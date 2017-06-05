@@ -1,17 +1,69 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Home</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+    <p><a  (click)="goSaved()"> Saved lists</a></p>
+    <hr>
+    <hr>
+    <div class="workout">
+        <div class="description">
+            <p>Created By: <b>User1</b></p>
+            <p>Workout1</p>
+            <p>Skill: beginer</p>
+            <p>Muscles worked: Chest</p>
+            <p>Cardio: no</p>
+        </div>
+        <div class="image">
+            <img src="http://via.placeholder.com/350x150">
+        </div>
+    </div>
+<div class="clear"></div>
+
+    <div class="workout">
+        <div class="description">
+            <p>Created By: <b>User2</b></p>
+            <p>Workout2</p>
+            <p>Skill: beginer</p>
+            <p>Muscles worked: Chest</p>
+            <p>Cardio: yes</p>
+        </div>
+        <div class="image">
+            <img src="http://via.placeholder.com/350x150">
+        </div>
+    </div>
+    <div class="clear"></div>
+
+    <div class="workout">
+        <div class="description">
+            <p>Created By: <b>User3</b></p>
+            <p>Workout3</p>
+            <p>Skill: med</p>
+            <p>Muscles worked: Chest</p>
+            <p>Cardio: no</p>
+        </div>
+        <div class="image">
+            <img src="http://via.placeholder.com/350x150">
+        </div>
+    </div>
+    <div class="clear"></div>
+
+
+    <div class="workout">
+        <div class="description">
+            <p>Created By: <b>User4</b></p>
+            <p>Workout4</p>
+            <p>Skill: adv</p>
+            <p>Muscles worked: Chest</p>
+            <p>Cardio: no</p>
+        </div>
+        <div class="image">
+            <img src="http://via.placeholder.com/350x150">
+        </div>
+    </div>
+    <div class="clear"></div>
+
+
 </ion-content>

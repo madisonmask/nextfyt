@@ -1,0 +1,45 @@
+<!--
+  Generated template for the Savedlist page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>savedlist</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+    <button ion-button (click)="ShowSaved('My')" [color]="isMySaved ? 'light' : ''">My creations</button>
+    <button ion-button (click)="ShowSaved('Favorited')" [color]="isMySaved ? '' : 'light'">My Favorited</button>
+
+
+    <ion-list>
+
+        <div ion-item *ngFor="let item of ActiveList" (click)="itemSelected(item)">
+            <div class="workout">
+                <div class="description">
+                    <p>Created By: <b>{{item.author}}</b></p>
+                    <p>Workout2</p>
+                    <p>Skill: beginer</p>
+                    <p>Muscles worked: Chest</p>
+                    <p>Cardio: yes</p>
+                </div>
+                <div class="image">
+                    <img src="http://via.placeholder.com/350x150">
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+
+    </ion-list>
+
+
+</ion-content>

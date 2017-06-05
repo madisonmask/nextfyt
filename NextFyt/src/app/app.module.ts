@@ -11,6 +11,10 @@ import { CreatePage } from '../pages/create/create';
 import { TabsPage } from '../pages/tabs/tabs';
 import { NotificationsPage } from '../pages/notifications/notifications';
 import { ProfilePage } from '../pages/profile/profile';
+import { SavedListPage } from '../pages/savedlist/savedlist';
+import { Registrations } from '../pages/registrations/registrations';
+
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -25,7 +29,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SearchPage,
     CreatePage,
     NotificationsPage,
-    ProfilePage
+    ProfilePage,
+    SavedListPage,
+    Registrations
   ],
   imports: [
     BrowserModule,
@@ -41,7 +47,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SearchPage,
     CreatePage,
     NotificationsPage,
-    ProfilePage
+    ProfilePage,
+    SavedListPage,
+    Registrations
   ],
   providers: [
     StatusBar,
