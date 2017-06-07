@@ -7,6 +7,7 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { SearchPage } from '../pages/search/search';
+import {  SearchFilters } from '../pages/searchfilters/searchfilters';
 import { CreatePage } from '../pages/create/create';
 import { TabsPage } from '../pages/tabs/tabs';
 import { NotificationsPage } from '../pages/notifications/notifications';
@@ -14,10 +15,13 @@ import { ProfilePage } from '../pages/profile/profile';
 import { SavedListPage } from '../pages/savedlist/savedlist';
 import { Registrations } from '../pages/registrations/registrations';
 
-
+import { CreatedExercisesPage } from '../pages/createdexercises/createdexercises';
+import {  CreatedExercisesStep2Page } from '../pages/createdexercisesstep2/createdexercisesstep2';
+import { CreatedExercisesStagePage } from '../pages/createdexercisesstage/createdexercisesstage';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Camera} from '@ionic-native/camera';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     NotificationsPage,
     ProfilePage,
     SavedListPage,
-    Registrations
+    Registrations,
+    SearchFilters,
+    CreatedExercisesPage,
+    CreatedExercisesStep2Page,
+    CreatedExercisesStagePage
+
   ],
   imports: [
     BrowserModule,
@@ -49,11 +58,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     NotificationsPage,
     ProfilePage,
     SavedListPage,
-    Registrations
+    Registrations,
+    SearchFilters,
+    CreatedExercisesPage,
+    CreatedExercisesStep2Page,
+    CreatedExercisesStagePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -1,0 +1,45 @@
+<!--
+  Generated template for the Savedlist page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>createdexercises</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-item>
+
+        <ion-input type="text"  placeholder="Please name your exercise here"></ion-input>
+    </ion-item>
+
+
+
+    <h2>Muscles worked </h2>
+
+
+    <button ion-button  *ngFor="let item of FilterValues.Muscles" (click)="SelectMuscles(item)"   [color]="checkMuscles(item) ? 'light' : ''"> {{item.name}} </button>
+
+    <ion-item>
+        <ion-label>Cardio</ion-label>
+        <ion-toggle [(ngModel)]="Searched.Filters.Cardio"></ion-toggle>
+    </ion-item>
+
+    <h2>Difficulty </h2>
+
+    <button ion-button  *ngFor="let item of FilterValues.Difficulty" (click)="SelectDifficulty(item)"   [color]="checkDifficulty(item) ? 'light' : ''"> {{item.name}} </button>
+
+<br>
+
+    <button ion-button round class="fullWidth" (click)="goToStep2()">Next</button>
+
+
+
+</ion-content>

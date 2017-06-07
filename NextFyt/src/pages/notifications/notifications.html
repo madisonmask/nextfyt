@@ -14,5 +14,9 @@
 
 
 <ion-content padding>
+  <button ion-button (click)="ShowNotify('Following')" [color]="isMySaved ? 'light' : ''">Following</button>
+  <button ion-button (click)="ShowNotify('My')" [color]="isMySaved ? '' : 'light'">You</button>
+
+
 
 </ion-content>

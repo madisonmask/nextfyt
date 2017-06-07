@@ -1,5 +1,6 @@
 {
   "name": "NextFyt",
   "app_id": "6be0cf17",
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "typescript": true
 }

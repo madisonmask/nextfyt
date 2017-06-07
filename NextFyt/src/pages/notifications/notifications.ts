@@ -14,11 +14,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class NotificationsPage {
 
+
+  isMySaved = true;
+
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Notifications');
+  }
+
+  ShowNotify(type) {
+    console.log(type);
+
+    if (type == 'My') {
+      this.isMySaved = true;
+    } else {
+      this.isMySaved = false;
+    }
+
   }
 
 }

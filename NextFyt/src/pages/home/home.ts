@@ -8,7 +8,7 @@ import {SavedListPage} from '../savedlist/savedlist'
 })
 export class HomePage {
 
-    SavedListPage1 = SavedListPage;
+//    SavedListPage1 = SavedListPage;
    // CreatePage1=CreatePage;
   constructor(public navCtrl: NavController) {
 
@@ -17,7 +17,7 @@ export class HomePage {
    goSaved(){
 
      console.log('go saved');
-       this.navCtrl.push(this.SavedListPage1);
+       this.navCtrl.push(SavedListPage);
     }
 
 

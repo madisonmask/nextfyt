@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {CreatedExercisesPage} from '../createdexercises/createdexercises'
 
 /**
  * Generated class for the Create page.
@@ -23,4 +24,11 @@ export class CreatePage {
     console.log('ionViewDidLoad Create');
   }
 
+  CreateWorkout(){
+
+    this.navCtrl.push(CreatedExercisesPage);
+
+  }
+  
+  
 }

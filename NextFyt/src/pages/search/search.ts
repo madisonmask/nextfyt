@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {ModalController, NavController, NavParams, ViewController  } from 'ionic-angular';
+import {SearchFilters} from '../searchfilters/searchfilters'
 
 /**
  * Generated class for the Search page.
@@ -13,7 +14,10 @@ import {NavController} from 'ionic-angular';
     templateUrl: 'search.html',
 })
 export class SearchPage {
-    Searched = {SearchString: '', Filters: {enabled:false, Muscles: {}, Cardio: false, Difficulty: {}, Equipment: {}, TimeLength:''}};
+    Searched = {
+        SearchString: '',
+        Filters: {enabled: false, Muscles: [], Cardio: false, Difficulty: [], Equipment: [], TimeLength: ''}
+    };
     shouldShowCancel = true;
     FilterValues = {Muscles: {}, Cardio: false, Difficulty: {}, Equipment: {}};
 
@@ -30,44 +34,27 @@ export class SearchPage {
 
     }
 
-    SelectMuscles(item) {
+
+    showOptions() {
+        console.log('options');
+
+        let contactModal = this.modalCtrl.create(SearchFilters);
+        // Getting data from the modal:
+        contactModal.onDidDismiss(data => {
+            console.log('MODAL DATA', data);
+        });
 
 
-        console.log(item);
+        contactModal.present();
+
     }
 
-    SelectDifficulty(item) {
-        console.log(item);
-    }
 
-    SelectEquipment(item) {
-        console.log(item);
-    }
+    constructor(public navCtrl:NavController, public modalCtrl:ModalController) {
 
-    ApplyFilter(){
-        console.log('apply');
-    }
-    constructor(public navCtrl: NavController) {
 
-        this.FilterValues.Muscles = [{name: 'ABS'},
-            {name: 'Chest'},
-            {name: 'Biceps'},
-            {name: 'Calves'},
-            {name: 'Forearms'},
-            {name: 'Glutes'}
-        ];
-
-        this.FilterValues.Difficulty = [{name: 'beginer'},
-            {name: 'intermediate'},
-            {name: 'advanced'}
-        ];
-
-        this.FilterValues.Equipment = [{name: 'bands'},
-            {name: 'barbell'},
-            {name: 'cable'},
-            {name: 'foam roll'},
-        ];
     }
 
 
 }
+
