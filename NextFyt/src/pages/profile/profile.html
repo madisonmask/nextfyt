@@ -6,13 +6,60 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Profile</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Profile</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+    <ion-item>
+        <h2> {{user.username}}</h2>
+        <ion-icon name="cog"></ion-icon>
+    </ion-item>
+
+
+    <ion-grid>
+        <ion-row>
+            <ion-col col-4>
+                <ion-avatar item-start class="avatar">
+                    <img src="{{user.avatar}}">
+                </ion-avatar>
+            </ion-col>
+            <ion-col col-8>
+                <ion-row>
+                    <ion-col col-4>
+                        <h2>{{user.posts}}</h2>
+                        Posts
+                    </ion-col>
+
+                    <ion-col col-4>
+                        <h2> {{user.followers}}</h2>
+                        Followers
+                    </ion-col>
+
+                    <ion-col col-4>
+                        <h2> {{user.following}}</h2>
+                        Following
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+    <div padding>
+        <ion-segment [(ngModel)]="profileWorkoutsType">
+            <ion-segment-button value="workouts">
+                My workouts
+            </ion-segment-button>
+            <ion-segment-button value="favorites">
+                My favorites
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+
 
 </ion-content>

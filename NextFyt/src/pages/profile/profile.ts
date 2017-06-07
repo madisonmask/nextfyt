@@ -14,7 +14,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProfilePage {
 
+  user={};
+  profileWorkoutsType='';
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+    this.user={id:1,username:'TestUser', avatar:'/assets/images/avatar.png', posts:8, followers:10, following:20};
   }
 
   ionViewDidLoad() {
