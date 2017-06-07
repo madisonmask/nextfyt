@@ -22,6 +22,12 @@ import { CreatedExercisesStagePage } from '../pages/createdexercisesstage/create
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Camera} from '@ionic-native/camera';
+import { HttpModule } from '@angular/http';
+
+
+import {AuthService} from '../services/auth';
+import {UserService} from '../services/User';
+
 
 @NgModule({
   declarations: [
@@ -44,6 +50,7 @@ import { Camera} from '@ionic-native/camera';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -68,6 +75,8 @@ import { Camera} from '@ionic-native/camera';
     StatusBar,
     SplashScreen,
     Camera,
+    AuthService,
+    UserService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
