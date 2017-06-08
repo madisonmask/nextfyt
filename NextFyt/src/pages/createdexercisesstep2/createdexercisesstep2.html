@@ -18,7 +18,7 @@
 
     <h2>Equipment needed </h2>
 
-    <button ion-button  *ngFor="let item of FilterValues.Equipment" (click)="SelectEquipment(item)"   [color]="checkEquipment(item)  ? 'light' : ''"> {{item.name}} </button>
+    <button ion-button  *ngFor="let item of FilterValues.Equipment" (click)="SelectEquipment(item)"   [color]="checkEquipment(item)  ? '' : 'light'"> {{item.name}} </button>
 
 
     <br>

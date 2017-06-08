@@ -8,6 +8,9 @@ import { AlertController } from 'ionic-angular';
 
 import {DomSanitizer} from '@angular/platform-browser';
 
+import {Http} from "@angular/http";
+import 'rxjs/add/operator/map';
+
 /**
  * Generated class for the Savedlist page.
  *
@@ -25,9 +28,16 @@ export class CreatedExercisesStagePage {
     testRadioOpen = false;
     testRadioResult = {};
     ExcerciseImage=[];
+    Exercise = {
+        Filters: {enabled: false, Muscles: [], Cardio: false, Difficulty: [], Equipment: [], TimeLength: ''},
+        Images:[]
+    };
 
+    constructor(public navCtrl:NavController, public navParams:NavParams, private camera:Camera, public alertCtrl:AlertController, public _DomSanitizationService: DomSanitizer, public http: Http) {
 
-    constructor(public navCtrl:NavController, public navParams:NavParams, private camera:Camera, public alertCtrl:AlertController, public _DomSanitizationService: DomSanitizer) {
+        this.Exercise=   this.navParams.get('Exercise');
+        console.log(this.Exercise);
+
     }
 
 
@@ -38,12 +48,8 @@ export class CreatedExercisesStagePage {
             targetHeight: 1000
         }).then((imageData) => {
             // imageData is a base64 encoded string
-
-     //       imageData.replace(/(\r\n|\n|\r)/gm,"");
-
-
-       //     this.base64Image = "data:image/jpeg;base64," + imageData;
             this.ExcerciseImage[number]="data:image/jpeg;base64," + imageData;
+            this.Exercise.Images[number]=imageData;
         }, (err) => {
             console.log(err);
         });
@@ -56,8 +62,8 @@ export class CreatedExercisesStagePage {
             sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
         }).then((imageData) => {
             // imageData is a base64 encoded string
-//            this.base64Image = "data:image/jpeg;base64," + imageData;
             this.ExcerciseImage[number]="data:image/jpeg;base64," + imageData;
+            this.Exercise.Images[number]=imageData;
         }, (err) => {
             console.log(err);
         });
@@ -67,7 +73,6 @@ export class CreatedExercisesStagePage {
     showRadio(number) {
         let alert = this.alertCtrl.create();
         alert.setTitle('Lightsaber color');
-
         alert.addInput({
             type: 'radio',
             label: 'Take a Photo',
@@ -105,7 +110,12 @@ export class CreatedExercisesStagePage {
     }
 
     publish(){
+        this.http.post('http://nextfyt.local/api/exercise', this.Exercise).map(res => res.json())
+            .subscribe(data => {
 
+                console.log(data);
+
+            });
 
     }
 
@@ -123,7 +133,8 @@ export class CreatedExercisesStagePage {
                 {
                     text: 'Publish',
                     handler: data => {
-                        console.log('Saved clicked');
+                        console.log('Publish clicked');
+                        this.publish();
                     }
                 }
             ]

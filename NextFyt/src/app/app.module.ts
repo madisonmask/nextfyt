@@ -28,6 +28,8 @@ import { HttpModule } from '@angular/http';
 import {AuthService} from '../services/auth';
 import {UserService} from '../services/User';
 
+import { APP_CONFIG, AppConfig } from './app.config';
+
 
 @NgModule({
   declarations: [
@@ -77,7 +79,8 @@ import {UserService} from '../services/User';
     Camera,
     AuthService,
     UserService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: APP_CONFIG, useValue: AppConfig }
   ]
 })
 export class AppModule {}

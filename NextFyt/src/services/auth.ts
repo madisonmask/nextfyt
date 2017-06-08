@@ -1,19 +1,25 @@
 /**
  * Created by Vika on 07.06.2017.
  */
-import {Injectable} from "@angular/core";
+import {Injectable, Inject} from "@angular/core";
 import {Http} from "@angular/http";
 import 'rxjs/add/operator/map';
 
 import{UserService} from  './User';
 
+import { APP_CONFIG, IAppConfig } from '../app/app.config';
+
+
 @Injectable()
 export class AuthService {
     data={};
-    constructor( public http: Http, public  user:UserService) {
+    config: IAppConfig;
+    constructor(public http: Http, public  user:UserService,
+    @Inject(APP_CONFIG)  config: IAppConfig) {
        this.http = http;
         this.data = null;
-
+       this.config=config;
+       console.log(config.apiEndpoint);
     }
 
     retrieveData() {
@@ -30,7 +36,7 @@ export class AuthService {
 
 
     getProfile(){
-        this.http.get('http://nextfyt.local/api/profile').map(res => res.json())
+        this.http.get(this.config.apiEndpoint+'profile').map(res => res.json())
             .subscribe(data => {
                 this.data = data;
                 console.log(data);

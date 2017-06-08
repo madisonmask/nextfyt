@@ -15,26 +15,14 @@ import {CreatedExercisesStagePage} from  '../createdexercisesstage/createdexerci
 })
 export class CreatedExercisesStep2Page {
 
-    Searched = {
-        SearchString: '',
-        Filters: {enabled: false, Muscles: [], Cardio: false, Difficulty: [], Equipment: [], TimeLength: ''}
+    Exercise = {
+        Filters: {enabled: false, Muscles: [], Cardio: false, Difficulty: [], Equipment: [], TimeLength: ''},
+        Images:[]
     };
 
     FilterValues = {Muscles: {}, Cardio: false, Difficulty: {}, Equipment: {}};
 
     constructor(public navCtrl:NavController, public navParams:NavParams) {
-        this.FilterValues.Muscles = [{name: 'ABS'},
-            {name: 'Chest'},
-            {name: 'Biceps'},
-            {name: 'Calves'},
-            {name: 'Forearms'},
-            {name: 'Glutes'}
-        ];
-
-        this.FilterValues.Difficulty = [{name: 'beginer'},
-            {name: 'intermediate'},
-            {name: 'advanced'}
-        ];
 
         this.FilterValues.Equipment = [{name: 'bands'},
             {name: 'barbell'},
@@ -42,19 +30,20 @@ export class CreatedExercisesStep2Page {
             {name: 'foam roll'},
         ];
 
+     this.Exercise=   this.navParams.get('Exercise');
     }
 
 
     SelectMuscles(item) {
-        if (this.Searched.Filters.Muscles.indexOf(item) == -1) {
-            this.Searched.Filters.Muscles.push(item);
+        if (this.Exercise.Filters.Muscles.indexOf(item) == -1) {
+            this.Exercise.Filters.Muscles.push(item);
         } else {
-            this.Searched.Filters.Muscles.splice(this.Searched.Filters.Muscles.indexOf(item), 1);
+            this.Exercise.Filters.Muscles.splice(this.Exercise.Filters.Muscles.indexOf(item), 1);
         }
     }
 
     checkMuscles(item) {
-        if (this.Searched.Filters.Muscles.indexOf(item) == -1) {
+        if (this.Exercise.Filters.Muscles.indexOf(item) == -1) {
             return false;
         } else {
             return true;
@@ -62,15 +51,15 @@ export class CreatedExercisesStep2Page {
     }
 
     SelectDifficulty(item) {
-        if (this.Searched.Filters.Difficulty.indexOf(item) == -1) {
-            this.Searched.Filters.Difficulty.push(item);
+        if (this.Exercise.Filters.Difficulty.indexOf(item) == -1) {
+            this.Exercise.Filters.Difficulty.push(item);
         } else {
-            this.Searched.Filters.Difficulty.splice(this.Searched.Filters.Difficulty.indexOf(item), 1);
+            this.Exercise.Filters.Difficulty.splice(this.Exercise.Filters.Difficulty.indexOf(item), 1);
         }
     }
 
     checkDifficulty(item) {
-        if (this.Searched.Filters.Difficulty.indexOf(item) == -1) {
+        if (this.Exercise.Filters.Difficulty.indexOf(item) == -1) {
             return false;
         } else {
             return true;
@@ -79,15 +68,15 @@ export class CreatedExercisesStep2Page {
 
 
     SelectEquipment(item) {
-        if (this.Searched.Filters.Equipment.indexOf(item) == -1) {
-            this.Searched.Filters.Equipment.push(item);
+        if (this.Exercise.Filters.Equipment.indexOf(item) == -1) {
+            this.Exercise.Filters.Equipment.push(item);
         } else {
-            this.Searched.Filters.Equipment.splice(this.Searched.Filters.Equipment.indexOf(item), 1);
+            this.Exercise.Filters.Equipment.splice(this.Exercise.Filters.Equipment.indexOf(item), 1);
         }
     }
 
     checkEquipment(item) {
-        if (this.Searched.Filters.Equipment.indexOf(item) == -1) {
+        if (this.Exercise.Filters.Equipment.indexOf(item) == -1) {
             return false;
         } else {
             return true;
@@ -95,7 +84,7 @@ export class CreatedExercisesStep2Page {
     }
 
     goToStages() {
-        this.navCtrl.push(CreatedExercisesStagePage);
+        this.navCtrl.push(CreatedExercisesStagePage, {Exercise:this.Exercise});
 
     }
 

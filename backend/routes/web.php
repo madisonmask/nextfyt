@@ -20,4 +20,7 @@ Route::group(['prefix' => 'api'  ] , function () {
 
 
     Route::get('/profile', 'UserProfileController@getProfile' );
+
+    Route::post('/exercise', 'ExerciseController@saveExercise' );
+
 });
