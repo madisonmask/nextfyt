@@ -50,17 +50,35 @@
     </ion-grid>
 
 
-    <ion-input type="text"  placeholder="" value="1"></ion-input>
-    <button ion-button  > Compound movements </button>
-    <button ion-button  > Sets </button>
+    <ion-input type="text"  placeholder=" enter repeat count"  [(ngModel)]="this.Exercise.repeat_count" ></ion-input>
 
-    <ion-input type="text"  placeholder="" value="30"></ion-input>
-    <button ion-button  > Seconds </button>
-    <button ion-button  > Minutes </button>
-    <button ion-button  > Reps </button>
+    <ion-segment [(ngModel)]="this.Exercise.repeat_type">
+        <ion-segment-button  value="movements">
+            Compound movements
+        </ion-segment-button>
+        <ion-segment-button  value="steps">
+            Sets
+        </ion-segment-button>
+    </ion-segment>
 
+    <ion-input type="text"  placeholder="enter length count" [(ngModel)]="this.Exercise.length_count" ></ion-input>
+
+    <ion-segment [(ngModel)]="this.Exercise.length_type">
+        <ion-segment-button  value="Seconds">
+            Seconds
+        </ion-segment-button>
+        <ion-segment-button  value="Minutes">
+            Minutes
+        </ion-segment-button>
+        <ion-segment-button  value="Reps">
+            Reps
+        </ion-segment-button>
+
+
+    </ion-segment>
 
     <button ion-button round class="fullWidth" (click)="showPrompt()">Publish</button>
+    <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
 <!--
 
    <a (click)="showRadio()"> Hello World, this is my camera app </a>

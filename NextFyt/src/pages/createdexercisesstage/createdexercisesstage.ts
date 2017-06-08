@@ -1,7 +1,7 @@
 //https://github.com/ionic-team/ionic-view-issues/issues/192
 
 
-import { Component } from '@angular/core';
+import { Component, Injectable, Inject } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
 import { Camera } from '@ionic-native/camera';
 import { AlertController } from 'ionic-angular';
@@ -10,6 +10,9 @@ import {DomSanitizer} from '@angular/platform-browser';
 
 import {Http} from "@angular/http";
 import 'rxjs/add/operator/map';
+
+import { APP_CONFIG, IAppConfig } from '../../app/app.config';
+
 
 /**
  * Generated class for the Savedlist page.
@@ -26,17 +29,28 @@ export class CreatedExercisesStagePage {
 
     public base64Image:string;
     testRadioOpen = false;
+    config:IAppConfig;
     testRadioResult = {};
-    ExcerciseImage=[];
+    ExcerciseImage = [];
     Exercise = {
+        Name: '',
         Filters: {enabled: false, Muscles: [], Cardio: false, Difficulty: [], Equipment: [], TimeLength: ''},
-        Images:[]
+        Images: [],
+        repeat_count:0,
+        repeat_type:'',
+        length_count:30,
+        length_type:''
+
     };
+    IsAjaxLoaded:boolean = false;
 
-    constructor(public navCtrl:NavController, public navParams:NavParams, private camera:Camera, public alertCtrl:AlertController, public _DomSanitizationService: DomSanitizer, public http: Http) {
+    constructor(public navCtrl:NavController, public navParams:NavParams, private camera:Camera, public alertCtrl:AlertController,
+                public _DomSanitizationService:DomSanitizer, public http:Http,
+                @Inject(APP_CONFIG)  config:IAppConfig) {
 
-        this.Exercise=   this.navParams.get('Exercise');
+        this.Exercise = this.navParams.get('Exercise');
         console.log(this.Exercise);
+        this.config = config;
 
     }
 
@@ -48,8 +62,8 @@ export class CreatedExercisesStagePage {
             targetHeight: 1000
         }).then((imageData) => {
             // imageData is a base64 encoded string
-            this.ExcerciseImage[number]="data:image/jpeg;base64," + imageData;
-            this.Exercise.Images[number]=imageData;
+            this.ExcerciseImage[number] = "data:image/jpeg;base64," + imageData;
+            this.Exercise.Images[number] = imageData;
         }, (err) => {
             console.log(err);
         });
@@ -62,8 +76,8 @@ export class CreatedExercisesStagePage {
             sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
         }).then((imageData) => {
             // imageData is a base64 encoded string
-            this.ExcerciseImage[number]="data:image/jpeg;base64," + imageData;
-            this.Exercise.Images[number]=imageData;
+            this.ExcerciseImage[number] = "data:image/jpeg;base64," + imageData;
+            this.Exercise.Images[number] = imageData;
         }, (err) => {
             console.log(err);
         });
@@ -109,12 +123,12 @@ export class CreatedExercisesStagePage {
 
     }
 
-    publish(){
-        this.http.post('http://nextfyt.local/api/exercise', this.Exercise).map(res => res.json())
+    publish() {
+        this.IsAjaxLoaded = true;
+        this.http.post(this.config.apiEndpoint + 'exercise', this.Exercise).map(res => res.json())
             .subscribe(data => {
-
                 console.log(data);
-
+                this.IsAjaxLoaded = false;
             });
 
     }
@@ -141,9 +155,6 @@ export class CreatedExercisesStagePage {
         });
         prompt.present();
     }
-
-
-
 
 
 }

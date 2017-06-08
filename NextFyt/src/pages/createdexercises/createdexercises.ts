@@ -16,7 +16,8 @@ import {  CreatedExercisesStep2Page } from '../createdexercisesstep2/createdexer
 export class CreatedExercisesPage {
 
     Exercise = {
-        Filters: {enabled: false, Muscles: [], Cardio: false, Difficulty: [], Equipment: [], TimeLength: ''},
+        Name:'',
+        Filters: {enabled: false, Muscles: [], Cardio: false, Difficulty:'', Equipment: [], TimeLength: ''},
         Images:[]
     };
 
@@ -36,6 +37,9 @@ export class CreatedExercisesPage {
             {name: 'advanced'}
         ];
 
+        this.Exercise.Filters.Difficulty =  this.FilterValues.Difficulty[0].name;
+
+        console.log(this.Exercise.Filters);
         this.FilterValues.Equipment = [{name: 'bands'},
             {name: 'barbell'},
             {name: 'cable'},
@@ -60,7 +64,7 @@ export class CreatedExercisesPage {
             return true;
         }
     }
-
+/*
     SelectDifficulty(item) {
         if (this.Exercise.Filters.Difficulty.indexOf(item) == -1) {
             this.Exercise.Filters.Difficulty.push(item);
@@ -77,7 +81,7 @@ export class CreatedExercisesPage {
         }
     }
 
-
+*/
     SelectEquipment(item) {
         if (this.Exercise.Filters.Equipment.indexOf(item) == -1) {
             this.Exercise.Filters.Equipment.push(item);
@@ -99,4 +103,18 @@ export class CreatedExercisesPage {
         this.navCtrl.push(CreatedExercisesStep2Page, {Exercise:this.Exercise});
     }
 
+    isformCorrect(){
+    if(this.Exercise.Name==''){
+            return false;
+        }
+
+        if(this.Exercise.Filters.Muscles.length==0){
+            return false;
+        }
+
+        return true;
+
+
+
+    }
 }

@@ -16,7 +16,7 @@
 <ion-content padding>
 
     <ion-item>
-        <ion-input type="text" placeholder="Please name your exercise here"></ion-input>
+        <ion-input type="text" placeholder="Please name your exercise here" [(ngModel)]="Exercise.Name"></ion-input>
     </ion-item>
 
 
@@ -33,11 +33,18 @@
 
     <h2>Difficulty </h2>
 
-    <button ion-button *ngFor="let item of FilterValues.Difficulty" (click)="SelectDifficulty(item)"
-            [color]="checkDifficulty(item) ? '' : 'light'"> {{item.name}}
-    </button>
+
+    <div padding>
+        <ion-segment [(ngModel)]="this.Exercise.Filters.Difficulty">
+            <ion-segment-button *ngFor="let item of FilterValues.Difficulty" value="{{item.name}}">
+                {{item.name}}
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+
+
     <br>
-    <button ion-button round class="fullWidth" (click)="goToStep2()">Next</button>
+    <button ion-button round class="fullWidth" (click)="goToStep2()" [disabled]="isformCorrect()==false">Next</button>
 
 
 </ion-content>

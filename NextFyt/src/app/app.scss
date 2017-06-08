@@ -14,3 +14,16 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+.loaderSpiner {
+  height: 50%;
+  width: 50%;
+  /* position: absolute; */
+  /* top: 50%; */
+  position: absolute;
+  left: 25%;
+  top: 25%;
+  /* margin-left: -32px; */
+  /* margin-top: -32px; */
+}

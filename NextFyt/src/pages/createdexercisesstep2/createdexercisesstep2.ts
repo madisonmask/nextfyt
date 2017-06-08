@@ -16,6 +16,7 @@ import {CreatedExercisesStagePage} from  '../createdexercisesstage/createdexerci
 export class CreatedExercisesStep2Page {
 
     Exercise = {
+        Name:'',
         Filters: {enabled: false, Muscles: [], Cardio: false, Difficulty: [], Equipment: [], TimeLength: ''},
         Images:[]
     };
