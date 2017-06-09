@@ -16,22 +16,23 @@ import {CreatedExercisesStagePage} from  '../createdexercisesstage/createdexerci
 export class CreatedExercisesStep2Page {
 
     Exercise = {
-        Name:'',
+        Name: '',
         Filters: {enabled: false, Muscles: [], Cardio: false, Difficulty: [], Equipment: [], TimeLength: ''},
-        Images:[]
+        Images: [],
+        repeat_count:0,
+        repeat_type:'movements',
+        length_count:30,
+        length_type:'Seconds'
+
     };
 
-    FilterValues = {Muscles: {}, Cardio: false, Difficulty: {}, Equipment: {}};
+    FilterValues = {Muscles: [], Cardio: false, Difficulty: [], Equipment: []};
 
     constructor(public navCtrl:NavController, public navParams:NavParams) {
 
-        this.FilterValues.Equipment = [{name: 'bands'},
-            {name: 'barbell'},
-            {name: 'cable'},
-            {name: 'foam roll'},
-        ];
-
      this.Exercise=   this.navParams.get('Exercise');
+
+        this.FilterValues=   this.navParams.get('FilterValues');
     }
 
 

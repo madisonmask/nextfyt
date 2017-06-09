@@ -35,7 +35,7 @@
 
 
     <div padding>
-        <ion-segment [(ngModel)]="this.Exercise.Filters.Difficulty">
+        <ion-segment *ngIf="FilterValues.Difficulty.length>0"  [(ngModel)]="Exercise.Filters.Difficulty">
             <ion-segment-button *ngFor="let item of FilterValues.Difficulty" value="{{item.name}}">
                 {{item.name}}
             </ion-segment-button>

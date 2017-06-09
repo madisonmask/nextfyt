@@ -50,9 +50,9 @@
     </ion-grid>
 
 
-    <ion-input type="text"  placeholder=" enter repeat count"  [(ngModel)]="this.Exercise.repeat_count" ></ion-input>
+    <ion-input type="text"  placeholder=" enter repeat count"  [(ngModel)]="Exercise.repeat_count" ></ion-input>
 
-    <ion-segment [(ngModel)]="this.Exercise.repeat_type">
+    <ion-segment [(ngModel)]="Exercise.repeat_type">
         <ion-segment-button  value="movements">
             Compound movements
         </ion-segment-button>
@@ -61,9 +61,9 @@
         </ion-segment-button>
     </ion-segment>
 
-    <ion-input type="text"  placeholder="enter length count" [(ngModel)]="this.Exercise.length_count" ></ion-input>
+    <ion-input type="text"  placeholder="enter length count" [(ngModel)]="Exercise.length_count" ></ion-input>
 
-    <ion-segment [(ngModel)]="this.Exercise.length_type">
+    <ion-segment [(ngModel)]="Exercise.length_type">
         <ion-segment-button  value="Seconds">
             Seconds
         </ion-segment-button>
@@ -76,6 +76,9 @@
 
 
     </ion-segment>
+
+
+
 
     <button ion-button round class="fullWidth" (click)="showPrompt()">Publish</button>
     <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>

@@ -1,10 +1,10 @@
 //https://github.com/ionic-team/ionic-view-issues/issues/192
 
 
-import { Component, Injectable, Inject } from '@angular/core';
-import {  NavController, NavParams } from 'ionic-angular';
+import { Component,  Inject } from '@angular/core';
+import {  NavController, NavParams,  AlertController} from 'ionic-angular';
 import { Camera } from '@ionic-native/camera';
-import { AlertController } from 'ionic-angular';
+
 
 import {DomSanitizer} from '@angular/platform-browser';
 
@@ -37,9 +37,9 @@ export class CreatedExercisesStagePage {
         Filters: {enabled: false, Muscles: [], Cardio: false, Difficulty: [], Equipment: [], TimeLength: ''},
         Images: [],
         repeat_count:0,
-        repeat_type:'',
+        repeat_type:'movements',
         length_count:30,
-        length_type:''
+        length_type:'Seconds'
 
     };
     IsAjaxLoaded:boolean = false;
@@ -125,8 +125,13 @@ export class CreatedExercisesStagePage {
 
     publish() {
         this.IsAjaxLoaded = true;
-        this.http.post(this.config.apiEndpoint + 'exercise', this.Exercise).map(res => res.json())
-            .subscribe(data => {
+        this.http.post(this.config.apiEndpoint + 'exercise', this.Exercise).map(res => res.json()) .subscribe(data => {
+             /*      let alert = this.alertCtrl.create({
+                        title: 'data',
+                        subTitle: data,
+                        buttons: ['OK']
+                    });
+                    alert.present();*/
                 console.log(data);
                 this.IsAjaxLoaded = false;
             });

@@ -1,5 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
+
+
+import {Http} from "@angular/http";
+import 'rxjs/add/operator/map';
+
+import { APP_CONFIG, IAppConfig } from '../../app/app.config';
+
+
 
 /**
  * Generated class for the Savedlist page.
@@ -15,40 +23,9 @@ import {  NavController, NavParams } from 'ionic-angular';
 export class SavedListPage {
 
     isMySaved = true;
+    config:IAppConfig;
 
-    createdList = [{
-        author: 'USER',
-        name: 'training1',
-        skill: 'adv',
-        muscles: 'all',
-        cardio: false,
-        image: 'http://via.placeholder.com/350x150'
-    },
-        {
-            author: 'USER',
-            name: 'training2',
-            skill: 'adv',
-            muscles: 'all',
-            cardio: false,
-            image: 'http://via.placeholder.com/350x150'
-        },
-        {
-            author: 'USER',
-            name: 'training3',
-            skill: '--',
-            muscles: 'not all',
-            cardio: false,
-            image: 'http://via.placeholder.com/350x150'
-        },
-        {
-            author: 'USER',
-            name: 'training4',
-            skill: 'adv',
-            muscles: 'none',
-            cardio: true,
-            image: 'http://via.placeholder.com/350x150'
-        },
-    ];
+    createdList = [ ];
 
     favoritedList = [{
         author: 'User1',
@@ -79,7 +56,12 @@ export class SavedListPage {
     ActiveList = this.createdList;
 
 
-    constructor(public navCtrl:NavController, public navParams:NavParams) {
+    constructor(public navCtrl:NavController, public navParams:NavParams,  public http:Http,
+                @Inject(APP_CONFIG)  config:IAppConfig
+    ) {
+
+        this.config=config;
+        this.getMyWorkouts();
     }
 
     ionViewDidLoad() {
@@ -90,6 +72,7 @@ export class SavedListPage {
         console.log(type);
 
         if (type == 'My') {
+            this.getMyWorkouts();
             this.isMySaved = true;
             this.ActiveList = this.createdList;
         } else {
@@ -103,4 +86,14 @@ export class SavedListPage {
         console.log(item);
     }
 
+
+
+    getMyWorkouts(){
+        this.http.get(this.config.apiEndpoint + 'workouts/my').map(res => res.json())
+            .subscribe(data => {
+                this.createdList = data.workouts;
+                console.log(data);
+                this.ActiveList = this.createdList;
+            });
+    }
 }

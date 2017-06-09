@@ -26,13 +26,14 @@
             <div class="workout">
                 <div class="description">
                     <p>Created By: <b>{{item.author}}</b></p>
-                    <p>Workout2</p>
-                    <p>Skill: beginer</p>
-                    <p>Muscles worked: Chest</p>
-                    <p>Cardio: yes</p>
+                    <p>{{item.name}}</p>
+                    <p>Skill: {{item.skill}}</p>
+                    <p>Muscles worked: <span *ngFor="let muscle  of item.muscles"> {{muscle.name}}  </span>  </p>
+                    <p>Cardio: {{item.cardio}}</p>
                 </div>
                 <div class="image">
-                    <img src="http://via.placeholder.com/350x150">
+                    <img src="http://via.placeholder.com/350x150" *ngIf="item.image==''" >
+                    <img src="{{item.image}}" *ngIf="item.image!=''">
                 </div>
             </div>
             <div class="clear"></div>

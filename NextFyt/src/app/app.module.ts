@@ -14,6 +14,7 @@ import { NotificationsPage } from '../pages/notifications/notifications';
 import { ProfilePage } from '../pages/profile/profile';
 import { SavedListPage } from '../pages/savedlist/savedlist';
 import { Registrations } from '../pages/registrations/registrations';
+import { ShareWorkoutPage } from '../pages/share-workout/share-workout';
 
 import { CreatedExercisesPage } from '../pages/createdexercises/createdexercises';
 import {  CreatedExercisesStep2Page } from '../pages/createdexercisesstep2/createdexercisesstep2';
@@ -47,7 +48,8 @@ import { APP_CONFIG, AppConfig } from './app.config';
     SearchFilters,
     CreatedExercisesPage,
     CreatedExercisesStep2Page,
-    CreatedExercisesStagePage
+    CreatedExercisesStagePage,
+    ShareWorkoutPage
 
   ],
   imports: [
@@ -71,7 +73,8 @@ import { APP_CONFIG, AppConfig } from './app.config';
     SearchFilters,
     CreatedExercisesPage,
     CreatedExercisesStep2Page,
-    CreatedExercisesStagePage
+    CreatedExercisesStagePage,
+    ShareWorkoutPage
   ],
   providers: [
     StatusBar,

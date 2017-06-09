@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {ModalController, NavController, NavParams, ViewController  } from 'ionic-angular';
+import {ModalController, NavController  } from 'ionic-angular';
 import {SearchFilters} from '../searchfilters/searchfilters'
 
 /**
