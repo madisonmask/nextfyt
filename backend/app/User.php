@@ -26,4 +26,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+/*
+    public function FollowersWorkouts()
+    {
+        return $this->hasManyThrough('App\Workout', 'App\Followers', 'follower_user_id', 'user_id', 'id');
+    }
+*/
 }

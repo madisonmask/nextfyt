@@ -1,0 +1,34 @@
+<!--
+  Generated template for the ExerciseHistoryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>ExerciseHistory</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div class="exercises" *ngFor="let exercise of MyExercises">
+    <ion-item (click)="selectItem(item)">
+      <div class="description">
+        <p>{{exercise.name}}</p>
+        <p>{{exercise.repeat_count}} {{exercise.repeat_type}}      of  {{exercise.length_count}}   {{exercise.length_type}}  </p>
+        <p>Cardio: {{exercise.cardio}}</p>
+        <p>Equipment:      <span *ngFor="let eq of exercise.equipment"> {{eq.name}} ,  </span></p>
+      </div>
+      <div class="image">
+        <img src="{{exercise.stage1_img}}">
+      </div>
+    </ion-item>
+  </div>
+  <div class="clear"></div>
+
+
+</ion-content>

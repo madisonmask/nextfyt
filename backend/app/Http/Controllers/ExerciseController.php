@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 //use Intervention\Image\Image;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\File;
+use App\Http\Controllers\Helpers;
 
 
 class ExerciseController extends Controller
@@ -23,7 +24,6 @@ class ExerciseController extends Controller
         foreach ($difficulty as $dif) {
             $difficultys[$dif->name] = $dif->id;
         }
-
 
 
         $user = Auth::user();
@@ -81,7 +81,7 @@ class ExerciseController extends Controller
                 'length_count' => $length_count,
                 'length_type' => $request->length_type, //['Seconds', 'Minutes', 'Reps']);
                 'cardio' => $request->Filters['Cardio'],
-                'Difficulty' =>  $difficultys[ $request->Filters['Difficulty']]
+                'Difficulty' => $difficultys[$request->Filters['Difficulty']]
             ]);
 
             foreach ($request->Filters['Muscles'] as $m) {
@@ -120,28 +120,58 @@ class ExerciseController extends Controller
 
     }
 
-    public function getExercises()
+    /**
+     * Get all my exercises
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getExercises(Request $request)
     {
-        $user = Auth::user();
-
-        if (empty($user)) {
-            $user = ['id' => 0, 'username' => 'TESTuser', 'avatar' => '/assets/images/avatar.jpg', 'email' => 'fake@email.com', 'posts' => 0, 'followers' => 0, 'following' => 0];
-            $user = (object)$user;
-        }
+        $user = Helpers::getUser($request);
+        /*
+                if (empty($user)) {
+                    $user = ['id' => 0, 'username' => 'TESTuser', 'avatar' => '/assets/images/avatar.jpg', 'email' => 'fake@email.com', 'posts' => 0, 'followers' => 0, 'following' => 0];
+                    $user = (object)$user;
+                }*/
         $exercises = Exercise::where('user_id', $user->id)->get();
 
-        $exportExercise=[];
-        $i=0;
-        foreach($exercises as $ex){
-            $exportExercise[$i]= $ex;
-            $exportExercise[$i]['equipment'] =     $ex->equipments()->get(['equipment.name']);;
-            $exportExercise[$i]['muscles'] =     $ex->muscles()->get(['muscles.name']);;
+        $exportExercise = [];
+        $i = 0;
+        foreach ($exercises as $ex) {
+            $exportExercise[$i] = $ex;
+            $exportExercise[$i]['equipment'] = $ex->equipments()->get(['equipment.name']);;
+            $exportExercise[$i]['muscles'] = $ex->muscles()->get(['muscles.name']);;
 
             $i++;
         }
-
         return response()->json(['error' => false, 'exercises' => $exportExercise]);
-
-
     }
+
+    /**
+     * Get new exercises, whic we will use for current workout
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getExercisesNew(Request $request)
+    {
+        $user = Helpers::getUser($request);
+        /*
+                if (empty($user)) {
+                    $user = ['id' => 0, 'username' => 'TESTuser', 'avatar' => '/assets/images/avatar.jpg', 'email' => 'fake@email.com', 'posts' => 0, 'followers' => 0, 'following' => 0];
+                    $user = (object)$user;
+                }*/
+        $exercises = Exercise::where('user_id', $user->id)->where('is_new',1)->get();
+
+        $exportExercise = [];
+        $i = 0;
+        foreach ($exercises as $ex) {
+            $exportExercise[$i] = $ex;
+            $exportExercise[$i]['equipment'] = $ex->equipments()->get(['equipment.name']);;
+            $exportExercise[$i]['muscles'] = $ex->muscles()->get(['muscles.name']);;
+
+            $i++;
+        }
+        return response()->json(['error' => false, 'exercises' => $exportExercise]);
+    }
+
 }

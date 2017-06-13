@@ -2,23 +2,23 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the Passwordreset page.
+ * Generated class for the ExerciseDefaultPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
 @IonicPage()
 @Component({
-  selector: 'page-passwordreset',
-  templateUrl: 'passwordreset.html',
+  selector: 'page-exercise-default',
+  templateUrl: 'exercise-default.html',
 })
-export class Passwordreset {
+export class ExerciseDefaultPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Passwordreset');
+    console.log('ionViewDidLoad ExerciseDefaultPage');
   }
 
 }

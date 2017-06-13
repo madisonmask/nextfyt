@@ -1,12 +1,11 @@
-import { Component, Inject } from '@angular/core';
-import {  NavController, NavParams } from 'ionic-angular';
+import {Component, Inject} from '@angular/core';
+import {NavController, NavParams} from 'ionic-angular';
 
-
-import {Http} from "@angular/http";
+import {Storage} from "@ionic/storage";
+import {Http, Headers} from "@angular/http";
 import 'rxjs/add/operator/map';
 
-import { APP_CONFIG, IAppConfig } from '../../app/app.config';
-
+import {APP_CONFIG, IAppConfig} from '../../app/app.config';
 
 
 /**
@@ -23,15 +22,15 @@ import { APP_CONFIG, IAppConfig } from '../../app/app.config';
 export class SavedListPage {
 
     isMySaved = true;
-    config:IAppConfig;
+    config: IAppConfig;
 
-    createdList = [ ];
+    createdList = [];
 
     favoritedList = [{
         author: 'User1',
         name: 'Lorem',
         skill: 'adv',
-        muscles: 'all',
+        muscles: ['all'],
         cardio: false,
         image: 'http://via.placeholder.com/350x150'
     },
@@ -39,7 +38,7 @@ export class SavedListPage {
             author: 'User2',
             name: 'Chest',
             skill: 'adv',
-            muscles: 'all',
+            muscles: ['notall'],
             cardio: false,
             image: 'http://via.placeholder.com/350x150'
         },
@@ -47,7 +46,7 @@ export class SavedListPage {
             author: 'user3',
             name: 'Big Cardio',
             skill: 'heart',
-            muscles: 'heart',
+            muscles: ['heart'],
             cardio: true,
             image: 'http://via.placeholder.com/350x150'
         }
@@ -56,11 +55,9 @@ export class SavedListPage {
     ActiveList = this.createdList;
 
 
-    constructor(public navCtrl:NavController, public navParams:NavParams,  public http:Http,
-                @Inject(APP_CONFIG)  config:IAppConfig
-    ) {
-
-        this.config=config;
+    constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,
+                @Inject(APP_CONFIG)  config: IAppConfig, private storage: Storage) {
+        this.config = config;
         this.getMyWorkouts();
     }
 
@@ -87,13 +84,27 @@ export class SavedListPage {
     }
 
 
+    getMyWorkouts() {
 
-    getMyWorkouts(){
-        this.http.get(this.config.apiEndpoint + 'workouts/my').map(res => res.json())
-            .subscribe(data => {
-                this.createdList = data.workouts;
-                console.log(data);
-                this.ActiveList = this.createdList;
-            });
+        this.storage.ready().then(() => {
+            this.storage.get('token').then(token => {
+                console.log(token);
+                let headers = new Headers();
+                headers.append('Authorization', 'Bearer ' + token);
+
+                this.http.get(this.config.apiEndpoint + 'workouts/my', {
+                    headers: headers
+                }).map(res => res.json()).subscribe(data => {
+                    this.createdList = data.workouts;
+                    console.log(data);
+                    this.ActiveList = this.createdList;
+
+
+                }, err => {
+                    console.log(err);
+                })
+            })
+        })
+
     }
 }

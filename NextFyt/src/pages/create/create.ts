@@ -1,13 +1,17 @@
-import { Component,   Inject } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component, Inject} from '@angular/core';
+import {IonicPage, NavController, NavParams, AlertController} from 'ionic-angular';
 import {CreatedExercisesPage} from '../createdexercises/createdexercises';
+import {ExerciseDefaultPage} from '../exercise-default/exercise-default';
+import {ExerciseHistoryPage} from '../exercise-history/exercise-history';
 
 import {ShareWorkoutPage} from '../share-workout/share-workout';
 
-import {Http} from "@angular/http";
-import 'rxjs/add/operator/map';
 
-import { APP_CONFIG, IAppConfig } from '../../app/app.config';
+import {Http, Headers} from "@angular/http";
+import 'rxjs/add/operator/map';
+import {Storage} from "@ionic/storage";
+
+import {APP_CONFIG, IAppConfig} from '../../app/app.config';
 /**
  * Generated class for the Create page.
  *
@@ -22,10 +26,10 @@ import { APP_CONFIG, IAppConfig } from '../../app/app.config';
 export class CreatePage {
 
     MyExercises = [];
-    config:IAppConfig;
+    config: IAppConfig;
 
-    constructor(public navCtrl:NavController, public navParams:NavParams, public http:Http,
-                @Inject(APP_CONFIG)  config:IAppConfig) {
+    constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,
+                @Inject(APP_CONFIG)  config: IAppConfig, private storage: Storage, public alertCtrl: AlertController) {
         this.config = config;
 
     }
@@ -62,21 +66,79 @@ export class CreatePage {
 
 
     updateExerciseList() {
-        this.http.get(this.config.apiEndpoint + 'exercise').map(res => res.json())
-            .subscribe(data => {
-                this.MyExercises = data.exercises;
-                console.log(data);
+        this.storage.ready().then(() => {
+            this.storage.get('token').then(token => {
+                console.log(token);
+                let headers = new Headers();
+                headers.append('Authorization', 'Bearer ' + token);
 
-            });
+                this.http.get(this.config.apiEndpoint + 'exercise/new', {
+                    headers: headers
+                }).map(res => res.json()).subscribe(data => {
+                    this.MyExercises = data.exercises;
+                    console.log(data);
+
+
+                }, err => {
+                    console.log(err);
+                })
+            })
+        })
     }
 
 
     CreateExercise() {
-        this.navCtrl.push(CreatedExercisesPage);
+        let alert = this.alertCtrl.create();
+        alert.setTitle('Lightsaber color');
+        alert.addInput({
+            type: 'radio',
+            label: 'past created exercises',
+            value: 'history',
+            checked: true
+        });
+
+        alert.addInput({
+            type: 'radio',
+            label: 'default exercises',
+            value: 'default',
+            checked: false
+        });
+
+        alert.addInput({
+            type: 'radio',
+            label: 'Create new',
+            value: 'new',
+            checked: false
+        });
+
+
+        alert.addButton('Cancel');
+        alert.addButton({
+            text: 'OK',
+            handler: data => {
+                console.log('Radio data:', data);
+                //    this.testRadioOpen = false;
+                //    this.testRadioResult = data;
+                if (data == 'new') {
+                    this.navCtrl.push(CreatedExercisesPage);
+                } else if (data == 'history') {
+                    this.navCtrl.push(ExerciseHistoryPage);
+                } else {
+                    this.navCtrl.push(ExerciseDefaultPage);
+                }
+
+            }
+        });
+        alert.present().then(() => {
+            //      this.testRadioOpen = true;
+        });
+
+
+        //   this.navCtrl.push(CreatedExercisesPage);
     }
 
-    ShareWorkout(){
-        this.navCtrl.push(ShareWorkoutPage, {Exercises:this.MyExercises});
+    ShareWorkout() {
+        this.navCtrl.push(ShareWorkoutPage, {Exercises: this.MyExercises});
 
     }
 

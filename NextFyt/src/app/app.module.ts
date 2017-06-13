@@ -13,12 +13,19 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { NotificationsPage } from '../pages/notifications/notifications';
 import { ProfilePage } from '../pages/profile/profile';
 import { SavedListPage } from '../pages/savedlist/savedlist';
-import { Registrations } from '../pages/registrations/registrations';
+import { RegistrationPage } from '../pages/registration/registration';
+import { LoginPage } from '../pages/login/login';
 import { ShareWorkoutPage } from '../pages/share-workout/share-workout';
 
 import { CreatedExercisesPage } from '../pages/createdexercises/createdexercises';
 import {  CreatedExercisesStep2Page } from '../pages/createdexercisesstep2/createdexercisesstep2';
 import { CreatedExercisesStagePage } from '../pages/createdexercisesstage/createdexercisesstage';
+
+import {ExerciseDefaultPage} from '../pages/exercise-default/exercise-default';
+import {ExerciseHistoryPage} from '../pages/exercise-history/exercise-history';
+
+
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -28,7 +35,10 @@ import { HttpModule } from '@angular/http';
 
 import {AuthService} from '../services/auth';
 import {UserService} from '../services/User';
+import { TabsService } from '../services/tabs';
+import { HttpClient } from '../services/HttpClient';
 
+import {IonicStorageModule} from "@ionic/storage";
 import { APP_CONFIG, AppConfig } from './app.config';
 
 
@@ -44,18 +54,22 @@ import { APP_CONFIG, AppConfig } from './app.config';
     NotificationsPage,
     ProfilePage,
     SavedListPage,
-    Registrations,
+    RegistrationPage,
+    LoginPage,
     SearchFilters,
     CreatedExercisesPage,
     CreatedExercisesStep2Page,
     CreatedExercisesStagePage,
+    ExerciseDefaultPage,
+    ExerciseHistoryPage,
     ShareWorkoutPage
 
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -69,11 +83,14 @@ import { APP_CONFIG, AppConfig } from './app.config';
     NotificationsPage,
     ProfilePage,
     SavedListPage,
-    Registrations,
+    RegistrationPage,
+    LoginPage,
     SearchFilters,
     CreatedExercisesPage,
     CreatedExercisesStep2Page,
     CreatedExercisesStagePage,
+    ExerciseDefaultPage,
+    ExerciseHistoryPage,
     ShareWorkoutPage
   ],
   providers: [
@@ -82,6 +99,9 @@ import { APP_CONFIG, AppConfig } from './app.config';
     Camera,
     AuthService,
     UserService,
+    TabsService,
+    HttpClient,
+ //  IonicStorageModule,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     { provide: APP_CONFIG, useValue: AppConfig }
   ]

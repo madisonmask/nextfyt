@@ -5,65 +5,24 @@
 </ion-header>
 
 <ion-content padding>
-    <p><a  (click)="goSaved()"> Saved lists</a></p>
+    <p><a (click)="goSaved()"> Saved lists</a></p>
     <hr>
     <hr>
-    <div class="workout">
-        <div class="description">
-            <p>Created By: <b>User1</b></p>
-            <p>Workout1</p>
-            <p>Skill: beginer</p>
-            <p>Muscles worked: Chest</p>
-            <p>Cardio: no</p>
-        </div>
-        <div class="image">
-            <img src="http://via.placeholder.com/350x150">
-        </div>
-    </div>
-<div class="clear"></div>
 
+    <div ion-item *ngFor="let item of Followers" (click)="itemSelected(item)">
     <div class="workout">
         <div class="description">
-            <p>Created By: <b>User2</b></p>
-            <p>Workout2</p>
-            <p>Skill: beginer</p>
-            <p>Muscles worked: Chest</p>
-            <p>Cardio: yes</p>
+            <p>Created By: <b>{{item.user}}</b></p>
+            <p>{{item.name}}</p>
+            <p>Skill: {{item.skill}}</p>
+            <p>Muscles worked: <span *ngFor="let muscle  of item.muscles"> {{muscle.name}}  </span>  </p>
+            <p>Cardio: {{item.cardio}}</p>
         </div>
         <div class="image">
-            <img src="http://via.placeholder.com/350x150">
+            <img src="{{item.image}}">
         </div>
     </div>
     <div class="clear"></div>
-
-    <div class="workout">
-        <div class="description">
-            <p>Created By: <b>User3</b></p>
-            <p>Workout3</p>
-            <p>Skill: med</p>
-            <p>Muscles worked: Chest</p>
-            <p>Cardio: no</p>
-        </div>
-        <div class="image">
-            <img src="http://via.placeholder.com/350x150">
-        </div>
-    </div>
-    <div class="clear"></div>
-
-
-    <div class="workout">
-        <div class="description">
-            <p>Created By: <b>User4</b></p>
-            <p>Workout4</p>
-            <p>Skill: adv</p>
-            <p>Muscles worked: Chest</p>
-            <p>Cardio: no</p>
-        </div>
-        <div class="image">
-            <img src="http://via.placeholder.com/350x150">
-        </div>
-    </div>
-    <div class="clear"></div>
-
+</div>
 
 </ion-content>

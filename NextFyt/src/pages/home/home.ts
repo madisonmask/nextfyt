@@ -1,26 +1,136 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {Component, Inject} from '@angular/core';
+import {NavController} from 'ionic-angular';
 import {SavedListPage} from '../savedlist/savedlist'
 //import {CreatePage} from '../create/create'
 import {AuthService} from '../../services/auth';
+import {UserService} from '../../services/User'
+import {LoginPage} from '../login/login';
+import {Storage} from "@ionic/storage";
+
+import {Http, Headers} from "@angular/http";
+import 'rxjs/add/operator/map';
+
+import {APP_CONFIG, IAppConfig} from '../../app/app.config';
+
+
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+    selector: 'page-home',
+    templateUrl: 'home.html'
 })
 export class HomePage {
 
 //    SavedListPage1 = SavedListPage;
-   // CreatePage1=CreatePage;
-  constructor(public navCtrl: NavController, data:AuthService) {
-      data.getData();
-      data.getProfile();
-  }
+    // CreatePage1=CreatePage;
+    config: IAppConfig;
+    Followers = [];
 
-   goSaved(){
+    constructor(public navCtrl: NavController, public  Auth: AuthService, public user: UserService, public http: Http,
+                @Inject(APP_CONFIG)  config: IAppConfig,  private storage: Storage) {
+        this.config = config;
+        this.getFollowers();
 
-     console.log('go saved');
-       this.navCtrl.push(SavedListPage);
     }
+
+    goSaved() {
+        console.log('go saved');
+        this.navCtrl.push(SavedListPage);
+    }
+
+    ionViewWillEnter() {
+        //   var CurUser: any;
+        console.log('ionViewWillEnter Create');
+        if (this.user.getData().id == 0) {
+            console.log('We dont have user data');
+            this.Auth.getProfile().then(data=> {
+                console.log(data);
+                if (data.id == 0) {
+                    console.log('User not logined');
+                    this.navCtrl.setRoot(LoginPage);
+                }
+            })
+        } else {
+            console.log('User logined');
+            return true;
+        }
+        console.log();
+    }
+
+
+
+
+
+
+
+    ionViewDidLoad() {
+        console.log('ionViewDidLoad Create');
+    }
+/*
+    ionViewWillEnter() {
+        console.log('ionViewWillEnter Create');
+
+    }*/
+
+    ionViewDidEnter() {
+        console.log('ionViewDidEnter Create');
+    }
+
+    ionViewWillLeave() {
+        console.log('ionViewWillLeave Create');
+    }
+
+    ionViewDidLeave() {
+        console.log('ionViewDidLeave Create');
+    }
+
+
+
+    ionViewCanLeave() {
+        console.log('ionViewCanLeave Create');
+    }
+
+
+
+
+
+
+
+
+
+    itemSelected() {
+
+    }
+
+    /*
+    getFollowers() {
+
+        this.http.get(this.config.apiEndpoint + 'workouts/followers').map(res => res.json())
+            .subscribe(data => {
+                this.Followers = data.workouts;
+            });
+    }
+*/
+
+    getFollowers() {
+
+            this.storage.ready().then(() => {
+                this.storage.get('token').then(token => {
+                    console.log(token);
+                    let headers = new Headers();
+                    headers.append('Authorization', 'Bearer ' + token);
+
+                    this.http.get(this.config.apiEndpoint + 'workouts/followers' ,{
+                        headers: headers
+                    }).map(res => res.json()).subscribe(data => {
+                        this.Followers = data.workouts;
+                    }, err => {
+                        console.log(err);
+                    })
+                })
+            })
+
+    }
+
+
 
 
 

@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Difficulty;
 use App\ExerciseToWorkout;
+use App\Http\Controllers\Helpers;
+use App\User;
 use App\Workout;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+
 
 class WorkoutController extends Controller
 {
@@ -126,31 +129,16 @@ class WorkoutController extends Controller
     }
 
 
-    public function getMyWorkouts()
+    public function getMyWorkouts(Request $request)
     {
 
-        $user = Auth::user();
+        $user = Helpers::getUser($request);
 
         $difficulty = Difficulty::all();
         foreach ($difficulty as $dif) {
             $difficultys[$dif->id] = $dif->name;
         }
-        if (empty($user)) {
-            $user = ['id' => 0, 'username' => 'TESTuser', 'avatar' => '/assets/images/avatar.jpg', 'email' => 'fake@email.com', 'posts' => 0, 'followers' => 0, 'following' => 0];
-            $user = (object)$user;
-        }
         $workouts = Workout::where('user_id', $user->id)->get();
-
-
-        /*
-
-
-                    skill: 'adv',
-                    muscles: 'all',
-                    cardio: false,
-                    image: 'http://via.placeholder.com/350x150'
-
-                */
 
         $exportWorkout = [];
         $i = 0;
@@ -159,12 +147,12 @@ class WorkoutController extends Controller
             $exportWorkout[$i]['name'] = $work->name;
             $exportWorkout[$i]['skill'] = $difficultys[$work->difficulty];
 
-            $sql='  SELECT DISTINCT(muscles.name)
+            $sql = '  SELECT DISTINCT(muscles.name)
                     FROM exercise_to_workout
                     LEFT JOIN muscles_to_exercise ON muscles_to_exercise.exercise_id =exercise_to_workout.exercise_id
                     LEFT JOIN muscles ON muscles_to_exercise.muscles_id =muscles.id
-                    WHERE exercise_to_workout.workout_id='.$work->id.' AND muscles.name IS NOT NULL';
-           $muscles=DB::select($sql);
+                    WHERE exercise_to_workout.workout_id=' . $work->id . ' AND muscles.name IS NOT NULL';
+            $muscles = DB::select($sql);
 
             ////
             $exportWorkout[$i]['muscles'] = $muscles;
@@ -185,4 +173,63 @@ class WorkoutController extends Controller
         return response()->json(['error' => false, 'workouts' => $exportWorkout]);
 
     }
+
+    public function getFollowersWorkouts(Request $request)
+    {
+
+        $user = Helpers::getUser($request);
+        $difficulty = Difficulty::all();
+        foreach ($difficulty as $dif) {
+            $difficultys[$dif->id] = $dif->name;
+        }
+
+        $sql = 'SELECT workouts.id, workouts.name, workouts.photo, workouts.countLikes, workouts.difficulty, workouts.cardio
+                FROM workouts
+                LEFT JOIN followers ON
+                followers.following_user_id=workouts.user_id
+                WHERE followers.follower_user_id =?            ';
+
+        $workouts = DB::select($sql, [$user->id]);
+
+
+        //    $workouts = $curUser->FollowersWorkouts();
+
+        //   print_r($workouts);
+        //     return response()->json(['error' => false, 'workouts' => $workouts]);
+        //    exit();
+        $exportWorkout = [];
+        $i = 0;
+        foreach ($workouts as $work) {
+            $exportWorkout[$i]['author'] = $user->username;
+            $exportWorkout[$i]['name'] = $work->name;
+            $exportWorkout[$i]['skill'] = $difficultys[$work->difficulty];
+
+            $sql = '  SELECT DISTINCT(muscles.name)
+                    FROM exercise_to_workout
+                    LEFT JOIN muscles_to_exercise ON muscles_to_exercise.exercise_id =exercise_to_workout.exercise_id
+                    LEFT JOIN muscles ON muscles_to_exercise.muscles_id =muscles.id
+                    WHERE exercise_to_workout.workout_id=' . $work->id . ' AND muscles.name IS NOT NULL';
+            $muscles = DB::select($sql);
+
+            ////
+            $exportWorkout[$i]['muscles'] = $muscles;
+///
+
+
+            $exportWorkout[$i]['cardio'] = $work->cardio;
+            $exportWorkout[$i]['image'] = $work->photo;
+
+
+            /*
+                        $exportWorkout[$i]['equipment'] =     $work->equipments()->get(['equipment.name']);;
+                        $exportWorkout[$i]['muscles'] =     $work->muscles()->get(['muscles.name']);;
+            */
+            $i++;
+        }
+
+        return response()->json(['error' => false, 'workouts' => $exportWorkout]);
+
+    }
+
+
 }

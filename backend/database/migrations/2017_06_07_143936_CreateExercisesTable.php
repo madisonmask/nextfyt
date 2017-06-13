@@ -27,6 +27,7 @@ class CreateExercisesTable extends Migration
             $table->enum('repeat_type', ['steps', 'movements']);
             $table->integer('length_count')->unsigned();
             $table->enum('length_type', ['Seconds', 'Minutes', 'Reps']);
+            $table->boolean('is_new')->default(0);
             $table->timestamps();
         });
     }

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {UserService} from '../../services/User';
-
+import {AuthService} from '../../services/auth';
+import {LoginPage} from '../login/login';
 /**
  * Generated class for the Profile page.
  *
@@ -18,10 +19,12 @@ export class ProfilePage {
  user={};
   profileWorkoutsType='';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public userSrv:UserService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public userSrv:UserService, public Auth:AuthService) {
 
  //   this.user={id:1,username:'TestUser', avatar:'/assets/images/avatar.png', posts:8, followers:10, following:20};
-   this.user=userSrv.user;
+   this.user=userSrv.getData();
+console.log(userSrv);
+      console.log(userSrv.getData());
 
 
   }
@@ -29,5 +32,11 @@ export class ProfilePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad Profile');
   }
+
+
+    Logout(){
+        this.Auth.logout();
+        this.navCtrl.setRoot(LoginPage);
+    }
 
 }
