@@ -37,5 +37,12 @@ export class UserService {
         console.log(this.user);
     }
 
+    getUserPosts(){
+        return this.user.posts;
+    }
+        setUserPosts(posts){
+            this.user.posts =posts;
+
+        }
 
 }

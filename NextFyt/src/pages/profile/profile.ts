@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {UserService} from '../../services/User';
 import {AuthService} from '../../services/auth';
 import {LoginPage} from '../login/login';
@@ -11,30 +11,32 @@ import {LoginPage} from '../login/login';
  */
 @IonicPage()
 @Component({
-  selector: 'page-profile',
-  templateUrl: 'profile.html',
+    selector: 'page-profile',
+    templateUrl: 'profile.html',
 })
 export class ProfilePage {
 
- user={};
-  profileWorkoutsType='';
+    user = {};
+    profileWorkoutsType = '';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public userSrv:UserService, public Auth:AuthService) {
+    constructor(public navCtrl: NavController, public navParams: NavParams, public userSrv: UserService, public Auth: AuthService) {
 
- //   this.user={id:1,username:'TestUser', avatar:'/assets/images/avatar.png', posts:8, followers:10, following:20};
-   this.user=userSrv.getData();
-console.log(userSrv);
-      console.log(userSrv.getData());
+        //   this.user={id:1,username:'TestUser', avatar:'/assets/images/avatar.png', posts:8, followers:10, following:20};
+        this.user = userSrv.getData();
+        console.log(userSrv);
+        console.log(userSrv.getData());
 
+    }
 
-  }
+    ionViewDidLoad() {
+        console.log('ionViewDidLoad Profile');
+    }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad Profile');
-  }
+    ionViewWillEnter() {
+        this.user = this.userSrv.getData();
+    }
 
-
-    Logout(){
+    Logout() {
         this.Auth.logout();
         this.navCtrl.setRoot(LoginPage);
     }

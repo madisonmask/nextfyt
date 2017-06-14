@@ -2,7 +2,7 @@ import {Component, Inject} from '@angular/core';
 import {IonicPage, NavController, NavParams, AlertController} from 'ionic-angular';
 
 
-import {Http, Headers} from "@angular/http";
+import {Http, Headers, RequestOptions} from "@angular/http";
 import 'rxjs/add/operator/map';
 import {Storage} from "@ionic/storage";
 
@@ -61,7 +61,38 @@ export class ExerciseHistoryPage {
         })
     }
 
+
+
     selectItem(item) {
+
+        this.storage.ready().then(() => {
+            this.storage.get('token').then(token => {
+                console.log(token);
+       //         let headers = new Headers();
+           //     headers.append('Authorization', 'Bearer ' + token);
+
+                let headers = new Headers({'Authorization': 'Bearer ' + token});
+                let options = new RequestOptions({ headers: headers });
+
+
+console.log(item);
+                let data = {exercise:item.id};
+                console.log(data);
+                this.http.post(this.config.apiEndpoint + 'exercise/makenew', data, options).map(res => res.json()).subscribe(data => {
+
+                    console.log(data);
+if(data.error==false){
+    this.navCtrl.pop();
+    
+}
+
+                }, err => {
+                    console.log(err);
+                })
+            })
+        })
+
+
 
     }
 

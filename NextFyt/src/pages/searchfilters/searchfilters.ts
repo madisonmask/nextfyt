@@ -1,6 +1,8 @@
-import {Component} from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import { NavParams, ViewController  } from 'ionic-angular';
-
+import {Http, Headers} from "@angular/http";
+import 'rxjs/add/operator/map';
+import {APP_CONFIG, IAppConfig} from '../../app/app.config';
 
 @Component({
     selector: 'search-filters',
@@ -18,8 +20,35 @@ export class SearchFilters {
     FilterValues = {Muscles: {}, Cardio: false, Difficulty: {}, Equipment: {}};
 
 
-    constructor(params:NavParams, public viewCtrl:ViewController) {
+    constructor(params:NavParams, public viewCtrl:ViewController, public http: Http,
+                @Inject(APP_CONFIG)  config: IAppConfig) {
         //      console.log('UserId', params.get('userId'));
+
+
+
+        this.http.get(config.apiEndpoint + 'catalog').map(res => res.json())
+            .subscribe(data => {
+                //           this.MyExercises=data.exercises;
+                console.log(data);
+                this.FilterValues.Muscles = data.muscles;
+                this.FilterValues.Difficulty = data.Difficulty;
+                this.FilterValues.Equipment = data.equipment;
+                console.log(this.FilterValues.Difficulty);
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*
 
         this.FilterValues.Muscles = [{name: 'ABS'},
             {name: 'Chest'},
@@ -40,6 +69,7 @@ export class SearchFilters {
             {name: 'foam roll'},
         ];
 
+        */
     }
 
     dismiss() {

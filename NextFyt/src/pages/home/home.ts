@@ -23,9 +23,10 @@ export class HomePage {
     // CreatePage1=CreatePage;
     config: IAppConfig;
     Followers = [];
+    IsAjaxLoaded: boolean = false;
 
     constructor(public navCtrl: NavController, public  Auth: AuthService, public user: UserService, public http: Http,
-                @Inject(APP_CONFIG)  config: IAppConfig,  private storage: Storage) {
+                @Inject(APP_CONFIG)  config: IAppConfig, private storage: Storage) {
         this.config = config;
         this.getFollowers();
 
@@ -37,18 +38,21 @@ export class HomePage {
     }
 
     ionViewWillEnter() {
+        this.IsAjaxLoaded = true;
         //   var CurUser: any;
         console.log('ionViewWillEnter Create');
         if (this.user.getData().id == 0) {
             console.log('We dont have user data');
             this.Auth.getProfile().then(data=> {
                 console.log(data);
+                this.IsAjaxLoaded = false;
                 if (data.id == 0) {
                     console.log('User not logined');
                     this.navCtrl.setRoot(LoginPage);
                 }
             })
         } else {
+            this.IsAjaxLoaded = false;
             console.log('User logined');
             return true;
         }
@@ -56,19 +60,15 @@ export class HomePage {
     }
 
 
-
-
-
-
-
     ionViewDidLoad() {
         console.log('ionViewDidLoad Create');
     }
-/*
-    ionViewWillEnter() {
-        console.log('ionViewWillEnter Create');
 
-    }*/
+    /*
+     ionViewWillEnter() {
+     console.log('ionViewWillEnter Create');
+
+     }*/
 
     ionViewDidEnter() {
         console.log('ionViewDidEnter Create');
@@ -83,17 +83,9 @@ export class HomePage {
     }
 
 
-
     ionViewCanLeave() {
         console.log('ionViewCanLeave Create');
     }
-
-
-
-
-
-
-
 
 
     itemSelected() {
@@ -101,37 +93,35 @@ export class HomePage {
     }
 
     /*
+     getFollowers() {
+
+     this.http.get(this.config.apiEndpoint + 'workouts/followers').map(res => res.json())
+     .subscribe(data => {
+     this.Followers = data.workouts;
+     });
+     }
+     */
+
     getFollowers() {
+        this.IsAjaxLoaded = true;
+        this.storage.ready().then(() => {
+            this.storage.get('token').then(token => {
+                console.log(token);
+                let headers = new Headers();
+                headers.append('Authorization', 'Bearer ' + token);
 
-        this.http.get(this.config.apiEndpoint + 'workouts/followers').map(res => res.json())
-            .subscribe(data => {
-                this.Followers = data.workouts;
-            });
-    }
-*/
-
-    getFollowers() {
-
-            this.storage.ready().then(() => {
-                this.storage.get('token').then(token => {
-                    console.log(token);
-                    let headers = new Headers();
-                    headers.append('Authorization', 'Bearer ' + token);
-
-                    this.http.get(this.config.apiEndpoint + 'workouts/followers' ,{
-                        headers: headers
-                    }).map(res => res.json()).subscribe(data => {
-                        this.Followers = data.workouts;
-                    }, err => {
-                        console.log(err);
-                    })
+                this.http.get(this.config.apiEndpoint + 'workouts/followers', {
+                    headers: headers
+                }).map(res => res.json()).subscribe(data => {
+                    this.IsAjaxLoaded = false;
+                    this.Followers = data.workouts;
+                }, err => {
+                    console.log(err);
                 })
             })
+        })
 
     }
-
-
-
 
 
 }

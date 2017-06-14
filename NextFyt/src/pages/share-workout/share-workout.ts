@@ -4,10 +4,14 @@ import { Camera } from '@ionic-native/camera';
 
 
 
-import {Http} from "@angular/http";
+import {Http, Headers, RequestOptions} from "@angular/http";
 import 'rxjs/add/operator/map';
 
 import { APP_CONFIG, IAppConfig } from '../../app/app.config';
+import {Storage} from "@ionic/storage";
+
+import {HomePage} from '../home/home';
+import{UserService} from '../../services/User';
 
 
 /**
@@ -33,7 +37,7 @@ export class ShareWorkoutPage {
     Workout = {Name: '', Length: '', Image: '', ImageData:'', Exercises:{}};
 
     constructor(public navCtrl:NavController, public navParams:NavParams, public alertCtrl:AlertController, private camera:Camera, public http:Http,
-                @Inject(APP_CONFIG)  config:IAppConfig) {
+                @Inject(APP_CONFIG)  config:IAppConfig ,  private storage: Storage, private  user:UserService) {
         this.config = config;
 
     }
@@ -120,20 +124,57 @@ export class ShareWorkoutPage {
 
     SaveWorkout(){
 
-       this.workoutToSend= this.Workout;
-        this.workoutToSend.Image='';
+
+
+
 
         this.IsAjaxLoaded = true;
-        this.http.post(this.config.apiEndpoint + 'workout', this.workoutToSend).map(res => res.json()) .subscribe(data => {
-            /*      let alert = this.alertCtrl.create({
-             title: 'data',
-             subTitle: data,
-             buttons: ['OK']
-             });
-             alert.present();*/
-            console.log(data);
-            this.IsAjaxLoaded = false;
-        });
+        this.storage.ready().then(() => {
+            this.storage.get('token').then(token => {
+                console.log(token);
+                //         let headers = new Headers();
+                //            headers.append('Authorization', 'Bearer ' + token);
+                let headers = new Headers({'Authorization': 'Bearer ' + token});
+                let options = new RequestOptions({ headers: headers });
+
+                this.workoutToSend = this.Workout;
+                this.workoutToSend.Image='';
+
+                this.http.post(this.config.apiEndpoint + 'workout', this.workoutToSend, options).map(res => res.json()) .subscribe(data => {
+                    /*      let alert = this.alertCtrl.create({
+                     title: 'data',
+                     subTitle: data,
+                     buttons: ['OK']
+                     });
+                     alert.present();*/
+                    console.log(data);
+                    this.IsAjaxLoaded = false;
+
+                    if(data.error==false){
+
+                        let posts= this.user.getUserPosts();
+                        this.user.setUserPosts(posts ++);
+
+                        this.navCtrl.setRoot(HomePage);
+
+
+                    }
+                });
+
+
+            })
+        })
+
+
+
+
+
+
+
+
+
+
+
 
     }
 

@@ -105,6 +105,31 @@ export class SavedListPage {
                 })
             })
         })
-
     }
+
+    getFavoritesWorkouts() {
+
+        this.storage.ready().then(() => {
+            this.storage.get('token').then(token => {
+                console.log(token);
+                let headers = new Headers();
+                headers.append('Authorization', 'Bearer ' + token);
+
+                this.http.get(this.config.apiEndpoint + 'workouts/myFavorites', {
+                    headers: headers
+                }).map(res => res.json()).subscribe(data => {
+                    this.createdList = data.workouts;
+                    console.log(data);
+                    this.ActiveList = this.createdList;
+
+
+                }, err => {
+                    console.log(err);
+                })
+            })
+        })
+    }
+
+
+
 }

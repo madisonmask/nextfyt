@@ -27,7 +27,8 @@ export class CreatePage {
 
     MyExercises = [];
     config: IAppConfig;
-
+    swiped=1;
+    IsAjaxLoaded:boolean = false;
     constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,
                 @Inject(APP_CONFIG)  config: IAppConfig, private storage: Storage, public alertCtrl: AlertController) {
         this.config = config;
@@ -66,6 +67,7 @@ export class CreatePage {
 
 
     updateExerciseList() {
+        this.IsAjaxLoaded=true;
         this.storage.ready().then(() => {
             this.storage.get('token').then(token => {
                 console.log(token);
@@ -78,7 +80,7 @@ export class CreatePage {
                     this.MyExercises = data.exercises;
                     console.log(data);
 
-
+                    this.IsAjaxLoaded=false;
                 }, err => {
                     console.log(err);
                 })
@@ -142,5 +144,10 @@ export class CreatePage {
 
     }
 
+    delete(exercise){
+this.swiped++;
+        this.MyExercises.splice( this.MyExercises.indexOf(exercise),1  );
+
+    }
 
 }

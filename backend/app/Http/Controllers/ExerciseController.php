@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\EquipmentToExercise;
 use App\Exercise;
+use App\Http\Controllers\Helpers;
 use App\MusclesToExercise;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -11,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 //use Intervention\Image\Image;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\File;
-use App\Http\Controllers\Helpers;
+use App\Difficulty;
 
 
 class ExerciseController extends Controller
@@ -25,13 +26,7 @@ class ExerciseController extends Controller
             $difficultys[$dif->name] = $dif->id;
         }
 
-
-        $user = Auth::user();
-
-        if (empty($user)) {
-            $user = ['id' => 0, 'username' => 'TESTuser', 'avatar' => '/assets/images/avatar.jpg', 'email' => 'fake@email.com', 'posts' => 0, 'followers' => 0, 'following' => 0];
-            $user = (object)$user;
-        }
+        $user = Helpers::getUser($request);
 
         $savedImages = [0 => '', 1 => '', 2 => '', 3 => '', 4 => '', 5 => ''];
         $i = 0;
@@ -41,7 +36,7 @@ class ExerciseController extends Controller
             File::makeDirectory($path, $mode = 0777, true, true);
         }
 
-        $path = public_path() . '/pictures/' . $user->id;
+        $path = public_path() . '/pictures/' . $user['id'];
         if (!File::exists($path)) {
             File::makeDirectory($path, $mode = 0777, true, true);
         }
@@ -50,7 +45,7 @@ class ExerciseController extends Controller
         foreach ($request->Images as $imagStr) {
             $image = base64_decode($imagStr);
             $imgName = "exercise-" . time() . ".png";
-            $webPath = '/pictures/' . $user->id . '/' . $imgName;
+            $webPath = '/pictures/' . $user['id'] . '/' . $imgName;
             $path = public_path() . $webPath;
             //     Image::make($image->getRealPath())->save($path);
             file_put_contents($path, $image);
@@ -73,7 +68,7 @@ class ExerciseController extends Controller
 
 
         if (!isset($request->id)) {
-            $createdExercise = Exercise::create(['name' => $request->Name, 'user_id' => $user->id, 'stage1_img' => $savedImages[0],
+            $createdExercise = Exercise::create(['name' => $request->Name, 'user_id' => $user['id'], 'stage1_img' => $savedImages[0],
                 'stage2_img' => $savedImages[1], 'stage3_img' => $savedImages[2],
                 'stage4_img' => $savedImages[3], 'stage5_img' => $savedImages[4],
                 'stage6_img' => $savedImages[5], 'repeat_count' => $repeat_count,
@@ -81,7 +76,8 @@ class ExerciseController extends Controller
                 'length_count' => $length_count,
                 'length_type' => $request->length_type, //['Seconds', 'Minutes', 'Reps']);
                 'cardio' => $request->Filters['Cardio'],
-                'Difficulty' => $difficultys[$request->Filters['Difficulty']]
+                'Difficulty' => $difficultys[$request->Filters['Difficulty']],
+                'is_new' => 1
             ]);
 
             foreach ($request->Filters['Muscles'] as $m) {
@@ -128,12 +124,8 @@ class ExerciseController extends Controller
     public function getExercises(Request $request)
     {
         $user = Helpers::getUser($request);
-        /*
-                if (empty($user)) {
-                    $user = ['id' => 0, 'username' => 'TESTuser', 'avatar' => '/assets/images/avatar.jpg', 'email' => 'fake@email.com', 'posts' => 0, 'followers' => 0, 'following' => 0];
-                    $user = (object)$user;
-                }*/
-        $exercises = Exercise::where('user_id', $user->id)->get();
+
+        $exercises = Exercise::where('user_id', $user['id'])->get();
 
         $exportExercise = [];
         $i = 0;
@@ -160,7 +152,7 @@ class ExerciseController extends Controller
                     $user = ['id' => 0, 'username' => 'TESTuser', 'avatar' => '/assets/images/avatar.jpg', 'email' => 'fake@email.com', 'posts' => 0, 'followers' => 0, 'following' => 0];
                     $user = (object)$user;
                 }*/
-        $exercises = Exercise::where('user_id', $user->id)->where('is_new',1)->get();
+        $exercises = Exercise::where('user_id', $user['id'])->where('is_new', 1)->get();
 
         $exportExercise = [];
         $i = 0;
@@ -173,5 +165,29 @@ class ExerciseController extends Controller
         }
         return response()->json(['error' => false, 'exercises' => $exportExercise]);
     }
+
+
+    public function setExercisesNew(Request $request)
+    {
+        $user = Helpers::getUser($request);
+
+        $exercise = Exercise::find($request->exercise);
+
+      if(!empty($exercise)){
+
+          if($exercise->user_id==$user['id']){
+              $exercise->is_new=1;
+              $exercise->save();
+              return response()->json(['error' => false]);
+          }else{
+              return response()->json(['error' => true, 'msg'=>'You shall not pass']);
+          }
+
+      }else{
+          return response()->json(['error' => true, 'msg'=>'exercise not found']);
+      }
+
+    }
+
 
 }

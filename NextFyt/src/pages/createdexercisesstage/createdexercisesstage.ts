@@ -8,10 +8,13 @@ import { Camera } from '@ionic-native/camera';
 
 import {DomSanitizer} from '@angular/platform-browser';
 
-import {Http} from "@angular/http";
+import {Http, Headers, RequestOptions} from "@angular/http";
 import 'rxjs/add/operator/map';
 
 import { APP_CONFIG, IAppConfig } from '../../app/app.config';
+
+import {CreatePage } from  '../create/create';
+import {Storage} from "@ionic/storage";
 
 
 /**
@@ -45,7 +48,7 @@ export class CreatedExercisesStagePage {
     IsAjaxLoaded:boolean = false;
 
     constructor(public navCtrl:NavController, public navParams:NavParams, private camera:Camera, public alertCtrl:AlertController,
-                public _DomSanitizationService:DomSanitizer, public http:Http,
+                public _DomSanitizationService:DomSanitizer, public http:Http,  private storage: Storage,
                 @Inject(APP_CONFIG)  config:IAppConfig) {
 
         this.Exercise = this.navParams.get('Exercise');
@@ -122,21 +125,61 @@ export class CreatedExercisesStagePage {
 
 
     }
-
+/*
     publish() {
         this.IsAjaxLoaded = true;
+
         this.http.post(this.config.apiEndpoint + 'exercise', this.Exercise).map(res => res.json()) .subscribe(data => {
-             /*      let alert = this.alertCtrl.create({
-                        title: 'data',
-                        subTitle: data,
-                        buttons: ['OK']
-                    });
-                    alert.present();*/
+
                 console.log(data);
                 this.IsAjaxLoaded = false;
+
+            this.navCtrl.setRoot(CreatePage);
             });
 
     }
+*/
+    publish() {
+
+        this.IsAjaxLoaded = true;
+        this.storage.ready().then(() => {
+            this.storage.get('token').then(token => {
+                console.log(token);
+       //         let headers = new Headers();
+    //            headers.append('Authorization', 'Bearer ' + token);
+                let headers = new Headers({'Authorization': 'Bearer ' + token});
+                let options = new RequestOptions({ headers: headers });
+                this.http.post(this.config.apiEndpoint + 'exercise', this.Exercise, options).map(res => res.json()) .subscribe(data => {
+                    /*      let alert = this.alertCtrl.create({
+                     title: 'data',
+                     subTitle: data,
+                     buttons: ['OK']
+                     });
+                     alert.present();*/
+                    console.log(data);
+                    this.IsAjaxLoaded = false;
+
+                    this.navCtrl.setRoot(CreatePage);
+                });
+
+
+            })
+        })
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     showPrompt() {
         let prompt = this.alertCtrl.create({

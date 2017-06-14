@@ -32,12 +32,15 @@ Route::group(['prefix' => 'api'  ] , function () {
     Route::post('/exercise', 'ExerciseController@saveExercise' );
     Route::get('/exercise', 'ExerciseController@getExercises' );
     Route::get('/exercise/new', 'ExerciseController@getExercisesNew' );
+    Route::post('/exercise/makenew', 'ExerciseController@setExercisesNew' );
     Route::get('/exercise/default', 'ExerciseController@getExercisesDefault' );
 
     Route::get('/catalog', 'CatalogController@getCatalog' );
 
     Route::post('/workout', 'WorkoutController@saveWorkout' );
     Route::get('/workouts/my', 'WorkoutController@getMyWorkouts' );
+    Route::get('/workouts/myFavorites', 'WorkoutController@getMyFavoritesWorkouts' );
+
 
     Route::get('/workouts/followers', 'WorkoutController@getFollowersWorkouts' );//use for home tab
 

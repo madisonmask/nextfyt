@@ -16,11 +16,11 @@
 <ion-content padding>
 
 <ion-icon name="add" (click)="CreateExercise()" class="createPlus" ></ion-icon>
+<!-- <p> Swiped: {{swiped}}</p> -->
 
-
-
+<!--https://stackoverflow.com/questions/36970425/determine-whether-a-swipe-event-is-for-a-left-swipe-or-a-right-swipe  -->
   <div class="exercises" *ngFor="let exercise of MyExercises">
-    <ion-item>
+    <ion-item   (swipeleft)="delete(exercise)">
     <div class="description">
       <p>{{exercise.name}}</p>
       <p>{{exercise.repeat_count}} {{exercise.repeat_type}}      of  {{exercise.length_count}}   {{exercise.length_type}}  </p>
@@ -34,6 +34,7 @@
   </div>
   <div class="clear"></div>
 
+  <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
 
   <button ion-button round class="fullWidth" (click)="ShareWorkout()" [disabled]="MyExercises.length==0">Share full workout</button>
 

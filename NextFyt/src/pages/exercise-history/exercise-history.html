@@ -16,7 +16,7 @@
 <ion-content padding>
 
   <div class="exercises" *ngFor="let exercise of MyExercises">
-    <ion-item (click)="selectItem(item)">
+    <ion-item (click)="selectItem(exercise)">
       <div class="description">
         <p>{{exercise.name}}</p>
         <p>{{exercise.repeat_count}} {{exercise.repeat_type}}      of  {{exercise.length_count}}   {{exercise.length_type}}  </p>

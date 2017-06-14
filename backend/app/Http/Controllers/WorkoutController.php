@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Difficulty;
+use App\Exercise;
 use App\ExerciseToWorkout;
 use App\Http\Controllers\Helpers;
 use App\User;
@@ -25,20 +26,21 @@ class WorkoutController extends Controller
             $difficultyRate[$dif->name] = $dif->difficulty_level;
             $difficulties[$dif->difficulty_level] = $dif->id;
         }
-        $user = Auth::user();
+        /*     $user = Auth::user();
 
-        if (empty($user)) {
-            $user = ['id' => 0, 'username' => 'TESTuser', 'avatar' => '/assets/images/avatar.jpg', 'email' => 'fake@email.com', 'posts' => 0, 'followers' => 0, 'following' => 0];
-            $user = (object)$user;
-        }
+             if (empty($user)) {
+                 $user = ['id' => 0, 'username' => 'TESTuser', 'avatar' => '/assets/images/avatar.jpg', 'email' => 'fake@email.com', 'posts' => 0, 'followers' => 0, 'following' => 0];
+                 $user = (object)$user;
+             }*/
 
-
+        $user = Helpers::getUser($request);
+        $userProfile = User::find($user['id']);
         $path = public_path() . '/pictures';
         if (!File::exists($path)) {
             File::makeDirectory($path, $mode = 0777, true, true);
         }
 
-        $path = public_path() . '/pictures/' . $user->id;
+        $path = public_path() . '/pictures/' . $user['id'];
         if (!File::exists($path)) {
             File::makeDirectory($path, $mode = 0777, true, true);
         }
@@ -50,7 +52,7 @@ class WorkoutController extends Controller
 
             $image = base64_decode($imagStr);
             $imgName = "workout-" . time() . ".png";
-            $webPath = '/pictures/' . $user->id . '/' . $imgName;
+            $webPath = '/pictures/' . $user['id'] . '/' . $imgName;
             $path = public_path() . $webPath;
             //     Image::make($image->getRealPath())->save($path);
             file_put_contents($path, $image);
@@ -72,7 +74,7 @@ class WorkoutController extends Controller
             $isCardio = 0;
             $maxDiffRate = 0;
             foreach ($request->Exercises as $ex) {
-                print_r($ex);
+                //           print_r($ex);
                 if ($ex['cardio'] == 1) {
                     $isCardio = 1;
                 }
@@ -90,7 +92,7 @@ class WorkoutController extends Controller
             }
 
 
-            $createdWorkout = Workout::create(['name' => $request->Name, 'user_id' => $user->id,
+            $createdWorkout = Workout::create(['name' => $request->Name, 'user_id' => $user['id'],
                 'photo' => $photo,
                 'countLikes' => 0,
                 'difficulty' => $WorkoutDifficulty,
@@ -98,9 +100,14 @@ class WorkoutController extends Controller
             ]);
 
             foreach ($request->Exercises as $ex) {
+                $exercise = Exercise::find($ex['id']);
+                $exercise->is_new = 0;
+                $exercise->save();
                 $exercisetoworkout = ExerciseToWorkout::create(['workout_id' => $createdWorkout->id, 'exercise_id' => $ex['id']]);
             }
 
+            $userProfile->posts++;
+            $userProfile->save();
 
         } else {
             /*
@@ -138,12 +145,12 @@ class WorkoutController extends Controller
         foreach ($difficulty as $dif) {
             $difficultys[$dif->id] = $dif->name;
         }
-        $workouts = Workout::where('user_id', $user->id)->get();
+        $workouts = Workout::where('user_id', $user['id'])->get();
 
         $exportWorkout = [];
         $i = 0;
         foreach ($workouts as $work) {
-            $exportWorkout[$i]['author'] = $user->username;
+            $exportWorkout[$i]['author'] = $user['username'];
             $exportWorkout[$i]['name'] = $work->name;
             $exportWorkout[$i]['skill'] = $difficultys[$work->difficulty];
 
@@ -174,6 +181,52 @@ class WorkoutController extends Controller
 
     }
 
+    public function getMyFavoritesWorkouts(Request $request)
+    {
+
+        $user = Helpers::getUser($request);
+
+        $difficulty = Difficulty::all();
+        foreach ($difficulty as $dif) {
+            $difficultys[$dif->id] = $dif->name;
+        }
+        $workouts = Workout::where('user_id', $user['id'])->get();
+
+        $exportWorkout = [];
+        $i = 0;
+        foreach ($workouts as $work) {
+            $exportWorkout[$i]['author'] = $user['username'];
+            $exportWorkout[$i]['name'] = $work->name;
+            $exportWorkout[$i]['skill'] = $difficultys[$work->difficulty];
+
+            $sql = '  SELECT DISTINCT(muscles.name)
+                    FROM exercise_to_workout
+                    LEFT JOIN muscles_to_exercise ON muscles_to_exercise.exercise_id =exercise_to_workout.exercise_id
+                    LEFT JOIN muscles ON muscles_to_exercise.muscles_id =muscles.id
+                    WHERE exercise_to_workout.workout_id=' . $work->id . ' AND muscles.name IS NOT NULL';
+            $muscles = DB::select($sql);
+
+            ////
+            $exportWorkout[$i]['muscles'] = $muscles;
+///
+
+
+            $exportWorkout[$i]['cardio'] = $work->cardio;
+            $exportWorkout[$i]['image'] = $work->photo;
+
+
+            /*
+                        $exportWorkout[$i]['equipment'] =     $work->equipments()->get(['equipment.name']);;
+                        $exportWorkout[$i]['muscles'] =     $work->muscles()->get(['muscles.name']);;
+            */
+            $i++;
+        }
+
+        return response()->json(['error' => false, 'workouts' => $exportWorkout]);
+
+    }
+
+
     public function getFollowersWorkouts(Request $request)
     {
 
@@ -189,7 +242,7 @@ class WorkoutController extends Controller
                 followers.following_user_id=workouts.user_id
                 WHERE followers.follower_user_id =?            ';
 
-        $workouts = DB::select($sql, [$user->id]);
+        $workouts = DB::select($sql, [$user['id']]);
 
 
         //    $workouts = $curUser->FollowersWorkouts();
@@ -200,7 +253,7 @@ class WorkoutController extends Controller
         $exportWorkout = [];
         $i = 0;
         foreach ($workouts as $work) {
-            $exportWorkout[$i]['author'] = $user->username;
+            $exportWorkout[$i]['author'] = $user['username'];
             $exportWorkout[$i]['name'] = $work->name;
             $exportWorkout[$i]['skill'] = $difficultys[$work->difficulty];
 

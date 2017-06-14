@@ -67,7 +67,7 @@ export class RegistrationPage {
         this.Auth.doRegister(this.User).subscribe(data => {
 
             this.storage.set('token', data.token);
-
+console.log('do register finish');
             this.Auth.getProfile().then(data=> {
                 console.log(data);
                 if (data.id == 0) {

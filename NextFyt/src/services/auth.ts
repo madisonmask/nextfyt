@@ -23,12 +23,13 @@ export class AuthService {
     jwtHelper = new JwtHelper();
     token: string;
 
-    constructor(public http: Http, public  user: UserService,
+    constructor(public http: Http, private  user: UserService,
                 @Inject(APP_CONFIG)  config: IAppConfig, private storage: Storage) {
         this.http = http;
         this.data = null;
         this.config = config;
         console.log(config.apiEndpoint);
+        console.log(user);
         /*
          storage.ready().then(() => {
          storage.get('profile').then(profile => {
@@ -63,7 +64,7 @@ export class AuthService {
      */
     logout() {
         this.storage.remove('token');
-        this.user = null;
+       // this.user = null;
     }
 
 
@@ -93,6 +94,8 @@ export class AuthService {
                     this.http.get(this.config.apiEndpoint + 'profile',{
                         headers: headers
                     }).map(res => res.json()).subscribe(data => {
+                        console.log(this.user);
+                        console.log(data);
                         this.user.setUser(data.user);
                         resolve(data.user);
                     }, err => {
