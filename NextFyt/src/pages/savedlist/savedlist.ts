@@ -2,7 +2,7 @@ import {Component, Inject} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 
 import {Storage} from "@ionic/storage";
-import {Http, Headers} from "@angular/http";
+import {Http, Headers, RequestOptions} from "@angular/http";
 import 'rxjs/add/operator/map';
 
 import {APP_CONFIG, IAppConfig} from '../../app/app.config';
@@ -89,12 +89,13 @@ export class SavedListPage {
         this.storage.ready().then(() => {
             this.storage.get('token').then(token => {
                 console.log(token);
-                let headers = new Headers();
-                headers.append('Authorization', 'Bearer ' + token);
 
-                this.http.get(this.config.apiEndpoint + 'workouts/my', {
-                    headers: headers
-                }).map(res => res.json()).subscribe(data => {
+
+                let headers = new Headers({'Authorization': 'Bearer ' + token});
+                let options = new RequestOptions({ headers: headers });
+
+
+                this.http.get(this.config.apiEndpoint + 'workouts/my', options).map(res => res.json()).subscribe(data => {
                     this.createdList = data.workouts;
                     console.log(data);
                     this.ActiveList = this.createdList;
@@ -112,12 +113,13 @@ export class SavedListPage {
         this.storage.ready().then(() => {
             this.storage.get('token').then(token => {
                 console.log(token);
-                let headers = new Headers();
-                headers.append('Authorization', 'Bearer ' + token);
 
-                this.http.get(this.config.apiEndpoint + 'workouts/myFavorites', {
-                    headers: headers
-                }).map(res => res.json()).subscribe(data => {
+
+                let headers = new Headers({'Authorization': 'Bearer ' + token});
+                let options = new RequestOptions({ headers: headers });
+
+
+                this.http.get(this.config.apiEndpoint + 'workouts/myFavorites', options).map(res => res.json()).subscribe(data => {
                     this.createdList = data.workouts;
                     console.log(data);
                     this.ActiveList = this.createdList;

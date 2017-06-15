@@ -44,12 +44,14 @@ export class ExerciseHistoryPage {
         this.storage.ready().then(() => {
             this.storage.get('token').then(token => {
                 console.log(token);
-                let headers = new Headers();
-                headers.append('Authorization', 'Bearer ' + token);
 
-                this.http.get(this.config.apiEndpoint + 'exercise', {
-                    headers: headers
-                }).map(res => res.json()).subscribe(data => {
+
+                let headers = new Headers({'Authorization': 'Bearer ' + token});
+                let options = new RequestOptions({ headers: headers });
+
+
+
+                this.http.get(this.config.apiEndpoint + 'exercises', options).map(res => res.json()).subscribe(data => {
                     this.MyExercises = data.exercises;
                     console.log(data);
 
@@ -62,39 +64,53 @@ export class ExerciseHistoryPage {
     }
 
 
-
     selectItem(item) {
-
         this.storage.ready().then(() => {
             this.storage.get('token').then(token => {
                 console.log(token);
-       //         let headers = new Headers();
-           //     headers.append('Authorization', 'Bearer ' + token);
+                //         let headers = new Headers();
+                //     headers.append('Authorization', 'Bearer ' + token);
+
+                let headers = new Headers({'Authorization': 'Bearer ' + token});
+                let options = new RequestOptions({headers: headers});
+                console.log(item);
+                let data = {exercise: item.id};
+                console.log(data);
+                this.http.post(this.config.apiEndpoint + 'exercise/makenew', data, options).map(res => res.json()).subscribe(data => {
+                    console.log(data);
+                    if (data.error == false) {
+                        this.navCtrl.pop();
+
+                    }
+                }, err => {
+                    console.log(err);
+                })
+            })
+        })
+    }
+
+    delete(exercise){
+        this.MyExercises.splice( this.MyExercises.indexOf(exercise),1  );
+        this.storage.ready().then(() => {
+            this.storage.get('token').then(token => {
+                console.log(token);
+
 
                 let headers = new Headers({'Authorization': 'Bearer ' + token});
                 let options = new RequestOptions({ headers: headers });
 
 
-console.log(item);
-                let data = {exercise:item.id};
-                console.log(data);
-                this.http.post(this.config.apiEndpoint + 'exercise/makenew', data, options).map(res => res.json()).subscribe(data => {
-
+                this.http.delete(this.config.apiEndpoint + 'exercise/'+exercise.id,  options).map(res => res.json()).subscribe(data => {
                     console.log(data);
-if(data.error==false){
-    this.navCtrl.pop();
-    
-}
-
                 }, err => {
                     console.log(err);
                 })
             })
         })
 
-
-
     }
+
+
 
 
 }

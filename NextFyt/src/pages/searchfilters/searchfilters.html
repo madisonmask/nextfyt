@@ -37,7 +37,7 @@
 
 
   <h2>Difficulty </h2>
-  <div  *ngIf="FilterValues.Muscles.Difficulty>0" >
+  <div  *ngIf="FilterValues.Difficulty.length>0" >
   <button ion-button  *ngFor="let item of FilterValues.Difficulty" (click)="SelectDifficulty(item)"   [color]="checkDifficulty(item) ? '' : 'light'"> {{item.name}} </button>
 
   </div>
@@ -45,7 +45,7 @@
 
   <h2>Equipment needed </h2>
 
-  <div  *ngIf="FilterValues.Muscles.Equipment>0" >
+  <div  *ngIf="FilterValues.Equipment.length>0" >
   <button ion-button  *ngFor="let item of FilterValues.Equipment" (click)="SelectEquipment(item)"   [color]="checkEquipment(item)  ? '' : 'light'"> {{item.name}} </button>
   </div>
 

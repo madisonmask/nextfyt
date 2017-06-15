@@ -29,5 +29,107 @@
   <ion-icon name="funnel"  (click)="showOptions()"  class="filter"> </ion-icon>
 
 
+  <div padding>
+
+    <ion-segment  [(ngModel)]="Searched.Type">
+      <ion-segment-button  value="top" (click)="doSearch()" >
+        Top
+      </ion-segment-button>
+
+      <ion-segment-button  value="people" (click)="doSearch()">
+        People
+      </ion-segment-button>
+
+      <ion-segment-button  value="tags" (click)="doSearch()">
+        Tags
+      </ion-segment-button>
+
+      <ion-segment-button  value="workouts" (click)="doSearch()">
+        Workouts
+      </ion-segment-button>
+
+
+    </ion-segment>
+  </div>
+
+  <div *ngIf="Searched.Type=='top' ">
+    <p> Top results </p>
+
+
+  </div>
+
+  <div *ngIf="Searched.Type=='people' ">
+    <p> People results </p>
+
+    <div ion-item *ngFor="let item of UserResults" (click)="itemSelected(item)">
+      <div class="user">
+        <div class="description">
+          <p>{{item.name}}</p>
+          <p>Posts: {{item.posts}}</p>
+        </div>
+        <div class="image">
+          <img src="{{item.avatar}}">
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+
+
+
+
+
+  </div>
+
+  <div *ngIf="Searched.Type=='tags' ">
+    <p> tags results </p>
+
+
+  </div>
+
+  <div *ngIf="Searched.Type=='workouts' ">
+    <p> workouts results </p>
+
+
+
+    <div ion-item *ngFor="let item of WorkoutResults" (click)="itemSelected(item)">
+      <div class="workout">
+        <div class="description">
+
+          <ion-icon name="heart-outline" *ngIf="!item.liked" (click)="toggleLike(item)" class="likes"></ion-icon>
+          <ion-icon name="heart" *ngIf="item.liked" (click)="toggleLike(item)" class="likes"></ion-icon>
+
+
+
+          <p>Created By: <b>{{item.user}}</b></p>
+          <p>{{item.name}}</p>
+          <p>Skill: {{item.skill}}</p>
+          <p>Muscles worked: <span *ngFor="let muscle  of item.muscles"> {{muscle.name}}  </span>  </p>
+          <p>Cardio: {{item.cardio}}</p>
+        </div>
+        <div class="image">
+          <img src="{{item.image}}">
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+  <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
 
 </ion-content>

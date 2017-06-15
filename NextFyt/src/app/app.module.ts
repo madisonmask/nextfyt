@@ -1,6 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { IonicApp, IonicModule, IonicErrorHandler, Slides } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
@@ -16,6 +16,10 @@ import { SavedListPage } from '../pages/savedlist/savedlist';
 import { RegistrationPage } from '../pages/registration/registration';
 import { LoginPage } from '../pages/login/login';
 import { ShareWorkoutPage } from '../pages/share-workout/share-workout';
+import {WorkoutDetailsPage } from '../pages/workout-details/workout-details'
+import {WorkoutDetailsExercisesPage } from '../pages/workout-details-exercises/workout-details-exercises'
+import {WorkoutDetailsExerciseShowPage } from '../pages/workout-details-exercise-show/workout-details-exercise-show'
+
 
 import { CreatedExercisesPage } from '../pages/createdexercises/createdexercises';
 import {  CreatedExercisesStep2Page } from '../pages/createdexercisesstep2/createdexercisesstep2';
@@ -62,7 +66,10 @@ import { APP_CONFIG, AppConfig } from './app.config';
     CreatedExercisesStagePage,
     ExerciseDefaultPage,
     ExerciseHistoryPage,
-    ShareWorkoutPage
+    ShareWorkoutPage,
+    WorkoutDetailsPage,
+    WorkoutDetailsExercisesPage,
+    WorkoutDetailsExerciseShowPage
 
   ],
   imports: [
@@ -91,7 +98,10 @@ import { APP_CONFIG, AppConfig } from './app.config';
     CreatedExercisesStagePage,
     ExerciseDefaultPage,
     ExerciseHistoryPage,
-    ShareWorkoutPage
+    ShareWorkoutPage,
+    WorkoutDetailsPage,
+    WorkoutDetailsExercisesPage,
+    WorkoutDetailsExerciseShowPage
   ],
   providers: [
     StatusBar,
@@ -101,6 +111,7 @@ import { APP_CONFIG, AppConfig } from './app.config';
     UserService,
     TabsService,
     HttpClient,
+     Slides,
  //  IonicStorageModule,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     { provide: APP_CONFIG, useValue: AppConfig }

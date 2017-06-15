@@ -9,20 +9,38 @@
     <hr>
     <hr>
 
-    <div ion-item *ngFor="let item of Followers" (click)="itemSelected(item)">
-    <div class="workout">
-        <div class="description">
-            <p>Created By: <b>{{item.user}}</b></p>
-            <p>{{item.name}}</p>
-            <p>Skill: {{item.skill}}</p>
-            <p>Muscles worked: <span *ngFor="let muscle  of item.muscles"> {{muscle.name}}  </span>  </p>
-            <p>Cardio: {{item.cardio}}</p>
+    <div ion-item *ngFor="let item of Followers" (click)="showDetails(item)">
+        <div class="workout">
+            <div class="description">
+                <p>Created By: <b>{{item.user}}</b></p>
+                <p>{{item.name}}</p>
+                <p>Skill: {{item.skill}}</p>
+                <p>Muscles worked: <span *ngFor="let muscle  of item.muscles"> {{muscle.name}}  </span></p>
+                <p>Cardio: {{item.cardio}}</p>
+            </div>
+            <div class="image">
+                <img src="{{item.image}}">
+            </div>
         </div>
-        <div class="image">
-            <img src="{{item.image}}">
-        </div>
+        <div class="clear"></div>
     </div>
-    <div class="clear"></div>
-</div>
+
+    <!--
+
+        <ion-list>
+            <ion-item-sliding >
+                <ion-item>
+                    Item
+                </ion-item>
+
+                <ion-item-options side="right">
+                    <button ion-button (click)="delete(item)">Delete</button>
+                </ion-item-options>
+            </ion-item-sliding>
+        </ion-list>
+
+    -->
+
+
     <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
 </ion-content>

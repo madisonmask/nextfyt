@@ -30,19 +30,31 @@ Route::group(['prefix' => 'api'  ] , function () {
     Route::get('/profile', 'UserProfileController@getProfile' );
 
     Route::post('/exercise', 'ExerciseController@saveExercise' );
-    Route::get('/exercise', 'ExerciseController@getExercises' );
+    Route::get('/exercises', 'ExerciseController@getExercises' );
+    Route::get('/exercise/{exerciseId}', 'ExerciseController@getExercise' );
+
     Route::get('/exercise/new', 'ExerciseController@getExercisesNew' );
     Route::post('/exercise/makenew', 'ExerciseController@setExercisesNew' );
+    Route::post('/exercise/makeold', 'ExerciseController@setExercisesOld' );
+    Route::delete('/exercise/{exerciseId}', 'ExerciseController@deleteExercise' );
+
+    Route::get('/exercises/{workoutId}', 'ExerciseController@getExercisesForWorkout' ); // Get all exercise list for given workout
+
     Route::get('/exercise/default', 'ExerciseController@getExercisesDefault' );
 
     Route::get('/catalog', 'CatalogController@getCatalog' );
 
     Route::post('/workout', 'WorkoutController@saveWorkout' );
+    Route::post('/workout/likes', 'WorkoutController@toogleLikes' );
+    Route::get('/workout/{WorkoutId}', 'WorkoutController@getWorkout' );
     Route::get('/workouts/my', 'WorkoutController@getMyWorkouts' );
     Route::get('/workouts/myFavorites', 'WorkoutController@getMyFavoritesWorkouts' );
 
 
     Route::get('/workouts/followers', 'WorkoutController@getFollowersWorkouts' );//use for home tab
+
+    Route::post('/search', 'SearchController@makeSearch' );
+
 
 
 });

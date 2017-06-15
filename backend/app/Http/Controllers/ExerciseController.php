@@ -6,6 +6,7 @@ use App\EquipmentToExercise;
 use App\Exercise;
 use App\Http\Controllers\Helpers;
 use App\MusclesToExercise;
+use App\Workout;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
@@ -140,6 +141,22 @@ class ExerciseController extends Controller
     }
 
     /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getExercise(Request $request, $exerciseId)
+    {
+        $user = Helpers::getUser($request);
+        $exercise = Exercise::find($exerciseId);
+        $exportExercise = [];
+            $exportExercise = $exercise;
+            $exportExercise['equipment'] = $exercise->equipments()->get(['equipment.name']);;
+            $exportExercise['muscles'] = $exercise->muscles()->get(['muscles.name']);;
+        return response()->json(['error' => false, 'exercises' => $exportExercise]);
+    }
+
+
+    /**
      * Get new exercises, whic we will use for current workout
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
@@ -189,5 +206,74 @@ class ExerciseController extends Controller
 
     }
 
+    public function setExercisesOld(Request $request)
+    {
+        $user = Helpers::getUser($request);
 
+        $exercise = Exercise::find($request->exercise);
+
+        if(!empty($exercise)){
+
+            if($exercise->user_id==$user['id']){
+                $exercise->is_new=0;
+                $exercise->save();
+                return response()->json(['error' => false]);
+            }else{
+                return response()->json(['error' => true, 'msg'=>'You shall not pass']);
+            }
+
+        }else{
+            return response()->json(['error' => true, 'msg'=>'exercise not found']);
+        }
+
+    }
+
+    /**
+     * Delete exercise from DB
+     * @todo DELETE IMAGES AND LINKED TABLE TOO!!!!
+     * @param Request $request
+     * @param $exerciseId
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function deleteExercise(Request $request, $exerciseId)
+    {
+        $user = Helpers::getUser($request);
+
+        $exercise = Exercise::find($exerciseId);
+
+        if(!empty($exercise)){
+            if($exercise->user_id==$user['id']){
+                $exercise->delete();
+                return response()->json(['error' => false]);
+            }else{
+                return response()->json(['error' => true, 'msg'=>'You shall not pass']);
+            }
+        }else{
+            return response()->json(['error' => true, 'msg'=>'exercise not found']);
+        }
+    }
+
+
+
+    public function getExercisesForWorkout (Request $request, $workoutId){
+
+        $user = Helpers::getUser($request);
+
+        $workout = Workout::find($workoutId);
+
+     //   $exercises = Exercise::where('user_id', $user['id'])->where('id', 1)->get();
+        $exercises =$workout->Exercises;
+
+        $exportExercise = [];
+        $i = 0;
+        foreach ($exercises as $ex) {
+            $exportExercise[$i] = $ex;
+            $exportExercise[$i]['equipment'] = $ex->equipments()->get(['equipment.name']);;
+            $exportExercise[$i]['muscles'] = $ex->muscles()->get(['muscles.name']);;
+
+            $i++;
+        }
+        return response()->json(['error' => false, 'exercises' => $exportExercise]);
+
+    }
 }

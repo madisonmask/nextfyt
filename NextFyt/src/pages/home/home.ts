@@ -5,9 +5,10 @@ import {SavedListPage} from '../savedlist/savedlist'
 import {AuthService} from '../../services/auth';
 import {UserService} from '../../services/User'
 import {LoginPage} from '../login/login';
+import {WorkoutDetailsPage} from '../workout-details/workout-details';
 import {Storage} from "@ionic/storage";
 
-import {Http, Headers} from "@angular/http";
+import {Http, Headers, RequestOptions} from "@angular/http";
 import 'rxjs/add/operator/map';
 
 import {APP_CONFIG, IAppConfig} from '../../app/app.config';
@@ -88,9 +89,7 @@ export class HomePage {
     }
 
 
-    itemSelected() {
 
-    }
 
     /*
      getFollowers() {
@@ -107,12 +106,12 @@ export class HomePage {
         this.storage.ready().then(() => {
             this.storage.get('token').then(token => {
                 console.log(token);
-                let headers = new Headers();
-                headers.append('Authorization', 'Bearer ' + token);
 
-                this.http.get(this.config.apiEndpoint + 'workouts/followers', {
-                    headers: headers
-                }).map(res => res.json()).subscribe(data => {
+                let headers = new Headers({'Authorization': 'Bearer ' + token});
+                let options = new RequestOptions({ headers: headers });
+
+
+                this.http.get(this.config.apiEndpoint + 'workouts/followers', options).map(res => res.json()).subscribe(data => {
                     this.IsAjaxLoaded = false;
                     this.Followers = data.workouts;
                 }, err => {
@@ -121,6 +120,11 @@ export class HomePage {
             })
         })
 
+    }
+
+
+    showDetails(selectedWorkout){
+        this.navCtrl.push(WorkoutDetailsPage,{workout:selectedWorkout})
     }
 
 

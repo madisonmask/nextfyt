@@ -150,12 +150,7 @@ export class CreatedExercisesStagePage {
                 let headers = new Headers({'Authorization': 'Bearer ' + token});
                 let options = new RequestOptions({ headers: headers });
                 this.http.post(this.config.apiEndpoint + 'exercise', this.Exercise, options).map(res => res.json()) .subscribe(data => {
-                    /*      let alert = this.alertCtrl.create({
-                     title: 'data',
-                     subTitle: data,
-                     buttons: ['OK']
-                     });
-                     alert.present();*/
+
                     console.log(data);
                     this.IsAjaxLoaded = false;
 

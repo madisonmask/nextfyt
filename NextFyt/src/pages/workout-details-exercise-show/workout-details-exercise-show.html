@@ -1,0 +1,117 @@
+<!--
+  Generated template for the WorkoutDetailsExerciseShowPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>WorkoutDetailsExerciseShow</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div   [hidden]="showFullscreen" >
+
+
+
+  <div class="description">
+    <p>{{Exercise.name}}</p>
+    <p>{{Exercise.skill}}</p>
+    <p>{{Exercise.repeat_count}} {{Exercise.repeat_type}} of {{Exercise.length_count}}
+      {{Exercise.length_type}} </p>
+    <p>Equipment: <span *ngFor="let eq of Exercise.equipment"> {{eq.name}} ,  </span></p>
+  </div>
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <img src="assets/images/blank.jpg" (click)="showRadio(0)" *ngIf="Exercise.stage1_img != '' ">
+        <img [src]="Exercise.stage1_img" *ngIf="Exercise.stage1_img == '' "/>
+      </ion-col>
+      <ion-col col-6>
+        <img src="assets/images/blank.jpg" (click)="showRadio(1)" *ngIf="!Exercise.stage2_img">
+        <img [src]="Exercise.stage2_img" *ngIf="Exercise.stage2_img"/>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-6>
+        <img src="assets/images/blank.jpg" (click)="showRadio(2)"  *ngIf="!Exercise.stage3_img">
+        <img [src]="Exercise.stage3_img" *ngIf="Exercise.stage3_img"/>
+      </ion-col>
+
+      <ion-col col-6>
+        <img src="assets/images/blank.jpg" (click)="showRadio(3)"  *ngIf="!Exercise.stage4_img">
+        <img [src]="Exercise.stage4_img" *ngIf="Exercise.stage4_img"/>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+
+      <ion-col col-6>
+        <img src="assets/images/blank.jpg" (click)="showRadio(4)"  *ngIf="!Exercise.stage5_img">
+        <img [src]="Exercise.stage5_img" *ngIf="Exercise.stage5_img"/>
+      </ion-col>
+      <ion-col col-6>
+        <img src="assets/images/blank.jpg" (click)="showRadio(5)"  *ngIf="!Exercise.stage6_img">
+        <img [src]="Exercise.stage6_img" *ngIf="Exercise.stage6_img"/>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  </div>
+
+
+
+ <!-- *ngIf="" -->
+  <ion-slides (ionSlideTap)="slideClick()" #mySlides   [hidden]="!showFullscreen">
+    <ion-slide>
+
+      <img [src]="Exercise.stage1_img">
+    </ion-slide>
+    <ion-slide>
+
+      <img [src]="Exercise.stage2_img">
+    </ion-slide>
+    <ion-slide>
+
+      <img [src]="Exercise.stage3_img">
+    </ion-slide>
+
+    <ion-slide>
+
+      <img [src]="Exercise.stage4_img">
+    </ion-slide>
+    <ion-slide>
+
+      <img [src]="Exercise.stage5_img">
+    </ion-slide>
+    <ion-slide>
+
+      <img [src]="Exercise.stage6_img">
+    </ion-slide>
+
+  </ion-slides>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ion-content>

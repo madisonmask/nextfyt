@@ -134,7 +134,9 @@ export class SearchFilters {
 
     ApplyFilter() {
         console.log('apply');
+        this.Searched.Filters.enabled=true;
 
+        console.log(this.Searched);
         this.viewCtrl.dismiss(this.Searched);
     }
 

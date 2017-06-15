@@ -32,9 +32,9 @@ export class ShareWorkoutPage {
      config:IAppConfig;
     testRadioResult = {};
     IsAjaxLoaded:boolean = false;
-    workoutToSend=  {Name: '', Length: '', Image: '', ImageData:'', Exercises:{}}; //object what we are sended without imagedata
+    workoutToSend=  {Name: '', Length: 30, Image: '', ImageData:'', Exercises:{}}; //object what we are sended without imagedata
 //@todo rewrite this
-    Workout = {Name: '', Length: '', Image: '', ImageData:'', Exercises:{}};
+    Workout = {Name: '', Length: 30, Image: '', ImageData:'', Exercises:{}};
 
     constructor(public navCtrl:NavController, public navParams:NavParams, public alertCtrl:AlertController, private camera:Camera, public http:Http,
                 @Inject(APP_CONFIG)  config:IAppConfig ,  private storage: Storage, private  user:UserService) {

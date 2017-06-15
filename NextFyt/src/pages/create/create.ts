@@ -7,7 +7,7 @@ import {ExerciseHistoryPage} from '../exercise-history/exercise-history';
 import {ShareWorkoutPage} from '../share-workout/share-workout';
 
 
-import {Http, Headers} from "@angular/http";
+import {Http, Headers, RequestOptions} from "@angular/http";
 import 'rxjs/add/operator/map';
 import {Storage} from "@ionic/storage";
 
@@ -71,12 +71,13 @@ export class CreatePage {
         this.storage.ready().then(() => {
             this.storage.get('token').then(token => {
                 console.log(token);
-                let headers = new Headers();
+        /*        let headers = new Headers();
                 headers.append('Authorization', 'Bearer ' + token);
+             */
+                let headers = new Headers({'Authorization': 'Bearer ' + token});
+                let options = new RequestOptions({ headers: headers });
 
-                this.http.get(this.config.apiEndpoint + 'exercise/new', {
-                    headers: headers
-                }).map(res => res.json()).subscribe(data => {
+                this.http.get(this.config.apiEndpoint + 'exercise/new', options).map(res => res.json()).subscribe(data => {
                     this.MyExercises = data.exercises;
                     console.log(data);
 
@@ -91,7 +92,7 @@ export class CreatePage {
 
     CreateExercise() {
         let alert = this.alertCtrl.create();
-        alert.setTitle('Lightsaber color');
+        alert.setTitle('Exercise type');
         alert.addInput({
             type: 'radio',
             label: 'past created exercises',
@@ -145,9 +146,22 @@ export class CreatePage {
     }
 
     delete(exercise){
-this.swiped++;
         this.MyExercises.splice( this.MyExercises.indexOf(exercise),1  );
+        this.storage.ready().then(() => {
+            this.storage.get('token').then(token => {
+                console.log(token);
 
+                let headers = new Headers({'Authorization': 'Bearer ' + token});
+                let options = new RequestOptions({ headers: headers });
+
+                this.http.post(this.config.apiEndpoint + 'exercise/makeold', {exercise:exercise.id}, options).map(res => res.json()).subscribe(data => {
+                 console.log(data);
+                }, err => {
+                    console.log(err);
+                })
+            })
+        })
+        this.MyExercises.splice( this.MyExercises.indexOf(exercise),1  );
     }
 
 }

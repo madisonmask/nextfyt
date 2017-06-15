@@ -6,29 +6,39 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>ExerciseHistory</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>ExerciseHistory</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
 
-  <div class="exercises" *ngFor="let exercise of MyExercises">
-    <ion-item (click)="selectItem(exercise)">
-      <div class="description">
-        <p>{{exercise.name}}</p>
-        <p>{{exercise.repeat_count}} {{exercise.repeat_type}}      of  {{exercise.length_count}}   {{exercise.length_type}}  </p>
-        <p>Cardio: {{exercise.cardio}}</p>
-        <p>Equipment:      <span *ngFor="let eq of exercise.equipment"> {{eq.name}} ,  </span></p>
-      </div>
-      <div class="image">
-        <img src="{{exercise.stage1_img}}">
-      </div>
-    </ion-item>
-  </div>
-  <div class="clear"></div>
+
+    <ion-list>
+        <ion-item-sliding class="exercises" *ngFor="let exercise of MyExercises">
+
+            <ion-item (click)="selectItem(exercise)">
+                <div class="description">
+                    <p>{{exercise.name}}</p>
+                    <p>{{exercise.repeat_count}} {{exercise.repeat_type}} of {{exercise.length_count}}
+                        {{exercise.length_type}} </p>
+                    <p>Cardio: {{exercise.cardio}}</p>
+                    <p>Equipment: <span *ngFor="let eq of exercise.equipment"> {{eq.name}} ,  </span></p>
+                </div>
+                <div class="image">
+                    <img src="{{exercise.stage1_img}}">
+                </div>
+            </ion-item>
+            <ion-item-options side="right">
+                <button ion-button (click)="delete(exercise)">Delete</button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+
+
+    <div class="clear"></div>
 
 
 </ion-content>

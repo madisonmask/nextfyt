@@ -8,6 +8,7 @@ use App\ExerciseToWorkout;
 use App\Http\Controllers\Helpers;
 use App\User;
 use App\Workout;
+use App\WorkoutLike;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -181,6 +182,77 @@ class WorkoutController extends Controller
 
     }
 
+
+    public function getWorkout(Request $request, $WorkoutId)
+    {
+
+        $user = Helpers::getUser($request);
+
+        $difficulty = Difficulty::all();
+        foreach ($difficulty as $dif) {
+            $difficultys[$dif->id] = $dif->name;
+        }
+        $workout = Workout::find($WorkoutId);
+
+        $exportWorkout = [];
+
+        if (isset($workout->user->name)) {
+            $exportWorkout['author'] = $workout->user->name;
+        } else {
+            $exportWorkout['author'] = '???';
+        }
+
+        $exportWorkout['workoutId'] = $workout->id;
+        $exportWorkout['name'] = $workout->name;
+        $exportWorkout['countLikes'] = $workout->countLikes;
+        $exportWorkout['Time'] = $workout->Time;
+        $exportWorkout['skill'] = $difficultys[$workout->difficulty];
+
+        $sql = '  SELECT DISTINCT(muscles.name)
+                    FROM exercise_to_workout
+                    LEFT JOIN muscles_to_exercise ON muscles_to_exercise.exercise_id =exercise_to_workout.exercise_id
+                    LEFT JOIN muscles ON muscles_to_exercise.muscles_id =muscles.id
+                    WHERE exercise_to_workout.workout_id=' . $workout->id . ' AND muscles.name IS NOT NULL';
+        $muscles = DB::select($sql);
+
+        ////
+        $exportWorkout['muscles'] = $muscles;
+///
+
+
+        $sql = '  SELECT DISTINCT(equipment.name)
+                    FROM exercise_to_workout
+                    LEFT JOIN equipment_to_exercise ON equipment_to_exercise.exercise_id =exercise_to_workout.exercise_id
+                    LEFT JOIN equipment ON equipment_to_exercise.equipment_id =equipment.id
+                    WHERE exercise_to_workout.workout_id=' . $workout->id . ' AND equipment.name IS NOT NULL';
+        $equipment = DB::select($sql);
+        $exportWorkout['equipment'] = $equipment;
+
+
+        $sql = 'SELECT DISTINCT(tags.name)
+                FROM workouts
+                LEFT JOIN tags_to_workout ON tags_to_workout.workout_id =workouts.id
+                LEFT JOIN tags ON tags_to_workout.tags_id =tags.id
+                WHERE tags_to_workout.workout_id=' . $workout->id . ' AND  tags.name IS NOT NULL ';
+        $tags = DB::select($sql);
+        $exportWorkout['tags'] = $tags;
+
+
+        $exportWorkout['cardio'] = $workout->cardio;
+        $exportWorkout['image'] = $workout->photo;
+
+
+        /*
+                    $exportWorkout[$i]['equipment'] =     $work->equipments()->get(['equipment.name']);;
+                    $exportWorkout[$i]['muscles'] =     $work->muscles()->get(['muscles.name']);;
+        */
+
+
+        return response()->json(['error' => false, 'workout' => $exportWorkout]);
+
+    }
+
+
     public function getMyFavoritesWorkouts(Request $request)
     {
 
@@ -253,6 +325,7 @@ class WorkoutController extends Controller
         $exportWorkout = [];
         $i = 0;
         foreach ($workouts as $work) {
+            $exportWorkout[$i]['workoutId'] = $work->id;
             $exportWorkout[$i]['author'] = $user['username'];
             $exportWorkout[$i]['name'] = $work->name;
             $exportWorkout[$i]['skill'] = $difficultys[$work->difficulty];
@@ -284,5 +357,22 @@ class WorkoutController extends Controller
 
     }
 
+
+    public function toogleLikes(Request $request)
+    {
+        $user = Helpers::getUser($request);
+        if ($request->liked == null) {
+            $likes = WorkoutLike::where('user_id', $user['id'])->where('workout_id', $request->id)->first();
+            if (!empty($likes)) {
+                $likes->delete();
+            }
+        } else {
+            WorkoutLike::create(['user_id' => $user['id'], 'workout_id' => $request->id]);
+
+        }
+        return response()->json(['error' => false]);
+
+
+    }
 
 }
