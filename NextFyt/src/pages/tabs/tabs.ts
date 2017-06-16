@@ -10,7 +10,7 @@ import {ProfilePage} from '../profile/profile'
 import {UserService} from '../../services/User'
 import {AuthService} from '../../services/auth';
 import {NavController} from 'ionic-angular';
-import {LoginPage} from '../login/login';
+//import {LoginPage} from '../login/login';
 
 @Component({
   templateUrl: 'tabs.html'

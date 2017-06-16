@@ -1,16 +1,16 @@
-import { Component, Inject } from '@angular/core';
-import { IonicPage, NavController, NavParams , AlertController} from 'ionic-angular';
-import { Camera } from '@ionic-native/camera';
-
+import {Component, Inject} from '@angular/core';
+import {IonicPage, NavController, NavParams, AlertController} from 'ionic-angular';
+import {Camera} from '@ionic-native/camera';
 
 
 import {Http, Headers, RequestOptions} from "@angular/http";
 import 'rxjs/add/operator/map';
 
-import { APP_CONFIG, IAppConfig } from '../../app/app.config';
+import {APP_CONFIG, IAppConfig} from '../../app/app.config';
 import {Storage} from "@ionic/storage";
 
-import {HomePage} from '../home/home';
+//import {HomePage} from '../home/home';
+import {CreatePage} from '../create/create'
 import{UserService} from '../../services/User';
 
 
@@ -29,15 +29,16 @@ export class ShareWorkoutPage {
 
 
     testRadioOpen = false;
-     config:IAppConfig;
+    config: IAppConfig;
     testRadioResult = {};
-    IsAjaxLoaded:boolean = false;
-    workoutToSend=  {Name: '', Length: 30, Image: '', ImageData:'', Exercises:{}}; //object what we are sended without imagedata
+    IsAjaxLoaded: boolean = false;
+    hashtag:string='';
+    workoutToSend = {Name: '', Length: 30, Image: '', ImageData: '', Exercises: {}, Tags:[]}; //object what we are sended without imagedata
 //@todo rewrite this
-    Workout = {Name: '', Length: 30, Image: '', ImageData:'', Exercises:{}};
+    Workout = {Name: '', Length: 30, Image: '', ImageData: '', Exercises: {},Tags:[]};
 
-    constructor(public navCtrl:NavController, public navParams:NavParams, public alertCtrl:AlertController, private camera:Camera, public http:Http,
-                @Inject(APP_CONFIG)  config:IAppConfig ,  private storage: Storage, private  user:UserService) {
+    constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, private camera: Camera, public http: Http,
+                @Inject(APP_CONFIG)  config: IAppConfig, private storage: Storage, private  user: UserService) {
         this.config = config;
 
     }
@@ -51,8 +52,6 @@ export class ShareWorkoutPage {
         console.log('ionViewWillEnter Create');
         this.Workout.Exercises = this.navParams.get('Exercises');
     }
-
-
 
 
     showRadio() {
@@ -115,67 +114,54 @@ export class ShareWorkoutPage {
         }).then((imageData) => {
             // imageData is a base64 encoded string
             this.Workout.Image = "data:image/jpeg;base64," + imageData;
-            this.Workout.ImageData= imageData;
+            this.Workout.ImageData = imageData;
         }, (err) => {
             console.log(err);
         });
     }
 
 
-    SaveWorkout(){
+    SaveWorkout() {
+        if (this.IsAjaxLoaded == true) {
+            return false;
+        } else {
+            this.IsAjaxLoaded = true;
+            this.storage.ready().then(() => {
+                this.storage.get('token').then(token => {
+                    console.log(token);
+                    //         let headers = new Headers();
+                    //            headers.append('Authorization', 'Bearer ' + token);
+                    let headers = new Headers({'Authorization': 'Bearer ' + token});
+                    let options = new RequestOptions({headers: headers});
 
+                    this.workoutToSend = this.Workout;
+                    this.workoutToSend.Image = '';
 
+                    this.http.post(this.config.apiEndpoint + 'workout', this.workoutToSend, options).map(res => res.json()) .subscribe(data => {
+                        /*      let alert = this.alertCtrl.create({
+                         title: 'data',
+                         subTitle: data,
+                         buttons: ['OK']
+                         });
+                         alert.present();*/
+                        console.log(data);
+                        this.IsAjaxLoaded = false;
 
-
-
-        this.IsAjaxLoaded = true;
-        this.storage.ready().then(() => {
-            this.storage.get('token').then(token => {
-                console.log(token);
-                //         let headers = new Headers();
-                //            headers.append('Authorization', 'Bearer ' + token);
-                let headers = new Headers({'Authorization': 'Bearer ' + token});
-                let options = new RequestOptions({ headers: headers });
-
-                this.workoutToSend = this.Workout;
-                this.workoutToSend.Image='';
-
-                this.http.post(this.config.apiEndpoint + 'workout', this.workoutToSend, options).map(res => res.json()) .subscribe(data => {
-                    /*      let alert = this.alertCtrl.create({
-                     title: 'data',
-                     subTitle: data,
-                     buttons: ['OK']
-                     });
-                     alert.present();*/
-                    console.log(data);
-                    this.IsAjaxLoaded = false;
-
-                    if(data.error==false){
-
-                        let posts= this.user.getUserPosts();
-                        this.user.setUserPosts(posts ++);
-
-                        this.navCtrl.setRoot(HomePage);
-
-
-                    }
-                });
-
-
+                        if (data.error == false) {
+                            let posts = this.user.getUserPosts();
+                            this.user.setUserPosts(posts++);
+                            this.navCtrl.setRoot(CreatePage);
+                        }
+                    });
+                })
             })
-        })
+        }
+    }
 
+    addTag(){
 
-
-
-
-
-
-
-
-
-
-
+        this.Workout.Tags.push(this.hashtag);
+        this.hashtag='';
     }
 
 

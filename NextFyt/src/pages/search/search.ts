@@ -8,6 +8,7 @@ import 'rxjs/add/operator/map';
 
 import {APP_CONFIG, IAppConfig} from '../../app/app.config';
 import{UserService} from '../../services/User';
+import {ProfilePublicPage} from '../profile-public/profile-public';
 
 /**
  * Generated class for the Search page.
@@ -77,6 +78,10 @@ export class SearchPage {
 
 
                         this.UserResults= data.results;
+                    }else if(this.Searched.Type=='tags'){
+
+
+                        this.TagsResults= data.results;
                     }
 
                 });
@@ -92,6 +97,13 @@ export class SearchPage {
 
     }
 
+    userSelected(user){
+
+        this.navCtrl.push(ProfilePublicPage,{user:user});
+    }
+
+
+
     onCancel(event) {
         console.log('on input');
         console.log(event);
@@ -106,7 +118,10 @@ export class SearchPage {
         // Getting data from the modal:
         contactModal.onDidDismiss(data => {
             console.log('MODAL DATA', data);
-            this.Searched.Filters = data.Filters;
+            if(data!=undefined){
+                this.Searched.Filters = data.Filters;
+            }
+
 
         });
 

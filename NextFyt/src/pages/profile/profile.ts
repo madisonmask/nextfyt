@@ -3,6 +3,7 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {UserService} from '../../services/User';
 import {AuthService} from '../../services/auth';
 import {LoginPage} from '../login/login';
+import {ProfileSettingsPage} from '../profile-settings/profile-settings';
 /**
  * Generated class for the Profile page.
  *
@@ -40,5 +41,9 @@ export class ProfilePage {
         this.Auth.logout();
         this.navCtrl.setRoot(LoginPage);
     }
+    EditSettings(){
+        this.navCtrl.push(ProfileSettingsPage, {user:this.user});
+    }
+
 
 }

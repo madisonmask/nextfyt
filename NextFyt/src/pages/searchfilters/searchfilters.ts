@@ -75,7 +75,7 @@ export class SearchFilters {
     dismiss() {
     //    let data = {'foo': 'bar'};
 //        console.log(data);
-        //       this.viewCtrl.dismiss(data);
+          this.viewCtrl.dismiss();
   //      this.viewCtrl.dismiss({"foo": "bar"});
 
     }

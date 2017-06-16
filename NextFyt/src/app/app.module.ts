@@ -12,6 +12,8 @@ import { CreatePage } from '../pages/create/create';
 import { TabsPage } from '../pages/tabs/tabs';
 import { NotificationsPage } from '../pages/notifications/notifications';
 import { ProfilePage } from '../pages/profile/profile';
+import { ProfilePublicPage } from '../pages/profile-public/profile-public';
+import {ProfileSettingsPage} from '../pages/profile-settings/profile-settings';
 import { SavedListPage } from '../pages/savedlist/savedlist';
 import { RegistrationPage } from '../pages/registration/registration';
 import { LoginPage } from '../pages/login/login';
@@ -69,7 +71,9 @@ import { APP_CONFIG, AppConfig } from './app.config';
     ShareWorkoutPage,
     WorkoutDetailsPage,
     WorkoutDetailsExercisesPage,
-    WorkoutDetailsExerciseShowPage
+    WorkoutDetailsExerciseShowPage,
+    ProfilePublicPage,
+    ProfileSettingsPage
 
   ],
   imports: [
@@ -101,7 +105,9 @@ import { APP_CONFIG, AppConfig } from './app.config';
     ShareWorkoutPage,
     WorkoutDetailsPage,
     WorkoutDetailsExercisesPage,
-    WorkoutDetailsExerciseShowPage
+    WorkoutDetailsExerciseShowPage,
+    ProfilePublicPage,
+    ProfileSettingsPage
   ],
   providers: [
     StatusBar,

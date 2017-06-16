@@ -72,9 +72,21 @@
   </ion-list>
 
 
+  <ion-item>
+    <ion-input type="text" placeholder="hashtags" [(ngModel)]="hashtag"></ion-input>
+  </ion-item>
+    <button ion-button round  (click)="addTag()" >add tag</button>
+
+  <p>
+  <span      *ngFor="let tag of Workout.Tags"     > #{{tag}} ,</span>
+
+
+  </p>
 
 
 
-  <button ion-button round class="fullWidth" (click)="SaveWorkout()" [disabled]="Workout.Name==''">Share</button>
+  <button ion-button round class="fullWidth" (click)="SaveWorkout()" [disabled]="Workout.Name=='' || IsAjaxLoaded ">Share</button>
+
+  <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
 
 </ion-content>

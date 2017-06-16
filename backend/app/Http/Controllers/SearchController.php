@@ -82,7 +82,7 @@ class SearchController extends Controller
 
             case 'people':
 
-                $usersByName = User::where('name', 'LIKE', '%' . $request->SearchString . '%')->get();
+                $usersByName = User::where('name', 'LIKE', '%' . $request->SearchString . '%')->get(['avatar', 'followers' ,'following', 'id', 'name', 'posts']);
 
                 $results = $usersByName;
 
@@ -91,6 +91,20 @@ class SearchController extends Controller
 
 
             case 'tags':
+                $sql = "SELECT COUNT(*) AS TotalUsed, tags.name
+                        FROM tags_to_workout
+                        LEFT JOIN tags ON tags_to_workout.tags_id = tags.id
+                        WHERE tags_to_workout.tags_id IN 
+                        (
+                        SELECT tags.id
+                        FROM tags
+                        WHERE tags.name LIKE '%".$request->SearchString."%'
+                        )
+                        GROUP BY tags_to_workout.tags_id";
+
+
+
+                $results =DB::select($sql);
 
 
                 break;

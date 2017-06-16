@@ -6,6 +6,7 @@ use App\Difficulty;
 use App\Exercise;
 use App\ExerciseToWorkout;
 use App\Http\Controllers\Helpers;
+use App\TagsToWorkout;
 use App\User;
 use App\Workout;
 use App\WorkoutLike;
@@ -13,10 +14,19 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use App\WorkoutKepers;
+use App\Tag;
 
 
 class WorkoutController extends Controller
 {
+    /**
+     * Save workout
+     * called from workout-share
+     * @route POST api/workout
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function saveWorkout(Request $request)
     {
 
@@ -27,30 +37,19 @@ class WorkoutController extends Controller
             $difficultyRate[$dif->name] = $dif->difficulty_level;
             $difficulties[$dif->difficulty_level] = $dif->id;
         }
-        /*     $user = Auth::user();
-
-             if (empty($user)) {
-                 $user = ['id' => 0, 'username' => 'TESTuser', 'avatar' => '/assets/images/avatar.jpg', 'email' => 'fake@email.com', 'posts' => 0, 'followers' => 0, 'following' => 0];
-                 $user = (object)$user;
-             }*/
-
         $user = Helpers::getUser($request);
         $userProfile = User::find($user['id']);
         $path = public_path() . '/pictures';
         if (!File::exists($path)) {
             File::makeDirectory($path, $mode = 0777, true, true);
         }
-
         $path = public_path() . '/pictures/' . $user['id'];
         if (!File::exists($path)) {
             File::makeDirectory($path, $mode = 0777, true, true);
         }
 
-
         $imagStr = $request->ImageData;
         if (!empty($imagStr)) {
-
-
             $image = base64_decode($imagStr);
             $imgName = "workout-" . time() . ".png";
             $webPath = '/pictures/' . $user['id'] . '/' . $imgName;
@@ -70,7 +69,6 @@ class WorkoutController extends Controller
 
 
         if (!isset($request->id)) {
-
             //findMaxDifficulty than greater value then harder
             $isCardio = 0;
             $maxDiffRate = 0;
@@ -79,25 +77,23 @@ class WorkoutController extends Controller
                 if ($ex['cardio'] == 1) {
                     $isCardio = 1;
                 }
-
-
                 if ($ex['Difficulty'] > $maxDiffRate) {
                     $maxDiffRate = $ex['Difficulty'];
                 }
-
             }
-            if (isset($difficulties[$maxDiffRate])) {
+        /*    if (isset($difficulties[$maxDiffRate])) {
                 $WorkoutDifficulty = $difficulties[$maxDiffRate];
             } else {
                 $WorkoutDifficulty = 'beginer';
-            }
-
+            }*/
+            $WorkoutDifficulty =$maxDiffRate;
 
             $createdWorkout = Workout::create(['name' => $request->Name, 'user_id' => $user['id'],
                 'photo' => $photo,
                 'countLikes' => 0,
                 'difficulty' => $WorkoutDifficulty,
                 'cardio' => $isCardio,
+                'Time'=>$Length
             ]);
 
             foreach ($request->Exercises as $ex) {
@@ -106,6 +102,23 @@ class WorkoutController extends Controller
                 $exercise->save();
                 $exercisetoworkout = ExerciseToWorkout::create(['workout_id' => $createdWorkout->id, 'exercise_id' => $ex['id']]);
             }
+
+            foreach ($request->Tags as $tag) {
+                $tagSaved = Tag::where('name',$tag)->first();
+                if(empty($tagSaved)){
+                    $tagSaved=Tag::create(['name'=>$tag]);
+                }
+
+                $tagsToWorkout= TagsToWorkout::where('workout_id', $createdWorkout->id)->where('tags_id', $tagSaved->id)->first();
+                if(empty($tagsToWorkout)){
+
+                    TagsToWorkout::create(['workout_id'=> $createdWorkout->id,  'tags_id'=> $tagSaved->id ]);
+                }
+
+
+
+            }
+
 
             $userProfile->posts++;
             $userProfile->save();
@@ -146,7 +159,16 @@ class WorkoutController extends Controller
         foreach ($difficulty as $dif) {
             $difficultys[$dif->id] = $dif->name;
         }
-        $workouts = Workout::where('user_id', $user['id'])->get();
+
+        $sql = "SELECT workouts.*, workoutkeepers.id AS Inkeepers
+                        FROM workouts
+                        LEFT JOIN workoutkeepers ON
+                         workoutkeepers.workout_id=workouts.id AND workoutkeepers.user_id=" . $user['id'] . "
+                        WHERE 1";
+        $workouts = DB::select($sql);
+
+
+        //     $workouts = Workout::where('user_id', $user['id'])->get();
 
         $exportWorkout = [];
         $i = 0;
@@ -154,6 +176,9 @@ class WorkoutController extends Controller
             $exportWorkout[$i]['author'] = $user['username'];
             $exportWorkout[$i]['name'] = $work->name;
             $exportWorkout[$i]['skill'] = $difficultys[$work->difficulty];
+            $exportWorkout[$i]['workoutId'] = $work->id;
+            $exportWorkout[$i]['Inkeepers'] = $work->Inkeepers;
+
 
             $sql = '  SELECT DISTINCT(muscles.name)
                     FROM exercise_to_workout
@@ -257,19 +282,31 @@ class WorkoutController extends Controller
     {
 
         $user = Helpers::getUser($request);
-
         $difficulty = Difficulty::all();
         foreach ($difficulty as $dif) {
             $difficultys[$dif->id] = $dif->name;
         }
-        $workouts = Workout::where('user_id', $user['id'])->get();
 
+        $sql = '  SELECT workouts.*,  workoutkeepers.id AS Inkeepers
+                FROM workoutlikes
+                INNER JOIN workouts ON workouts.id =workoutlikes.workout_id
+                 LEFT JOIN workoutkeepers ON
+                         workoutkeepers.workout_id=workouts.id AND workoutkeepers.user_id=' . $user['id'] . '
+                WHERE workoutlikes.user_id=' . $user['id'] . ' LIMIT 20 ';
+
+
+        $workouts = DB::select($sql);
+
+
+        $workouts = DB::select($sql);
         $exportWorkout = [];
         $i = 0;
         foreach ($workouts as $work) {
             $exportWorkout[$i]['author'] = $user['username'];
             $exportWorkout[$i]['name'] = $work->name;
             $exportWorkout[$i]['skill'] = $difficultys[$work->difficulty];
+            $exportWorkout[$i]['workoutId'] = $work->id;
+            $exportWorkout[$i]['Inkeepers'] = $work->Inkeepers;
 
             $sql = '  SELECT DISTINCT(muscles.name)
                     FROM exercise_to_workout
@@ -277,25 +314,61 @@ class WorkoutController extends Controller
                     LEFT JOIN muscles ON muscles_to_exercise.muscles_id =muscles.id
                     WHERE exercise_to_workout.workout_id=' . $work->id . ' AND muscles.name IS NOT NULL';
             $muscles = DB::select($sql);
-
             ////
             $exportWorkout[$i]['muscles'] = $muscles;
 ///
-
-
             $exportWorkout[$i]['cardio'] = $work->cardio;
             $exportWorkout[$i]['image'] = $work->photo;
-
-
             /*
                         $exportWorkout[$i]['equipment'] =     $work->equipments()->get(['equipment.name']);;
                         $exportWorkout[$i]['muscles'] =     $work->muscles()->get(['muscles.name']);;
             */
             $i++;
         }
-
         return response()->json(['error' => false, 'workouts' => $exportWorkout]);
+    }
 
+    public function getMyKeepersWorkouts(Request $request)
+    {
+
+        $user = Helpers::getUser($request);
+        $difficulty = Difficulty::all();
+        foreach ($difficulty as $dif) {
+            $difficultys[$dif->id] = $dif->name;
+        }
+
+        $sql = '  SELECT workouts.*,  workoutkeepers.id AS Inkeepers
+                FROM workoutkeepers
+                INNER JOIN workouts ON workouts.id =workoutkeepers.workout_id
+                WHERE workoutkeepers.user_id=' . $user['id'];
+
+        $workouts = DB::select($sql);
+        $exportWorkout = [];
+        $i = 0;
+        foreach ($workouts as $work) {
+            $exportWorkout[$i]['author'] = $user['username'];
+            $exportWorkout[$i]['name'] = $work->name;
+            $exportWorkout[$i]['skill'] = $difficultys[$work->difficulty];
+            $exportWorkout[$i]['workoutId'] = $work->id;
+            $exportWorkout[$i]['Inkeepers'] = $work->Inkeepers;
+            $sql = '  SELECT DISTINCT(muscles.name)
+                    FROM exercise_to_workout
+                    LEFT JOIN muscles_to_exercise ON muscles_to_exercise.exercise_id =exercise_to_workout.exercise_id
+                    LEFT JOIN muscles ON muscles_to_exercise.muscles_id =muscles.id
+                    WHERE exercise_to_workout.workout_id=' . $work->id . ' AND muscles.name IS NOT NULL';
+            $muscles = DB::select($sql);
+            ////
+            $exportWorkout[$i]['muscles'] = $muscles;
+///
+            $exportWorkout[$i]['cardio'] = $work->cardio;
+            $exportWorkout[$i]['image'] = $work->photo;
+            /*
+                        $exportWorkout[$i]['equipment'] =     $work->equipments()->get(['equipment.name']);;
+                        $exportWorkout[$i]['muscles'] =     $work->muscles()->get(['muscles.name']);;
+            */
+            $i++;
+        }
+        return response()->json(['error' => false, 'workouts' => $exportWorkout]);
     }
 
 
@@ -371,8 +444,23 @@ class WorkoutController extends Controller
 
         }
         return response()->json(['error' => false]);
-
-
     }
+
+
+    public function toogleKeepers(Request $request)
+    {
+        $user = Helpers::getUser($request);
+        if ($request->Inkeepers == null) {
+            $likes = WorkoutKepers::where('user_id', $user['id'])->where('workout_id', $request->workoutId)->first();
+            if (!empty($likes)) {
+                $likes->delete();
+            }
+        } else {
+            WorkoutKepers::create(['user_id' => $user['id'], 'workout_id' => $request->workoutId]);
+
+        }
+        return response()->json(['error' => false]);
+    }
+
 
 }

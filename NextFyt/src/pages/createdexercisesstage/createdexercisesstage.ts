@@ -2,7 +2,7 @@
 
 
 import { Component,  Inject } from '@angular/core';
-import {  NavController, NavParams,  AlertController} from 'ionic-angular';
+import {  NavController, NavParams,  AlertController, ToastController } from 'ionic-angular';
 import { Camera } from '@ionic-native/camera';
 
 
@@ -49,7 +49,7 @@ export class CreatedExercisesStagePage {
 
     constructor(public navCtrl:NavController, public navParams:NavParams, private camera:Camera, public alertCtrl:AlertController,
                 public _DomSanitizationService:DomSanitizer, public http:Http,  private storage: Storage,
-                @Inject(APP_CONFIG)  config:IAppConfig) {
+                @Inject(APP_CONFIG)  config:IAppConfig, public toastCtrl: ToastController) {
 
         this.Exercise = this.navParams.get('Exercise');
         console.log(this.Exercise);
@@ -141,25 +141,46 @@ export class CreatedExercisesStagePage {
 */
     publish() {
 
-        this.IsAjaxLoaded = true;
-        this.storage.ready().then(() => {
-            this.storage.get('token').then(token => {
-                console.log(token);
-       //         let headers = new Headers();
-    //            headers.append('Authorization', 'Bearer ' + token);
-                let headers = new Headers({'Authorization': 'Bearer ' + token});
-                let options = new RequestOptions({ headers: headers });
-                this.http.post(this.config.apiEndpoint + 'exercise', this.Exercise, options).map(res => res.json()) .subscribe(data => {
+        console.log(this.ExcerciseImage.length);
 
-                    console.log(data);
-                    this.IsAjaxLoaded = false;
+        if(this.ExcerciseImage.length>=2){
 
-                    this.navCtrl.setRoot(CreatePage);
-                });
+            this.IsAjaxLoaded = true;
+            this.storage.ready().then(() => {
+                this.storage.get('token').then(token => {
+                    console.log(token);
+                    //         let headers = new Headers();
+                    //            headers.append('Authorization', 'Bearer ' + token);
+                    let headers = new Headers({'Authorization': 'Bearer ' + token});
+                    let options = new RequestOptions({ headers: headers });
+                    this.http.post(this.config.apiEndpoint + 'exercise', this.Exercise, options).map(res => res.json()) .subscribe(data => {
 
 
+
+                        console.log(data);
+                        this.IsAjaxLoaded = false;
+
+                        this.navCtrl.setRoot(CreatePage);
+                    });
+
+
+                })
             })
-        })
+
+        }else{
+console.log('show toastr');
+            let toast = this.toastCtrl.create({
+                message: 'Plaese  enter at least 2 photo',
+                duration: 2000,
+                position: 'middle'
+            });
+
+            toast.present(toast);
+
+
+        }
+
+
 
     }
 

@@ -6,6 +6,7 @@ import {Http, Headers, RequestOptions} from "@angular/http";
 import 'rxjs/add/operator/map';
 
 import {APP_CONFIG, IAppConfig} from '../../app/app.config';
+import {WorkoutDetailsPage} from '../workout-details/workout-details';
 
 
 /**
@@ -21,36 +22,16 @@ import {APP_CONFIG, IAppConfig} from '../../app/app.config';
 })
 export class SavedListPage {
 
-    isMySaved = true;
+    activeTab='My';
     config: IAppConfig;
 
     createdList = [];
 
-    favoritedList = [{
-        author: 'User1',
-        name: 'Lorem',
-        skill: 'adv',
-        muscles: ['all'],
-        cardio: false,
-        image: 'http://via.placeholder.com/350x150'
-    },
-        {
-            author: 'User2',
-            name: 'Chest',
-            skill: 'adv',
-            muscles: ['notall'],
-            cardio: false,
-            image: 'http://via.placeholder.com/350x150'
-        },
-        {
-            author: 'user3',
-            name: 'Big Cardio',
-            skill: 'heart',
-            muscles: ['heart'],
-            cardio: true,
-            image: 'http://via.placeholder.com/350x150'
-        }
-    ];
+    favoritedList = [];
+
+    keeperList = [];
+
+    IsAjaxLoaded:boolean=false;
 
     ActiveList = this.createdList;
 
@@ -68,13 +49,18 @@ export class SavedListPage {
     ShowSaved(type) {
         console.log(type);
 
+        this.activeTab =type;
+
         if (type == 'My') {
             this.getMyWorkouts();
-            this.isMySaved = true;
-            this.ActiveList = this.createdList;
-        } else {
-            this.isMySaved = false;
-            this.ActiveList = this.favoritedList;
+   //         this.ActiveList = this.createdList;
+        } else if(type=='Favorited') {
+            this.getFavoritesWorkouts();
+   //         this.ActiveList = this.favoritedList;
+        }else{
+
+            this.getKeepersWorkouts();
+      //      this.ActiveList = this.keeperList;
         }
 
     }
@@ -120,9 +106,9 @@ export class SavedListPage {
 
 
                 this.http.get(this.config.apiEndpoint + 'workouts/myFavorites', options).map(res => res.json()).subscribe(data => {
-                    this.createdList = data.workouts;
+                    this.favoritedList = data.workouts;
                     console.log(data);
-                    this.ActiveList = this.createdList;
+                    this.ActiveList = this.favoritedList;
 
 
                 }, err => {
@@ -132,6 +118,79 @@ export class SavedListPage {
         })
     }
 
+    getKeepersWorkouts() {
+
+        this.storage.ready().then(() => {
+            this.storage.get('token').then(token => {
+                console.log(token);
 
 
+                let headers = new Headers({'Authorization': 'Bearer ' + token});
+                let options = new RequestOptions({ headers: headers });
+
+
+                this.http.get(this.config.apiEndpoint + 'workouts/myKeepers', options).map(res => res.json()).subscribe(data => {
+                    this.keeperList = data.workouts;
+                    console.log(data);
+                    this.ActiveList = this.keeperList;
+
+
+                }, err => {
+                    console.log(err);
+                })
+            })
+        })
+    }
+
+    showDetails(selectedWorkout){
+        this.navCtrl.push(WorkoutDetailsPage,{workout:selectedWorkout})
+    }
+
+
+    toggleKeepers(event, item){
+
+        event.stopPropagation();
+        console.log(item);
+
+
+
+
+        console.log(item.Inkeepers);
+        if(item.Inkeepers==null){
+            item.Inkeepers=1;
+        }else{
+            item.Inkeepers=null;
+        }
+
+
+        this.IsAjaxLoaded = true;
+        this.storage.ready().then(() => {
+            this.storage.get('token').then(token => {
+                console.log(token);
+                //         let headers = new Headers();
+                //            headers.append('Authorization', 'Bearer ' + token);
+                let headers = new Headers({'Authorization': 'Bearer ' + token});
+                let options = new RequestOptions({headers: headers});
+                this.http.post(this.config.apiEndpoint + 'workout/keepers', item, options).map(res => res.json()) .subscribe(data => {
+
+                    console.log(data);
+                    this.IsAjaxLoaded = false;
+
+
+
+                });
+
+
+            })
+        })
+
+
+
+
+
+
+
+
+
+    }
 }

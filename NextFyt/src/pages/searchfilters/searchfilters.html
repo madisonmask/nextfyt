@@ -53,19 +53,56 @@
   <h2>Time length</h2>
 
 
-  <ion-item>
-    <ion-label color="primary" stacked>Length in minutes</ion-label>
-    <ion-input type="number" placeholder="Enter length" [(ngModel)]="Searched.Filters.TimeLength"></ion-input>
-  </ion-item>
+
+
+    <p> Please enter your workout length </p>
+
+    <ion-list radio-group [(ngModel)]="Searched.Filters.TimeLength">
+      <ion-item>
+        <ion-label>0-15 minutes</ion-label>
+        <ion-radio value="15" [checked]></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>15-30 minutes</ion-label>
+        <ion-radio value="30"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>30-45 minutes</ion-label>
+        <ion-radio value="45" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>45-60 minutes</ion-label>
+        <ion-radio value="60" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>60-75 minutes</ion-label>
+        <ion-radio value="75" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>75-90 minutes</ion-label>
+        <ion-radio value="90" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>90-120 minutes</ion-label>
+        <ion-radio value="120" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>120+ minutes</ion-label>
+        <ion-radio value="121" ></ion-radio>
+      </ion-item>
+
+
+    </ion-list>
+
 
 
   <button ion-button  (click)="ApplyFilter()"   > Apply </button>
 
 
 
+  <button ion-button  (click)="dismiss()"  [color]="'light'" > Cancel </button>
 
 
 
-  <a (click)="dismiss()" > Close </a>
 
 </ion-content>

@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Tag extends Model
+class TagsToWorkout extends Model
 {
     protected $guarded = ['id'];
-    protected $table='tags';
+    protected $table='tags_to_workout';
 }

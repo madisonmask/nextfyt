@@ -6,9 +6,9 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Search</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Search</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
@@ -16,120 +16,108 @@
 <ion-content padding>
 
 
-  <ion-searchbar
-          [(ngModel)]="Searched.SearchString"
-          [showCancelButton]="shouldShowCancel"
-          (ionInput)="onInput($event)"
-          (ionCancel)="onCancel($event)">
-  </ion-searchbar>
+    <ion-searchbar
+            [(ngModel)]="Searched.SearchString"
+            [showCancelButton]="shouldShowCancel"
+            (ionInput)="onInput($event)"
+            (ionCancel)="onCancel($event)">
+    </ion-searchbar>
 
 
+    <ion-icon name="funnel" (click)="showOptions()" class="filter"></ion-icon>
 
 
-  <ion-icon name="funnel"  (click)="showOptions()"  class="filter"> </ion-icon>
+    <div padding>
+
+        <ion-segment [(ngModel)]="Searched.Type">
+            <ion-segment-button value="top" (click)="doSearch()">
+                Top
+            </ion-segment-button>
+
+            <ion-segment-button value="people" (click)="doSearch()">
+                People
+            </ion-segment-button>
+
+            <ion-segment-button value="tags" (click)="doSearch()">
+                Tags
+            </ion-segment-button>
+
+            <ion-segment-button value="workouts" (click)="doSearch()">
+                Workouts
+            </ion-segment-button>
 
 
-  <div padding>
+        </ion-segment>
+    </div>
 
-    <ion-segment  [(ngModel)]="Searched.Type">
-      <ion-segment-button  value="top" (click)="doSearch()" >
-        Top
-      </ion-segment-button>
-
-      <ion-segment-button  value="people" (click)="doSearch()">
-        People
-      </ion-segment-button>
-
-      <ion-segment-button  value="tags" (click)="doSearch()">
-        Tags
-      </ion-segment-button>
-
-      <ion-segment-button  value="workouts" (click)="doSearch()">
-        Workouts
-      </ion-segment-button>
+    <div *ngIf="Searched.Type=='top' ">
+        <p> Top results </p>
 
 
-    </ion-segment>
-  </div>
+    </div>
 
-  <div *ngIf="Searched.Type=='top' ">
-    <p> Top results </p>
+    <div *ngIf="Searched.Type=='people' ">
+        <p> People results </p>
+
+        <ion-list>
+            <ion-item *ngFor="let user of UserResults" (click)="userSelected(user)">
+                <ion-avatar item-start>
+                    <img src="{{user.avatar}}" *ngIf="user.avatar!=''">
+                    <img src="/assets/images/avatar.jpg" *ngIf="user.avatar==''">
+                </ion-avatar>
+                <h2>{{user.name}}</h2>
+                <h3>Posts: {{user.posts}}</h3>
+                <p>Followers:{{user.followers}}</p>
+            </ion-item>
+        </ion-list>
 
 
-  </div>
+    </div>
 
-  <div *ngIf="Searched.Type=='people' ">
-    <p> People results </p>
+    <div *ngIf="Searched.Type=='tags' ">
+        <p> tags results </p>
 
-    <div ion-item *ngFor="let item of UserResults" (click)="itemSelected(item)">
-      <div class="user">
-        <div class="description">
-          <p>{{item.name}}</p>
-          <p>Posts: {{item.posts}}</p>
+        <ion-list>
+            <ion-item *ngFor="let item of TagsResults" (click)="itemSelected(item)">
+
+                <h2>#{{item.name}}</h2>
+                <h3>Used: {{item.TotalUsed}}</h3>
+            </ion-item>
+        </ion-list>
+
+
+    </div>
+
+    <div *ngIf="Searched.Type=='workouts' ">
+        <p> workouts results </p>
+
+
+        <div ion-item *ngFor="let item of WorkoutResults" (click)="itemSelected(item)">
+            <div class="workout">
+                <div class="description">
+
+                    <ion-icon name="heart-outline" *ngIf="!item.liked" (click)="toggleLike(item)"
+                              class="likes"></ion-icon>
+                    <ion-icon name="heart" *ngIf="item.liked" (click)="toggleLike(item)" class="likes"></ion-icon>
+
+
+                    <p>Created By: <b>{{item.user}}</b></p>
+                    <p>{{item.name}}</p>
+                    <p>Skill: {{item.skill}}</p>
+                    <p>Muscles worked: <span *ngFor="let muscle  of item.muscles"> {{muscle.name}}  </span></p>
+                    <p>Cardio: {{item.cardio}}</p>
+                </div>
+                <div class="image">
+                    <img src="{{item.image}}">
+                </div>
+            </div>
+            <div class="clear"></div>
         </div>
-        <div class="image">
-          <img src="{{item.avatar}}">
-        </div>
-      </div>
-      <div class="clear"></div>
+
+
     </div>
 
 
-
-
-
-  </div>
-
-  <div *ngIf="Searched.Type=='tags' ">
-    <p> tags results </p>
-
-
-  </div>
-
-  <div *ngIf="Searched.Type=='workouts' ">
-    <p> workouts results </p>
-
-
-
-    <div ion-item *ngFor="let item of WorkoutResults" (click)="itemSelected(item)">
-      <div class="workout">
-        <div class="description">
-
-          <ion-icon name="heart-outline" *ngIf="!item.liked" (click)="toggleLike(item)" class="likes"></ion-icon>
-          <ion-icon name="heart" *ngIf="item.liked" (click)="toggleLike(item)" class="likes"></ion-icon>
-
-
-
-          <p>Created By: <b>{{item.user}}</b></p>
-          <p>{{item.name}}</p>
-          <p>Skill: {{item.skill}}</p>
-          <p>Muscles worked: <span *ngFor="let muscle  of item.muscles"> {{muscle.name}}  </span>  </p>
-          <p>Cardio: {{item.cardio}}</p>
-        </div>
-        <div class="image">
-          <img src="{{item.image}}">
-        </div>
-      </div>
-      <div class="clear"></div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-
-
-
-
-  <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
+    <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
 
 </ion-content>

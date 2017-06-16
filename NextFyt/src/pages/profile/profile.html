@@ -17,7 +17,7 @@
 
     <ion-item>
         <h2> {{user.name}}</h2>
-        <ion-icon name="cog" class="settings"></ion-icon>
+        <ion-icon name="cog" class="settings" (click)="EditSettings()"></ion-icon>
         <a (click)="Logout()">Logout</a>
     </ion-item>
 
@@ -26,7 +26,11 @@
         <ion-row>
             <ion-col col-4>
                 <ion-avatar item-start class="avatar">
-                    <img src="{{user.avatar}}">
+
+                    <img src="{{user.avatar}}" *ngIf="user.avatar!=''">
+                    <img src="/assets/images/avatar.jpg" *ngIf="user.avatar==''">
+
+
                 </ion-avatar>
             </ion-col>
             <ion-col col-8>

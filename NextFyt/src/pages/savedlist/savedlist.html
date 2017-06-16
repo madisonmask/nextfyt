@@ -16,16 +16,25 @@
 <ion-content padding>
 
 
-    <button ion-button (click)="ShowSaved('My')" [color]="isMySaved ? 'light' : ''">My creations</button>
-    <button ion-button (click)="ShowSaved('Favorited')" [color]="isMySaved ? '' : 'light'">My Favorited</button>
+    <button ion-button (click)="ShowSaved('My')" [color]="activeTab=='My' ? '' : 'light'">My creations</button>
+    <button ion-button (click)="ShowSaved('Favorited')" [color]="activeTab=='Favorited' ? '' : 'light'">My Favorited</button>
+    <button ion-button (click)="ShowSaved('Keepers')" [color]="activeTab=='Keepers' ? '' : 'light'">Keepers</button>
 
 
     <ion-list>
 
-        <div ion-item *ngFor="let item of ActiveList" (click)="itemSelected(item)">
-            <div class="workout">
+        <div ion-item *ngFor="let item of ActiveList" (click)="showDetails(item)">
+
+            <ion-icon name="bookmarks" *ngIf="item.Inkeepers" class="keepers" (click)="toggleKeepers($event, item)"></ion-icon>
+            <ion-icon name="ios-bookmarks-outline" *ngIf="!item.Inkeepers" class="keepers" (click)="toggleKeepers($event, item)"></ion-icon>
+
+            <div class="workout"  >
                 <div class="description">
                     <p>Created By: <b>{{item.author}}</b></p>
+
+
+
+
                     <p>{{item.name}}</p>
                     <p>Skill: {{item.skill}}</p>
                     <p>Muscles worked: <span *ngFor="let muscle  of item.muscles"> {{muscle.name}}  </span>  </p>
