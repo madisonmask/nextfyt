@@ -11,6 +11,8 @@ use App\Http\Controllers\Helpers;
 use App\User;
 use App\Followers;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\File;
 
 class UserProfileController extends Controller
 {

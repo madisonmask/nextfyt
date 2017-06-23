@@ -27,13 +27,91 @@ class SearchController extends Controller
 
             case 'workouts':
 
-           //     $workoutsByName = Workout::where('name', 'LIKE', '%' . $request->SearchString . '%')->get();
+                $filters = [];
+                $filterStr='';
+                if (isset($request->Filters) AND ($request->Filters['enabled'] == true)) {
+
+                    if (isset($request->Filters['Cardio'])) {
+                        if ($request->Filters['Cardio'] == true) {
+                            $filters[] = 'workouts.cardio=1';
+                        } else {
+                            $filters[] = 'workouts.cardio=0';
+                        }
+                    }
+
+                    if (isset($request->Filters['Difficulty']) AND (count($request->Filters['Difficulty']) > 0)) {
+                        $difficulties = '';
+                        foreach ($request->Filters['Difficulty'] AS $dif) {
+                            $difficulties .= $dif['id'] . ',';
+                        }
+                        $difficulties = substr($difficulties, 0, -1);
+                        $filters[] = 'workouts.difficulty IN  (' . $difficulties . ')';
+                    }
+
+                    if (isset($request->Filters['Equipment']) AND (count($request->Filters['Equipment']) > 0)) {
+                        $equipments = '';
+                        foreach ($request->Filters['Equipment'] AS $item) {
+                            $equipments .= $item['id'] . ',';
+                        }
+                        $equipments = substr($equipments, 0, -1);
+                        $filters[] = 'equipment_to_exercise.equipment_id IN  (' . $equipments . ')';
+                    }
+
+                    if (isset($request->Filters['Muscles']) AND (count($request->Filters['Muscles']) > 0)) {
+                        $muscles = '';
+                        foreach ($request->Filters['Muscles'] AS $item) {
+                            $muscles .= $item['id'] . ',';
+                        }
+                        $muscles = substr($muscles, 0, -1);
+                        $filters[] = 'muscles_to_exercise.muscles_id IN  (' . $muscles . ')';
+                    }
+
+
+                    if (isset($request->Filters['TimeLength'])) {
+                        if ($request->Filters['TimeLength'] == 0 ) {
+                        } else {
+                            $filters[] = 'workouts.Time ='.$request->Filters['TimeLength'];
+                        }
+                    }
+
+                    foreach($filters as $filter){
+
+                        $filterStr.='AND '.$filter;
+
+                    }
+
+                }
+
+
+
+                //     $workoutsByName = Workout::where('name', 'LIKE', '%' . $request->SearchString . '%')->get();
                 $sql = "SELECT workouts.*, workoutlikes.id AS liked
                         FROM workouts
                         LEFT JOIN workoutlikes ON
-                         workoutlikes.workout_id=workouts.id AND workoutlikes.user_id=".$user['id']."
-                        WHERE workouts.name LIKE '%".$request->SearchString ."%'";
-                $workoutsByName =DB::select($sql);
+                         workoutlikes.workout_id=workouts.id AND workoutlikes.user_id=" . $user['id'] . "
+                         
+                           inner join exercise_to_workout
+                         ON
+                         exercise_to_workout.workout_id =workouts.id
+                         left join equipment_to_exercise
+                         on
+                    equipment_to_exercise.exercise_id    = exercise_to_workout.exercise_id 
+                    
+                         left join muscles_to_exercise
+                         on 
+                         muscles_to_exercise.exercise_id =exercise_to_workout.exercise_id
+                    
+                         
+                         
+                        WHERE workouts.name LIKE '%" . $request->SearchString . "%'
+                        
+                       ".$filterStr."
+                       
+                       GROUP BY workouts.id
+                       ";
+
+                echo $sql;
+                $workoutsByName = DB::select($sql);
 
                 $exportWorkout = [];
                 $i = 0;
@@ -42,7 +120,7 @@ class SearchController extends Controller
                     $exportWorkout[$i]['name'] = $work->name;
                     $exportWorkout[$i]['skill'] = $difficultys[$work->difficulty];
                     $exportWorkout[$i]['liked'] = $work->liked;
-                    $exportWorkout[$i]['id'] = $work->id;
+                    $exportWorkout[$i]['workoutId'] = $work->id;
 
                     $sql = '  SELECT DISTINCT(muscles.name)
                     FROM exercise_to_workout
@@ -82,7 +160,7 @@ class SearchController extends Controller
 
             case 'people':
 
-                $usersByName = User::where('name', 'LIKE', '%' . $request->SearchString . '%')->get(['avatar', 'followers' ,'following', 'id', 'name', 'posts']);
+                $usersByName = User::where('name', 'LIKE', '%' . $request->SearchString . '%')->get(['avatar', 'followers', 'following', 'id', 'name', 'posts']);
 
                 $results = $usersByName;
 
@@ -98,13 +176,12 @@ class SearchController extends Controller
                         (
                         SELECT tags.id
                         FROM tags
-                        WHERE tags.name LIKE '%".$request->SearchString."%'
+                        WHERE tags.name LIKE '%" . $request->SearchString . "%'
                         )
                         GROUP BY tags_to_workout.tags_id";
 
 
-
-                $results =DB::select($sql);
+                $results = DB::select($sql);
 
 
                 break;

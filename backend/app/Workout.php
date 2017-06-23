@@ -23,4 +23,9 @@ class Workout extends Model
         return $this->hasOne('App\WorkoutKepers','workout_id', 'id');
     }
 
+
+
+
+
+
 }
