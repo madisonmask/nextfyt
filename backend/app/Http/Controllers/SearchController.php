@@ -110,7 +110,7 @@ class SearchController extends Controller
                        GROUP BY workouts.id
                        ";
 
-                echo $sql;
+         //       echo $sql;
                 $workoutsByName = DB::select($sql);
 
                 $exportWorkout = [];

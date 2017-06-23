@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use App\WorkoutKepers;
 use App\Tag;
+use App\Activities;
 
 
 class WorkoutController extends Controller
@@ -95,7 +96,7 @@ class WorkoutController extends Controller
                 'cardio' => $isCardio,
                 'Time'=>$Length
             ]);
-
+            Activities::create(['user_id' => $user['id'],  'actionType' => 'newworkout', 'targetElementId'=>$createdWorkout->id]);
             foreach ($request->Exercises as $ex) {
                 $exercise = Exercise::find($ex['id']);
                 $exercise->is_new = 0;
@@ -208,6 +209,60 @@ class WorkoutController extends Controller
     }
 
 
+    public function getUserWorkouts($userId, Request $request)
+    {
+
+      //  $user = Helpers::getUser($request);
+$user=User::find($userId);
+        $difficulty = Difficulty::all();
+        foreach ($difficulty as $dif) {
+            $difficultys[$dif->id] = $dif->name;
+        }
+
+        $sql = "SELECT workouts.*, workoutkeepers.id AS Inkeepers
+                        FROM workouts
+                        LEFT JOIN workoutkeepers ON
+                         workoutkeepers.workout_id=workouts.id AND workoutkeepers.user_id=" . $userId . "
+                        WHERE 1";
+        $workouts = DB::select($sql);
+
+
+        //     $workouts = Workout::where('user_id', $user['id'])->get();
+
+        $exportWorkout = [];
+        $i = 0;
+        foreach ($workouts as $work) {
+            $exportWorkout[$i]['author'] = $user->username;
+            $exportWorkout[$i]['name'] = $work->name;
+            $exportWorkout[$i]['skill'] = $difficultys[$work->difficulty];
+            $exportWorkout[$i]['workoutId'] = $work->id;
+            $exportWorkout[$i]['Inkeepers'] = $work->Inkeepers;
+
+
+            $sql = '  SELECT DISTINCT(muscles.name)
+                    FROM exercise_to_workout
+                    LEFT JOIN muscles_to_exercise ON muscles_to_exercise.exercise_id =exercise_to_workout.exercise_id
+                    LEFT JOIN muscles ON muscles_to_exercise.muscles_id =muscles.id
+                    WHERE exercise_to_workout.workout_id=' . $work->id . ' AND muscles.name IS NOT NULL';
+            $muscles = DB::select($sql);
+
+            ////
+            $exportWorkout[$i]['muscles'] = $muscles;
+            $exportWorkout[$i]['cardio'] = $work->cardio;
+            $exportWorkout[$i]['image'] = $work->photo;
+            /*
+                        $exportWorkout[$i]['equipment'] =     $work->equipments()->get(['equipment.name']);;
+                        $exportWorkout[$i]['muscles'] =     $work->muscles()->get(['muscles.name']);;
+            */
+            $i++;
+        }
+
+        return response()->json(['error' => false, 'workouts' => $exportWorkout]);
+
+    }
+
+
+
     public function getWorkout(Request $request, $WorkoutId)
     {
 
@@ -303,6 +358,58 @@ class WorkoutController extends Controller
         $i = 0;
         foreach ($workouts as $work) {
             $exportWorkout[$i]['author'] = $user['username'];
+            $exportWorkout[$i]['name'] = $work->name;
+            $exportWorkout[$i]['skill'] = $difficultys[$work->difficulty];
+            $exportWorkout[$i]['workoutId'] = $work->id;
+            $exportWorkout[$i]['Inkeepers'] = $work->Inkeepers;
+
+            $sql = '  SELECT DISTINCT(muscles.name)
+                    FROM exercise_to_workout
+                    LEFT JOIN muscles_to_exercise ON muscles_to_exercise.exercise_id =exercise_to_workout.exercise_id
+                    LEFT JOIN muscles ON muscles_to_exercise.muscles_id =muscles.id
+                    WHERE exercise_to_workout.workout_id=' . $work->id . ' AND muscles.name IS NOT NULL';
+            $muscles = DB::select($sql);
+            ////
+            $exportWorkout[$i]['muscles'] = $muscles;
+///
+            $exportWorkout[$i]['cardio'] = $work->cardio;
+            $exportWorkout[$i]['image'] = $work->photo;
+            /*
+                        $exportWorkout[$i]['equipment'] =     $work->equipments()->get(['equipment.name']);;
+                        $exportWorkout[$i]['muscles'] =     $work->muscles()->get(['muscles.name']);;
+            */
+            $i++;
+        }
+        return response()->json(['error' => false, 'workouts' => $exportWorkout]);
+    }
+
+
+    public function getUserFavoritesWorkouts($userId, Request $request)
+    {
+
+ //       $user = Helpers::getUser($request);
+        $user= User::find($userId);
+        $difficulty = Difficulty::all();
+        foreach ($difficulty as $dif) {
+            $difficultys[$dif->id] = $dif->name;
+        }
+
+        $sql = '  SELECT workouts.*,  workoutkeepers.id AS Inkeepers
+                FROM workoutlikes
+                INNER JOIN workouts ON workouts.id =workoutlikes.workout_id
+                 LEFT JOIN workoutkeepers ON
+                         workoutkeepers.workout_id=workouts.id AND workoutkeepers.user_id=' .$userId . '
+                WHERE workoutlikes.user_id=' . $userId . ' LIMIT 20 ';
+
+
+        $workouts = DB::select($sql);
+
+
+        $workouts = DB::select($sql);
+        $exportWorkout = [];
+        $i = 0;
+        foreach ($workouts as $work) {
+            $exportWorkout[$i]['author'] = $user->username;
             $exportWorkout[$i]['name'] = $work->name;
             $exportWorkout[$i]['skill'] = $difficultys[$work->difficulty];
             $exportWorkout[$i]['workoutId'] = $work->id;
@@ -435,12 +542,14 @@ class WorkoutController extends Controller
     {
         $user = Helpers::getUser($request);
         if ($request->liked == null) {
-            $likes = WorkoutLike::where('user_id', $user['id'])->where('workout_id', $request->id)->first();
+            $likes = WorkoutLike::where('user_id', $user['id'])->where('workout_id', $request->workoutId)->first();
             if (!empty($likes)) {
                 $likes->delete();
             }
         } else {
-            WorkoutLike::create(['user_id' => $user['id'], 'workout_id' => $request->id]);
+            WorkoutLike::create(['user_id' => $user['id'], 'workout_id' => $request->workoutId]);
+
+            Activities::create(['user_id' => $user['id'],  'actionType' => 'liked', 'targetElementId'=>$request->workoutId]);
 
         }
         return response()->json(['error' => false]);

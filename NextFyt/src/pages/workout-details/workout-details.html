@@ -51,4 +51,7 @@
 
     <p>  <span *ngFor="let tag  of Workout.Tags"> {{tag.name}}  </span>    </p>
 
+
+    <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
+
 </ion-content>

@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
 import {RegistrationPage} from '../registration/registration';
 import {PasswordResetPage} from '../password-reset/password-reset';
 import {AuthService} from '../../services/auth';
@@ -28,10 +28,11 @@ export class LoginPage {
     //  User = {};
     tabBarElement: any;
     jwtHelper = new JwtHelper();
+    IsAjaxLoaded: boolean = false;
 
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public Auth: AuthService,
-                private storage: Storage, public User: UserService, public tabsService: TabsService) {
+                private storage: Storage, public User: UserService, public tabsService: TabsService, private toastCtrl: ToastController) {
         this.tabBarElement = document.querySelector('#tabs');
 
     }
@@ -51,7 +52,9 @@ export class LoginPage {
     }
 
     doLogin() {
+        this.IsAjaxLoaded=true;
         this.Auth.doLogin(this.User).subscribe(data => {
+
 
                 console.log(data);
                 this.storage.set('token', data.token);
@@ -63,6 +66,10 @@ export class LoginPage {
 
                  */
                 this.Auth.getProfile().then(data=> {
+
+                    this.IsAjaxLoaded=false;
+
+
                     console.log(data);
                     if (data.id == 0) {
                         console.log('User not logined');
@@ -74,6 +81,11 @@ export class LoginPage {
 
 
                     }
+                }, error=>{
+                    this.IsAjaxLoaded=false;
+                    this.showToastr(error.json().error)
+
+
                 })
                 /*
                  this.Auth.getProfile().subscribe(data => {
@@ -91,9 +103,13 @@ export class LoginPage {
                 //      this.storage.set('profile', this.User);
 
             },
-            err=> {
-                console.log('error');
-                console.log(err);
+            error=> {
+                this.IsAjaxLoaded=false;
+       //         console.log('error');
+                console.log(error);
+       //         console.log(err.text());
+      //          console.log(err.json());
+                this.showToastr(error.json().error)
             })
 
     }
@@ -112,4 +128,20 @@ export class LoginPage {
         console.log('do FB');
         return false;
     }
+
+    showToastr (msg){
+        let toast = this.toastCtrl.create({
+            message: msg,
+            duration: 3000,
+            position: 'middle'
+        });
+
+        toast.onDidDismiss(() => {
+            console.log('Dismissed toast');
+        });
+
+        toast.present();
+    }
+
+
 }

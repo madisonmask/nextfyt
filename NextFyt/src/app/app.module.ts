@@ -30,6 +30,10 @@ import { CreatedExercisesStagePage } from '../pages/createdexercisesstage/create
 import {ExerciseDefaultPage} from '../pages/exercise-default/exercise-default';
 import {ExerciseHistoryPage} from '../pages/exercise-history/exercise-history';
 
+import {PrivacyPage} from '../pages/privacy/privacy';
+import {TermsPage} from  '../pages/terms/terms';
+
+
 
 
 
@@ -73,7 +77,9 @@ import { APP_CONFIG, AppConfig } from './app.config';
     WorkoutDetailsExercisesPage,
     WorkoutDetailsExerciseShowPage,
     ProfilePublicPage,
-    ProfileSettingsPage
+    ProfileSettingsPage,
+    PrivacyPage,
+    TermsPage
 
   ],
   imports: [
@@ -107,7 +113,9 @@ import { APP_CONFIG, AppConfig } from './app.config';
     WorkoutDetailsExercisesPage,
     WorkoutDetailsExerciseShowPage,
     ProfilePublicPage,
-    ProfileSettingsPage
+    ProfileSettingsPage,
+    PrivacyPage,
+    TermsPage
   ],
   providers: [
     StatusBar,

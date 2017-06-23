@@ -28,6 +28,8 @@ export class CreatedExercisesStep2Page {
 
     FilterValues = {Muscles: [], Cardio: false, Difficulty: [], Equipment: []};
 
+    IsAjaxLoaded: boolean = false;
+
     constructor(public navCtrl:NavController, public navParams:NavParams) {
 
      this.Exercise=   this.navParams.get('Exercise');

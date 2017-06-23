@@ -14,9 +14,77 @@
 
 
 <ion-content padding>
-  <button ion-button (click)="ShowNotify('Following')" [color]="isMySaved ? 'light' : ''">Following</button>
-  <button ion-button (click)="ShowNotify('My')" [color]="isMySaved ? '' : 'light'">You</button>
+ <!-- <button ion-button (click)="ShowNotify('Following')" [color]="isMySaved ? 'light' : ''">Following</button>
+  <button ion-button (click)="ShowNotify('My')" [color]="isMySaved ? '' : 'light'">You</button> -->
+
+ <ion-list>
+
+        <div ion-item *ngFor="let item of Notifications" (click)="showDetails(item)">
+
+            <div *ngIf="item.actionType=='liked'">
+
+
+                Liked block
+<br>
+
+
+                {{item.User.name}}
+
+                {{item.User.avatar}}
+
+              like workout
+
+                {{item.WorkoutName}}
+
+                {{item.date}}
+
+            </div>
+
+            <div *ngIf="item.actionType=='followed'">
+
+
+                followed block
+                <br>
+
+
+                {{item.User.name}}
+
+                {{item.User.avatar}}
+
+                follow
+
+                {{item.UserName}}
+
+                {{item.UserAvatar}}
 
 
 
+                {{item.date}}
+
+            </div>
+
+
+            <div *ngIf="item.actionType=='newworkout'">
+
+                new workout block
+                <br>
+                {{item.User.name}}
+
+                {{item.User.avatar}}
+
+                add new workout
+
+                {{item.date}}
+
+            </div>
+
+
+         </div>
+
+
+    </ion-list>
+
+
+
+  <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
 </ion-content>

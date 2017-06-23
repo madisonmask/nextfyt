@@ -59,8 +59,13 @@
 
     <ion-list radio-group [(ngModel)]="Searched.Filters.TimeLength">
       <ion-item>
+        <ion-label>ANY</ion-label>
+        <ion-radio value="0" [checked]></ion-radio>
+      </ion-item>
+
+      <ion-item>
         <ion-label>0-15 minutes</ion-label>
-        <ion-radio value="15" [checked]></ion-radio>
+        <ion-radio value="15" ></ion-radio>
       </ion-item>
       <ion-item>
         <ion-label>15-30 minutes</ion-label>

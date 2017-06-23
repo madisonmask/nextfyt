@@ -2,25 +2,23 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the PasswordResetPage page.
+ * Generated class for the PrivacyPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
 @IonicPage()
 @Component({
-  selector: 'page-password-reset',
-  templateUrl: 'password-reset.html',
+  selector: 'page-privacy',
+  templateUrl: 'privacy.html',
 })
-export class PasswordResetPage {
+export class PrivacyPage {
 
-
-  IsAjaxLoaded: boolean = false;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PasswordResetPage');
+    console.log('ionViewDidLoad PrivacyPage');
   }
 
 }

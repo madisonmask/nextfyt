@@ -32,6 +32,8 @@ export class CreatedExercisesPage {
 
     FilterValues = {Muscles: [], Cardio: false, Difficulty: [], Equipment: []};
 
+    IsAjaxLoaded: boolean = false;
+
     constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,
                 @Inject(APP_CONFIG)  config: IAppConfig) {
 

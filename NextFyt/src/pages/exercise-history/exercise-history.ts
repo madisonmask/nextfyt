@@ -24,6 +24,7 @@ export class ExerciseHistoryPage {
 
     MyExercises = [];
     config: IAppConfig;
+    IsAjaxLoaded: boolean = false;
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,
                 @Inject(APP_CONFIG)  config: IAppConfig, private storage: Storage, public alertCtrl: AlertController) {

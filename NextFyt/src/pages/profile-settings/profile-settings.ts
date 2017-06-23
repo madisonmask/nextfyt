@@ -1,13 +1,17 @@
 import { Component, Inject } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import {Storage} from "@ionic/storage";
-
+import {DomSanitizer} from '@angular/platform-browser';
 import {Http, Headers, RequestOptions} from "@angular/http";
 import 'rxjs/add/operator/map';
 
 import {APP_CONFIG, IAppConfig} from '../../app/app.config';
 import { Camera } from '@ionic-native/camera';
 
+
+import {PrivacyPage} from '../privacy/privacy';
+
+import {TermsPage} from '../terms/terms';
 /**
  * Generated class for the ProfileSettingsPage page.
  *
@@ -29,7 +33,7 @@ export class ProfileSettingsPage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams,  private camera:Camera, public alertCtrl:AlertController, private storage: Storage,  public http: Http,
-              @Inject(APP_CONFIG)  config: IAppConfig,) {
+              @Inject(APP_CONFIG)  config: IAppConfig, public _DomSanitizationService:DomSanitizer) {
     this.user = this.navParams.get('user');
     console.log(this.user);
     this.config=config;
@@ -54,6 +58,9 @@ export class ProfileSettingsPage {
 
         this.http.post(this.config.apiEndpoint + 'profile' , this.user, options).map(res => res.json()).subscribe(data => {
           this.IsAjaxLoaded = false;
+
+
+
 
 
         }, err => {
@@ -135,6 +142,19 @@ export class ProfileSettingsPage {
     alert.present().then(() => {
    //   this.testRadioOpen = true;
     });
+
+
+  }
+
+  openPage(page){
+    if(page=='privacy'){
+
+      this.navCtrl.push(PrivacyPage);
+
+    }else if (page=='terms'){
+
+      this.navCtrl.push(TermsPage);
+    }
 
 
   }

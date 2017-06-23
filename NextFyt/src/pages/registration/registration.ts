@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
 import {AuthService} from '../../services/auth';
 import{UserService} from  '../../services/User';
 import {HomePage} from '../home/home';
@@ -21,8 +21,10 @@ import {Storage} from "@ionic/storage";
 export class RegistrationPage {
 
     User = {};
+    IsAjaxLoaded: boolean = false;
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, public Auth: AuthService, public user: UserService, private storage: Storage) {
+    constructor(public navCtrl: NavController, public navParams: NavParams, public Auth: AuthService, public user: UserService, private storage: Storage
+        , private toastCtrl: ToastController) {
     }
 
     ionViewDidLoad() {
@@ -30,57 +32,41 @@ export class RegistrationPage {
     }
 
     doRegister() {
-
-
-
-
-
-
-
-
-        /*         this.Auth.getProfile().then(user=>{
-         console.log(user);
-
-         })
-
-         */
-        /*         this.Auth.getProfile().then(data=> {
-         console.log(data);
-         if (data.id == 0) {
-         console.log('User not logined');
-         this.navCtrl.push(LoginPage);
-         } else {
-         this.User = data;
-         this.navCtrl.setRoot(HomePage);
-         //        this.navCtrl.pop();
-
-
-         }
-         })
-
-
-         }
-
-         */
-
-
+        this.IsAjaxLoaded=true;
         this.Auth.doRegister(this.User).subscribe(data => {
 
-            this.storage.set('token', data.token);
-console.log('do register finish');
-            this.Auth.getProfile().then(data=> {
-                console.log(data);
-                if (data.id == 0) {
-                    console.log('User not logined');
-                    this.navCtrl.push(LoginPage);
-                } else {
-                    this.User = data;
-                    this.navCtrl.setRoot(HomePage);
-                    //        this.navCtrl.pop();
+            if (data.error == false) {
+
+                this.storage.set('token', data.token);
+                console.log('do register finish');
+                this.Auth.getProfile().then(data=> {
+                    this.IsAjaxLoaded=false;
+                    console.log(data);
+                    if (data.id == 0) {
+                        console.log('User not logined');
+                        this.navCtrl.push(LoginPage);
+                    } else {
+                        this.User = data;
+                        this.navCtrl.setRoot(HomePage);
+                        //        this.navCtrl.pop();
 
 
-                }
-            })
+                    }
+                }, error=>{
+                    this.IsAjaxLoaded=false;
+
+                })
+
+            }else{
+                this.IsAjaxLoaded=false;
+                this.showToastr(data.msg)
+
+            }
+
+
+
+
+
 
 
             /*       if (data.error == false) {
@@ -95,11 +81,24 @@ console.log('do register finish');
              */
 
         }, error=> {
-            console.log('error');
+   //         console.log('error');
             console.log(error);
-
+            this.showToastr(error.json().error)
         })
 
+    }
+
+
+    showToastr(msg) {
+        let toast = this.toastCtrl.create({
+            message: msg,
+            duration: 3000,
+            position: 'middle'
+        });
+        toast.onDidDismiss(() => {
+            console.log('Dismissed toast');
+        });
+        toast.present();
     }
 
 

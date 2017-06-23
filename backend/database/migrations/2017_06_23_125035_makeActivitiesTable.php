@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNotificationsTable extends Migration
+class MakeActivitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateNotificationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('notifications', function (Blueprint $table) {
+        Schema::create('Activities', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedBigInteger('user_id')->comment('User whosearch this data');
-            $table->unsignedBigInteger('user_id_who_make_action')->comment('Id user who make action (like/follow etc.');
+            $table->unsignedBigInteger('user_id');
             $table->enum('actionType', ['liked', 'followed', 'newworkout']);
             $table->unsignedBigInteger('targetElementId')->comment('id of element  which got action (for example workout, or userprofile');
 
@@ -31,6 +30,6 @@ class CreateNotificationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('notifications');
+        Schema::dropIfExists('Activities');
     }
 }

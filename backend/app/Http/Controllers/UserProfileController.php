@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Activities;
+use App\Notifications;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Tymon\JWTAuth\Facades\JWTAuth;
@@ -13,6 +15,8 @@ use App\Followers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\File;
+
+
 
 class UserProfileController extends Controller
 {
@@ -99,7 +103,8 @@ class UserProfileController extends Controller
 
             Followers::create(['follower_user_id' => $user['id'], 'following_user_id' => $userId]);
         }
-
+Activities::create(['user_id' => $user['id'],  'actionType' => 'followed', 'targetElementId'=>$userId]);
+    //    Notifications::create(['user_id' => $userId, 'user_id_who_make_action' => $user['id'], 'actionType' => 'followed']);
 
         return response()->json(['error' => false]);
     }
@@ -131,15 +136,14 @@ class UserProfileController extends Controller
                 $curentUser->password = Hash::make($request->new_password);
 
 
-            }else{
+            } else {
                 return response()->json(['error' => true, 'msg' => 'You enter wrong password']);
             }
 
 
         }
 
-        if(isset($request->ImageData) and !empty($request->ImageData)){
-
+        if (isset($request->ImageData) and !empty($request->ImageData)) {
 
 
             $path = public_path() . '/pictures';

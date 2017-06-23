@@ -31,6 +31,6 @@
   </ion-item>
 
   <button ion-button round class="fullWidth" (click)="doRegister()" [disabled]="User.email==''">Register</button>
-
+  <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
 
 </ion-content>

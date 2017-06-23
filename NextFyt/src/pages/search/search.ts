@@ -9,6 +9,7 @@ import 'rxjs/add/operator/map';
 import {APP_CONFIG, IAppConfig} from '../../app/app.config';
 import{UserService} from '../../services/User';
 import {ProfilePublicPage} from '../profile-public/profile-public';
+import {WorkoutDetailsPage} from '../workout-details/workout-details';
 
 /**
  * Generated class for the Search page.
@@ -23,19 +24,19 @@ import {ProfilePublicPage} from '../profile-public/profile-public';
 })
 export class SearchPage {
     Searched = {
-        Type:'workouts',
+        Type: 'workouts',
         SearchString: '',
         Filters: {enabled: false, Muscles: [], Cardio: false, Difficulty: [], Equipment: [], TimeLength: ''}
     };
     shouldShowCancel = true;
     FilterValues = {Muscles: {}, Cardio: false, Difficulty: {}, Equipment: {}};
-    IsAjaxLoaded = false;
+    IsAjaxLoaded: boolean = false;
     config: IAppConfig;
-    WorkoutResults=[];
-    UserResults=[];
-    TagsResults=[];
-    TopResults=[];
-  //  SerachResultTabs = 'workouts';
+    WorkoutResults = [];
+    UserResults = [];
+    TagsResults = [];
+    TopResults = [];
+    //  SerachResultTabs = 'workouts';
 
 
     constructor(public navCtrl: NavController, public modalCtrl: ModalController, private storage: Storage,
@@ -45,19 +46,20 @@ export class SearchPage {
     }
 
 
-
     onInput(event) {
         console.log('on input');
         //   console.log(event);
         //   console.log(this.Searched);
 
-      this.doSearch();
+        this.doSearch();
 
 
     }
 
-
-    doSearch(){
+    /**
+     * @param {{results:Array}} data
+     */
+    doSearch() {
         this.IsAjaxLoaded = true;
         this.storage.ready().then(() => {
             this.storage.get('token').then(token => {
@@ -71,17 +73,17 @@ export class SearchPage {
                     console.log(data);
                     this.IsAjaxLoaded = false;
 
-                    if(this.Searched.Type=='workouts'){
+                    if (this.Searched.Type == 'workouts') {
                         this.WorkoutResults = data.results;
 
-                    }else if(this.Searched.Type=='people'){
+                    } else if (this.Searched.Type == 'people') {
 
 
-                        this.UserResults= data.results;
-                    }else if(this.Searched.Type=='tags'){
+                        this.UserResults = data.results;
+                    } else if (this.Searched.Type == 'tags') {
 
 
-                        this.TagsResults= data.results;
+                        this.TagsResults = data.results;
                     }
 
                 });
@@ -93,15 +95,19 @@ export class SearchPage {
 
     }
 
-    itemSelected(){
+    itemSelected() {
 
     }
 
-    userSelected(user){
-
-        this.navCtrl.push(ProfilePublicPage,{user:user});
+    showDetails(selectedWorkout) {
+        this.navCtrl.push(WorkoutDetailsPage, {workout: selectedWorkout})
     }
 
+
+    userSelected(user) {
+
+        this.navCtrl.push(ProfilePublicPage, {user: user});
+    }
 
 
     onCancel(event) {
@@ -118,8 +124,9 @@ export class SearchPage {
         // Getting data from the modal:
         contactModal.onDidDismiss(data => {
             console.log('MODAL DATA', data);
-            if(data!=undefined){
+            if (data != undefined) {
                 this.Searched.Filters = data.Filters;
+                this.doSearch();
             }
 
 
@@ -131,13 +138,13 @@ export class SearchPage {
     }
 
 
-    toggleLike(workout){
+    toggleLike(workout) {
 
         console.log(workout.liked);
-        if(workout.liked==null){
-            workout.liked=1;
-        }else{
-            workout.liked=null;
+        if (workout.liked == null) {
+            workout.liked = 1;
+        } else {
+            workout.liked = null;
         }
 
 
@@ -155,7 +162,6 @@ export class SearchPage {
                     this.IsAjaxLoaded = false;
 
 
-
                 });
 
 
@@ -164,7 +170,6 @@ export class SearchPage {
 
 
     }
-
 
 
 }

@@ -16,8 +16,9 @@
 <ion-content padding>
 
   <ion-avatar item-start (click)="showRadio()">
+
     <img src="{{user.avatar}}" *ngIf="user.avatar!='' && AvatarImage=='' ">
-    <img src="/assets/images/avatar.jpg" *ngIf="user.avatar==''  && AvatarImage=='' ">
+    <img src="assets/images/avatar.jpg" *ngIf="user.avatar==''  && AvatarImage=='' ">
     <img [src]="_DomSanitizationService.bypassSecurityTrustUrl(AvatarImage)" *ngIf="AvatarImage"/>
 
   </ion-avatar>
@@ -43,8 +44,16 @@
     <ion-input type="password" [(ngModel)]="user.new_password"></ion-input>
   </ion-item>
 
-
+  <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
 
   <button ion-button round class="fullWidth" (click)="save()">Save</button>
+
+  <br>
+
+  <p (click)="openPage('privacy')"> privacy policy</p>
+  <p (click)="openPage('terms')"> /terms and conditions</p>
+
+
+
 
 </ion-content>

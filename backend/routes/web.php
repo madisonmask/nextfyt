@@ -39,10 +39,20 @@ Route::group(['prefix' => 'api'], function () {
     Route::post('/workout/likes', 'WorkoutController@toogleLikes');
     Route::post('/workout/keepers', 'WorkoutController@toogleKeepers');
     Route::get('/workout/{WorkoutId}', 'WorkoutController@getWorkout');
+
     Route::get('/workouts/my', 'WorkoutController@getMyWorkouts');
+    Route::get('/workouts/user/{userId}', 'WorkoutController@getUserWorkouts');
+
     Route::get('/workouts/myFavorites', 'WorkoutController@getMyFavoritesWorkouts');
+    Route::get('/workouts/Favorites/{userId}', 'WorkoutController@getUserFavoritesWorkouts');
+
     Route::get('/workouts/myKeepers', 'WorkoutController@getMyKeepersWorkouts');
     Route::get('/workouts/followers', 'WorkoutController@getFollowersWorkouts');//use for home tab
+
+    Route::get('/news', 'NotificationController@getMyNews');
+
+
+
     Route::post('/search', 'SearchController@makeSearch');
 });
 

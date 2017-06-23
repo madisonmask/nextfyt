@@ -11,7 +11,7 @@ import {JwtHelper} from "angular2-jwt";
 import {Storage} from "@ionic/storage";
 //import {HttpClient} from './HttpClient';
 
-import {Observable} from 'rxjs/observable';
+//import {Observable} from 'rxjs/observable';
 
 
 @Injectable()

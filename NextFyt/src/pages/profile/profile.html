@@ -28,7 +28,7 @@
                 <ion-avatar item-start class="avatar">
 
                     <img src="{{user.avatar}}" *ngIf="user.avatar!=''">
-                    <img src="/assets/images/avatar.jpg" *ngIf="user.avatar==''">
+                    <img src="assets/images/avatar.jpg" *ngIf="user.avatar==''">
 
 
                 </ion-avatar>
@@ -56,9 +56,9 @@
 
 
     <div padding>
-        <ion-segment [(ngModel)]="profileWorkoutsType">
+        <ion-segment [(ngModel)]="profileWorkoutsType" (ngModelChange)="updateList()">
             <ion-segment-button value="workouts">
-                My workouts
+                My workout s
             </ion-segment-button>
             <ion-segment-button value="favorites">
                 My favorites
@@ -66,5 +66,34 @@
         </ion-segment>
     </div>
 
+    <ion-list>
 
+        <div ion-item *ngFor="let item of ActiveList" (click)="showDetails(item)">
+
+            <div class="workout"  >
+                <div class="description">
+                    <p>Created By: <b>{{item.author}}</b></p>
+
+
+
+
+                    <p>{{item.name}}</p>
+                    <p>Skill: {{item.skill}}</p>
+                    <p>Muscles worked: <span *ngFor="let muscle  of item.muscles"> {{muscle.name}}  </span>  </p>
+                    <p>Cardio: {{item.cardio}}</p>
+                </div>
+                <div class="image">
+                    <img src="http://via.placeholder.com/350x150" *ngIf="item.image==''" >
+                    <img src="{{item.image}}" *ngIf="item.image!=''">
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+
+    </ion-list>
+
+
+
+    <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
 </ion-content>

@@ -80,7 +80,7 @@
         <ion-list>
             <ion-item *ngFor="let item of TagsResults" (click)="itemSelected(item)">
 
-                <h2>#{{item.name}}</h2>
+                <h2><a href="#"> #{{item.name}}</a></h2>
                 <h3>Used: {{item.TotalUsed}}</h3>
             </ion-item>
         </ion-list>
@@ -92,7 +92,7 @@
         <p> workouts results </p>
 
 
-        <div ion-item *ngFor="let item of WorkoutResults" (click)="itemSelected(item)">
+        <div ion-item *ngFor="let item of WorkoutResults" (click)="showDetails(item)">
             <div class="workout">
                 <div class="description">
 

@@ -14,11 +14,12 @@ export class SearchFilters {
 
     Searched = {
         SearchString: '',
-        Filters: {enabled: false, Muscles: [], Cardio: false, Difficulty: [], Equipment: [], TimeLength: ''}
+        Filters: {enabled: false, Muscles: [], Cardio: false, Difficulty: [], Equipment: [],  TimeLength:0}
     };
     shouldShowCancel = true;
     FilterValues = {Muscles: {}, Cardio: false, Difficulty: {}, Equipment: {}};
 
+    IsAjaxLoaded: boolean = false;
 
     constructor(params:NavParams, public viewCtrl:ViewController, public http: Http,
                 @Inject(APP_CONFIG)  config: IAppConfig) {
