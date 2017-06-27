@@ -1,7 +1,7 @@
 import {Component, Inject} from '@angular/core';
 import {IonicPage, NavController, NavParams, AlertController} from 'ionic-angular';
 import {Camera} from '@ionic-native/camera';
-
+import {DomSanitizer} from '@angular/platform-browser';
 
 import {Http, Headers, RequestOptions} from "@angular/http";
 import 'rxjs/add/operator/map';
@@ -32,13 +32,13 @@ export class ShareWorkoutPage {
     config: IAppConfig;
     testRadioResult = {};
     IsAjaxLoaded: boolean = false;
-    hashtag:string='';
-    workoutToSend = {Name: '', Length: 30, Image: '', ImageData: '', Exercises: {}, Tags:[]}; //object what we are sended without imagedata
+    hashtag: string = '';
+    workoutToSend = {Name: '', Length: 30, Image: '', ImageData: '', Exercises: {}, Tags: []}; //object what we are sended without imagedata
 //@todo rewrite this
-    Workout = {Name: '', Length: 30, Image: '', ImageData: '', Exercises: {},Tags:[]};
+    Workout = {Name: '', Length: 30, Image: '', ImageData: '', Exercises: {}, Tags: []};
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, private camera: Camera, public http: Http,
-                @Inject(APP_CONFIG)  config: IAppConfig, private storage: Storage, private  user: UserService) {
+                @Inject(APP_CONFIG)  config: IAppConfig, private storage: Storage, private  user: UserService,  public _DomSanitizationService:DomSanitizer) {
         this.config = config;
 
     }
@@ -158,10 +158,10 @@ export class ShareWorkoutPage {
         }
     }
 
-    addTag(){
+    addTag() {
 
         this.Workout.Tags.push(this.hashtag);
-        this.hashtag='';
+        this.hashtag = '';
     }
 
 

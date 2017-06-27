@@ -10,6 +10,7 @@ import {Http, Headers, RequestOptions} from "@angular/http";
 import 'rxjs/add/operator/map';
 
 import {APP_CONFIG, IAppConfig} from '../../app/app.config';
+import {WorkoutDetailsPage} from '../workout-details/workout-details';
 /**
  * Generated class for the Profile page.
  *
@@ -155,4 +156,11 @@ export class ProfilePage {
         });
         toast.present();
     }
+
+    showDetails(selectedWorkout) {
+        this.navCtrl.push(WorkoutDetailsPage, {workout: selectedWorkout})
+    }
+
+
+
 }

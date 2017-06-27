@@ -6,6 +6,7 @@ import {AuthService} from '../../services/auth';
 import {UserService} from '../../services/User';
 import {TabsService} from '../../services/tabs';
 import{HomePage} from'../home/home';
+import {TabsPage} from '../tabs/tabs';
 
 
 import {JwtHelper} from "angular2-jwt";
@@ -76,7 +77,7 @@ export class LoginPage {
                         this.navCtrl.push(LoginPage);
                     } else {
                         this.User = data;
-                        this.navCtrl.setRoot(HomePage);
+                        this.navCtrl.setRoot(TabsPage);
                 //        this.navCtrl.pop();
 
 

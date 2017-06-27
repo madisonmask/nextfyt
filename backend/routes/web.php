@@ -12,8 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome',['new'=>true]);
 });
+
+Route::post('/subscribe', 'LandingController@subscribe');
+
+
 
 
 Route::group(['prefix' => 'api'], function () {
@@ -73,7 +77,9 @@ Route::group(['prefix' => 'adminpanel', 'middleware' => ['CheckIfAdmin']], funct
     Route::get('/dashboard', 'AdminController@dashboard' );
     Route::get('/usermanager', 'AdminController@usermanager' );
     Route::post('/usermanager/delete', 'AdminController@deleteUser' );
+
     Route::get('/defaults', 'AdminController@defaults' );
+
 
     Route::get('/catalog/muscles', 'AdminController@CatalogMuscles' );
     Route::post('/catalog/muscles/add', 'AdminController@AddMuscles' );

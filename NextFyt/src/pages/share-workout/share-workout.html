@@ -18,8 +18,13 @@
 
   <ion-row>
     <ion-col col-12>
-      <img src="assets/images/blank.jpg" (click)="showRadio()"  *ngIf="!Workout.Image">
+      <img src="assets/images/blank.jpg" (click)="showRadio()"  *ngIf="Workout.Image=='' && Workout.ImageData==''">
       <img [src]="_DomSanitizationService.bypassSecurityTrustUrl(Workout.Image)" *ngIf="Workout.Image"/>
+
+
+
+
+
     </ion-col>
 
   </ion-row>

@@ -85,7 +85,11 @@ class AdminController extends Controller
 
     public function defaults(){
 
-        return view('admin.defaults', ['tab'=>'defaults']);
+        $allMuscles = Muscle::all();
+        $allEquipment = Equipment::all();
+        $allDifficulty = Difficulty::all();
+
+        return view('admin.defaults', ['tab'=>'defaults', 'allMuscles'=>$allMuscles, 'allEquipment'=>$allEquipment, 'allDifficulty'=>$allDifficulty ]);
     }
 
 

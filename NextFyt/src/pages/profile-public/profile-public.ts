@@ -7,6 +7,9 @@ import 'rxjs/add/operator/map';
 
 import {APP_CONFIG, IAppConfig} from '../../app/app.config';
 
+import {WorkoutDetailsPage} from '../workout-details/workout-details';
+
+
 /**
  * Generated class for the ProfilePublicPage page.
  *
@@ -63,7 +66,7 @@ export class ProfilePublicPage {
 
 
                 this.http.get(this.config.apiEndpoint + 'profile/' + this.user.id, options).map(res => res.json()).subscribe(data => {
-                    this.IsAjaxLoaded = false;
+    //                this.IsAjaxLoaded = false;
 
                     this.user = data.user;
 
@@ -186,4 +189,11 @@ export class ProfilePublicPage {
         }
 
     }
+
+
+    showDetails(selectedWorkout) {
+        this.navCtrl.push(WorkoutDetailsPage, {workout: selectedWorkout})
+    }
+
+
 }
