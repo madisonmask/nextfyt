@@ -61,6 +61,8 @@ class AuthController extends Controller
             'Name' => 'required|string|max:255',
             'Email' => 'required|string|email|max:255|unique:users',
             'Password' => 'required|string|min:6|confirmed',
+            'Role' => 'required',
+            'Accept' => 'accepted',
         ]);
 
         if ($validator->fails()) {
@@ -77,6 +79,7 @@ class AuthController extends Controller
             'name' => $request->Name,
             'email' => $request->Email,
             'password' => bcrypt($request->Password),
+            'role'=>$request->Role
         ]);
 
         //@todo create check for email

@@ -20,7 +20,7 @@ import {Storage} from "@ionic/storage";
 })
 export class RegistrationPage {
 
-    User = {};
+    User = {Name:'', Email:'',Password:'',Role:'user', Accept:false};
     IsAjaxLoaded: boolean = false;
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public Auth: AuthService, public user: UserService, private storage: Storage
@@ -32,6 +32,13 @@ export class RegistrationPage {
     }
 
     doRegister() {
+        if(this.User.Accept==false){
+            this.showToastr('You must accept agrements')
+            return false;
+        }
+
+
+
         this.IsAjaxLoaded=true;
         this.Auth.doRegister(this.User).subscribe(data => {
 
@@ -101,5 +108,8 @@ export class RegistrationPage {
         toast.present();
     }
 
+    goBack(){
+        this.navCtrl.pop();
+    }
 
 }

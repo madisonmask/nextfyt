@@ -121,7 +121,7 @@ export class LoginPage {
     }
 
     doPasswordRecovery() {
-        this.navCtrl.push(RegistrationPage);
+        this.navCtrl.push(PasswordResetPage);
     }
 
 
@@ -144,5 +144,9 @@ export class LoginPage {
         toast.present();
     }
 
+
+    goBack(){
+        this.navCtrl.pop();
+    }
 
 }

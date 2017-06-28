@@ -35,7 +35,7 @@ import {TermsPage} from  '../pages/terms/terms';
 import {AuthPage} from  '../pages/auth/auth';
 import {DefaultExercisesParamsPage} from '../pages/default-exercises-params/default-exercises-params';
 
-
+import {PasswordResetPage} from '../pages/password-reset/password-reset';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -82,7 +82,8 @@ import { APP_CONFIG, AppConfig } from './app.config';
     PrivacyPage,
     TermsPage,
     AuthPage,
-    DefaultExercisesParamsPage
+    DefaultExercisesParamsPage,
+    PasswordResetPage
 
   ],
   imports: [
@@ -120,7 +121,8 @@ import { APP_CONFIG, AppConfig } from './app.config';
     PrivacyPage,
     TermsPage,
     AuthPage,
-    DefaultExercisesParamsPage
+    DefaultExercisesParamsPage,
+    PasswordResetPage
   ],
   providers: [
     StatusBar,

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import {RegistrationPage} from '../registration/registration';
 /**
  * Generated class for the PasswordResetPage page.
  *
@@ -15,6 +15,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class PasswordResetPage {
 
 
+  User={email:''};
   IsAjaxLoaded: boolean = false;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -22,5 +23,17 @@ export class PasswordResetPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PasswordResetPage');
   }
+
+  goBack(){
+    this.navCtrl.pop();
+  }
+
+  doRegister() {
+    this.navCtrl.push(RegistrationPage);
+  }
+
+
+
+
 
 }

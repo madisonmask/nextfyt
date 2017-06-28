@@ -16,7 +16,7 @@ class LandingController extends Controller
 
       Mail::send('emails.landing', ['email' => $email], function ($m) use ($email) {
           $m->from('madison@nextfyt.com', 'Site admin');
-
+          $m->cc('madison@nextfyt.com');
           $m->to($email, $email)->subject('Test email!');
       });
 
