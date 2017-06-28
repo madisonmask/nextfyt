@@ -6,57 +6,79 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Create</ion-title>
-  </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 
-<ion-icon name="add" (click)="CreateExercise()" class="createPlus" ></ion-icon>
-<!-- <p> Swiped: {{swiped}}</p> -->
+    <div class="creat-tab wrap-page">
+        <div class="top-window">
+            <div class="h4" >Create Tab</div>
+        </div>
+        <div class="block-create-tab">
+            <a  class="add"   (click)="CreateExercise()" >
+                <img src="assets/images/add-blue.svg" alt="">
+                <span>Add New Tab</span>
+            </a>
+            <ul class="list">
+                <li *ngFor="let exercise of MyExercises" >
+                    <div class="left">
+                        <div class="image" style="background-image:url({{exercise.stage1_img}})"></div>
+                    </div>
+                    <div class="right">
+                        <div class="h3">{{exercise.name}}</div>
+                        <p>{{exercise.repeat_count}} {{exercise.repeat_type}}      of  {{exercise.length_count}}   {{exercise.length_type}} </p>
+                        <p>Equipment: <span> <span *ngFor="let eq of exercise.equipment"> {{eq.name}} ,  </span></span></p>
+                    </div>
+                </li>
 
-<!--https://stackoverflow.com/questions/36970425/determine-whether-a-swipe-event-is-for-a-left-swipe-or-a-right-swipe  -->
+            </ul>
+            <a  class="share"  (click)="ShareWorkout()" >Share Full Workout</a>
+        </div>
 
-
-
-
-
-
-
-
-  <ion-list>
-
-    <ion-item-sliding class="exercises" *ngFor="let exercise of MyExercises" >
-    <ion-item   >
-    <div class="description">
-      <p>{{exercise.name}}</p>
-      <p>{{exercise.repeat_count}} {{exercise.repeat_type}}      of  {{exercise.length_count}}   {{exercise.length_type}}  </p>
-      <p>Cardio: {{exercise.cardio}}</p>
-      <p>Equipment:      <span *ngFor="let eq of exercise.equipment"> {{eq.name}} ,  </span></p>
     </div>
-    <div class="image">
-      <img src="{{exercise.stage1_img}}">
-    </div>
-    </ion-item>
 
 
-      <ion-item-options side="right">
-        <button ion-button (click)="delete(exercise)">Delete</button>
-      </ion-item-options>
+    <!-- <p> Swiped: {{swiped}}</p> -->
+    <!--https://stackoverflow.com/questions/36970425/determine-whether-a-swipe-event-is-for-a-left-swipe-or-a-right-swipe  -->
+
+    <!-- <ion-icon name="add" (click)="CreateExercise()" class="createPlus" ></ion-icon>
 
 
-    </ion-item-sliding>
 
-  </ion-list>
+     <ion-list>
+
+       <ion-item-sliding class="exercises" *ngFor="let exercise of MyExercises" >
+       <ion-item   >
+       <div class="description">
+         <p>{{exercise.name}}</p>
+         <p>{{exercise.repeat_count}} {{exercise.repeat_type}}      of  {{exercise.length_count}}   {{exercise.length_type}}  </p>
+         <p>Cardio: {{exercise.cardio}}</p>
+         <p>Equipment:      <span *ngFor="let eq of exercise.equipment"> {{eq.name}} ,  </span></p>
+       </div>
+       <div class="image">
+         <img src="{{exercise.stage1_img}}">
+       </div>
+       </ion-item>
 
 
-  <div class="clear"></div>
+         <ion-item-options side="right">
+           <button ion-button (click)="delete(exercise)">Delete</button>
+         </ion-item-options>
 
-  <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
 
-  <button ion-button round class="fullWidth" (click)="ShareWorkout()" [disabled]="MyExercises.length==0">Share full workout</button>
+       </ion-item-sliding>
+
+     </ion-list>
+
+
+     <div class="clear"></div>
+
+
+
+     <button ion-button round class="fullWidth" (click)="ShareWorkout()" [disabled]="MyExercises.length==0">Share full workout</button>
+   -->
+    <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
 
 </ion-content>

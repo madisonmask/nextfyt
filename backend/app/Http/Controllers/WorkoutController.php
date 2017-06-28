@@ -57,7 +57,7 @@ class WorkoutController extends Controller
             $path = public_path() . $webPath;
             //     Image::make($image->getRealPath())->save($path);
             file_put_contents($path, $image);
-            $photo = env('APP_URL') . $webPath;
+            $photo = $webPath;
         } else {
             $photo = '';
         }
@@ -179,7 +179,7 @@ class WorkoutController extends Controller
             $exportWorkout[$i]['skill'] = $difficultys[$work->difficulty];
             $exportWorkout[$i]['workoutId'] = $work->id;
             $exportWorkout[$i]['Inkeepers'] = $work->Inkeepers;
-
+            $exportWorkout[$i]['countLikes'] = $work->countLikes;
 
             $sql = '  SELECT DISTINCT(muscles.name)
                     FROM exercise_to_workout
@@ -193,7 +193,12 @@ class WorkoutController extends Controller
 ///
 
 
-            $exportWorkout[$i]['cardio'] = $work->cardio;
+            if($work->cardio==0){
+                $exportWorkout[$i]['cardio'] = 'No';
+            }else{
+                $exportWorkout[$i]['cardio'] = 'Yes';
+            }
+
             $exportWorkout[$i]['image'] = $work->photo;
 
 
@@ -278,8 +283,10 @@ $user=User::find($userId);
 
         if (isset($workout->user->name)) {
             $exportWorkout['author'] = $workout->user->name;
+            $exportWorkout['authorAvatar'] = $workout->user->avatar;
         } else {
             $exportWorkout['author'] = '???';
+            $exportWorkout['authorAvatar'] = '';
         }
 
         $exportWorkout['workoutId'] = $workout->id;
@@ -362,6 +369,7 @@ $user=User::find($userId);
             $exportWorkout[$i]['skill'] = $difficultys[$work->difficulty];
             $exportWorkout[$i]['workoutId'] = $work->id;
             $exportWorkout[$i]['Inkeepers'] = $work->Inkeepers;
+            $exportWorkout[$i]['countLikes'] = $work->countLikes;
 
             $sql = '  SELECT DISTINCT(muscles.name)
                     FROM exercise_to_workout
@@ -372,7 +380,11 @@ $user=User::find($userId);
             ////
             $exportWorkout[$i]['muscles'] = $muscles;
 ///
-            $exportWorkout[$i]['cardio'] = $work->cardio;
+            if($work->cardio==0){
+                $exportWorkout[$i]['cardio'] = 'No';
+            }else{
+                $exportWorkout[$i]['cardio'] = 'Yes';
+            }
             $exportWorkout[$i]['image'] = $work->photo;
             /*
                         $exportWorkout[$i]['equipment'] =     $work->equipments()->get(['equipment.name']);;
@@ -508,6 +520,7 @@ $user=User::find($userId);
             $exportWorkout[$i]['workoutId'] = $work->id;
             $exportWorkout[$i]['author'] = $user['username'];
             $exportWorkout[$i]['name'] = $work->name;
+            $exportWorkout[$i]['countLikes'] = $work->countLikes;
             $exportWorkout[$i]['skill'] = $difficultys[$work->difficulty];
 
             $sql = '  SELECT DISTINCT(muscles.name)
@@ -522,7 +535,12 @@ $user=User::find($userId);
 ///
 
 
-            $exportWorkout[$i]['cardio'] = $work->cardio;
+            if($work->cardio==0){
+                $exportWorkout[$i]['cardio'] = 'No';
+            }else{
+                $exportWorkout[$i]['cardio'] = 'Yes';
+            }
+
             $exportWorkout[$i]['image'] = $work->photo;
 
 

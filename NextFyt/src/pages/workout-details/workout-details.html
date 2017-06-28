@@ -6,17 +6,70 @@
 -->
 <ion-header>
 
-    <ion-navbar>
-        <ion-title>WorkoutDetails</ion-title>
-    </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content >
 
+
+
+
+    <div class="wrap-page padding-bottom-none">
+        <div class="top-window card-top-w">
+            <a href="" class="prev">
+                <img src="assets/images/home/arrow.svg" alt="">
+            </a>
+            <div class="h4">Muscules Worked</div>
+        </div>
+        <div class="card-wrap" (click)="runWorkout()">
+            <div class="card-slider">
+                <div class="slide" style="background-image:url({{Workout.image}})">
+                    <div class="icon"><img src="assets/images/clocks.png" alt=""></div>
+                </div>
+            </div>
+            <div class="card-info">
+                <div class="top">
+                    <div class="title">{{Workout.name}}</div>
+                    <div class="prof">
+                        <div class="image" style="background-image:url({{Workout.authorAvatar}})"></div>
+                        <p>By: <span>{{Workout.author}}</span></p>
+                    </div>
+                </div>
+                <ul class="bottom">
+                    <li>
+                        <img src="assets/images/bar/like-red.svg" alt="">
+                        <div class="number">{{Workout.countLikes}}</div>
+                        <span>recomended</span>
+                    </li>
+
+                </ul>
+            </div>
+            <ul class="card-worked-list">
+                <li>
+                    <div class="left">Muscules Worked:</div>
+                    <div class="right"><span *ngFor="let muscle  of Workout.muscles"> {{muscle.name}}  </span> </div>
+                </li>
+                <li>
+                    <div class="left">Workout Duration</div>
+                    <div class="right">{{Workout.Time}} min</div>
+                </li>
+                <li>
+                    <div class="left">Cardio</div>
+                    <div class="right">{{Workout.cardio}}</div>
+                </li>
+            </ul>
+
+
+
+       </div>
+    </div>
+
+
+
+
+<!--
     <ion-grid>
-
         <ion-row>
             <ion-col col-6>
                 Created by: {{Workout.author}}
@@ -51,7 +104,7 @@
 
     <p>  <span *ngFor="let tag  of Workout.Tags"> {{tag.name}}  </span>    </p>
 
-
+-->
     <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
 
 </ion-content>

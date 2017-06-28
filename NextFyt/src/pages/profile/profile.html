@@ -6,14 +6,99 @@
 -->
 <ion-header>
 
-    <ion-navbar>
-        <ion-title>Profile</ion-title>
-    </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content >
+
+    <div class="wrap-page ">
+        <div class="top-window">
+            <div class="right-icon"><a (click)="EditSettings()"><img src="assets/images/inner/set.svg" alt=""></a></div>
+            <div class="h4">My Profile</div>
+        </div>
+        <div class="profile-page">
+            <div class="profile-info">
+                <div class="profile-top">
+                    <div class="image" style="background-image:url({{user.avatar}})" *ngIf="user.avatar!=''" ></div>
+                    <div class="image" style="background-image:url('assets/images/avatar.jpg')" *ngIf="user.avatar==''" ></div>
+
+
+                    <a href="" class="name">{{user.name}}</a>
+                <!--    <a href="" class="tag">@strong_jesus</a> -->
+                </div>
+                <ul class="char-profile">
+                    <li>
+                        <div class="number">{{user.posts}}</div>
+                        <div class="text">Posts</div>
+                    </li>
+                    <li>
+                        <div class="number">{{user.followers}}</div>
+                        <div class="text">Followers</div>
+                    </li>
+                    <li>
+                        <div class="number">{{user.following}}</div>
+                        <div class="text">Following</div>
+                    </li>
+                </ul>
+                <div class="wr-radio-items">
+                    <div class="radio-items">
+                        <label class="radio">
+                            <input type="radio" name="profile" checked  [(ngModel)]="profileWorkoutsType" (ngModelChange)="updateList()" value="workouts">
+                            <span class="text">My Workouts</span>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="profile"  [(ngModel)]="profileWorkoutsType" (ngModelChange)="updateList()" value="favorites">
+                            <span class="text">My Favorites</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="items-search">
+                <div class="item" *ngFor="let item of ActiveList" (click)="showDetails(item)">
+                    <div class="left">
+                        <div class="image" style="background-image:url({{item.image}})"></div>
+                        <ul>
+                            <li>
+                                <a href="">
+ 								<span class="icon">
+									<img src="assets/images/bar/like-red.svg" alt="">
+ 								</span>
+                                    <span class="number">{{item.countLikes}}</span>
+                                </a>
+                            </li>
+                     <!--       <li>
+                                <a href="">
+ 								<span class="icon">
+									<img src="assets/images/comments.svg" alt="">
+ 								</span>
+                                    <span class="number">14</span>
+                                </a>
+                            </li> -->
+                        </ul>
+                    </div>
+                    <div class="right">
+                        <a  class="h4">{{item.name}}</a>
+                        <ul>
+                            <li>By: <span>{{item.author}}</span></li>
+                            <li>Skill: <span>{{item.skill}}</span></li>
+                            <li>Muscules Worked: <span> <span *ngFor="let muscle  of item.muscles"> {{muscle.name}}  </span></span></li>
+                            <li>Cardio: <span>{{item.cardio}}</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <!--
+
 
     <ion-item>
         <h2> {{user.name}}</h2>
@@ -93,7 +178,7 @@
 
     </ion-list>
 
-
+-->
 
     <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
 </ion-content>

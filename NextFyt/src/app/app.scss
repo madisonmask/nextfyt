@@ -597,7 +597,7 @@ body{
   color: #9cafc3;
 }
 .notification .tab-item{
-  display: none;
+ /* display: none;*/
 }
 .notification .tab-item.active{
   display: block;
@@ -1298,16 +1298,16 @@ body{
   display: block;
   width: auto;
 }
-.tab-button {
+.tab-buttonDesign {
   padding: 15px;
 }
-.tab-button.absolute {
+.tab-buttonDesign.absolute {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
 }
-.tab-button .next {
+.tab-buttonDesign .next {
   height: 45px;
   border-radius: 3px;
   background-color: #01a9f6;
@@ -2018,4 +2018,111 @@ body{
 }
 .card-top-w.scroll{
   background: rgba(41, 51, 81, 0.6);
+}
+
+
+
+.ion-ios-HomeTab,
+.ion-md-HomeTab {
+  content: url(../../assets/images/bar/home.svg);
+  width: 24px;
+  height: 32px;
+  padding: 6px 4px 2px;
+  opacity: 0.9;
+}
+
+.ion-ios-HomeTab[ng-reflect-is-active=true] ,
+.ion-md-HomeTab[ng-reflect-is-active=true]  {
+  content: url(../../assets/images/bar/home-active.svg);
+  width: 24px;
+  height: 32px;
+  padding: 6px 4px 2px;
+  opacity: 0.9;
+}
+
+
+.ion-ios-SearchTab,
+.ion-md-SearchTab {
+  content: url(../../assets/images/bar/search.svg);
+  width: 24px;
+  height: 32px;
+  padding: 6px 4px 2px;
+  opacity: 0.9;
+}
+
+.ion-ios-SearchTab[ng-reflect-is-active=true],
+ .ion-md-SearchTab[ng-reflect-is-active=true] {
+   content: url(../../assets/images/bar/search-n.svg);
+   width: 24px;
+   height: 32px;
+   padding: 6px 4px 2px;
+   opacity: 0.9;
+ }
+
+
+.ion-ios-CreateTab,
+.ion-md-CreateTab {
+  content: url(../../assets/images/bar/close.svg);
+  width: 24px;
+  height: 32px;
+  padding: 6px 4px 2px;
+  opacity: 0.9;
+}
+
+.ion-ios-CreateTab[ng-reflect-is-active=true],
+.ion-md-CreateTab[ng-reflect-is-active=true] {
+  content: url(../../assets/images/bar/add-blue.svg);
+  width: 24px;
+  height: 32px;
+  padding: 6px 4px 2px;
+  opacity: 0.9;
+}
+
+.ion-ios-LikeTab,
+.ion-md-LikeTab {
+  content: url(../../assets/images/bar/like.svg);
+  width: 24px;
+  height: 32px;
+  padding: 6px 4px 2px;
+  opacity: 0.9;
+}
+
+.ion-ios-LikeTab[ng-reflect-is-active=true],
+.ion-md-LikeTab[ng-reflect-is-active=true] {
+  content: url(../../assets/images/bar/like-red.svg);
+  width: 24px;
+  height: 32px;
+  padding: 6px 4px 2px;
+  opacity: 0.9;
+}
+
+
+
+.ion-ios-ProfileTab,
+.ion-md-ProfileTab {
+  content: url(../../assets/images/bar/name.svg);
+  width: 24px;
+  height: 32px;
+  padding: 6px 4px 2px;
+  opacity: 0.9;
+}
+
+.ion-ios-ProfileTab[ng-reflect-is-active=true],
+.ion-md-ProfileTab[ng-reflect-is-active=true] {
+  content: url(../../assets/images/bar/profile-active.svg);
+  width: 24px;
+  height: 32px;
+  padding: 6px 4px 2px;
+  opacity: 0.9;
+}
+
+
+
+
+
+.tabbar{
+  box-shadow: 0 -2px 14px rgba(8, 20, 42, 0.3), inset 0 1px 0 rgba(0, 0, 0, 0.1) !important;
+  -webkit-box-shadow: 0 -2px 14px rgba(8, 20, 42, 0.3), inset 0 1px 0 rgba(0, 0, 0, 0.1) !important;
+  background-image: linear-gradient(180deg, rgba(41, 51, 81, 0.9) 0%, #32375b 100%) !important;
+  background-image: -webkit-linear-gradient(180deg, rgba(41, 51, 81, 0.9) 0%, #32375b 100%) !important;
 }

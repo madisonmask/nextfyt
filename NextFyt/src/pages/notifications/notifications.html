@@ -6,17 +6,86 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Notifications</ion-title>
-  </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
- <!-- <button ion-button (click)="ShowNotify('Following')" [color]="isMySaved ? 'light' : ''">Following</button>
-  <button ion-button (click)="ShowNotify('My')" [color]="isMySaved ? '' : 'light'">You</button> -->
+<ion-content>
+    <!-- <button ion-button (click)="ShowNotify('Following')" [color]="isMySaved ? 'light' : ''">Following</button>
+     <button ion-button (click)="ShowNotify('My')" [color]="isMySaved ? '' : 'light'">You</button> -->
 
+    <div class="notification">
+        <ul class="tab">
+            <li>
+                <a class="active">Following</a>
+            </li>
+            <li>
+                <a>You</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-item" id="Following">
+                <ul class="tab-list">
+                    <li *ngFor="let item of Notifications" (click)="showDetails(item)">
+                        <div *ngIf="item.actionType=='liked'">
+                            <div class="avatar">
+                                <div class="photo" style="background-image:url({{item.User.avatar}})"></div>
+                            </div>
+                            <div class="info">
+                                <div class="top-info">
+                                    <div class="name"><span>{{item.User.name}}</span></div>
+                                    <div class="commetn">
+                                        <img src="assets/images/bar/like-red.svg" alt="">
+                                        <span>Like your workout</span>
+                                    </div>
+                                    <div class="date">{{item.date}}</div>
+                                </div>
+                                <div class="comment-to">
+                                    <div class="ava">
+                                        <div class="photo"
+                                             style="background-image:url(assets/images/home/home.jpg)"></div>
+                                    </div>
+                                    <div class="text">{{item.WorkoutName}}</div>
+                                    <a href="" class="more">
+                                        <img src="assets/images/notification/arrow.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div  *ngIf="item.actionType=='followed'">
+                            <div class="avatar">
+                                <div class="photo" style="background-image:url({{item.User.avatar}})"></div>
+                            </div>
+                            <div class="info">
+                                <div class="top-info">
+                                    <div class="name"><span>{{item.User.name}}</span></div>
+                                    <div class="commetn">
+                                        <span>Following   {{item.UserName}} </span>
+                                    </div>
+                                    <div class="date">{{item.date}}</div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </li>
+
+
+
+
+
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <!--
  <ion-list>
 
         <div ion-item *ngFor="let item of Notifications" (click)="showDetails(item)">
@@ -83,8 +152,8 @@
 
 
     </ion-list>
+-->
 
 
-
-  <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
+    <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
 </ion-content>

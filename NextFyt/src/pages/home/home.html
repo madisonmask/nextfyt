@@ -1,10 +1,86 @@
 <ion-header>
-    <ion-navbar>
-        <ion-title>Home</ion-title>
-    </ion-navbar>
+
 </ion-header>
 
-<ion-content padding>
+<ion-content >
+
+
+    <div class="notification feed-page">
+        <div class="top-window">
+              <ul class="tab">
+                <li>
+                    <a (click)="goSaved()" >My Saved </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tab-content">
+       <div class="tab-item active" id="My-Favorite" >
+                <div class="items-search">
+
+                    <div class="item"  *ngFor="let item of Followers" (click)="showDetails(item)" >
+
+                        <div class="left">
+                            <div class="image" style="background-image:url(  {{item.image}} )">
+                                <div class="icon"><img src="assets/images/clocks.png" alt=""></div>
+                                <div class="avatar" style="background-image:url(assets/images/img-1.png)"></div>
+                            </div>
+                            <ul>
+                                <li>
+                                    <a href="">
+									<span class="icon">
+										<img src="assets/images/bar/like-red.svg" alt="">
+									</span>
+                                        <span class="number">{{item.countLikes}}</span>
+                                    </a>
+                                </li>
+                         <!--       <li>
+                                    <a href="">
+									<span class="icon">
+										<img src="assets/images/comments.svg" alt="">
+									</span>
+                                        <span class="number">14</span>
+                                    </a>
+                                </li> -->
+                            </ul>
+                        </div>
+                        <div class="right">
+                            <ul>
+                                <li>By: <span>{{item.user}}</span></li>
+                                <li>Skill: <span>{{item.skill}}</span></li>
+                                <li>Muscules Worked: <span> <span *ngFor="let muscle  of item.muscles"> {{muscle.name}}  </span></span></li>
+                                <li>Cardio: <span>{{item.cardio}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--
     <p><a (click)="goSaved()"> Saved lists</a></p>
     <hr>
     <hr>

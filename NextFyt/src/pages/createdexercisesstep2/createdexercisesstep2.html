@@ -6,16 +6,45 @@
 -->
 <ion-header>
 
-    <ion-navbar>
-        <ion-title>step2</ion-title>
-    </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content >
 
 
+    <div class="wrap-page padding-bottom-none">
+        <div class="top-window">
+            <a href="" class="prev">
+                <img src="assets/images/home/arrow.svg" alt="">
+            </a>
+            <div class="h4">New Tab</div>
+        </div>
+        <div class="search-page">
+            <form>
+                <div class="worked">
+                    <div class="h4">Equipment Needed</div>
+                    <div class="list-worked">
+                        <label class="checkbox" *ngFor="let item of FilterValues.Equipment" (click)="SelectEquipment(item)"  >
+                            <input type="checkbox">
+                            <span class="text">{{item.name}} </span>
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <div class="tab-buttonDesign ">
+                    <button class="next" (click)="goToStages()">Next</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
+
+    <!--
     <h2>Equipment needed </h2>
 
     <button ion-button  *ngFor="let item of FilterValues.Equipment" (click)="SelectEquipment(item)"   [color]="checkEquipment(item)  ? '' : 'light'"> {{item.name}} </button>
@@ -23,10 +52,10 @@
 
     <br>
 
-    <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
+
 
     <button ion-button round class="fullWidth" (click)="goToStages()">Next</button>
 
-
+-->
 
 </ion-content>

@@ -28,6 +28,11 @@ export class TabsPage {
 
   }
 
+  goTab1(){
+    this.navCtrl.setRoot(this.tab1Root);
+  }
+
+
 /*
   ionViewWillEnter() {
     //   var CurUser: any;

@@ -6,15 +6,68 @@
 -->
 <ion-header>
 
-    <ion-navbar>
-        <ion-title>createdexercises</ion-title>
-    </ion-navbar>
+
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content >
 
+
+    <div class="wrap-page padding-bottom-none">
+        <div class="top-window">
+            <a class="prev">
+                <img src="assets/images/home/arrow.svg" alt="">
+            </a>
+            <div class="h4">New Tab</div>
+        </div>
+        <div class="search-page">
+            <form>
+                <div class="name-exercise">
+                    <div class="h4">Name your Exercise</div>
+                    <input type="text" placeholder="Name your Exercise" [(ngModel)]="Exercise.Name" name="name">
+                </div>
+                <div class="worked">
+                    <div class="h4">Muscles Worked</div>
+                    <div class="list-worked">
+                        <label class="checkbox" *ngFor="let item of FilterValues.Muscles" (click)="SelectMuscles(item)">
+                            <input type="checkbox">
+                            <span class="text">{{item.name}}</span>
+                        </label>
+
+                    </div>
+            <!--        <div class="wr-checkbox-item">
+                        <label class="checkbox-item">
+                            <input type="checkbox">
+                            <span class="text">Cardio</span>
+                        </label>
+                    </div> -->
+
+                    <div class="wr-checkbox-item">
+                        <span class="text">Cardio</span>
+                            <ion-toggle [(ngModel)]="Exercise.Filters.Cardio" name="cardio"></ion-toggle>
+                     </div>
+
+                </div>
+                <div class="diff">
+                    <div class="h4">Difficulty</div>
+                    <div class="radio-items">
+                        <label class="radio" *ngFor="let item of FilterValues.Difficulty">
+                            <input type="radio" name="Difficulty"  value="{{item.name}}" [(ngModel)]="Exercise.Filters.Difficulty" name="diff">
+                            <span class="text">{{item.name}}</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="tab-buttonDesign">
+                    <button class="next" (click)="goToStep2()">Next</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
+    <!--
     <ion-item>
         <ion-input type="text" placeholder="Please name your exercise here" [(ngModel)]="Exercise.Name"></ion-input>
     </ion-item>
@@ -46,5 +99,5 @@
     <br>
     <button ion-button round class="fullWidth" (click)="goToStep2()" [disabled]="isformCorrect()==false">Next</button>
 
-
+-->
 </ion-content>
