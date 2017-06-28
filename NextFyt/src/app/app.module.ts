@@ -33,6 +33,7 @@ import {ExerciseHistoryPage} from '../pages/exercise-history/exercise-history';
 import {PrivacyPage} from '../pages/privacy/privacy';
 import {TermsPage} from  '../pages/terms/terms';
 import {AuthPage} from  '../pages/auth/auth';
+import {DefaultExercisesParamsPage} from '../pages/default-exercises-params/default-exercises-params';
 
 
 
@@ -80,7 +81,8 @@ import { APP_CONFIG, AppConfig } from './app.config';
     ProfileSettingsPage,
     PrivacyPage,
     TermsPage,
-    AuthPage
+    AuthPage,
+    DefaultExercisesParamsPage
 
   ],
   imports: [
@@ -117,7 +119,8 @@ import { APP_CONFIG, AppConfig } from './app.config';
     ProfileSettingsPage,
     PrivacyPage,
     TermsPage,
-    AuthPage
+    AuthPage,
+    DefaultExercisesParamsPage
   ],
   providers: [
     StatusBar,

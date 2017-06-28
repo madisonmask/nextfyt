@@ -140,6 +140,25 @@ class ExerciseController extends Controller
         return response()->json(['error' => false, 'exercises' => $exportExercise]);
     }
 
+    public function getExercisesDefault(Request $request)
+    {
+        $user = Helpers::getUser($request);
+
+        $exercises = Exercise::where('is_default', 1)->get();
+
+        $exportExercise = [];
+        $i = 0;
+        foreach ($exercises as $ex) {
+            $exportExercise[$i] = $ex;
+            $exportExercise[$i]['equipment'] = $ex->equipments()->get(['equipment.name']);;
+            $exportExercise[$i]['muscles'] = $ex->muscles()->get(['muscles.name']);;
+
+            $i++;
+        }
+        return response()->json(['error' => false, 'exercises' => $exportExercise]);
+    }
+
+
     /**
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
@@ -149,9 +168,9 @@ class ExerciseController extends Controller
         $user = Helpers::getUser($request);
         $exercise = Exercise::find($exerciseId);
         $exportExercise = [];
-            $exportExercise = $exercise;
-            $exportExercise['equipment'] = $exercise->equipments()->get(['equipment.name']);;
-            $exportExercise['muscles'] = $exercise->muscles()->get(['muscles.name']);;
+        $exportExercise = $exercise;
+        $exportExercise['equipment'] = $exercise->equipments()->get(['equipment.name']);;
+        $exportExercise['muscles'] = $exercise->muscles()->get(['muscles.name']);;
         return response()->json(['error' => false, 'exercises' => $exportExercise]);
     }
 
@@ -190,19 +209,19 @@ class ExerciseController extends Controller
 
         $exercise = Exercise::find($request->exercise);
 
-      if(!empty($exercise)){
+        if (!empty($exercise)) {
 
-          if($exercise->user_id==$user['id']){
-              $exercise->is_new=1;
-              $exercise->save();
-              return response()->json(['error' => false]);
-          }else{
-              return response()->json(['error' => true, 'msg'=>'You shall not pass']);
-          }
+            if ($exercise->user_id == $user['id']) {
+                $exercise->is_new = 1;
+                $exercise->save();
+                return response()->json(['error' => false]);
+            } else {
+                return response()->json(['error' => true, 'msg' => 'You shall not pass']);
+            }
 
-      }else{
-          return response()->json(['error' => true, 'msg'=>'exercise not found']);
-      }
+        } else {
+            return response()->json(['error' => true, 'msg' => 'exercise not found']);
+        }
 
     }
 
@@ -212,18 +231,18 @@ class ExerciseController extends Controller
 
         $exercise = Exercise::find($request->exercise);
 
-        if(!empty($exercise)){
+        if (!empty($exercise)) {
 
-            if($exercise->user_id==$user['id']){
-                $exercise->is_new=0;
+            if ($exercise->user_id == $user['id']) {
+                $exercise->is_new = 0;
                 $exercise->save();
                 return response()->json(['error' => false]);
-            }else{
-                return response()->json(['error' => true, 'msg'=>'You shall not pass']);
+            } else {
+                return response()->json(['error' => true, 'msg' => 'You shall not pass']);
             }
 
-        }else{
-            return response()->json(['error' => true, 'msg'=>'exercise not found']);
+        } else {
+            return response()->json(['error' => true, 'msg' => 'exercise not found']);
         }
 
     }
@@ -241,28 +260,28 @@ class ExerciseController extends Controller
 
         $exercise = Exercise::find($exerciseId);
 
-        if(!empty($exercise)){
-            if($exercise->user_id==$user['id']){
+        if (!empty($exercise)) {
+            if ($exercise->user_id == $user['id']) {
                 $exercise->delete();
                 return response()->json(['error' => false]);
-            }else{
-                return response()->json(['error' => true, 'msg'=>'You shall not pass']);
+            } else {
+                return response()->json(['error' => true, 'msg' => 'You shall not pass']);
             }
-        }else{
-            return response()->json(['error' => true, 'msg'=>'exercise not found']);
+        } else {
+            return response()->json(['error' => true, 'msg' => 'exercise not found']);
         }
     }
 
 
-
-    public function getExercisesForWorkout (Request $request, $workoutId){
+    public function getExercisesForWorkout(Request $request, $workoutId)
+    {
 
         $user = Helpers::getUser($request);
 
         $workout = Workout::find($workoutId);
 
-     //   $exercises = Exercise::where('user_id', $user['id'])->where('id', 1)->get();
-        $exercises =$workout->Exercises;
+        //   $exercises = Exercise::where('user_id', $user['id'])->where('id', 1)->get();
+        $exercises = $workout->Exercises;
 
         $exportExercise = [];
         $i = 0;
@@ -275,5 +294,43 @@ class ExerciseController extends Controller
         }
         return response()->json(['error' => false, 'exercises' => $exportExercise]);
 
+    }
+
+
+    public function selectDefault(Request $request)
+    {
+
+        $user = Helpers::getUser($request);
+
+
+        $exerciseDefault = Exercise::find($request->exercise);
+
+
+        $createdExercise = Exercise::create(['name' => $exerciseDefault->name, 'user_id' => $user['id'], 'stage1_img' => $exerciseDefault->stage1_img,
+            'stage2_img' => $exerciseDefault->stage2_img, 'stage3_img' => $exerciseDefault->stage3_img,
+            'stage4_img' => $exerciseDefault->stage4_img, 'stage5_img' => $exerciseDefault->stage5_img,
+            'stage6_img' => $exerciseDefault->stage6_img, 'repeat_count' => $request->repeat_count,
+            'repeat_type' => $request->repeat_type,           // ['steps', 'movements']);
+            'length_count' => $request->length_count,
+            'length_type' => $request->length_type, //['Seconds', 'Minutes', 'Reps']);
+            'cardio' => $exerciseDefault->cardio,
+            'Difficulty' => $exerciseDefault->Difficulty,
+            'is_new' => 1
+        ]);
+
+
+        $muscles = MusclesToExercise::where('exercise_id', $exerciseDefault->id)->get();
+        foreach ($muscles as $m) {
+
+            $muscles = MusclesToExercise::create(['muscles_id' => $m->muscles_id, 'exercise_id' => $createdExercise->id]);
+        }
+
+        $eequipmnet = EquipmentToExercise::where('exercise_id', $exerciseDefault->id)->get();
+        foreach ($eequipmnet as $e) {
+
+            $muscles = EquipmentToExercise::create(['equipment_id' => $e->equipment_id, 'exercise_id' => $createdExercise->id]);
+        }
+
+        return response()->json(['error' => false]);
     }
 }

@@ -26,10 +26,9 @@
     <div class="content">
         <div class="left">
             <div class="h5">Next Fyt App</div>
-            <div class="h2">A great app makes your
-                life better</div>
-            <p>With NextFyt you will become filter, healthier and
-                more motivated than ever before.</p>
+            <div class="h2">THERE IS NO "I" IN FYT<br></div>
+
+            <p>An app dedicated to making fitness a community effort</p>
             @if($new)
             <form action="subscribe" method="POST">
                 <div class="input">
@@ -37,7 +36,7 @@
                 </div>
                 <div class="button">
                     <button type="submit">
-                        <span>Get App Now</span>
+                        <span>Try Beta Now</span>
                         <img src="img/arrow.svg" alt="">
                     </button>
                 </div>
@@ -52,7 +51,7 @@
             <img src="img/iphone.png" alt="">
         </div>
     </div>
-    <a href="" class="instagram">
+    <a href="https://www.instagram.com/nextfyt/" class="instagram" target="_blank">
         <img src="img/instagram.svg" alt="">
         <span>Chek our Instagram</span>
     </a>

@@ -30,14 +30,19 @@ Route::group(['prefix' => 'api'], function () {
     Route::get('/profile/{userId}', 'UserProfileController@getPublicProfile');
     Route::get('/profile/follow/{userId}', 'UserProfileController@FollowUser');
     Route::post('/exercise', 'ExerciseController@saveExercise');
+
+
     Route::get('/exercises', 'ExerciseController@getExercises');
     Route::get('/exercise/new', 'ExerciseController@getExercisesNew');
+    Route::get('/exercise/default', 'ExerciseController@getExercisesDefault');
     Route::get('/exercise/{exerciseId}', 'ExerciseController@getExercise');
     Route::post('/exercise/makenew', 'ExerciseController@setExercisesNew');
     Route::post('/exercise/makeold', 'ExerciseController@setExercisesOld');
+    Route::post('/exercise/selectDefault', 'ExerciseController@selectDefault');
+
     Route::delete('/exercise/{exerciseId}', 'ExerciseController@deleteExercise');
     Route::get('/exercises/{workoutId}', 'ExerciseController@getExercisesForWorkout'); // Get all exercise list for given workout
-    Route::get('/exercise/default', 'ExerciseController@getExercisesDefault');
+
     Route::get('/catalog', 'CatalogController@getCatalog');
     Route::post('/workout', 'WorkoutController@saveWorkout');
     Route::post('/workout/likes', 'WorkoutController@toogleLikes');
@@ -79,6 +84,7 @@ Route::group(['prefix' => 'adminpanel', 'middleware' => ['CheckIfAdmin']], funct
     Route::post('/usermanager/delete', 'AdminController@deleteUser' );
 
     Route::get('/defaults', 'AdminController@defaults' );
+    Route::post('/defaults', 'AdminController@saveDefaults' );
 
 
     Route::get('/catalog/muscles', 'AdminController@CatalogMuscles' );

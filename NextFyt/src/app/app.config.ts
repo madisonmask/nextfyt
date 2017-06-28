@@ -10,7 +10,7 @@ export interface IAppConfig {
 }
 
 export const AppConfig: IAppConfig = {
- //   apiEndpoint: "http://nextfyt.local/api/"
-  apiEndpoint: "http://www.nextfyt.com/api/"
+    apiEndpoint: "http://nextfyt.local/api/"
+ // apiEndpoint: "http://www.nextfyt.com/api/"
 
 };

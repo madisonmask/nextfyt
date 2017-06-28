@@ -9,6 +9,7 @@
 
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -92,8 +93,11 @@
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+<!-- the main fileinput plugin file -->
+<script src="/js/fileinput.min.js"></script>
 
 <script src="/js/bootstrap.min.js"></script>
 
@@ -102,6 +106,39 @@
 <link rel="stylesheet" type="text/css" href="/css/datatables.min.css"/>
 
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.15/datatables.min.js"></script>
+
+
+
+
+
+
+<!-- bootstrap.js below is needed if you wish to zoom and view file content
+     in a larger detailed modal dialog
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>-->
+
+
+
+
+
+
+<script>
+    $(document).on('ready', function() {
+        $(".file-loading").fileinput({
+            showUpload: false,
+            maxFileCount: 1,
+            mainClass: "input-group-lg",
+            allowedFileExtensions: ["jpg", "png", "gif"]
+        });
+
+
+
+
+
+
+    });
+</script>
+
+
 
 
 </body>

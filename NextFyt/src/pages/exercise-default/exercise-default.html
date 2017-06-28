@@ -15,7 +15,24 @@
 
 <ion-content padding>
 
+  <ion-list>
+      <ion-item (click)="selectItem(exercise)" *ngFor="let exercise of Exercises">
+        <div class="description">
+          <p>{{exercise.name}}</p>
+          <p>{{exercise.repeat_count}} {{exercise.repeat_type}} of {{exercise.length_count}}
+            {{exercise.length_type}} </p>
+          <p>Cardio: {{exercise.cardio}}</p>
+          <p>Equipment: <span *ngFor="let eq of exercise.equipment"> {{eq.name}} ,  </span></p>
+        </div>
+        <div class="image">
+          <img src="{{exercise.stage1_img}}">
+        </div>
+      </ion-item>
 
+  </ion-list>
+
+
+  <div class="clear"></div>
 
   <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
 </ion-content>
