@@ -11,6 +11,7 @@ import 'rxjs/add/operator/map';
 
 import {APP_CONFIG, IAppConfig} from '../../app/app.config';
 import {WorkoutDetailsPage} from '../workout-details/workout-details';
+import {DomSanitizer} from '@angular/platform-browser';
 /**
  * Generated class for the Profile page.
  *
@@ -24,7 +25,7 @@ import {WorkoutDetailsPage} from '../workout-details/workout-details';
 })
 export class ProfilePage {
 
-    user = {};
+    user:any;
 
     config: IAppConfig;
     IsAjaxLoaded: boolean = false;
@@ -39,7 +40,7 @@ export class ProfilePage {
     constructor(public navCtrl: NavController, public navParams: NavParams, public userSrv: UserService, public Auth: AuthService
         , public http: Http,
                 @Inject(APP_CONFIG)  config: IAppConfig, private storage: Storage
-        , private toastCtrl: ToastController
+        , private toastCtrl: ToastController, private sanitizer:DomSanitizer
 
     ) {
 
@@ -61,6 +62,21 @@ export class ProfilePage {
 
     ionViewWillEnter() {
         this.user = this.userSrv.getData();
+
+
+        if ( this.user.avatar) {
+            this.user.avatarSTYLE =
+                this.sanitizer.bypassSecurityTrustStyle('url(' +  this.user.avatar + ')');
+        } else {
+            this.user.avatar = null;
+        }
+
+
+
+
+
+ //       this.user.avatar = this.sanitizer.bypassSecurityTrustHtml( this.user.avatar);
+        console.log(this.userSrv.getData());
     }
 
     Logout() {

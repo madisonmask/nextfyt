@@ -2023,8 +2023,11 @@ body{
 
 
 .ion-ios-HomeTab,
-.ion-md-HomeTab {
-  content: url(../../assets/images/bar/home.svg);
+.ion-md-HomeTab,
+.ion-md-HomeTab-outlet,
+.ion-ios-HomeTab-outlet
+{
+  content: url(../assets/images/bar/home.svg);
   width: 24px;
   height: 32px;
   padding: 6px 4px 2px;
@@ -2033,7 +2036,7 @@ body{
 
 .ion-ios-HomeTab[ng-reflect-is-active=true] ,
 .ion-md-HomeTab[ng-reflect-is-active=true]  {
-  content: url(../../assets/images/bar/home-active.svg);
+  content: url(../assets/images/bar/home-active.svg);
   width: 24px;
   height: 32px;
   padding: 6px 4px 2px;
@@ -2042,8 +2045,13 @@ body{
 
 
 .ion-ios-SearchTab,
-.ion-md-SearchTab {
-  content: url(../../assets/images/bar/search.svg);
+.ion-md-SearchTab,
+.ion-ios-SearchTab-outlet,
+.ion-md-SearchTab-outlet
+
+
+{
+  content: url(../assets/images/bar/search.svg);
   width: 24px;
   height: 32px;
   padding: 6px 4px 2px;
@@ -2052,7 +2060,7 @@ body{
 
 .ion-ios-SearchTab[ng-reflect-is-active=true],
  .ion-md-SearchTab[ng-reflect-is-active=true] {
-   content: url(../../assets/images/bar/search-n.svg);
+   content: url(../assets/images/bar/search-n.svg);
    width: 24px;
    height: 32px;
    padding: 6px 4px 2px;
@@ -2061,8 +2069,12 @@ body{
 
 
 .ion-ios-CreateTab,
-.ion-md-CreateTab {
-  content: url(../../assets/images/bar/close.svg);
+.ion-md-CreateTab,
+.ion-ios-CreateTab-outlet,
+.ion-md-CreateTab-outlet
+
+{
+  content: url(../assets/images/bar/close.svg);
   width: 24px;
   height: 32px;
   padding: 6px 4px 2px;
@@ -2071,7 +2083,7 @@ body{
 
 .ion-ios-CreateTab[ng-reflect-is-active=true],
 .ion-md-CreateTab[ng-reflect-is-active=true] {
-  content: url(../../assets/images/bar/add-blue.svg);
+  content: url(../assets/images/bar/add-blue.svg);
   width: 24px;
   height: 32px;
   padding: 6px 4px 2px;
@@ -2079,8 +2091,11 @@ body{
 }
 
 .ion-ios-LikeTab,
-.ion-md-LikeTab {
-  content: url(../../assets/images/bar/like.svg);
+.ion-md-LikeTab,
+.ion-ios-LikeTab-outlet,
+.ion-md-LikeTab-outlet
+{
+  content: url(../assets/images/bar/like.svg);
   width: 24px;
   height: 32px;
   padding: 6px 4px 2px;
@@ -2089,7 +2104,7 @@ body{
 
 .ion-ios-LikeTab[ng-reflect-is-active=true],
 .ion-md-LikeTab[ng-reflect-is-active=true] {
-  content: url(../../assets/images/bar/like-red.svg);
+  content: url(../assets/images/bar/like-red.svg);
   width: 24px;
   height: 32px;
   padding: 6px 4px 2px;
@@ -2099,8 +2114,11 @@ body{
 
 
 .ion-ios-ProfileTab,
-.ion-md-ProfileTab {
-  content: url(../../assets/images/bar/name.svg);
+.ion-md-ProfileTab,
+.ion-ios-ProfileTab-outlet,
+.ion-md-ProfileTab-outlet
+{
+  content: url(../assets/images/bar/name.svg);
   width: 24px;
   height: 32px;
   padding: 6px 4px 2px;
@@ -2109,7 +2127,7 @@ body{
 
 .ion-ios-ProfileTab[ng-reflect-is-active=true],
 .ion-md-ProfileTab[ng-reflect-is-active=true] {
-  content: url(../../assets/images/bar/profile-active.svg);
+  content: url(../assets/images/bar/profile-active.svg);
   width: 24px;
   height: 32px;
   padding: 6px 4px 2px;

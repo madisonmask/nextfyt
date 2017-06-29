@@ -1,14 +1,24 @@
+<!--
 
-
-<ion-tabs   id="tabs" class="tabs-icon-top tabs-custom" >
-  <ion-tab [root]="tab1Root" tabIcon="HomeTab" ></ion-tab>
-  <ion-tab [root]="tab2Root"  tabIcon="SearchTab"></ion-tab>
-  <ion-tab [root]="tab3Root"  tabIcon="CreateTab"></ion-tab>
-  <ion-tab [root]="tab4Root"  tabIcon="LikeTab"></ion-tab>
-  <ion-tab [root]="tab5Root"  tabIcon="ProfileTab"></ion-tab>
-
+<ion-tabs   id="tabs">
+  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
+    <ion-tab [root]="tab2Root" tabTitle="Search" tabIcon="search"></ion-tab>
+    <ion-tab [root]="tab3Root" tabTitle="Create" tabIcon="add"></ion-tab>
+   <ion-tab [root]="tab4Root" tabTitle="Notifications" tabIcon="heart"></ion-tab>
+   <ion-tab [root]="tab5Root" tabTitle="Profile" tabIcon="contact"></ion-tab>
 
 </ion-tabs>
+-->
+
+  <ion-tabs   id="tabs" class="tabs-icon-top tabs-custom" >
+    <ion-tab [root]="tab1Root" tabIcon="HomeTab" ></ion-tab>
+    <ion-tab [root]="tab2Root"  tabIcon="SearchTab"></ion-tab>
+    <ion-tab [root]="tab3Root"  tabIcon="CreateTab"></ion-tab>
+    <ion-tab [root]="tab4Root"  tabIcon="LikeTab"></ion-tab>
+    <ion-tab [root]="tab5Root"  tabIcon="ProfileTab"></ion-tab>
+
+
+  </ion-tabs>
 
 <!--
 <ion-tabs   id="tabs">

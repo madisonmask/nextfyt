@@ -20,7 +20,7 @@
         <div class="profile-page">
             <div class="profile-info">
                 <div class="profile-top">
-                    <div class="image" style="background-image:url({{user.avatar}})" *ngIf="user.avatar!=''" ></div>
+                    <div class="image" [style.background-image]="user.avatarSTYLE"  *ngIf="user.avatar!=''" ></div>
                     <div class="image" style="background-image:url('assets/images/avatar.jpg')" *ngIf="user.avatar==''" ></div>
 
 
