@@ -14,18 +14,6 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
-.loaderSpiner {
-  height: 50%;
-  width: 50%;
-  /* position: absolute; */
-  /* top: 50%; */
-  position: absolute;
-  left: 25%;
-  top: 25%;
-  /* margin-left: -32px; */
-  /* margin-top: -32px; */
-  z-index: 50;
-}
 
 
 @font-face {
@@ -2021,6 +2009,24 @@ body{
 }
 
 
+/*******************************************************************************************/
+
+
+
+.loaderSpiner {
+  height: 50%;
+  width: 50%;
+  /* position: absolute; */
+  /* top: 50%; */
+  position: absolute;
+  left: 25%;
+  top: 25%;
+  /* margin-left: -32px; */
+  /* margin-top: -32px; */
+  z-index: 50;
+}
+
+
 
 .ion-ios-HomeTab,
 .ion-md-HomeTab,
@@ -2133,10 +2139,6 @@ body{
   padding: 6px 4px 2px;
   opacity: 0.9;
 }
-
-
-
-
 
 .tabbar{
   box-shadow: 0 -2px 14px rgba(8, 20, 42, 0.3), inset 0 1px 0 rgba(0, 0, 0, 0.1) !important;

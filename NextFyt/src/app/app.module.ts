@@ -52,6 +52,8 @@ import { HttpClient } from '../services/HttpClient';
 import {IonicStorageModule} from "@ionic/storage";
 import { APP_CONFIG, AppConfig } from './app.config';
 
+//import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
+
 
 @NgModule({
   declarations: [
@@ -133,6 +135,7 @@ import { APP_CONFIG, AppConfig } from './app.config';
     TabsService,
     HttpClient,
      Slides,
+  //  Facebook,
  //  IonicStorageModule,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     { provide: APP_CONFIG, useValue: AppConfig }

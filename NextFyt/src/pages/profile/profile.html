@@ -57,7 +57,9 @@
             <div class="items-search">
                 <div class="item" *ngFor="let item of ActiveList" (click)="showDetails(item)">
                     <div class="left">
-                        <div class="image" style="background-image:url({{item.image}})"></div>
+                      <!--  <div   [style.background-image] = " sanitizer.bypassSecurityTrustResourceUrl(item.image) "></div>-->
+                        <div class="image" [ngStyle]="{background: 'url(' + item.image + ')'}"></div>
+
                         <ul>
                             <li>
                                 <a href="">

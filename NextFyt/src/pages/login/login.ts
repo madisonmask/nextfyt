@@ -8,6 +8,8 @@ import {TabsService} from '../../services/tabs';
 import{HomePage} from'../home/home';
 import {TabsPage} from '../tabs/tabs';
 
+//import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
+import { Facebook } from 'ionic-native';
 
 import {JwtHelper} from "angular2-jwt";
 import {Storage} from "@ionic/storage";
@@ -31,9 +33,12 @@ export class LoginPage {
     jwtHelper = new JwtHelper();
     IsAjaxLoaded: boolean = false;
 
-
+    FB_APP_ID: number = 1788817871428642;
     constructor(public navCtrl: NavController, public navParams: NavParams, public Auth: AuthService,
-                private storage: Storage, public User: UserService, public tabsService: TabsService, private toastCtrl: ToastController) {
+                private storage: Storage, public User: UserService, public tabsService: TabsService, private toastCtrl: ToastController
+    ) {
+
+      // Facebook.browserInit(this.FB_APP_ID, "v2.8");   #ENABLE ME ON MOBILE!!!!!
         this.tabBarElement = document.querySelector('#tabs');
 
     }
@@ -126,8 +131,44 @@ export class LoginPage {
 
 
     doFB() {
+
+        Facebook.logout();
         console.log('do FB');
-        return false;
+/*
+        this.fb.login(['public_profile', 'user_friends', 'email'])
+            .then((res: FacebookLoginResponse) => this.showToastr(res))
+            .catch(e => this.showToastr(e));
+
+
+    //    this.fb.logEvent(this.fb.EVENTS.EVENT_NAME_ADDED_TO_CART);
+   //     this.fb.logEvent(this.fb.EVENTS);
+*/
+
+        let permissions = new Array<string>();
+        let nav = this.navCtrl;
+        //the permissions your facebook app needs from the user
+        permissions = ["public_profile"];
+
+
+        Facebook.login(permissions)
+            .then(function(response){
+                let userId = response.authResponse.userID;
+                let params = new Array<string>();
+                this.showToastr(response);
+                //Getting name and gender properties
+                Facebook.api("/me?fields=name,gender", params)
+                    .then(function(user) {
+                        user.picture = "https://graph.facebook.com/" + userId + "/picture?type=large";
+                        //now we have the users info, let's save it in the NativeStorage
+                     console.log(user);
+                        this.showToastr(user);
+                    })
+            }, function(error){
+                console.log(error);
+                this.showToastr(error);
+            });
+
+
     }
 
     showToastr (msg){

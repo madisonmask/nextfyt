@@ -165,7 +165,7 @@ class WorkoutController extends Controller
                         FROM workouts
                         LEFT JOIN workoutkeepers ON
                          workoutkeepers.workout_id=workouts.id AND workoutkeepers.user_id=" . $user['id'] . "
-                        WHERE 1";
+                        WHERE workouts.user_id=" . $user['id'] ;
         $workouts = DB::select($sql);
 
 
@@ -228,7 +228,7 @@ $user=User::find($userId);
                         FROM workouts
                         LEFT JOIN workoutkeepers ON
                          workoutkeepers.workout_id=workouts.id AND workoutkeepers.user_id=" . $userId . "
-                        WHERE 1";
+                                    WHERE workouts.user_id=" . $userId ;
         $workouts = DB::select($sql);
 
 
