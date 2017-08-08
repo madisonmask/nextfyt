@@ -172,5 +172,16 @@ export class SearchPage {
     }
 
 
+    showTag(tag){
+
+this.Searched.Type='workouts';
+        this.Searched.SearchString='#'+tag;
+        this.doSearch();
+
+
+    }
+
+
+
 }
 

@@ -2,36 +2,40 @@
 
 <div class="wrap-page saved-page share-p">
     <div class="top-window">
-        <a href="" class="prev">
-            <img src="img/home/arrow.svg" alt="">
+        <a  class="prev" (click)="goBack()">
+            <img src="assets/images/home/arrow.svg" alt="">
         </a>
         <div class="h4">Savedlist</div>
     </div>
     <div class="exercise-History">
         <div class="saved--list-tg">
             <ul>
-                <li><a href="" class="active">My Creations </a></li>
-                <li><a href="" class=" ">My Favorite</a></li>
-                <li><a href="" class=" ">Keepers</a></li>
+                <li><a (click)="ShowSaved('My')"  [ngClass]="{'active': activeTab=='My'}"    >My Creations </a></li>
+                <li><a (click)="ShowSaved('Favorited')"   [ngClass]="{'active': activeTab=='Favorited'}"       >My Favorite</a></li>
+                <li><a  (click)="ShowSaved('Keepers')"     [ngClass]="{'active': activeTab=='Keepers'}"         >Keepers</a></li>
             </ul>
         </div>
-        <div class="item">
-            <div class="iamge" style="background-image: url(/img/bitmap2.png)"></div>
+
+
+        <div class="item"   *ngFor="let item of ActiveList" (click)="showDetails(item)" >
+            <div class="iamge"  [ngStyle]="{background: 'url(' + item.image + ')'}"
+
+                 ></div>
             <div class="info">
                 <div class="left">
-                    <div class="h5">Crazy Chest Workout</div>
+                    <div class="h5">{{item.name}}</div>
                     <ul class="list">
                         <li>
-                            By: <span>Sentarius</span>
+                            By: <span>{{item.author}}</span>
                         </li>
                         <li>
-                            Skill: <span>advanced</span>
+                            Skill: <span>{{item.skill}}</span>
                         </li>
                         <li>
-                            Muscules Worked: <span>Chest, Triceps</span>
+                            Muscules Worked: <span><span *ngFor="let muscle  of item.muscles"> {{muscle.name}}  </span></span>
                         </li>
                         <li>
-                            Cardio: <span>No</span>
+                            Cardio: <span>{{item.cardio}}</span>
                         </li>
                     </ul>
                 </div>
@@ -40,69 +44,29 @@
                         <li>
                             <a href="">
  								<span class="icon">
-									<img src="/img/bar/like-red.svg" alt="">
+									<img src="assets/images/bar/like-red.svg" alt="">
  								</span>
-                                <span class="number">125</span>
+                                <span class="number">{{item.countLikes}}</span>
                             </a>
                         </li>
-                        <li>
+                      <!--  <li>
                             <a href="">
  								<span class="icon">
-									<img src="/img/comments.svg" alt="">
+									<img src="assets/images/comments.svg" alt="">
  								</span>
                                 <span class="number">14</span>
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="item">
-            <div class="iamge" style="background-image: url(/img/bitmap2.png)"></div>
-            <div class="info">
-                <div class="left">
-                    <div class="h5">Crazy Chest Workout</div>
-                    <ul class="list">
-                        <li>
-                            By: <span>Sentarius</span>
-                        </li>
-                        <li>
-                            Skill: <span>advanced</span>
-                        </li>
-                        <li>
-                            Muscules Worked: <span>Chest, Triceps</span>
-                        </li>
-                        <li>
-                            Cardio: <span>No</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="right">
-                    <ul>
-                        <li>
-                            <a href="">
- 								<span class="icon">
-									<img src="/img/bar/like-red.svg" alt="">
- 								</span>
-                                <span class="number">125</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
- 								<span class="icon">
-									<img src="/img/comments.svg" alt="">
- 								</span>
-                                <span class="number">14</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
+     </div>
 
+
+    <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
 </div>
 
 

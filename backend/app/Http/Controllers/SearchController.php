@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Difficulty;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 
 class SearchController extends Controller
@@ -82,10 +83,49 @@ class SearchController extends Controller
 
                 }
 
+                //     Log::info(trim($request->SearchString));
+                if( preg_match('/^\#(.*?)$/',trim($request->SearchString),$match) ){
+
+                    //               Log::info(print_r($match,true));
+                    //so we search tags
+                    $sql = "SELECT workouts.*, workoutlikes.id AS liked
+                        FROM workouts
+                        LEFT JOIN workoutlikes ON
+                         workoutlikes.workout_id=workouts.id AND workoutlikes.user_id=" . $user['id'] . "
+                         
+                           inner join exercise_to_workout
+                         ON
+                         exercise_to_workout.workout_id =workouts.id
+                         left join equipment_to_exercise
+                         on
+                    equipment_to_exercise.exercise_id    = exercise_to_workout.exercise_id 
+                    
+                         left join muscles_to_exercise
+                         on 
+                         muscles_to_exercise.exercise_id =exercise_to_workout.exercise_id
+                    
+                    
+                      left join tags_to_workout
+                         on tags_to_workout.workout_id =workouts.id
+                         
+                         left join tags on
+                         tags.id =tags_to_workout.tags_id
+                         
+                         
+ 
+                        WHERE tags.name ='" . $match[1] . "'
+                        
+                       ".$filterStr."
+                       
+                       GROUP BY workouts.id
+                       ";
+
+                }else{
 
 
-                //     $workoutsByName = Workout::where('name', 'LIKE', '%' . $request->SearchString . '%')->get();
-                $sql = "SELECT workouts.*, workoutlikes.id AS liked
+
+                    //     $workoutsByName = Workout::where('name', 'LIKE', '%' . $request->SearchString . '%')->get();
+                    $sql = "SELECT workouts.*, workoutlikes.id AS liked
                         FROM workouts
                         LEFT JOIN workoutlikes ON
                          workoutlikes.workout_id=workouts.id AND workoutlikes.user_id=" . $user['id'] . "
@@ -109,8 +149,9 @@ class SearchController extends Controller
                        
                        GROUP BY workouts.id
                        ";
+                }
 
-         //       echo $sql;
+                //           Log::info($sql);
                 $workoutsByName = DB::select($sql);
 
                 $exportWorkout = [];

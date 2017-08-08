@@ -21,4 +21,9 @@ export class TermsPage {
     console.log('ionViewDidLoad TermsPage');
   }
 
+  goBack(){
+    this.navCtrl.pop();
+  }
+
+
 }

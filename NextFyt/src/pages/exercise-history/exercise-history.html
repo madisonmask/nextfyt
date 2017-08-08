@@ -1,9 +1,72 @@
+<div class="wrap-page ">
+
+<div class="top-window">
+    <a href="" class="prev">
+        <img src="assets/images/home/arrow.svg" alt="">
+    </a>
+
+    <div class="h4">ExerciseHistory</div>
+</div>
+
+<div class="exercise-History">
+
+
+
+    <div class="item"  *ngFor="let exercise of MyExercises">
+        <div class="iamge"
+
+             [ngStyle]="{background: 'url(' + exercise.stage1_img + ')'}"
+
+
+
+
+        ></div>
+        <div class="info" (click)="selectItem(exercise)">
+            <div class="left">
+                <div class="h5">{{exercise.name}}</div>
+                <ul class="list">
+                    <li>
+                        By: <span>Sentarius</span>
+                    </li>
+                    <li>
+                        Skill: <span>advanced</span>
+                    </li>
+                    <li>
+                        Muscules Worked: <span>Chest, Triceps</span>
+                    </li>
+                    <li>
+                        Cardio: <span> {{exercise.cardio}}</span>
+                    </li>
+                </ul>
+            </div>
+       <!--     <div class="right">
+                <ul>
+                    <li>
+                        <a href="">
+ 								<span class="icon">
+									<img src="assets/images/bar/like-red.svg" alt="">
+ 								</span>
+                            <span class="number">125</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div> -->
+        </div>
+    </div>
+
+</div>
+
+    </div>
+
+<ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
+
 <!--
   Generated template for the ExerciseHistoryPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
--->
+
 <ion-header>
 
     <ion-navbar>
@@ -42,3 +105,4 @@
 
     <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
 </ion-content>
+-->

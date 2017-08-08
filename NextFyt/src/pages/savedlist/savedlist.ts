@@ -199,4 +199,10 @@ export class SavedListPage {
         toast.present();
     }
 
+    goBack(){
+        this.navCtrl.pop();
+    }
+
+
+
 }

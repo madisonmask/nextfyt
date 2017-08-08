@@ -12,6 +12,7 @@ import { Camera } from '@ionic-native/camera';
 import {PrivacyPage} from '../privacy/privacy';
 
 import {TermsPage} from '../terms/terms';
+import {EditPasswordPage} from '../edit-password/edit-password';
 /**
  * Generated class for the ProfileSettingsPage page.
  *
@@ -154,9 +155,17 @@ export class ProfileSettingsPage {
     }else if (page=='terms'){
 
       this.navCtrl.push(TermsPage);
+    }else if(page=='changePassword'){
+
+      this.navCtrl.push(EditPasswordPage);
     }
 
 
   }
+
+  goBack(){
+    this.navCtrl.pop();
+  }
+
 
 }

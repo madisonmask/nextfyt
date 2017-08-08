@@ -66,25 +66,46 @@
                 </div>
                 <!--------------------->
                 <div *ngIf="Searched.Type=='people' ">
-                    <p> People results </p>
-
-                    <ion-list>
-                        <ion-item *ngFor="let user of UserResults" (click)="userSelected(user)">
-                            <ion-avatar item-start>
-                                <img src="{{user.avatar}}" *ngIf="user.avatar!=''">
-                                <img src="/assets/images/avatar.jpg" *ngIf="user.avatar==''">
-                            </ion-avatar>
-                            <h2>{{user.name}}</h2>
-                            <h3>Posts: {{user.posts}}</h3>
-                            <p>Followers:{{user.followers}}</p>
-                        </ion-item>
-                    </ion-list>
 
 
+                    <div class="searcg--peaple">
+                        <div class="item"  *ngFor="let user of UserResults" (click)="userSelected(user)">
+                            <div class="icon">
+                                <div class="img"     [ngStyle]="{background: 'url(' + user.avatar + ')'}"
+                                     ></div>
+                            </div>
+                            <div class="info">
+                                <div class="name">{{user.name}}</div>
+                                <div class="posts">Posts: {{user.posts}}</div>
+                            </div>
+                            <div class="follow">
+                                <span>Followers: {{user.followers}}</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!--
+                              <p> People results </p>
+
+                              <ion-list>
+                                  <ion-item *ngFor="let user of UserResults" (click)="userSelected(user)">
+                                      <ion-avatar item-start>
+                                          <img src="{{user.avatar}}" *ngIf="user.avatar!=''">
+                                          <img src="/assets/images/avatar.jpg" *ngIf="user.avatar==''">
+                                      </ion-avatar>
+                                      <h2>{{user.name}}</h2>
+                                      <h3>Posts: {{user.posts}}</h3>
+                                      <p>Followers:{{user.followers}}</p>
+                                  </ion-item>
+                              </ion-list>
+
+          -->
                 </div>
                 <!--------------------->
                 <div *ngIf="Searched.Type=='tags' ">
-                    <p> tags results </p>
+             <!--       <p> tags results </p>
 
                     <ion-list>
                         <ion-item *ngFor="let item of TagsResults" (click)="itemSelected(item)">
@@ -92,7 +113,16 @@
                             <h2><a href="#"> #{{item.name}}</a></h2>
                             <h3>Used: {{item.TotalUsed}}</h3>
                         </ion-item>
-                    </ion-list>
+                    </ion-list> -->
+
+                    <div class="searcg--tags" *ngFor="let item of TagsResults" (click)="itemSelected(item)">
+                        <div class="item">
+                            <div class="tag"><a (click)="showTag(item.name)">#{{item.name}}</a></div>
+                            <div class="used">Used: {{item.TotalUsed}}</div>
+                        </div>
+
+                    </div>
+
 
 
                 </div>

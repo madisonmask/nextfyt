@@ -33,9 +33,9 @@ export class ShareWorkoutPage {
     testRadioResult = {};
     IsAjaxLoaded: boolean = false;
     hashtag: string = '';
-    workoutToSend = {Name: '', Length: 30, Image: '', ImageData: '', Exercises: {}, Tags: []}; //object what we are sended without imagedata
+    workoutToSend = {Name: '', Length: "30", Image: '', ImageData: '', Exercises: {}, Tags: []}; //object what we are sended without imagedata
 //@todo rewrite this
-    Workout = {Name: '', Length: 30, Image: '', ImageData: '', Exercises: {}, Tags: []};
+    Workout = {Name: '', Length: "30", Image: '', ImageData: '', Exercises: {}, Tags: []};
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, private camera: Camera, public http: Http,
                 @Inject(APP_CONFIG)  config: IAppConfig, private storage: Storage, private  user: UserService,  public _DomSanitizationService:DomSanitizer) {
