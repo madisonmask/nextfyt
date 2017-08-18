@@ -7,7 +7,7 @@ import {Injectable} from "@angular/core";
 
 @Injectable()
 export class UserService {
-    user = {id: 0, avatar: '', email: '', name: '', posts: 0, followers: 0, following: 0};
+    user = {id: 0, avatar: '', email: '', name: '', posts: 0, followers: 0, following: 0, firstname:'', lastname:'', age:0};
 
     constructor() {
 
@@ -34,6 +34,9 @@ export class UserService {
         this.user.posts = UserObj.posts;
         this.user.followers = UserObj.followers;
         this.user.following = UserObj.following;
+        this.user.firstname = UserObj.FirstName;
+        this.user.lastname = UserObj.LastName;
+        this.user.age = UserObj.Age;
         console.log(this.user);
     }
 

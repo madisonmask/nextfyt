@@ -19,6 +19,13 @@ class CreateUsersTable extends Migration
             $table->string('avatar');
             $table->string('email')->unique();
             $table->string('password');
+            $table->unsignedInteger('posts');
+            $table->unsignedTinyInteger('Age');
+            $table->string('FirstName');
+            $table->string('LastName');
+            $table->unsignedInteger('followers');
+            $table->unsignedInteger('following');
+            $table->enum('role', ['admin', 'user', 'trainer'])->default('user');
             $table->rememberToken();
             $table->timestamps();
         });

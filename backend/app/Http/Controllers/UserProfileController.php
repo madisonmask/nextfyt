@@ -128,6 +128,15 @@ Activities::create(['user_id' => $user['id'],  'actionType' => 'followed', 'targ
         if (!empty($request->name)) {
             $curentUser->name = $request->name;
         }
+        if (!empty($request->age)) {
+            $curentUser->Age = $request->age;
+        }
+        if (!empty($request->firstname)) {
+            $curentUser->FirstName = $request->firstname;
+        }
+        if (!empty($request->lastname)) {
+            $curentUser->LastName = $request->lastname;
+        }
 
         if (!empty($request->old_password)) {
 

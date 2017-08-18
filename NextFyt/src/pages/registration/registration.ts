@@ -20,7 +20,7 @@ import {Storage} from "@ionic/storage";
 })
 export class RegistrationPage {
 
-    User = {Name:'', Email:'',Password:'',Role:'user', Accept:false};
+    User = {Name:'', Email:'',Password:'',Role:'user', Accept:false, Age:'', FirstName:'', LastName:''};
     IsAjaxLoaded: boolean = false;
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public Auth: AuthService, public user: UserService, private storage: Storage

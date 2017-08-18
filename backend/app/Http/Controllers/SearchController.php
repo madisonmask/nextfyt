@@ -162,6 +162,7 @@ class SearchController extends Controller
                     $exportWorkout[$i]['skill'] = $difficultys[$work->difficulty];
                     $exportWorkout[$i]['InLiked'] = $work->InLiked;
                     $exportWorkout[$i]['workoutId'] = $work->id;
+                    $exportWorkout[$i]['countLikes'] = $work->countLikes;
 
                     $sql = '  SELECT DISTINCT(muscles.name)
                     FROM exercise_to_workout

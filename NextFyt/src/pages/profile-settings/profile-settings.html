@@ -29,11 +29,31 @@
                         </div>
                     </div>
                     <div class="item">
-                        <div class="title">Name</div>
+                        <div class="title">UserName</div>
                         <div class="ps_info">
                             <input  type="text" [(ngModel)]="user.name">
                         </div>
                     </div>
+                    <div class="item">
+                        <div class="title">First Name</div>
+                        <div class="ps_info">
+                            <input  type="text" [(ngModel)]="user.firstname">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="title">Last Name</div>
+                        <div class="ps_info">
+                            <input  type="text" [(ngModel)]="user.lastname">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="title">Age</div>
+                        <div class="ps_info">
+                            <input  type="text" [(ngModel)]="user.age">
+                        </div>
+                    </div>
+
+
                     <div class="item"  (click)="openPage('changePassword')" >
                         <div class="title">Password</div>
                         <div class="ps_info">

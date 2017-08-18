@@ -596,6 +596,7 @@ ORDER BY workouts.created_at DESC
             $exportWorkout[$i]['avatar'] = $work->avatar;
             $exportWorkout[$i]['name'] = $work->name;
             $exportWorkout[$i]['countLikes'] = $work->countLikes;
+            $exportWorkout[$i]['InLiked'] = $work->InLiked;
 
             if (isset($difficultys[$work->difficulty])) {
                 $exportWorkout[$i]['skill'] = $difficultys[$work->difficulty];
