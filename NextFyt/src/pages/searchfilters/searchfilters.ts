@@ -1,6 +1,6 @@
 import {Component, Inject} from '@angular/core';
 import { NavParams, ViewController  } from 'ionic-angular';
-import {Http, Headers} from "@angular/http";
+import {Http} from "@angular/http";
 import 'rxjs/add/operator/map';
 import {APP_CONFIG, IAppConfig} from '../../app/app.config';
 
@@ -14,7 +14,7 @@ export class SearchFilters {
 
     Searched = {
         SearchString: '',
-        Filters: {enabled: false, Muscles: [], Cardio: false, Difficulty: [], Equipment: [],  TimeLength:0}
+        Filters: {enabled: false, Muscles: [], Cardio: false, Difficulty: [], Equipment: [],  TimeLength:"0"}
     };
     shouldShowCancel = true;
     FilterValues = {Muscles: {}, Cardio: false, Difficulty: {}, Equipment: {}};
@@ -82,8 +82,12 @@ export class SearchFilters {
     }
 
     SelectMuscles(item) {
+        console.log(item);
+        console.log(this.Searched);
+        console.log(this.Searched.Filters.Muscles);
         if (this.Searched.Filters.Muscles.indexOf(item) == -1) {
             this.Searched.Filters.Muscles.push(item);
+      //     console.log('push');
         } else {
             this.Searched.Filters.Muscles.splice(this.Searched.Filters.Muscles.indexOf(item), 1);
         }

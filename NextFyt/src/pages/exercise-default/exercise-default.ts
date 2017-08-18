@@ -1,5 +1,5 @@
 import {Component, Inject} from '@angular/core';
-import {IonicPage, NavController, NavParams, AlertController, ModalController} from 'ionic-angular';
+import { NavController, NavParams, AlertController, ModalController} from 'ionic-angular';
 
 
 import {Http, Headers, RequestOptions} from "@angular/http";
@@ -16,7 +16,7 @@ import {DefaultExercisesParamsPage} from '../default-exercises-params/default-ex
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
+
 @Component({
   selector: 'page-exercise-default',
   templateUrl: 'exercise-default.html',
@@ -149,6 +149,9 @@ this.addExercise(this.SelectedExercise);
 
 
 
+  goBack(){
+    this.navCtrl.pop();
+  }
 
 
 

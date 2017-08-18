@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import {Storage} from "@ionic/storage";
 import {DomSanitizer} from '@angular/platform-browser';
 import {Http, Headers, RequestOptions} from "@angular/http";
@@ -19,7 +19,7 @@ import {EditPasswordPage} from '../edit-password/edit-password';
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
+
 @Component({
   selector: 'page-profile-settings',
   templateUrl: 'profile-settings.html',
@@ -157,7 +157,7 @@ export class ProfileSettingsPage {
       this.navCtrl.push(TermsPage);
     }else if(page=='changePassword'){
 
-      this.navCtrl.push(EditPasswordPage);
+      this.navCtrl.push(EditPasswordPage,{user:this.user});
     }
 
 

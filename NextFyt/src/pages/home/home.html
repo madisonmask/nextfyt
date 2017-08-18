@@ -18,24 +18,33 @@
        <div class="tab-item active" id="My-Favorite" >
                 <div class="items-search">
 
-                    <div class="item"  *ngFor="let item of Followers" (click)="showDetails(item)" >
+                    <div class="item"  *ngFor="let item of Followers" >
 
                         <div class="left">
-                            <div class="image" style="background-image:url(  {{item.image}} )">
+
+                            <div class="image" [ngStyle]="{'background-image' : 'url(/assets/images/fitnes_blank.jpg)'}" *ngIf="item.image =='' "></div>
+                            <div class="image"  [ngStyle]="{'background-image': 'url(' + config.baseUrl + item.image + ')'}" *ngIf="item.image.length > 10 " >
+
+
                                 <div class="icon"><img src="assets/images/clocks.png" alt=""></div>
-                                <div class="avatar" style="background-image:url(assets/images/img-1.png)"></div>
+
+
+                                <div class="avatar" [ngStyle]="{'background-image' : 'url(' +config.baseUrl + item.avatar + ')'}"  *ngIf="user.avatar!=''" ></div>
+                                <div class="avatar" style="background-image:url('assets/images/avatar.jpg')" *ngIf="user.avatar==''" ></div>
+
                             </div>
                             <ul>
                                 <li>
-                                    <a href="">
-									<span class="icon">
-										<img src="assets/images/bar/like-red.svg" alt="">
-									</span>
+                                    <a >
+								<span class="icon" (click)="toggleLike(item)" >
+									<img src="assets/images/bar/like-red.svg" alt="" *ngIf="item.InLiked >0 ">
+                                    <img src="assets/images/bar/like.svg" alt="" *ngIf="item.InLiked ==null ">
+ 								</span>
                                         <span class="number">{{item.countLikes}}</span>
                                     </a>
                                 </li>
                          <!--       <li>
-                                    <a href="">
+                                    <a >
 									<span class="icon">
 										<img src="assets/images/comments.svg" alt="">
 									</span>
@@ -44,9 +53,9 @@
                                 </li> -->
                             </ul>
                         </div>
-                        <div class="right">
+                        <div class="right"  (click)="showDetails(item)" >
                             <ul>
-                                <li>By: <span>{{item.user}}</span></li>
+                                <li>By: <span>{{item.author}}</span></li>
                                 <li>Skill: <span>{{item.skill}}</span></li>
                                 <li>Muscules Worked: <span> <span *ngFor="let muscle  of item.muscles"> {{muscle.name}}  </span></span></li>
                                 <li>Cardio: <span>{{item.cardio}}</span></li>

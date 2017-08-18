@@ -58,8 +58,8 @@ Route::group(['prefix' => 'api'], function () {
     Route::get('/workouts/myKeepers', 'WorkoutController@getMyKeepersWorkouts');
     Route::get('/workouts/followers', 'WorkoutController@getFollowersWorkouts');//use for home tab
 
-    Route::get('/news', 'NotificationController@getMyNews');
-
+    Route::get('/news/following', 'NotificationController@getMyNews');
+    Route::get('/news/my', 'NotificationController@getMyNews');
 
 
     Route::post('/search', 'SearchController@makeSearch');

@@ -23,7 +23,7 @@
     </div>
     <form class="sign-form login-form">
 
-      <a href="" class="facebook">Log in with Facebook</a>
+      <a  class="facebook">Log in with Facebook</a>
       <div class="or">or</div>
    <!--   <div class="form-group">
         <label>Full Name </label>
@@ -49,6 +49,8 @@
         <label>Create password *</label>
         <input type="password" class="password" placeholder="Password" [(ngModel)]="User.Password" name="password">
       </div>
+
+   <!--
       <div class="form-group">
         <label class="radio">
           <input type="radio" name="radio" checked [(ngModel)]="User.Role" value="user" name="accounttype">
@@ -61,11 +63,12 @@
           <span class="text">Personal Account</span>
         </label>
       </div>
+      -->
       <div class="form-group">
         <label class="checkbox">
           <input type="checkbox" [(ngModel)]="User.Accept" name="accept">
           <span class="check"></span>
-          <span class="text">By signing up you agree to NextFyt <a href="">Terms of Service and Privacy Policy.</a> You also agree to receive subsequent email and third-party communications,
+          <span class="text">By signing up you agree to NextFyt <a >Terms of Service and Privacy Policy.</a> You also agree to receive subsequent email and third-party communications,
 which you may opt out of at any time.</span>
         </label>
       </div>

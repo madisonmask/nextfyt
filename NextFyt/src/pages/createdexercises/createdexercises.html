@@ -1,9 +1,4 @@
-<!--
-  Generated template for the Savedlist page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
 
@@ -16,7 +11,7 @@
 
     <div class="wrap-page padding-bottom-none">
         <div class="top-window">
-            <a class="prev">
+            <a class="prev" (click)="goBack()">
                 <img src="assets/images/home/arrow.svg" alt="">
             </a>
             <div class="h4">New Tab</div>
@@ -58,7 +53,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="tab-buttonDesign">
+                <div class="buttonTABS">
                     <button class="next" (click)="goToStep2()">Next</button>
                 </div>
             </form>
@@ -67,37 +62,4 @@
     </div>
 
 
-    <!--
-    <ion-item>
-        <ion-input type="text" placeholder="Please name your exercise here" [(ngModel)]="Exercise.Name"></ion-input>
-    </ion-item>
-
-
-    <h2>Muscles worked </h2>
-
-    <button ion-button *ngFor="let item of FilterValues.Muscles" (click)="SelectMuscles(item)"
-            [color]="checkMuscles(item) ? '' : 'light'"> {{item.name}}
-    </button>
-
-    <ion-item>
-        <ion-label>Cardio</ion-label>
-        <ion-toggle [(ngModel)]="Exercise.Filters.Cardio"></ion-toggle>
-    </ion-item>
-
-    <h2>Difficulty </h2>
-
-
-    <div padding>
-        <ion-segment *ngIf="FilterValues.Difficulty.length>0"  [(ngModel)]="Exercise.Filters.Difficulty">
-            <ion-segment-button *ngFor="let item of FilterValues.Difficulty" value="{{item.name}}">
-                {{item.name}}
-            </ion-segment-button>
-        </ion-segment>
-    </div>
-
-
-    <br>
-    <button ion-button round class="fullWidth" (click)="goToStep2()" [disabled]="isformCorrect()==false">Next</button>
-
--->
 </ion-content>

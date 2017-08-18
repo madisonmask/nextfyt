@@ -1,120 +1,227 @@
-<!--
-  Generated template for the Savedlist page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-    <ion-navbar>
-        <ion-title>createdexercises stage</ion-title>
-    </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
+<ion-content >
 
 
-    <ion-grid>
-        <ion-row>
-            <ion-col col-4>
+    <div class="wrap-page padding-bottom-none">
+        <div class="top-window">
+            <a class="prev" (click)="goBack()"  >
+                <img src="assets/images/home/arrow.svg" alt="">
+            </a>
+            <div class="h4">New Tab</div>
+        </div>
+        <div class="stage">
+            <div class="h3">Stages of Exercise</div>
+            <ul class="img-list">
+
+
+<!--
                 <img src="assets/images/blank.jpg" (click)="showRadio(0)" *ngIf="!ExcerciseImage[0]">
                 <img [src]="_DomSanitizationService.bypassSecurityTrustUrl(ExcerciseImage[0])" *ngIf="ExcerciseImage[0]"/>
-            </ion-col>
-            <ion-col col-4>
-                <img src="assets/images/blank.jpg" (click)="showRadio(1)" *ngIf="!ExcerciseImage[1]">
-                <img [src]="_DomSanitizationService.bypassSecurityTrustUrl(ExcerciseImage[1])" *ngIf="ExcerciseImage[1]"/>
-            </ion-col>
-            <ion-col col-4>
-                <img src="assets/images/blank.jpg" (click)="showRadio(2)"  *ngIf="!ExcerciseImage[2]">
-                <img [src]="_DomSanitizationService.bypassSecurityTrustUrl(ExcerciseImage[2])" *ngIf="ExcerciseImage[2]"/>
-            </ion-col>
-
-
-        </ion-row>
-        <ion-row>
-            <ion-col col-4>
-                <img src="assets/images/blank.jpg" (click)="showRadio(3)"  *ngIf="!ExcerciseImage[3]">
-                <img [src]="_DomSanitizationService.bypassSecurityTrustUrl(ExcerciseImage[3])" *ngIf="ExcerciseImage[3]"/>
-            </ion-col>
-            <ion-col col-4>
-                <img src="assets/images/blank.jpg" (click)="showRadio(4)"  *ngIf="!ExcerciseImage[4]">
-                <img [src]="_DomSanitizationService.bypassSecurityTrustUrl(ExcerciseImage[4])" *ngIf="ExcerciseImage[4]"/>
-            </ion-col>
-            <ion-col col-4>
-                <img src="assets/images/blank.jpg" (click)="showRadio(5)"  *ngIf="!ExcerciseImage[5]">
-                <img [src]="_DomSanitizationService.bypassSecurityTrustUrl(ExcerciseImage[5])" *ngIf="ExcerciseImage[5]"/>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
-
-
-
-
-    <ion-item>
-        <ion-label>repeat count</ion-label>
-        <ion-select [(ngModel)]="Exercise.repeat_count">
-            <ion-option value="1">1</ion-option>
-            <ion-option value="2">2</ion-option>
-            <ion-option value="3">3</ion-option>
-            <ion-option value="4">4</ion-option>
-            <ion-option value="5">5</ion-option>
-            <ion-option value="6">6</ion-option>
-            <ion-option value="7">7</ion-option>
-            <ion-option value="8">8</ion-option>
-            <ion-option value="9">9</ion-option>
-            <ion-option value="10">10</ion-option>
-        </ion-select>
-    </ion-item>
-
-
-
-
-    <ion-segment [(ngModel)]="Exercise.repeat_type">
-        <ion-segment-button  value="movements">
-            Compound movements
-        </ion-segment-button>
-        <ion-segment-button  value="steps">
-            Sets
-        </ion-segment-button>
-    </ion-segment>
-
-    <ion-input type="text"  placeholder="enter length count" [(ngModel)]="Exercise.length_count" ></ion-input>
-
-    <ion-segment [(ngModel)]="Exercise.length_type">
-        <ion-segment-button  value="Seconds">
-            Seconds
-        </ion-segment-button>
-        <ion-segment-button  value="Minutes">
-            Minutes
-        </ion-segment-button>
-        <ion-segment-button  value="Reps">
-            Reps
-        </ion-segment-button>
-
-
-    </ion-segment>
-
-
-
-
-    <button ion-button round class="fullWidth" (click)="showPrompt()">Publish</button>
-
-    <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
-<!--
-
-   <a (click)="showRadio()"> Hello World, this is my camera app </a>
-
-    <button (click)="takePicture()">Take a Picture</button>
-
-    Latest Picture:
-    <img [src]="base64Image" *ngIf="base64Image" />
-
-
-    <img [src]="_DomSanitizationService.bypassSecurityTrustUrl(base64Image)" *ngIf="base64Image"/>
-
-
 -->
 
+                <li [ngStyle]="{'background-image' : 'url(' + ExcerciseImage[0] + ')'}"  *ngIf="ExcerciseImage[0]" (click)="showRadio(0)"></li>
+                <li *ngIf="!ExcerciseImage[0]"><img src="assets/images/img-icon.svg" alt="" (click)="showRadio(0)" ></li>
+
+                <li [ngStyle]="{'background-image' : 'url(' + ExcerciseImage[1] + ')'}"  *ngIf="ExcerciseImage[1]" (click)="showRadio(1)"></li>
+                <li *ngIf="!ExcerciseImage[1]"><img src="assets/images/img-icon.svg" alt="" (click)="showRadio(1)" ></li>
+
+                <li [ngStyle]="{'background-image' : 'url(' + ExcerciseImage[2] + ')'}"  *ngIf="ExcerciseImage[2]" (click)="showRadio(2)"></li>
+                <li *ngIf="!ExcerciseImage[2]"><img src="assets/images/img-icon.svg" alt="" (click)="showRadio(2)" ></li>
+
+                <li [ngStyle]="{'background-image' : 'url(' + ExcerciseImage[3] + ')'}"  *ngIf="ExcerciseImage[3]" (click)="showRadio(3)"></li>
+                <li *ngIf="!ExcerciseImage[3]"><img src="assets/images/img-icon.svg" alt="" (click)="showRadio(3)" ></li>
+
+                <li [ngStyle]="{'background-image' : 'url(' + ExcerciseImage[4] + ')'}"  *ngIf="ExcerciseImage[4]" (click)="showRadio(4)"></li>
+                <li *ngIf="!ExcerciseImage[4]"><img src="assets/images/img-icon.svg" alt="" (click)="showRadio(4)" ></li>
+
+                <li [ngStyle]="{'background-image' : 'url(' + ExcerciseImage[5] + ')'}"  *ngIf="ExcerciseImage[5]" (click)="showRadio(5)"></li>
+                <li *ngIf="!ExcerciseImage[5]"><img src="assets/images/img-icon.svg" alt="" (click)="showRadio(5)" ></li>
+
+            </ul>
+            <table class="option-stage">
+                <tr>
+                    <td class="set">
+                        <div class="wr">
+                            <label class="radio">
+                                <input type="radio" name="set" [(ngModel)]="Exercise.repeat_type" value="movements">
+                                <span>Compound Movements</span>
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="set" [(ngModel)]="Exercise.repeat_type" value="segments ">
+                                <span>Sets</span>
+                            </label>
+                        </div>
+                    </td>
+                    <td class="number">
+                        <p class="numbers-column">
+                            <ion-select [(ngModel)]="Exercise.repeat_count">
+                                <ion-option value="1" selected>1</ion-option>
+                                <ion-option value="2">2</ion-option>
+                                <ion-option value="3">3</ion-option>
+                                <ion-option value="4">4</ion-option>
+                                <ion-option value="5">5</ion-option>
+                                <ion-option value="6">6</ion-option>
+                                <ion-option value="7">7</ion-option>
+                                <ion-option value="8">8</ion-option>
+                                <ion-option value="9">9</ion-option>
+                                <ion-option value="10">10</ion-option>
+                            </ion-select>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time">
+                        <div class="wr">
+                            <label class="radio">
+                                <input type="radio" name="time">
+                                <span>Seconds</span>
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="time" checked>
+                                <span>Minutes</span>
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="time">
+                                <span>Reps</span>
+                            </label>
+                        </div>
+                    </td>
+                    <td class="number">
+                        <p class="numbers-column">
+                            <input type="text" [(ngModel)]="Exercise.length_count" >
+                        </p>
+                    </td>
+                </tr>
+            </table>
+            <a  class="publish" (click)="showPrompt()">Publish</a>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <!--
+    <ion-header>
+
+        <ion-navbar>
+            <ion-title>createdexercises stage</ion-title>
+        </ion-navbar>
+
+    </ion-header>
+
+
+    <ion-content padding>
+
+
+        <ion-grid>
+            <ion-row>
+                <ion-col col-4>
+                    <img src="assets/images/blank.jpg" (click)="showRadio(0)" *ngIf="!ExcerciseImage[0]">
+                    <img [src]="_DomSanitizationService.bypassSecurityTrustUrl(ExcerciseImage[0])" *ngIf="ExcerciseImage[0]"/>
+                </ion-col>
+                <ion-col col-4>
+                    <img src="assets/images/blank.jpg" (click)="showRadio(1)" *ngIf="!ExcerciseImage[1]">
+                    <img [src]="_DomSanitizationService.bypassSecurityTrustUrl(ExcerciseImage[1])" *ngIf="ExcerciseImage[1]"/>
+                </ion-col>
+                <ion-col col-4>
+                    <img src="assets/images/blank.jpg" (click)="showRadio(2)"  *ngIf="!ExcerciseImage[2]">
+                    <img [src]="_DomSanitizationService.bypassSecurityTrustUrl(ExcerciseImage[2])" *ngIf="ExcerciseImage[2]"/>
+                </ion-col>
+
+
+            </ion-row>
+            <ion-row>
+                <ion-col col-4>
+                    <img src="assets/images/blank.jpg" (click)="showRadio(3)"  *ngIf="!ExcerciseImage[3]">
+                    <img [src]="_DomSanitizationService.bypassSecurityTrustUrl(ExcerciseImage[3])" *ngIf="ExcerciseImage[3]"/>
+                </ion-col>
+                <ion-col col-4>
+                    <img src="assets/images/blank.jpg" (click)="showRadio(4)"  *ngIf="!ExcerciseImage[4]">
+                    <img [src]="_DomSanitizationService.bypassSecurityTrustUrl(ExcerciseImage[4])" *ngIf="ExcerciseImage[4]"/>
+                </ion-col>
+                <ion-col col-4>
+                    <img src="assets/images/blank.jpg" (click)="showRadio(5)"  *ngIf="!ExcerciseImage[5]">
+                    <img [src]="_DomSanitizationService.bypassSecurityTrustUrl(ExcerciseImage[5])" *ngIf="ExcerciseImage[5]"/>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+
+
+
+        <ion-item>
+            <ion-label>repeat count</ion-label>
+            <ion-select [(ngModel)]="Exercise.repeat_count">
+                <ion-option value="1">1</ion-option>
+                <ion-option value="2">2</ion-option>
+                <ion-option value="3">3</ion-option>
+                <ion-option value="4">4</ion-option>
+                <ion-option value="5">5</ion-option>
+                <ion-option value="6">6</ion-option>
+                <ion-option value="7">7</ion-option>
+                <ion-option value="8">8</ion-option>
+                <ion-option value="9">9</ion-option>
+                <ion-option value="10">10</ion-option>
+            </ion-select>
+        </ion-item>
+
+
+
+
+        <ion-segment [(ngModel)]="Exercise.repeat_type">
+            <ion-segment-button  value="movements">
+                Compound movements
+            </ion-segment-button>
+            <ion-segment-button  value="steps">
+                Sets
+            </ion-segment-button>
+        </ion-segment>
+
+        <ion-input type="text"  placeholder="enter length count" [(ngModel)]="Exercise.length_count" ></ion-input>
+
+        <ion-segment [(ngModel)]="Exercise.length_type">
+            <ion-segment-button  value="Seconds">
+                Seconds
+            </ion-segment-button>
+            <ion-segment-button  value="Minutes">
+                Minutes
+            </ion-segment-button>
+            <ion-segment-button  value="Reps">
+                Reps
+            </ion-segment-button>
+
+
+        </ion-segment>
+
+
+
+
+        <button ion-button round class="fullWidth" (click)="showPrompt()">Publish</button>
+
+        <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
+    <!--
+
+       <a (click)="showRadio()"> Hello World, this is my camera app </a>
+
+        <button (click)="takePicture()">Take a Picture</button>
+
+        Latest Picture:
+        <img [src]="base64Image" *ngIf="base64Image" />
+
+
+        <img [src]="_DomSanitizationService.bypassSecurityTrustUrl(base64Image)" *ngIf="base64Image"/>
+
+
+
+    -->
+    <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
 </ion-content>

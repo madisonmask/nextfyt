@@ -1,9 +1,60 @@
-<!--
-  Generated template for the WorkoutDetailsExercisesPage page.
+<div class="wrap-page ">
+  <div class="top-window">
+    <a class="prev" (click)="goBack()">
+      <img src="assets/images/home/arrow.svg" alt="">
+    </a>
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
+    <div class="h4">WorkoutDetailsExercises</div>
+  </div>
+
+  <div class="exercise-History">
+    <div class="item" *ngFor="let exercise of Exercises">
+      <div class="image"                [ngStyle]="{'background-image': 'url('  + config.baseUrl + exercise.stage1_img + ')'}"            ></div>
+      <div class="info" (tap)="runExercise(exercise)">
+        <div class="left">
+          <div class="h5">{{exercise.name}}</div>
+          <ul class="list">
+            <li>
+              By: <span>Sentarius</span>
+            </li>
+            <li>
+              Skill: <span>advanced</span>
+            </li>
+            <li>
+              Muscules Worked: <span>Chest, Triceps</span>
+            </li>
+            <li>
+              Cardio: <span> {{exercise.cardio}}</span>
+            </li>
+          </ul>
+        </div>
+        <!--     <div class="right">
+                 <ul>
+                     <li>
+                         <a >
+                                  <span class="icon">
+                                     <img src="assets/images/bar/like-red.svg" alt="">
+                                  </span>
+                             <span class="number">125</span>
+                         </a>
+                     </li>
+
+                 </ul>
+             </div> -->
+      </div>
+    </div>
+    <button class="share-btn" (tap)="finish()" >Completed  </button>
+  </div>
+
+
+</div>
+
+<ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
+
+
+
+<!--
+
 <ion-header>
 
   <ion-navbar>
@@ -42,3 +93,4 @@
 
 
 </ion-content>
+-->

@@ -1,11 +1,10 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
+import { NavController, NavParams, ToastController} from 'ionic-angular';
 import {RegistrationPage} from '../registration/registration';
 import {PasswordResetPage} from '../password-reset/password-reset';
 import {AuthService} from '../../services/auth';
 import {UserService} from '../../services/User';
 import {TabsService} from '../../services/tabs';
-import{HomePage} from'../home/home';
 import {TabsPage} from '../tabs/tabs';
 
 //import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
@@ -21,7 +20,7 @@ import {Storage} from "@ionic/storage";
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
+
 @Component({
     selector: 'page-login',
     templateUrl: 'login.html',
@@ -145,7 +144,7 @@ export class LoginPage {
 */
 
         let permissions = new Array<string>();
-        let nav = this.navCtrl;
+//        let nav = this.navCtrl;
         //the permissions your facebook app needs from the user
         permissions = ["public_profile"];
 

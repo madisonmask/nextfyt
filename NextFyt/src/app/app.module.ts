@@ -39,6 +39,7 @@ import {DefaultExercisesParamsPage} from '../pages/default-exercises-params/defa
 import {PasswordResetPage} from '../pages/password-reset/password-reset';
 
 
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Camera} from '@ionic-native/camera';
@@ -122,6 +123,7 @@ import { APP_CONFIG, AppConfig } from './app.config';
     WorkoutDetailsExerciseShowPage,
     ProfilePublicPage,
     ProfileSettingsPage,
+    EditPasswordPage,
     PrivacyPage,
     TermsPage,
     AuthPage,

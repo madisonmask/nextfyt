@@ -1,5 +1,5 @@
 import {Component, Inject} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {NavController, NavParams} from 'ionic-angular';
 import {Storage} from "@ionic/storage";
 import{WorkoutDetailsExerciseShowPage} from '../workout-details-exercise-show/workout-details-exercise-show';
 
@@ -13,7 +13,7 @@ import {APP_CONFIG, IAppConfig} from '../../app/app.config';
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
+
 @Component({
     selector: 'page-workout-details-exercises',
     templateUrl: 'workout-details-exercises.html',
@@ -82,6 +82,10 @@ export class WorkoutDetailsExercisesPage {
 
     runExercise(exercise) {
         this.navCtrl.push(WorkoutDetailsExerciseShowPage, {exercise: exercise})
+    }
+
+    goBack(){
+        this.navCtrl.pop();
     }
 
 

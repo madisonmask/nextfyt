@@ -221,4 +221,12 @@ console.log('show toastr');
     }
 
 
+    goBack(){
+        this.navCtrl.pop();
+    }
+
+
+
+
+
 }

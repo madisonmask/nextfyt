@@ -145,4 +145,9 @@ export class CreatedExercisesPage {
 
 
     }
+
+    goBack(){
+        this.navCtrl.pop();
+    }
+
 }

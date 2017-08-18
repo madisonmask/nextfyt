@@ -34,9 +34,9 @@ class SearchController extends Controller
 
                     if (isset($request->Filters['Cardio'])) {
                         if ($request->Filters['Cardio'] == true) {
-                            $filters[] = 'workouts.cardio=1';
+                            $filters[] = ' workouts.cardio=1';
                         } else {
-                            $filters[] = 'workouts.cardio=0';
+                            $filters[] = ' workouts.cardio=0';
                         }
                     }
 
@@ -46,7 +46,7 @@ class SearchController extends Controller
                             $difficulties .= $dif['id'] . ',';
                         }
                         $difficulties = substr($difficulties, 0, -1);
-                        $filters[] = 'workouts.difficulty IN  (' . $difficulties . ')';
+                        $filters[] = ' workouts.difficulty IN  (' . $difficulties . ')';
                     }
 
                     if (isset($request->Filters['Equipment']) AND (count($request->Filters['Equipment']) > 0)) {
@@ -55,7 +55,7 @@ class SearchController extends Controller
                             $equipments .= $item['id'] . ',';
                         }
                         $equipments = substr($equipments, 0, -1);
-                        $filters[] = 'equipment_to_exercise.equipment_id IN  (' . $equipments . ')';
+                        $filters[] = ' equipment_to_exercise.equipment_id IN  (' . $equipments . ')';
                     }
 
                     if (isset($request->Filters['Muscles']) AND (count($request->Filters['Muscles']) > 0)) {
@@ -64,20 +64,20 @@ class SearchController extends Controller
                             $muscles .= $item['id'] . ',';
                         }
                         $muscles = substr($muscles, 0, -1);
-                        $filters[] = 'muscles_to_exercise.muscles_id IN  (' . $muscles . ')';
+                        $filters[] = ' muscles_to_exercise.muscles_id IN  (' . $muscles . ')';
                     }
 
 
                     if (isset($request->Filters['TimeLength'])) {
                         if ($request->Filters['TimeLength'] == 0 ) {
                         } else {
-                            $filters[] = 'workouts.Time ='.$request->Filters['TimeLength'];
+                            $filters[] = ' workouts.Time ='.$request->Filters['TimeLength'];
                         }
                     }
 
                     foreach($filters as $filter){
 
-                        $filterStr.='AND '.$filter;
+                        $filterStr.=' AND '.$filter;
 
                     }
 
@@ -88,7 +88,7 @@ class SearchController extends Controller
 
                     //               Log::info(print_r($match,true));
                     //so we search tags
-                    $sql = "SELECT workouts.*, workoutlikes.id AS liked
+                    $sql = "SELECT workouts.*, workoutlikes.id AS InLiked
                         FROM workouts
                         LEFT JOIN workoutlikes ON
                          workoutlikes.workout_id=workouts.id AND workoutlikes.user_id=" . $user['id'] . "
@@ -125,7 +125,7 @@ class SearchController extends Controller
 
 
                     //     $workoutsByName = Workout::where('name', 'LIKE', '%' . $request->SearchString . '%')->get();
-                    $sql = "SELECT workouts.*, workoutlikes.id AS liked
+                    $sql = "SELECT workouts.*, workoutlikes.id AS InLiked
                         FROM workouts
                         LEFT JOIN workoutlikes ON
                          workoutlikes.workout_id=workouts.id AND workoutlikes.user_id=" . $user['id'] . "
@@ -160,7 +160,7 @@ class SearchController extends Controller
                     $exportWorkout[$i]['author'] = $user['username'];
                     $exportWorkout[$i]['name'] = $work->name;
                     $exportWorkout[$i]['skill'] = $difficultys[$work->difficulty];
-                    $exportWorkout[$i]['liked'] = $work->liked;
+                    $exportWorkout[$i]['InLiked'] = $work->InLiked;
                     $exportWorkout[$i]['workoutId'] = $work->id;
 
                     $sql = '  SELECT DISTINCT(muscles.name)

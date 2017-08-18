@@ -48,14 +48,12 @@ class NotificationController extends Controller
 
                     'name' => 'TestUsder'
                 ];
+
+
             }
+            $notify->actionType=trim($notify->actionType);
             $news[] = $notify;
-
-
         }
-
-
         return response()->json(['error' => false, 'news' => $news, 'followers' => $followers]);
-
     }
 }

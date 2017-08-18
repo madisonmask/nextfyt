@@ -139,15 +139,12 @@ export class SearchPage {
 
 
     toggleLike(workout) {
-
-        console.log(workout.liked);
-        if (workout.liked == null) {
-            workout.liked = 1;
+        console.log(workout.InLiked);
+        if (workout.InLiked == null || workout.InLiked == undefined) {
+            workout.InLiked = 1;
         } else {
-            workout.liked = null;
+            workout.InLiked = null;
         }
-
-
         this.IsAjaxLoaded = true;
         this.storage.ready().then(() => {
             this.storage.get('token').then(token => {
@@ -160,15 +157,9 @@ export class SearchPage {
 
                     console.log(data);
                     this.IsAjaxLoaded = false;
-
-
                 });
-
-
             })
         })
-
-
     }
 
 

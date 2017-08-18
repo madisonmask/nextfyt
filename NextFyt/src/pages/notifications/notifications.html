@@ -17,17 +17,19 @@
     <div class="notification">
         <ul class="tab">
             <li>
-                <a class="active">Following</a>
+                <a (tap)="ShowNotify('Following')"    [ngClass]="{'active': isMySaved }" >Following</a>
             </li>
             <li>
-                <a>You</a>
+                <a (tap)="ShowNotify('My')"  [ngClass]="{'active': !isMySaved }" >You</a>
             </li>
         </ul>
         <div class="tab-content">
             <div class="tab-item" id="Following">
                 <ul class="tab-list">
-                    <li *ngFor="let item of Notifications" (click)="showDetails(item)">
-                        <div *ngIf="item.actionType=='liked'">
+                    <li *ngFor="let item of Notifications" (tap)="showDetails(item)">
+
+
+                         <div *ngIf="item.actionType=='liked'">
                             <div class="avatar">
                                 <div class="photo" style="background-image:url({{item.User.avatar}})"></div>
                             </div>
@@ -46,7 +48,7 @@
                                              style="background-image:url(assets/images/home/home.jpg)"></div>
                                     </div>
                                     <div class="text">{{item.WorkoutName}}</div>
-                                    <a href="" class="more">
+                                    <a class="more">
                                         <img src="assets/images/notification/arrow.png" alt="">
                                     </a>
                                 </div>
@@ -68,6 +70,33 @@
 
                             </div>
 
+                        </div>
+
+
+                        <div *ngIf="item.actionType =='newworkout' ">
+                            <div class="avatar">
+                                <div class="photo" style="background-image:url({{item.User.avatar}})"></div>
+                            </div>
+                            <div class="info">
+                                <div class="top-info">
+                                    <div class="name"><span>{{item.User.name}}</span></div>
+                                    <div class="commetn">
+                                        <img src="assets/images/bar/like-red.svg" alt="">
+                                        <span>Create workout</span>
+                                    </div>
+                                    <div class="date">{{item.DATE}}</div>
+                                </div>
+                                <div class="comment-to">
+                                    <div class="ava">
+                                        <div class="photo"
+                                             style="background-image:url(assets/images/home/home.jpg)"></div>
+                                    </div>
+                                    <div class="text">{{item.WorkoutName}}</div>
+                                    <a class="more">
+                                        <img src="assets/images/notification/arrow.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
                         </div>
 
 

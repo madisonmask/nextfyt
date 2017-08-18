@@ -1,17 +1,8 @@
-<!--
-  Generated template for the Profile page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-
 </ion-header>
 
 
 <ion-content >
-
     <div class="wrap-page ">
         <div class="top-window">
             <div class="right-icon"><a (click)="EditSettings()"><img src="assets/images/inner/set.svg" alt=""></a></div>
@@ -20,12 +11,12 @@
         <div class="profile-page">
             <div class="profile-info">
                 <div class="profile-top">
-                    <div class="image" [style.background-image]="user.avatarSTYLE"  *ngIf="user.avatar!=''" ></div>
+                    <div class="image" [ngStyle]="{'background-image' : 'url(' +config.baseUrl + user.avatar + ')'}"  *ngIf="user.avatar!=''" ></div>
                     <div class="image" style="background-image:url('assets/images/avatar.jpg')" *ngIf="user.avatar==''" ></div>
 
 
-                    <a href="" class="name">{{user.name}}</a>
-                <!--    <a href="" class="tag">@strong_jesus</a> -->
+                    <a class="name">{{user.name}}</a>
+                <!--    <a class="tag">@strong_jesus</a> -->
                 </div>
                 <ul class="char-profile">
                     <li>
@@ -58,19 +49,21 @@
                 <div class="item" *ngFor="let item of ActiveList" (click)="showDetails(item)">
                     <div class="left">
                       <!--  <div   [style.background-image] = " sanitizer.bypassSecurityTrustResourceUrl(item.image) "></div>-->
-                        <div class="image" [ngStyle]="{background: 'url(' + item.image + ')'}"></div>
+                        <div class="image" [ngStyle]="{'background-image' : 'url(/assets/images/fitnes_blank.jpg)'}" *ngIf="item.image =='' "></div>
+                        <div class="image" [ngStyle]="{'background-image' : 'url(' +config.baseUrl + item.image + ')'}"   *ngIf="item.image.length > 10 "></div>
 
                         <ul>
                             <li>
-                                <a href="">
- 								<span class="icon">
-									<img src="assets/images/bar/like-red.svg" alt="">
+                                <a >
+ 								<span class="icon" (click)="toggleLike(item)" >
+									<img src="assets/images/bar/like-red.svg" alt="" *ngIf="item.InLiked >0 ">
+                                    <img src="assets/images/bar/like.svg" alt="" *ngIf="item.InLiked ==null ">
  								</span>
                                     <span class="number">{{item.countLikes}}</span>
                                 </a>
                             </li>
                      <!--       <li>
-                                <a href="">
+                                <a >
  								<span class="icon">
 									<img src="assets/images/comments.svg" alt="">
  								</span>
@@ -95,92 +88,6 @@
         </div>
 
     </div>
-
-
-
-
-    <!--
-
-
-    <ion-item>
-        <h2> {{user.name}}</h2>
-        <ion-icon name="cog" class="settings" (click)="EditSettings()"></ion-icon>
-        <a (click)="Logout()">Logout</a>
-    </ion-item>
-
-
-    <ion-grid>
-        <ion-row>
-            <ion-col col-4>
-                <ion-avatar item-start class="avatar">
-
-                    <img src="{{user.avatar}}" *ngIf="user.avatar!=''">
-                    <img src="assets/images/avatar.jpg" *ngIf="user.avatar==''">
-
-
-                </ion-avatar>
-            </ion-col>
-            <ion-col col-8>
-                <ion-row>
-                    <ion-col col-4>
-                        <h2>{{user.posts}}</h2>
-                        Posts
-                    </ion-col>
-
-                    <ion-col col-4>
-                        <h2> {{user.followers}}</h2>
-                        Followers
-                    </ion-col>
-
-                    <ion-col col-4>
-                        <h2> {{user.following}}</h2>
-                        Following
-                    </ion-col>
-                </ion-row>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
-
-
-    <div padding>
-        <ion-segment [(ngModel)]="profileWorkoutsType" (ngModelChange)="updateList()">
-            <ion-segment-button value="workouts">
-                My workout s
-            </ion-segment-button>
-            <ion-segment-button value="favorites">
-                My favorites
-            </ion-segment-button>
-        </ion-segment>
-    </div>
-
-    <ion-list>
-
-        <div ion-item *ngFor="let item of ActiveList" (click)="showDetails(item)">
-
-            <div class="workout"  >
-                <div class="description">
-                    <p>Created By: <b>{{item.author}}</b></p>
-
-
-
-
-                    <p>{{item.name}}</p>
-                    <p>Skill: {{item.skill}}</p>
-                    <p>Muscles worked: <span *ngFor="let muscle  of item.muscles"> {{muscle.name}}  </span>  </p>
-                    <p>Cardio: {{item.cardio}}</p>
-                </div>
-                <div class="image">
-                    <img src="http://via.placeholder.com/350x150" *ngIf="item.image==''" >
-                    <img src="{{item.image}}" *ngIf="item.image!=''">
-                </div>
-            </div>
-            <div class="clear"></div>
-        </div>
-
-
-    </ion-list>
-
--->
 
     <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
 </ion-content>

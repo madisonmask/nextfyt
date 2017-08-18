@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
+import {NavController, NavParams, ToastController} from 'ionic-angular';
 import {AuthService} from '../../services/auth';
 import{UserService} from  '../../services/User';
 import {HomePage} from '../home/home';
@@ -13,7 +13,7 @@ import {Storage} from "@ionic/storage";
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
+
 @Component({
     selector: 'page-registration',
     templateUrl: 'registration.html',

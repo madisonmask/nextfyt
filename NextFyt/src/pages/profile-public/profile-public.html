@@ -1,9 +1,106 @@
-<!--
-  Generated template for the ProfilePublicPage page.
+<ion-header>
+</ion-header>
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
+
+<ion-content >
+  <div class="wrap-page ">
+
+
+
+
+    <div class="top-window">
+      <a  class="prev" (click)="goBack()">
+        <img src="assets/images/home/arrow.svg" alt="">
+      </a>
+      <div class="h4">{{user.name}}</div>
+    </div>
+    <div class="profile-page">
+      <div class="profile-info">
+        <div class="profile-top">
+          <div class="image" [style.background-image]="user.avatarSTYLE"  *ngIf="user.avatar!=''" ></div>
+          <div class="image" style="background-image:url('assets/images/avatar.jpg')" *ngIf="user.avatar==''" ></div>
+
+
+          <a  class="name">{{user.name}}</a>
+          <!--    <a  class="tag">@strong_jesus</a> -->
+        </div>
+        <ul class="char-profile">
+          <li>
+            <div class="number">{{user.posts}}</div>
+            <div class="text">Posts</div>
+          </li>
+          <li>
+            <div class="number">{{user.followers}}</div>
+            <div class="text">Followers</div>
+          </li>
+          <li>
+            <div class="number">{{user.following}}</div>
+            <div class="text">Following</div>
+          </li>
+        </ul>
+        <div class="wr-radio-items">
+          <div class="radio-items">
+            <label class="radio">
+              <input type="radio" name="profile" checked  [(ngModel)]="profileWorkoutsType" (ngModelChange)="updateList()" value="workouts">
+              <span class="text">My Workouts</span>
+            </label>
+            <label class="radio">
+              <input type="radio" name="profile"  [(ngModel)]="profileWorkoutsType" (ngModelChange)="updateList()" value="favorites">
+              <span class="text">My Favorites</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="items-search">
+        <div class="item" *ngFor="let item of ActiveList" (click)="showDetails(item)">
+          <div class="left">
+            <!--  <div   [style.background-image] = " sanitizer.bypassSecurityTrustResourceUrl(item.image) "></div>-->
+            <div class="image" [ngStyle]="{'background-image' : 'url(/assets/images/fitnes_blank.jpg)'}" *ngIf="item.image =='' "></div>
+            <div class="image" [ngStyle]="{'background-image' : 'url(' + config.baseUrl  + item.image + ')'}"   *ngIf="item.image.length > 10 "></div>
+
+            <ul>
+              <li>
+                <a >
+ 								<span class="icon" (click)="toggleLike(item)">
+											<img src="assets/images/bar/like-red.svg" alt="" *ngIf="item.InLiked >0 ">
+                                    <img src="assets/images/bar/like.svg" alt="" *ngIf="item.InLiked ==null ">
+ 								</span>
+                  <span class="number">{{item.countLikes}}</span>
+                </a>
+              </li>
+              <!--       <li>
+                         <a >
+                          <span class="icon">
+                             <img src="assets/images/comments.svg" alt="">
+                          </span>
+                             <span class="number">14</span>
+                         </a>
+                     </li> -->
+            </ul>
+          </div>
+          <div class="right">
+            <a  class="h4">{{item.name}}</a>
+            <ul>
+              <li>By: <span>{{item.author}}</span></li>
+              <li>Skill: <span>{{item.skill}}</span></li>
+              <li>Muscules Worked: <span> <span *ngFor="let muscle  of item.muscles"> {{muscle.name}}  </span></span></li>
+              <li>Cardio: <span>{{item.cardio}}</span></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
+</ion-content>
+
+
+
+<!--
 <ion-header>
 
   <ion-navbar>
@@ -103,3 +200,4 @@
   <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
 
 </ion-content>
+-->

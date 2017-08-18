@@ -1,98 +1,91 @@
-
-
 <div class="wrap-page ">
-  <div class="top-window">
-    <a href="" class="prev">
-      <img src="img/home/arrow.svg" alt="">
-    </a>
-    <div class="h4">Share Workout</div>
-  </div>
-  <div class="share-p search-page">
-    <div class="workout--share">
-
-      <form>
-        <div class="image">
-          <label>
-            <input type="file">
-            <span class="wr">
-
-               <img src="assets/images/image.png" (click)="showRadio()"  *ngIf="Workout.Image=='' && Workout.ImageData==''">
-      <img [src]="_DomSanitizationService.bypassSecurityTrustUrl(Workout.Image)" *ngIf="Workout.Image"/>
-              		<span class="text"  *ngIf="Workout.Image=='' && Workout.ImageData==''">Upload Image </span>
-						</span>
-          </label>
-        </div>
-        <input type="text" class="share-input name-workout" placeholder="Please name your workout here " [(ngModel)]="Workout.Name" name="name">
-        <div class="time--length">
-          <div class="h4">Time Length</div>
-          <p>Please enter your workout length</p>
-          <div class="list--time">
-            <label class="checkbox">
-              <span class="text">0-15 minutes</span>
-              <input type="radio" name="radio-time" value="15"  [(ngModel)]="Workout.Length" [checked]>
-              <span class="check"></span>
-            </label>
-            <label class="checkbox">
-              <span class="text">15-30 minutes</span>
-              <input type="radio" name="radio-time" value="30"  [(ngModel)]="Workout.Length" checked>
-              <span class="check"></span>
-            </label>
-            <label class="checkbox">
-              <span class="text">30-45 minutes</span>
-              <input type="radio" name="radio-time" value="45"  [(ngModel)]="Workout.Length" >
-              <span class="check"></span>
-            </label>
-            <label class="checkbox">
-              <span class="text">45-60 minutes</span>
-              <input type="radio" name="radio-time" value="60"  [(ngModel)]="Workout.Length">
-              <span class="check"></span>
-            </label>
-            <label class="checkbox">
-              <span class="text">60-75 minutes</span>
-              <input type="radio" name="radio-time" value="75"  [(ngModel)]="Workout.Length">
-              <span class="check"></span>
-            </label>
-            <label class="checkbox">
-              <span class="text">75-90 minutes</span>
-              <input type="radio" name="radio-time" value="90"  [(ngModel)]="Workout.Length">
-              <span class="check"></span>
-            </label>
-            <label class="checkbox">
-              <span class="text">90-120 minutes</span>
-              <input type="radio" name="radio-time" value="120"  [(ngModel)]="Workout.Length">
-              <span class="check"></span>
-            </label>
-            <label class="checkbox">
-              <span class="text">120+ minutes</span>
-              <input type="radio" name="radio-time" value="121"  [(ngModel)]="Workout.Length">
-              <span class="check"></span>
-            </label>
-          </div>
-        </div>
-
-
-
-
-
-        <input type="text" class="share-input hasttags" placeholder="Hashtags "  [(ngModel)]="hashtag" name="tag">
-        <a  class="add-tags"  (click)="addTag()" >Add tag</a>
-        <div class="share--tags">
-          <span      *ngFor="let tag of Workout.Tags"     > #{{tag}} ,</span>
-        </div>
-        <button class="share-btn"  (click)="SaveWorkout()" [disabled]="Workout.Name=='' || IsAjaxLoaded ">Share</button>
-      </form>
+    <div class="top-window">
+        <a class="prev" (click)="goBack()">
+            <img src="assets/images/home/arrow.svg" alt="">
+        </a>
+        <div class="h4">Share Workout</div>
     </div>
+    <div class="share-p search-page">
+        <div class="workout--share">
+
+            <form>
+                <div class="image">
+                    <label>
+                        <input type="file">
+                        <span class="wr">
+
+               <img src="assets/images/image.png" (click)="showRadio()"
+                    *ngIf="Workout.Image=='' && Workout.ImageData==''">
+                     <img [src]="_DomSanitizationService.bypassSecurityTrustUrl(Workout.Image)" *ngIf="Workout.Image"/>
+              		<span class="text" *ngIf="Workout.Image=='' && Workout.ImageData==''">Upload Image </span>
+						</span>
+                    </label>
+                </div>
+                <input type="text" class="share-input name-workout" placeholder="Please name your workout here "
+                       [(ngModel)]="Workout.Name" name="name">
+                <div class="time--length">
+                    <div class="h4">Time Length</div>
+                    <p>Please enter your workout length</p>
+                    <div class="list--time">
+                        <label class="checkbox">
+                            <span class="text">0-15 minutes</span>
+                            <input type="radio" name="radio-time" value="15" [(ngModel)]="Workout.Length" [checked]>
+                            <span class="check"></span>
+                        </label>
+                        <label class="checkbox">
+                            <span class="text">15-30 minutes</span>
+                            <input type="radio" name="radio-time" value="30" [(ngModel)]="Workout.Length" checked>
+                            <span class="check"></span>
+                        </label>
+                        <label class="checkbox">
+                            <span class="text">30-45 minutes</span>
+                            <input type="radio" name="radio-time" value="45" [(ngModel)]="Workout.Length">
+                            <span class="check"></span>
+                        </label>
+                        <label class="checkbox">
+                            <span class="text">45-60 minutes</span>
+                            <input type="radio" name="radio-time" value="60" [(ngModel)]="Workout.Length">
+                            <span class="check"></span>
+                        </label>
+                        <label class="checkbox">
+                            <span class="text">60-75 minutes</span>
+                            <input type="radio" name="radio-time" value="75" [(ngModel)]="Workout.Length">
+                            <span class="check"></span>
+                        </label>
+                        <label class="checkbox">
+                            <span class="text">75-90 minutes</span>
+                            <input type="radio" name="radio-time" value="90" [(ngModel)]="Workout.Length">
+                            <span class="check"></span>
+                        </label>
+                        <label class="checkbox">
+                            <span class="text">90-120 minutes</span>
+                            <input type="radio" name="radio-time" value="120" [(ngModel)]="Workout.Length">
+                            <span class="check"></span>
+                        </label>
+                        <label class="checkbox">
+                            <span class="text">120+ minutes</span>
+                            <input type="radio" name="radio-time" value="121" [(ngModel)]="Workout.Length">
+                            <span class="check"></span>
+                        </label>
+                    </div>
+                </div>
 
 
-  </div>
-  <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
+                <input type="text" class="share-input hasttags" placeholder="Hashtags " [(ngModel)]="hashtag"
+                       name="tag">
+                <a class="add-tags" (click)="addTag()">Add tag</a>
+                <div class="share--tags">
+                    <span *ngFor="let tag of Workout.Tags"> #{{tag}} ,</span>
+                </div>
+                <button class="share-btn" (click)="SaveWorkout()" [disabled]="Workout.Name=='' || IsAjaxLoaded ">Share
+                </button>
+            </form>
+        </div>
+
+
+    </div>
+    <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
 </div>
-
-
-
-
-
-
 
 
 <!--

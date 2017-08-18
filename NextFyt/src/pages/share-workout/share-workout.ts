@@ -1,5 +1,5 @@
 import {Component, Inject} from '@angular/core';
-import {IonicPage, NavController, NavParams, AlertController} from 'ionic-angular';
+import { NavController, NavParams, AlertController} from 'ionic-angular';
 import {Camera} from '@ionic-native/camera';
 import {DomSanitizer} from '@angular/platform-browser';
 
@@ -20,7 +20,7 @@ import{UserService} from '../../services/User';
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
+
 @Component({
     selector: 'page-share-workout',
     templateUrl: 'share-workout.html',
@@ -163,6 +163,12 @@ export class ShareWorkoutPage {
         this.Workout.Tags.push(this.hashtag);
         this.hashtag = '';
     }
+
+    goBack(){
+        this.navCtrl.pop();
+    }
+
+
 
 
 }

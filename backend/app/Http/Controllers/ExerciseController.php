@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\File;
 use App\Difficulty;
+use Illuminate\Support\Facades\DB;
 
 
 class ExerciseController extends Controller
@@ -45,12 +46,12 @@ class ExerciseController extends Controller
 
         foreach ($request->Images as $imagStr) {
             $image = base64_decode($imagStr);
-            $imgName = "exercise-" . time() . ".png";
+            $imgName = "exercise-" . time() . "_".rand(1000,9000).".png";
             $webPath = '/pictures/' . $user['id'] . '/' . $imgName;
             $path = public_path() . $webPath;
             //     Image::make($image->getRealPath())->save($path);
             file_put_contents($path, $image);
-            $savedImages[$i] = env('APP_URL') . $webPath;
+            $savedImages[$i] =  $webPath;
             $i++;
 
         }
@@ -278,20 +279,35 @@ class ExerciseController extends Controller
 
         $user = Helpers::getUser($request);
 
-        $workout = Workout::find($workoutId);
+  //      $workout = Workout::find($workoutId);
 
+        $sql='SELECT `exercises`.id
+                FROM `exercises`
+                INNER JOIN `exercise_to_workout` ON `exercise_to_workout`.`exercise_id` = `exercises`.`id`
+                WHERE `exercise_to_workout`.`workout_id` = ?';
+        $exerciseIds=DB::select($sql,[$workoutId]);
         //   $exercises = Exercise::where('user_id', $user['id'])->where('id', 1)->get();
-        $exercises = $workout->Exercises;
 
         $exportExercise = [];
         $i = 0;
-        foreach ($exercises as $ex) {
-            $exportExercise[$i] = $ex;
-            $exportExercise[$i]['equipment'] = $ex->equipments()->get(['equipment.name']);;
-            $exportExercise[$i]['muscles'] = $ex->muscles()->get(['muscles.name']);;
+        foreach($exerciseIds as $ex){
+
+
+
+        $exercise = Exercise::find($ex->id);
+
+
+
+    //    foreach ($exercises as $ex) {
+            $exportExercise[$i] = $exercise;
+            $exportExercise[$i]['equipment'] = $exercise->equipments()->get(['equipment.name']);;
+            $exportExercise[$i]['muscles'] = $exercise->muscles()->get(['muscles.name']);;
 
             $i++;
-        }
+   //     }
+
+    }
+
         return response()->json(['error' => false, 'exercises' => $exportExercise]);
 
     }

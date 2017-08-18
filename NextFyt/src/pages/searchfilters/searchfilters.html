@@ -12,22 +12,25 @@
         <div class="h4">Muscles Worked</div>
 
         <div class="list-worked" *ngIf="FilterValues.Muscles.length>0" >
-          <label class="checkbox"  *ngFor="let item of FilterValues.Muscles" (click)="SelectMuscles(item)"  >
+          <label class="checkbox"  *ngFor="let item of FilterValues.Muscles" (tap)="SelectMuscles(item)"  >
             <input type="checkbox">
             <span class="text">{{item.name}}</span>
           </label>
         </div>
+
         <label class="checkbox-item">
+
           <ion-item>
             <ion-label>Cardio</ion-label>
             <ion-toggle [(ngModel)]="Searched.Filters.Cardio"></ion-toggle>
           </ion-item>
+
         </label>
       </div>
       <div class="diff">
         <div class="h4">Difficulty</div>
         <div class="radio-items"  *ngIf="FilterValues.Difficulty.length>0" >
-          <label class="radio"  *ngFor="let item of FilterValues.Difficulty" (click)="SelectDifficulty(item)"  >
+          <label class="radio"  *ngFor="let item of FilterValues.Difficulty" (tap)="SelectDifficulty(item)"  >
             <input type="radio" name="Difficulty">
             <span class="text">{{item.name}}</span>
           </label>
@@ -37,7 +40,7 @@
         <div class="h4">Equipment Needed</div>
 
         <div class="list-worked"  *ngIf="FilterValues.Equipment.length>0">
-          <label class="checkbox" *ngFor="let item of FilterValues.Equipment" (click)="SelectEquipment(item)" >
+          <label class="checkbox" *ngFor="let item of FilterValues.Equipment" (tap)="SelectEquipment(item)" >
             <input type="checkbox"  >
             <span class="text">{{item.name}}</span>
           </label>
@@ -50,52 +53,52 @@
         <div class="list--time">
           <label class="checkbox">
             <span class="text">ANY</span>
-            <input type="radio" name="radio-time" value="0" checked>
+            <input type="radio" name="radio-time" value="0"  [(ngModel)]="Searched.Filters.TimeLength">
             <span class="check"></span>
           </label>
           <label class="checkbox">
             <span class="text">0-15 minutes</span>
-            <input type="radio" name="radio-time"  value="15">
+            <input type="radio" name="radio-time"  value="15" [(ngModel)]="Searched.Filters.TimeLength">
             <span class="check"></span>
           </label>
           <label class="checkbox">
             <span class="text">15-30 minutes</span>
-            <input type="radio" name="radio-time" value="30">
+            <input type="radio" name="radio-time" value="30" [(ngModel)]="Searched.Filters.TimeLength">
             <span class="check"></span>
           </label>
           <label class="checkbox">
             <span class="text">30-45 minutes</span>
-            <input type="radio" name="radio-time" value="45">
+            <input type="radio" name="radio-time" value="45" [(ngModel)]="Searched.Filters.TimeLength">
             <span class="check"></span>
           </label>
           <label class="checkbox">
             <span class="text">45-60 minutes</span>
-            <input type="radio" name="radio-time" value="60">
+            <input type="radio" name="radio-time" value="60" [(ngModel)]="Searched.Filters.TimeLength">
             <span class="check"></span>
           </label>
           <label class="checkbox">
             <span class="text">60-75 minutes</span>
-            <input type="radio" name="radio-time" value="75">
+            <input type="radio" name="radio-time" value="75" [(ngModel)]="Searched.Filters.TimeLength">
             <span class="check"></span>
           </label>
           <label class="checkbox">
             <span class="text">75-90 minutes</span>
-            <input type="radio" name="radio-time" value="90">
+            <input type="radio" name="radio-time" value="90" [(ngModel)]="Searched.Filters.TimeLength">
             <span class="check"></span>
           </label>
           <label class="checkbox">
             <span class="text">90-120 minutes</span>
-            <input type="radio" name="radio-time" value="120">
+            <input type="radio" name="radio-time" value="120" [(ngModel)]="Searched.Filters.TimeLength">
             <span class="check"></span>
           </label>
           <label class="checkbox">
             <span class="text">120+ minutes</span>
-            <input type="radio" name="radio-time" value="121">
+            <input type="radio" name="radio-time" value="121" [(ngModel)]="Searched.Filters.TimeLength">
             <span class="check"></span>
           </label>
           <div class="buttons">
-            <button class="apply" (click)="ApplyFilter()" >Apply</button>
-            <button class="cancel"  (click)="dismiss()" >Cancel</button>
+            <button class="apply" (tap)="ApplyFilter()" >Apply</button>
+            <button class="cancel"  (tap)="dismiss()" >Cancel</button>
           </div>
         </div>
       </div>

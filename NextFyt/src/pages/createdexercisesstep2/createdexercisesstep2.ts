@@ -92,4 +92,10 @@ export class CreatedExercisesStep2Page {
 
     }
 
+    goBack(){
+        this.navCtrl.pop();
+    }
+
+
+
 }

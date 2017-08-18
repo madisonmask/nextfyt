@@ -133,7 +133,14 @@ Activities::create(['user_id' => $user['id'],  'actionType' => 'followed', 'targ
 
             if (Hash::check($request->old_password, $curentUser->password)) {
 
-                $curentUser->password = Hash::make($request->new_password);
+                if($request->new_password == $request->new_password2){
+                    $curentUser->password = Hash::make($request->new_password);
+
+                }else{
+                    return response()->json(['error' => true, 'msg' => 'New password dont match']);
+                }
+
+
 
 
             } else {
@@ -163,7 +170,7 @@ Activities::create(['user_id' => $user['id'],  'actionType' => 'followed', 'targ
                 $path = public_path() . $webPath;
                 //     Image::make($image->getRealPath())->save($path);
                 file_put_contents($path, $image);
-                $photo = env('APP_URL') . $webPath;
+                $photo = $webPath;
             } else {
                 $photo = '';
             }

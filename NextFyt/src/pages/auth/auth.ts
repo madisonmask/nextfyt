@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
+import { NavController, NavParams, ToastController} from 'ionic-angular';
 import {LoginPage} from '../login/login';
 import {RegistrationPage} from '../registration/registration';
 import {AuthService} from '../../services/auth';
@@ -13,7 +13,7 @@ import {TabsPage} from '../tabs/tabs';
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
+
 @Component({
     selector: 'page-auth',
     templateUrl: 'auth.html',

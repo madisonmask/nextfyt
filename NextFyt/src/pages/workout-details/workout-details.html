@@ -1,30 +1,20 @@
-<!--
-  Generated template for the WorkoutDetailsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-
 </ion-header>
 
 
 <ion-content >
 
 
-
-
     <div class="wrap-page padding-bottom-none">
         <div class="top-window card-top-w">
-            <a href="" class="prev">
+            <a class="prev" (click)="goBack()">
                 <img src="assets/images/home/arrow.svg" alt="">
             </a>
             <div class="h4">Muscules Worked</div>
         </div>
         <div class="card-wrap" (click)="runWorkout()">
             <div class="card-slider">
-                <div class="slide" style="background-image:url({{Workout.image}})">
+                <div class="slide"     [ngStyle]="{'background-image' : 'url('  + config.baseUrl + Workout.image + ')'}"            >
                     <div class="icon"><img src="assets/images/clocks.png" alt=""></div>
                 </div>
             </div>
@@ -32,13 +22,14 @@
                 <div class="top">
                     <div class="title">{{Workout.name}}</div>
                     <div class="prof">
-                        <div class="image" style="background-image:url({{Workout.authorAvatar}})"></div>
-                        <p>By: <span>{{Workout.author}}</span></p>
+                        <div class="image"    [ngStyle]="{'background-image' : 'url('  +config.baseUrl + Workout.authorAvatar + ')'}"  ></div>
+                        <p>By: <span>{{Workout.author}}</span>  </p>
                     </div>
                 </div>
                 <ul class="bottom">
-                    <li>
-                        <img src="assets/images/bar/like-red.svg" alt="">
+                    <li >
+                        <img src="assets/images/bar/like-red.svg" alt="" *ngIf="Workout.InLiked >0 " (click)="toggleLike(item)">
+                        <img src="assets/images/bar/like.svg" alt="" *ngIf="Workout.InLiked ==null " (click)="toggleLike(item)">
                         <div class="number">{{Workout.countLikes}}</div>
                         <span>recomended</span>
                     </li>

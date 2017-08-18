@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import {RegistrationPage} from '../registration/registration';
 /**
  * Generated class for the PasswordResetPage page.
@@ -7,7 +7,7 @@ import {RegistrationPage} from '../registration/registration';
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
+
 @Component({
   selector: 'page-password-reset',
   templateUrl: 'password-reset.html',

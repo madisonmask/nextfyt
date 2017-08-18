@@ -18,9 +18,7 @@
 
 
         <div class="item"   *ngFor="let item of ActiveList" (click)="showDetails(item)" >
-            <div class="iamge"  [ngStyle]="{background: 'url(' + item.image + ')'}"
-
-                 ></div>
+            <div class="image"  [ngStyle]="{'background-image': 'url(' + config.baseUrl + item.image + ')'}"    ></div>
             <div class="info">
                 <div class="left">
                     <div class="h5">{{item.name}}</div>
@@ -42,15 +40,16 @@
                 <div class="right">
                     <ul>
                         <li>
-                            <a href="">
- 								<span class="icon">
-									<img src="assets/images/bar/like-red.svg" alt="">
+                            <a >
+ 								<span class="icon" (click)="toggleLike(item)">
+											<img src="assets/images/bar/like-red.svg" alt="" *ngIf="item.InLiked >0 ">
+                                    <img src="assets/images/bar/like.svg" alt="" *ngIf="item.InLiked ==null ">
  								</span>
                                 <span class="number">{{item.countLikes}}</span>
                             </a>
                         </li>
                       <!--  <li>
-                            <a href="">
+                            <a >
  								<span class="icon">
 									<img src="assets/images/comments.svg" alt="">
  								</span>

@@ -1,5 +1,5 @@
 import {Component, Inject} from '@angular/core';
-import {IonicPage, NavController, NavParams, AlertController} from 'ionic-angular';
+import {NavController, NavParams, AlertController} from 'ionic-angular';
 import {CreatedExercisesPage} from '../createdexercises/createdexercises';
 import {ExerciseDefaultPage} from '../exercise-default/exercise-default';
 import {ExerciseHistoryPage} from '../exercise-history/exercise-history';
@@ -18,7 +18,7 @@ import {APP_CONFIG, IAppConfig} from '../../app/app.config';
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
+
 @Component({
     selector: 'page-create',
     templateUrl: 'create.html',

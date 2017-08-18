@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { IonicPage, NavController, NavParams , ToastController} from 'ionic-angular';
+import { NavController, NavParams , ToastController} from 'ionic-angular';
 import {Storage} from "@ionic/storage";
 
 import {Http, Headers, RequestOptions} from "@angular/http";
@@ -12,7 +12,7 @@ import {APP_CONFIG, IAppConfig} from '../../app/app.config';
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
+
 @Component({
   selector: 'page-notifications',
   templateUrl: 'notifications.html',
@@ -61,11 +61,18 @@ export class NotificationsPage {
         let headers = new Headers({'Authorization': 'Bearer ' + token});
         let options = new RequestOptions({headers: headers});
 
+   if(    this.isMySaved==true){
+    var  type='my'
 
-        this.http.get(this.config.apiEndpoint + 'news', options).map(res => res.json()).subscribe(data => {
+   }else{
+     var  type='following'
+   }
+
+        this.http.get(this.config.apiEndpoint + 'news/'+ type, options).map(res => res.json()).subscribe(data => {
           this.IsAjaxLoaded = false;
 
           this.Notifications = data.news;
+            console.log(data.news);
 
         }, err => {
           console.log(err);

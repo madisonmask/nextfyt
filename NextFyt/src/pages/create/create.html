@@ -24,7 +24,9 @@
             <ul class="list">
                 <li *ngFor="let exercise of MyExercises" >
                     <div class="left">
-                        <div class="image" style="background-image:url({{exercise.stage1_img}})"></div>
+                        <div class="image" [ngStyle]="{'background-image' : 'url(/assets/images/fitnes_blank.jpg)'}" *ngIf="exercise.stage1_img =='' "></div>
+                        <div class="image" [ngStyle]="{'background-image' : 'url(' +config.baseUrl + exercise.stage1_img + ')'}"   *ngIf="exercise.stage1_img.length > 10 "></div>
+
                     </div>
                     <div class="right">
                         <div class="h3">{{exercise.name}}</div>

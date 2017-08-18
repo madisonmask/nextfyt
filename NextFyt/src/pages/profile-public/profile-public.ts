@@ -1,5 +1,5 @@
 import {Component, Inject} from '@angular/core';
-import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
+import { NavController, NavParams, ToastController} from 'ionic-angular';
 import {Storage} from "@ionic/storage";
 
 import {Http, Headers, RequestOptions} from "@angular/http";
@@ -16,7 +16,7 @@ import {WorkoutDetailsPage} from '../workout-details/workout-details';
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
+
 @Component({
     selector: 'page-profile-public',
     templateUrl: 'profile-public.html',
@@ -194,6 +194,36 @@ export class ProfilePublicPage {
     showDetails(selectedWorkout) {
         this.navCtrl.push(WorkoutDetailsPage, {workout: selectedWorkout})
     }
+
+
+    toggleLike(workout) {
+        console.log(workout.InLiked);
+        if (workout.InLiked == null || workout.InLiked == undefined) {
+            workout.InLiked = 1;
+        } else {
+            workout.InLiked = null;
+        }
+        this.IsAjaxLoaded = true;
+        this.storage.ready().then(() => {
+            this.storage.get('token').then(token => {
+                console.log(token);
+                //         let headers = new Headers();
+                //            headers.append('Authorization', 'Bearer ' + token);
+                let headers = new Headers({'Authorization': 'Bearer ' + token});
+                let options = new RequestOptions({headers: headers});
+                this.http.post(this.config.apiEndpoint + 'workout/likes', workout, options).map(res => res.json()) .subscribe(data => {
+
+                    console.log(data);
+                    this.IsAjaxLoaded = false;
+                });
+            })
+        })
+    }
+
+    goBack(){
+        this.navCtrl.pop();
+    }
+
 
 
 }

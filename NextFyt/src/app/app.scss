@@ -571,7 +571,7 @@ body{
   color: #9cafc3;
 }
 .notification .tab-item{
-  display: none;
+ /* display: none;*/
 }
 .notification .tab-item.active{
   display: block;
@@ -744,6 +744,7 @@ body{
 
 .wrap-page{
   height: 100vh;
+ /* height: 100%;*/
   position: relative;
   background-image: -webkit-linear-gradient(180deg, rgba(41, 51, 81, 0.9) 0%, #32375b 100%);
   background-image: linear-gradient(180deg, rgba(41, 51, 81, 0.9) 0%, #32375b 100%);
@@ -773,7 +774,7 @@ body{
 .top-window  .h4 {
   text-align: center;
   color: #ffffff;
-  font-family: pr;
+  font-family: pul;
   font-size: 15px;
   letter-spacing: -0.09px;
 }
@@ -925,81 +926,81 @@ body{
   bottom: 0;
   margin: auto;
 }
-.stage .option {
+.option-stage {
   width: 100%;
   border-collapse:separate;
 }
-.stage td {
+.option-stage td {
   border:  1px solid rgba(23, 43, 79, 0.2);
   vertical-align: middle;
 }
-.stage td.set,
-.stage td.time{
+.option-stage td.set,
+.option-stage td.time{
   padding-right: 10px;
   border-left: 0;
 }
-.stage td.set {
+.option-stage td.set {
   border-bottom: 0;
 }
-.stage .set .radio:last-child span{
+.option-stage .set .radio:last-child span{
   padding: 0 25px;
 }
-.stage .time .radio{
+.option-stage .time .radio{
   width: 33.33%;
 }
-.stage .wr {
+.option-stage .wr {
   display: table;
   width: 100%;
   border: 1px solid rgba(156, 175, 195, 0.2);
   border-radius: 3px;
   -webkit-border-radius: 3px;
 }
-.stage .radio {
+.option-stage .radio {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
   cursor: pointer;
   border-right: 1px solid rgba(156, 175, 195, 0.2);
 }
-.stage .radio:last-child{
-  border-right: 0;
+.option-stage .radio:last-child{
+	border-right: 0;
 }
-.stage .radio input {
-  display: none;
+.option-stage .radio input {
+	display: none;
 }
-.stage .radio input:checked + span{
-  background: #434c6c;
+.option-stage .radio input:checked + span{
+	background: #434c6c;
 }
-.stage .radio span {
-  color: #ffffff;
-  font-family: pr;
-  font-size: 13px;
-  letter-spacing: -0.08px;
-  display: block;
-  height: 24px;
-  line-height: 24px;
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
+.option-stage .radio span {
+	color: #ffffff;
+	font-family: pr;
+	font-size: 13px;
+	letter-spacing: -0.08px;	
+	display: block;
+	height: 24px;
+	line-height: 24px;
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
 }
-.stage .number {
-  width: 40px;
-  text-align: center;
-  height: 48px;
-  vertical-align: middle;
+.option-stage .number {
+	width: 40px;
+	text-align: center;
+	height: 48px;
+	vertical-align: middle;
 }
-.stage .number .numbers-column {
-  position: relative;
+.option-stage .number .numbers-column {
+	position: relative;
 }
-.stage .number input {
-  width: 15px;
-  background: none;
-  border: 0;
-  color: #ffffff;
-  font-family: pum;
-  font-size: 13px;
-  letter-spacing: -0.08px;
-  text-align: center;
-  height: 16px;
+.option-stage .number input {
+	width: 15px;
+	background: none;
+	border: 0;
+	color: #ffffff;
+	font-family: pum;
+	font-size: 13px;
+	letter-spacing: -0.08px;	
+	text-align: center;
+	height: 16px;
 }
 .stage .publish {
   height: 45px;
@@ -1274,16 +1275,16 @@ body{
   display: block;
   width: auto;
 }
-.tab-button {
+.buttonTABS {
   padding: 15px;
 }
-.tab-button.absolute {
+.buttonTABS.absolute {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
 }
-.tab-button .next {
+.buttonTABS .next {
   height: 45px;
   border-radius: 3px;
   background-color: #01a9f6;
@@ -1443,6 +1444,8 @@ body{
   -webkit-border-radius: 50%;
   display: table;
   margin:0 auto 5px;
+  background-size: cover;
+  background-position: center;
 }
 .profile-info .name {
   color: #ffffff;
@@ -1745,6 +1748,8 @@ body{
   display: inline-block;
   vertical-align: middle;
   margin-right: 10px;
+  	background-size: cover;
+	background-position: top center;
 }
 .card-info .prof p{
   display: inline-block;
@@ -2173,7 +2178,8 @@ body{
   border: 4px solid #39405f;
   border-radius: 50%;
   -webkit-border-radius: 50%;
-	background-size: 120% auto;background-position: center;
+	background-size: cover!important;
+	background-position: center;
 }
 .searcg--peaple .info {
   display: table-cell;
@@ -2313,6 +2319,10 @@ body{
   margin-bottom: 15px;
   background-size: cover;
   background-position: center;
+  width:100%;
+
+
+
 }
 .exercise-History .info {
   display: table;
@@ -2615,4 +2625,16 @@ body{
   -webkit-box-shadow: 0 -2px 14px rgba(8, 20, 42, 0.3), inset 0 1px 0 rgba(0, 0, 0, 0.1) !important;
   background-image: linear-gradient(180deg, rgba(41, 51, 81, 0.9) 0%, #32375b 100%) !important;
   background-image: -webkit-linear-gradient(180deg, rgba(41, 51, 81, 0.9) 0%, #32375b 100%) !important;
+}
+
+
+.checkbox-item .item-md.item-block .item-inner {
+  border-bottom: none;
+}
+
+.checkbox-item .item-md {
+
+  color: #fff;
+  background-color: transparent ;
+
 }
