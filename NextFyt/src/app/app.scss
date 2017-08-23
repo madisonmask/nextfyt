@@ -2511,7 +2511,10 @@ body{
 .ion-ios-HomeTab,
 .ion-md-HomeTab,
 .ion-md-HomeTab-outlet,
-.ion-ios-HomeTab-outlet
+.ion-ios-HomeTab-outlet,
+.ion-ios-HomeTab-outline,
+.ion-md-HomeTab-outline
+
 {
   content: url(../assets/images/bar/home.svg);
   width: 24px;
@@ -2528,6 +2531,22 @@ body{
   padding: 6px 4px 2px;
   opacity: 0.9;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .ion-ios-SearchTab,
@@ -2565,6 +2584,19 @@ body{
   height: 32px;
   padding: 6px 4px 2px;
   opacity: 0.9;
+
+
+  display: inline-block;
+  width: 37px;
+  height: 37px;
+  box-shadow: 0 12px 14px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(180deg, #02d4fc 0%, #01a9f6 100%);
+  background-image: -webkit-linear-gradient(180deg, #02d4fc 0%, #01a9f6 100%);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  line-height: 37px;
+  font-size: 0;
+  text-align: center;
 }
 
 .ion-ios-CreateTab[ng-reflect-is-active=true],

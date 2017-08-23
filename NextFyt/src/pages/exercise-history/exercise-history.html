@@ -9,7 +9,7 @@
 
     <div class="exercise-History">
         <div class="item" *ngFor="let exercise of MyExercises">
-            <div class="image"                [ngStyle]="{'background-image': 'url('  + config.baseUrl + exercise.stage1_img + ')'}"            ></div>
+            <div class="image"                [ngStyle]="{'background-image': 'url('  + config.baseUrl + exercise.stage1_img + ')'}"           (click)="selectItem(exercise)"  ></div>
             <div class="info" (click)="selectItem(exercise)">
                 <div class="left">
                     <div class="h5">{{exercise.name}}</div>

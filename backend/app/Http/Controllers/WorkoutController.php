@@ -312,7 +312,7 @@ class WorkoutController extends Controller
         $exportWorkout['name'] = $workout->name;
         $exportWorkout['countLikes'] = $workout->countLikes;
         $exportWorkout['Time'] = $workout->Time;
-        $exportWorkout['skill'] = $difficultys[$workout->difficulty];
+
 
         if (isset($difficultys[$workout->difficulty])) {
             $exportWorkout['skill'] = $difficultys[$workout->difficulty];

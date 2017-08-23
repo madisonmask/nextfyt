@@ -166,12 +166,23 @@ class ExerciseController extends Controller
      */
     public function getExercise(Request $request, $exerciseId)
     {
+        $difficulty = Difficulty::all();
+        foreach ($difficulty as $dif) {
+            $difficultys[$dif->id] = $dif->name;
+        }
+
         $user = Helpers::getUser($request);
         $exercise = Exercise::find($exerciseId);
         $exportExercise = [];
         $exportExercise = $exercise;
         $exportExercise['equipment'] = $exercise->equipments()->get(['equipment.name']);;
         $exportExercise['muscles'] = $exercise->muscles()->get(['muscles.name']);;
+        if (isset($difficultys[$exercise->Difficulty])) {
+            $exportExercise['skill'] = $difficultys[$exercise->Difficulty];
+        } else {
+            $exportExercise['skill'] = 'N/a';
+        }
+
         return response()->json(['error' => false, 'exercises' => $exportExercise]);
     }
 
@@ -277,9 +288,15 @@ class ExerciseController extends Controller
     public function getExercisesForWorkout(Request $request, $workoutId)
     {
 
+        $difficulty = Difficulty::all();
+        foreach ($difficulty as $dif) {
+            $difficultys[$dif->id] = $dif->name;
+        }
+
+
         $user = Helpers::getUser($request);
 
-  //      $workout = Workout::find($workoutId);
+        //      $workout = Workout::find($workoutId);
 
         $sql='SELECT `exercises`.id
                 FROM `exercises`
@@ -294,19 +311,34 @@ class ExerciseController extends Controller
 
 
 
-        $exercise = Exercise::find($ex->id);
+            $exercise = Exercise::find($ex->id);
 
 
 
-    //    foreach ($exercises as $ex) {
+            //    foreach ($exercises as $ex) {
             $exportExercise[$i] = $exercise;
             $exportExercise[$i]['equipment'] = $exercise->equipments()->get(['equipment.name']);;
             $exportExercise[$i]['muscles'] = $exercise->muscles()->get(['muscles.name']);;
 
-            $i++;
-   //     }
+            if (isset($difficultys[$exercise->Difficulty])) {
+                $exportExercise[$i]['skill'] = $difficultys[$exercise->Difficulty];
+            } else {
+                $exportExercise[$i]['skill'] = 'N/a';
+            }
 
-    }
+
+
+
+
+
+
+
+
+
+            $i++;
+            //     }
+
+        }
 
         return response()->json(['error' => false, 'exercises' => $exportExercise]);
 
