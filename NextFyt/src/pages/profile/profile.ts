@@ -83,6 +83,7 @@ export class ProfilePage {
         this.Auth.logout();
         this.navCtrl.setRoot(LoginPage);
     }
+
     EditSettings(){
         this.navCtrl.push(ProfileSettingsPage, {user:this.user});
     }

@@ -15,4 +15,12 @@ export const AppConfig: IAppConfig = {
   apiEndpoint: "http://www.nextfyt.com/api/",
     baseUrl: "http://www.nextfyt.com",
 
+
+    /*
+    apiEndpoint: "http://144.76.28.156:1238/api/",
+    baseUrl: "http://144.76.28.156:1238/",
+
+    */
+
+
 };

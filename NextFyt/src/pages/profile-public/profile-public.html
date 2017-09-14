@@ -17,12 +17,14 @@
     <div class="profile-page">
       <div class="profile-info">
         <div class="profile-top">
-          <div class="image" [style.background-image]="user.avatarSTYLE"  *ngIf="user.avatar!=''" ></div>
+          <div class="image"     [ngStyle]="{'background-image' : 'url(' +config.baseUrl + user.avatar + ')'}"        *ngIf="user.avatar!=''" ></div>
           <div class="image" style="background-image:url('assets/images/avatar.jpg')" *ngIf="user.avatar==''" ></div>
 
 
-          <a  class="name">{{user.name}}</a>
-          <!--    <a  class="tag">@strong_jesus</a> -->
+          <a class="name">{{user.FirstName}}  {{user.LastName}}  </a>
+          <a class="tag">@{{user.name}}</a>
+          <a class="follow" (click)="followUser()" >Follow</a>
+
         </div>
         <ul class="char-profile">
           <li>
@@ -55,7 +57,7 @@
         <div class="item" *ngFor="let item of ActiveList" (click)="showDetails(item)">
           <div class="left">
             <!--  <div   [style.background-image] = " sanitizer.bypassSecurityTrustResourceUrl(item.image) "></div>-->
-            <div class="image" [ngStyle]="{'background-image' : 'url(/assets/images/fitnes_blank.jpg)'}" *ngIf="item.image =='' "></div>
+            <div class="image" [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.jpg)'}" *ngIf="item.image =='' "></div>
             <div class="image" [ngStyle]="{'background-image' : 'url(' + config.baseUrl  + item.image + ')'}"   *ngIf="item.image.length > 10 "></div>
 
             <ul>
@@ -122,7 +124,7 @@
       <ion-col col-4>
         <ion-avatar item-start class="avatar">
           <img src="{{user.avatar}}" *ngIf="user.avatar!=''">
-          <img src="/assets/images/avatar.jpg" *ngIf="user.avatar==''">
+          <img src="assets/images/avatar.jpg" *ngIf="user.avatar==''">
         </ion-avatar>
       </ion-col>
       <ion-col col-8>

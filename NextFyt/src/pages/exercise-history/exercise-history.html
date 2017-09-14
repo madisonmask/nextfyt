@@ -9,19 +9,20 @@
 
     <div class="exercise-History">
         <div class="item" *ngFor="let exercise of MyExercises">
-            <div class="image"                [ngStyle]="{'background-image': 'url('  + config.baseUrl + exercise.stage1_img + ')'}"           (click)="selectItem(exercise)"  ></div>
+            <div class="image"                [ngStyle]="{'background-image': 'url('  + config.baseUrl + exercise.stage1_img + ')'}"     *ngIf="exercise.stage1_img.length > 10 "      (click)="selectItem(exercise)"  ></div>
+
+
+            <div class="image" [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.jpg)'}" *ngIf="exercise.stage1_img =='' "      (click)="selectItem(exercise)" ></div>
+
             <div class="info" (click)="selectItem(exercise)">
                 <div class="left">
                     <div class="h5">{{exercise.name}}</div>
                     <ul class="list">
                         <li>
-                            By: <span>Sentarius</span>
+                            Skill: <span>{{exercise.skill}}</span>
                         </li>
                         <li>
-                            Skill: <span>advanced</span>
-                        </li>
-                        <li>
-                            Muscules Worked: <span>Chest, Triceps</span>
+                            Muscules Worked: <span><span *ngFor="let muscle  of exercise.muscles"> {{muscle.name}}  </span></span>
                         </li>
                         <li>
                             Cardio: <span> {{exercise.cardio}}</span>

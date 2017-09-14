@@ -10,13 +10,19 @@
 
             <form>
                 <div class="image">
+
+                    <img [src]="_DomSanitizationService.bypassSecurityTrustUrl(Workout.Image)" *ngIf="Workout.Image" (click)="showRadio()"/>
+
+                    <img src="assets/images/image.png" (click)="showRadio()"
+                         *ngIf="Workout.Image=='' && Workout.ImageData==''">
+
+
                     <label>
-                        <input type="file">
+                     <!--   <input type="file">-->
                         <span class="wr">
 
-               <img src="assets/images/image.png" (click)="showRadio()"
-                    *ngIf="Workout.Image=='' && Workout.ImageData==''">
-                     <img [src]="_DomSanitizationService.bypassSecurityTrustUrl(Workout.Image)" *ngIf="Workout.Image"/>
+
+
               		<span class="text" *ngIf="Workout.Image=='' && Workout.ImageData==''">Upload Image </span>
 						</span>
                     </label>

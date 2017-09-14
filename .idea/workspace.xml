@@ -3,14 +3,42 @@
   <component name="ChangeListManager">
     <list default="true" id="d98de16b-71e9-4b6c-9bb4-64aa367c430f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/config.xml" afterPath="$PROJECT_DIR$/NextFyt/config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/ionic.config.json" afterPath="$PROJECT_DIR$/NextFyt/ionic.config.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/app/app.config.ts" afterPath="$PROJECT_DIR$/NextFyt/src/app/app.config.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/app/app.scss" afterPath="$PROJECT_DIR$/NextFyt/src/app/app.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/assets/images/bar/like.svg" afterPath="$PROJECT_DIR$/NextFyt/src/assets/images/bar/like.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/index.html" afterPath="$PROJECT_DIR$/NextFyt/src/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/create/create.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/create/create.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/create/create.ts" afterPath="$PROJECT_DIR$/NextFyt/src/pages/create/create.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/createdexercises/createdexercises.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/createdexercises/createdexercises.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/exercise-default/exercise-default.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/exercise-default/exercise-default.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/exercise-history/exercise-history.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/exercise-history/exercise-history.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/home/home.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/home/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/notifications/notifications.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/notifications/notifications.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/login/login.ts" afterPath="$PROJECT_DIR$/NextFyt/src/pages/login/login.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/profile-public/profile-public.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/profile-public/profile-public.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/profile-settings/profile-settings.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/profile-settings/profile-settings.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/profile-settings/profile-settings.ts" afterPath="$PROJECT_DIR$/NextFyt/src/pages/profile-settings/profile-settings.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/profile/profile.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/profile/profile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/profile/profile.ts" afterPath="$PROJECT_DIR$/NextFyt/src/pages/profile/profile.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/savedlist/savedlist.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/savedlist/savedlist.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/search/search.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/search/search.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/search/search.ts" afterPath="$PROJECT_DIR$/NextFyt/src/pages/search/search.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/searchfilters/searchfilters.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/searchfilters/searchfilters.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/searchfilters/searchfilters.ts" afterPath="$PROJECT_DIR$/NextFyt/src/pages/searchfilters/searchfilters.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/share-workout/share-workout.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/share-workout/share-workout.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/workout-details-exercises/workout-details-exercises.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/workout-details-exercises/workout-details-exercises.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/workout-details/workout-details.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/workout-details/workout-details.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/services/auth.ts" afterPath="$PROJECT_DIR$/NextFyt/src/services/auth.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/AuthController.php" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/AuthController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/ExerciseController.php" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/ExerciseController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Helpers.php" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Helpers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/SearchController.php" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/SearchController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/WorkoutController.php" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/WorkoutController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/app/Providers/AppServiceProvider.php" afterPath="$PROJECT_DIR$/backend/app/Providers/AppServiceProvider.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/database/migrations/2017_06_09_122238_CreateCardioField.php" afterPath="$PROJECT_DIR$/backend/database/migrations/2017_06_09_122238_CreateCardioField.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/database/migrations/2017_06_09_122727_CreateHardestField.php" afterPath="$PROJECT_DIR$/backend/database/migrations/2017_06_09_122727_CreateHardestField.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/routes/web.php" afterPath="$PROJECT_DIR$/backend/routes/web.php" />
     </list>
     <ignored path="NextFyt.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,95 +59,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/home/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="60" column="63" selection-start-line="60" selection-start-column="60" selection-end-line="60" selection-end-column="128" />
-              <folding>
-                <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="WorkoutController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/WorkoutController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="316" column="37" selection-start-line="294" selection-start-column="3" selection-end-line="320" selection-end-column="9" />
+            <state relative-caret-position="-289">
+              <caret line="25" column="151" selection-start-line="25" selection-start-column="120" selection-end-line="25" selection-end-column="194" />
               <folding>
-                <element signature="e#673#5367#0#PHP" expanded="false" />
-                <element signature="e#8416#10843#0#PHP" expanded="false" />
-                <marker date="1503318177592" expanded="true" signature="5631:6112" ph="SELECT worko... workouts" />
-                <marker date="1503318177592" expanded="true" signature="5631:6129" ph="SELECT worko... workouts" />
-                <marker date="1503318177592" expanded="true" signature="5631:6206" ph="SELECT worko... workouts" />
-                <marker date="1503318177592" expanded="true" signature="5631:6232" ph="SELECT worko... workouts" />
-                <marker date="1503318177592" expanded="true" signature="7190:7570" ph="SELECT DISTI... exercise_to_workout" />
-                <marker date="1503318177592" expanded="true" signature="8724:8994" ph="SELECT worko... workouts" />
-                <marker date="1503318177592" expanded="true" signature="8724:9029" ph="SELECT worko... workouts" />
-                <marker date="1503318177592" expanded="true" signature="8724:9033" ph="SELECT worko... workouts" />
-                <marker date="1503318177592" expanded="true" signature="8724:9151" ph="SELECT worko... workouts" />
-                <marker date="1503318177592" expanded="true" signature="8724:9189" ph="SELECT worko... workouts" />
-                <marker date="1503318177592" expanded="true" signature="9874:10254" ph="SELECT DISTI... exercise_to_workout" />
-                <marker date="1503318177592" expanded="true" signature="11908:12291" ph="SELECT DISTI... exercise_to_workout" />
-                <marker date="1503318177592" expanded="true" signature="12415:12814" ph="SELECT DISTI... exercise_to_workout" />
-                <marker date="1503318177592" expanded="true" signature="12924:13229" ph="SELECT DISTI... workouts" />
-                <marker date="1503318177592" expanded="true" signature="13325:13507" ph="SELECT id FR... workoutlikes" />
-                <marker date="1503318177592" expanded="true" signature="14287:14826" ph="SELECT worko... workoutlikes" />
-                <marker date="1503318177592" expanded="true" signature="15606:15986" ph="SELECT DISTI... exercise_to_workout" />
-                <marker date="1503318177592" expanded="true" signature="17029:17512" ph="SELECT worko... workoutlikes" />
-                <marker date="1503318177592" expanded="true" signature="18165:18545" ph="SELECT DISTI... exercise_to_workout" />
-                <marker date="1503318177592" expanded="true" signature="19406:19616" ph="SELECT worko... workoutkeepers" />
-                <marker date="1503318177592" expanded="true" signature="19406:19691" ph="SELECT worko... workoutkeepers" />
-                <marker date="1503318177592" expanded="true" signature="19406:19726" ph="SELECT worko... workoutkeepers" />
-                <marker date="1503318177592" expanded="true" signature="20338:20718" ph="SELECT DISTI... exercise_to_workout" />
-                <marker date="1503318177592" expanded="true" signature="21578:21699" ph="SELECT worko... workouts" />
-                <marker date="1503318177592" expanded="true" signature="21578:22048" ph="SELECT worko... workouts" />
-                <marker date="1503318177592" expanded="true" signature="23046:23426" ph="SELECT DISTI... exercise_to_workout" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tabs.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/tabs/tabs.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="36" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="exercise-default.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/exercise-default/exercise-default.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="46" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="workout-details-exercises.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/workout-details-exercises/workout-details-exercises.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="21" column="74" selection-start-line="21" selection-start-column="74" selection-end-line="21" selection-end-column="74" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExerciseController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/ExerciseController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="836">
-              <caret line="384" column="0" selection-start-line="384" selection-start-column="0" selection-end-line="384" selection-end-column="0" />
-              <folding>
-                <element signature="e#488#4096#0#PHP" expanded="false" />
-                <marker date="1503475653632" expanded="true" signature="9811:10033" ph="SELECT `exer... exercises" />
+                <element signature="e#40#59#0#PHP" expanded="true" />
+                <element signature="e#6017#9048#0#PHP" expanded="false" />
+                <element signature="e#9055#11482#0#PHP" expanded="false" />
+                <element signature="e#11489#14652#0#PHP" expanded="false" />
+                <marker date="1504796107871" expanded="true" signature="6274:6755" ph="SELECT worko... workouts" />
+                <marker date="1504796107871" expanded="true" signature="6274:6772" ph="SELECT worko... workouts" />
+                <marker date="1504796107871" expanded="true" signature="6274:6849" ph="SELECT worko... workouts" />
+                <marker date="1504796107871" expanded="true" signature="6274:6875" ph="SELECT worko... workouts" />
+                <marker date="1504796107871" expanded="true" signature="7829:8209" ph="SELECT DISTI... exercise_to_workout" />
+                <marker date="1504796107871" expanded="true" signature="9363:9633" ph="SELECT worko... workouts" />
+                <marker date="1504796107871" expanded="true" signature="9363:9668" ph="SELECT worko... workouts" />
+                <marker date="1504796107871" expanded="true" signature="9363:9672" ph="SELECT worko... workouts" />
+                <marker date="1504796107871" expanded="true" signature="9363:9790" ph="SELECT worko... workouts" />
+                <marker date="1504796107871" expanded="true" signature="9363:9828" ph="SELECT worko... workouts" />
+                <marker date="1504796107871" expanded="true" signature="10513:10893" ph="SELECT DISTI... exercise_to_workout" />
+                <marker date="1504796107871" expanded="true" signature="12547:12930" ph="SELECT DISTI... exercise_to_workout" />
+                <marker date="1504796107871" expanded="true" signature="13054:13453" ph="SELECT DISTI... exercise_to_workout" />
+                <marker date="1504796107871" expanded="true" signature="13563:13868" ph="SELECT DISTI... workouts" />
+                <marker date="1504796107871" expanded="true" signature="13964:14146" ph="SELECT id FR... workoutlikes" />
+                <marker date="1504796107871" expanded="true" signature="14926:15587" ph="SELECT worko... workoutlikes" />
+                <marker date="1504796107871" expanded="true" signature="16365:16745" ph="SELECT DISTI... exercise_to_workout" />
+                <marker date="1504796107871" expanded="true" signature="17788:18271" ph="SELECT worko... workoutlikes" />
+                <marker date="1504796107871" expanded="true" signature="18924:19304" ph="SELECT DISTI... exercise_to_workout" />
+                <marker date="1504796107871" expanded="true" signature="20165:20375" ph="SELECT worko... workoutkeepers" />
+                <marker date="1504796107871" expanded="true" signature="20165:20450" ph="SELECT worko... workoutkeepers" />
+                <marker date="1504796107871" expanded="true" signature="20165:20485" ph="SELECT worko... workoutkeepers" />
+                <marker date="1504796107871" expanded="true" signature="21097:21477" ph="SELECT DISTI... exercise_to_workout" />
+                <marker date="1504796107871" expanded="true" signature="22337:22458" ph="SELECT worko... workouts" />
+                <marker date="1504796107871" expanded="true" signature="22337:22807" ph="SELECT worko... workouts" />
+                <marker date="1504796107871" expanded="true" signature="23805:24185" ph="SELECT DISTI... exercise_to_workout" />
               </folding>
             </state>
           </provider>
@@ -128,44 +103,83 @@
       <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="43" column="83" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="83" />
+            <state relative-caret-position="255">
+              <caret line="24" column="47" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="notifications.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/notifications/notifications.html">
+      <file leaf-file-name="AuthController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/AuthController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1105">
-              <caret line="65" column="64" selection-start-line="65" selection-start-column="64" selection-end-line="65" selection-end-column="64" />
+            <state relative-caret-position="514">
+              <caret line="206" column="0" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#2;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
+                <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NextFyt/www/index.html">
+      <file leaf-file-name="UserProfileController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/UserProfileController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+            <state relative-caret-position="646">
+              <caret line="179" column="63" selection-start-line="164" selection-start-column="12" selection-end-line="186" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/profile/profile.html">
+      <file leaf-file-name="JWTAuth.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/vendor/tymon/jwt-auth/src/JWTAuth.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="75" column="51" selection-start-line="75" selection-start-column="23" selection-end-line="75" selection-end-column="56" />
+            <state relative-caret-position="395">
+              <caret line="130" column="5" selection-start-line="130" selection-start-column="5" selection-end-line="130" selection-end-column="5" />
               <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
+                <element signature="e#247#275#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ForgotPasswordController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Auth/ForgotPasswordController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IlluminateAuthAdapter.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/vendor/tymon/jwt-auth/src/Providers/Auth/IlluminateAuthAdapter.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="582">
+              <caret line="49" column="32" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JWTAuth.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/vendor/tymon/jwt-auth/src/Facades/JWTAuth.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JWTManager.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/vendor/tymon/jwt-auth/src/JWTManager.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2193">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -187,57 +201,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/createdexercisesstage/createdexercisesstage.ts" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/createdexercisesstep2/createdexercisesstep2.ts" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/createdexercisesstep2/createdexercisesstep2.html" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/edit-password/edit-password.html" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/edit-password/edit-password.ts" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/exercise-history/exercise-history.ts" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/share-workout/share-workout.ts" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/login/login.html" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/search/search.ts" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/profile/profile.ts" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/savedlist/savedlist.ts" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/workout-details/workout-details.ts" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/profile-public/profile-public.ts" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/searchfilters/searchfilters.ts" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/searchfilters/searchfilters.html" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/share-workout/share-workout.html" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/create/create.html" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/profile-public/profile-public.html" />
-        <option value="$PROJECT_DIR$/NextFyt/src/app/app.config.ts" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/workout-details/workout-details.html" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/createdexercisesstage/createdexercisesstage.html" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/exercise-default/exercise-default.ts" />
-        <option value="$PROJECT_DIR$/NextFyt/src/index.html" />
-        <option value="$PROJECT_DIR$/backend/routes/web.php" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/profile/profile.html" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/workout-details-exercises/workout-details-exercises.ts" />
         <option value="$PROJECT_DIR$/NextFyt/src/pages/workout-details-exercise-show/workout-details-exercise-show.ts" />
         <option value="$PROJECT_DIR$/NextFyt/src/pages/workout-details-exercise-show/workout-details-exercise-show.html" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/savedlist/savedlist.html" />
         <option value="$PROJECT_DIR$/NextFyt/src/pages/notifications/notifications.ts" />
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/NotificationController.php" />
         <option value="$PROJECT_DIR$/NextFyt/src/pages/home/home.ts" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/search/search.html" />
-        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/SearchController.php" />
         <option value="$PROJECT_DIR$/NextFyt/src/pages/registration/registration.html" />
         <option value="$PROJECT_DIR$/NextFyt/src/pages/registration/registration.ts" />
         <option value="$PROJECT_DIR$/backend/app/User.php" />
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Auth/RegisterController.php" />
         <option value="$PROJECT_DIR$/backend/database/migrations/2014_10_12_000000_create_users_table.php" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/profile-settings/profile-settings.html" />
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/UserProfileController.php" />
         <option value="$PROJECT_DIR$/NextFyt/src/services/User.ts" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/home/home.html" />
-        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/WorkoutController.php" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/exercise-history/exercise-history.html" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/exercise-default/exercise-default.html" />
         <option value="$PROJECT_DIR$/NextFyt/src/pages/notifications/notifications.html" />
         <option value="$PROJECT_DIR$/NextFyt/www/index.html" />
-        <option value="$PROJECT_DIR$/NextFyt/src/app/app.scss" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/workout-details-exercises/workout-details-exercises.html" />
+        <option value="$PROJECT_DIR$/backend/app/Providers/AppServiceProvider.php" />
+        <option value="$PROJECT_DIR$/backend/database/migrations/2017_06_09_122238_CreateCardioField.php" />
+        <option value="$PROJECT_DIR$/backend/database/migrations/2017_06_09_122727_CreateHardestField.php" />
+        <option value="$PROJECT_DIR$/NextFyt/src/app/app.config.ts" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/profile/profile.ts" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/profile-settings/profile-settings.ts" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/profile-settings/profile-settings.html" />
+        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Helpers.php" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/exercise-default/exercise-default.html" />
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/ExerciseController.php" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/workout-details-exercises/workout-details-exercises.html" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/exercise-history/exercise-history.html" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/profile/profile.html" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/profile-public/profile-public.html" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/savedlist/savedlist.html" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/share-workout/share-workout.html" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/searchfilters/searchfilters.html" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/searchfilters/searchfilters.ts" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/workout-details/workout-details.html" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/createdexercises/createdexercises.html" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/create/create.ts" />
+        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/WorkoutController.php" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/home/home.html" />
+        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/SearchController.php" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/search/search.html" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/search/search.ts" />
+        <option value="$PROJECT_DIR$/NextFyt/config.xml" />
+        <option value="$PROJECT_DIR$/NextFyt/node_modules/ionic-native/dist/esm/plugins/plugin.js" />
+        <option value="$PROJECT_DIR$/NextFyt/src/services/auth.ts" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/create/create.html" />
+        <option value="$PROJECT_DIR$/NextFyt/src/app/app.scss" />
+        <option value="$PROJECT_DIR$/NextFyt/src/index.html" />
+        <option value="$PROJECT_DIR$/backend/routes/web.php" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/login/login.ts" />
+        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Auth/JWAUTH.php" />
+        <option value="$PROJECT_DIR$/backend/vendor/tymon/jwt-auth/src/JWTAuth.php" />
+        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/AuthController.php" />
       </list>
     </option>
   </component>
@@ -258,10 +272,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1920" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -316,837 +328,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="workout-details-exercises" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="workout-details-exercise-show" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="workout-details" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="terms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tabs" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="share-workout" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="searchfilters" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="search" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="savedlist" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="registration" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="profile-settings" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="profile-public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="profile" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="privacy" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="password-reset" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="notifications" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="login" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="exercise-history" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="exercise-default" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="edit-password" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="default-exercises-params" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="createdexercisesstep2" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="createdexercisesstage" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="createdexercises" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="create" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="contact" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="auth" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="backend" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -1161,6 +343,66 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="backend" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NextFyt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NextFyt" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backend" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tymon" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jwt-auth" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NextFyt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NextFyt" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backend" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tymon" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jwt-auth" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -1179,46 +421,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="routes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NextFyt" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -1326,7 +528,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../loicknuchel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../labamba" />
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
@@ -1455,21 +657,31 @@
       <workItem from="1502397925892" duration="27502000" />
       <workItem from="1503053716829" duration="5560000" />
       <workItem from="1503316481629" duration="4522000" />
-      <workItem from="1503474322798" duration="1314000" />
+      <workItem from="1503474322798" duration="3708000" />
+      <workItem from="1503491422637" duration="658000" />
+      <workItem from="1504088026551" duration="8924000" />
+      <workItem from="1504192472231" duration="4465000" />
+      <workItem from="1504257324024" duration="8776000" />
+      <workItem from="1504589242264" duration="5139000" />
+      <workItem from="1504631057912" duration="617000" />
+      <workItem from="1504790112444" duration="5976000" />
+      <workItem from="1504856261756" duration="9948000" />
+      <workItem from="1505320527496" duration="6745000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="300180000" />
+    <option name="totallyTimeSpent" value="353822000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24253732" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26612905" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3278867" sideWeight="0.5149095" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32488987" sideWeight="0.48509052" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1482,7 +694,6 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32575756" sideWeight="0.48509052" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3982684" sideWeight="0.49583766" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1491,21 +702,21 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3278867" sideWeight="0.5149095" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3278867" sideWeight="0.5149095" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2683706" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26612905" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3278867" sideWeight="0.48509052" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32488987" sideWeight="0.48509052" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3985122" sideWeight="0.49583766" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3982684" sideWeight="0.49583766" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1558,12 +769,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/backend/app/Http/Controllers/WorkoutController.php</url>
-          <line>76</line>
+          <line>87</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/backend/app/Http/Controllers/WorkoutController.php</url>
-          <line>34</line>
+          <line>39</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -1598,22 +809,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/backend/app/Http/Controllers/ExerciseController.php</url>
-          <line>353</line>
+          <line>372</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/backend/app/Http/Controllers/ExerciseController.php</url>
-          <line>370</line>
+          <line>389</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/backend/app/Http/Controllers/ExerciseController.php</url>
-          <line>368</line>
+          <line>387</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/backend/app/Http/Controllers/ExerciseController.php</url>
-          <line>350</line>
+          <line>369</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -1630,436 +841,446 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/savedlist/savedlist.ts">
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/services/HttpClient.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="212" column="5" selection-start-line="212" selection-start-column="5" selection-end-line="212" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/workout-details/workout-details.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="108" column="5" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/createdexercisesstage/createdexercisesstage.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="224" column="6" selection-start-line="223" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/profile-public/profile-public.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="226" column="0" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#48#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/searchfilters/searchfilters.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="108" selection-start-line="16" selection-start-column="108" selection-end-line="16" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/share-workout/share-workout.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="169" column="0" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/create/create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/profile-public/profile-public.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="58" column="73" selection-start-line="58" selection-start-column="73" selection-end-line="58" selection-end-column="73" />
+        <state relative-caret-position="646">
+          <caret line="40" column="46" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/NextFyt/src/app/app.config.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+        <state relative-caret-position="272">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/exercise-default/exercise-default.ts">
+    <entry file="file://$PROJECT_DIR$/NextFyt/node_modules/ionic-angular/css/ionic.dark.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+        <state relative-caret-position="293">
+          <caret line="8623" column="1" selection-start-line="8623" selection-start-column="1" selection-end-line="8623" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/index.html">
+    <entry file="file://$PROJECT_DIR$/NextFyt/node_modules/ionic-angular/components/item/item.md.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="38" column="32" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
+        <state relative-caret-position="4709">
+          <caret line="277" column="0" selection-start-line="277" selection-start-column="0" selection-end-line="277" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/workout-details/workout-details.html">
+    <entry file="file://$PROJECT_DIR$/NextFyt/node_modules/ionic-angular/css/ionic.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="16" column="80" selection-start-line="16" selection-start-column="79" selection-end-line="16" selection-end-column="96" />
+        <state relative-caret-position="146574">
+          <caret line="8622" column="0" selection-start-line="8622" selection-start-column="0" selection-end-line="8622" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Workout.php">
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/profile/profile.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="68">
+          <caret line="4" column="2" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/exercise-history/exercise-history.ts">
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/profile-settings/profile-settings.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="115" column="27" selection-start-line="114" selection-start-column="1" selection-end-line="117" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="2635">
+          <caret line="171" column="5" selection-start-line="171" selection-start-column="2" selection-end-line="171" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/share-workout/share-workout.html">
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/profile-settings/profile-settings.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="80" column="18" selection-start-line="79" selection-start-column="15" selection-end-line="80" selection-end-column="25" />
+        <state relative-caret-position="1360">
+          <caret line="80" column="53" selection-start-line="80" selection-start-column="53" selection-end-line="80" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Helpers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <folding>
+            <marker date="1504196008897" expanded="true" signature="1031:1302" ph="SELECT users... followers" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/exercise-default/exercise-default.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/ExerciseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="154" column="5" selection-start-line="153" selection-start-column="2" selection-end-line="178" selection-end-column="5" />
+          <folding>
+            <element signature="e#488#4096#0#PHP" expanded="false" />
+            <marker date="1504265183686" expanded="true" signature="10537:10759" ph="SELECT `exer... exercises" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/workout-details-exercises/workout-details-exercises.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="86" column="3" selection-start-line="86" selection-start-column="0" selection-end-line="88" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#48#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="-813">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/createdexercisesstage/createdexercisesstage.html">
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/workout-details-exercises/workout-details-exercises.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="24" column="16" selection-start-line="24" selection-start-column="11" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="697">
+          <caret line="44" column="96" selection-start-line="44" selection-start-column="96" selection-end-line="44" selection-end-column="96" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/searchfilters/searchfilters.html">
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/exercise-history/exercise-history.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="10" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="72" />
+        <state relative-caret-position="238">
+          <caret line="14" column="69" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/workout-details-exercise-show/workout-details-exercise-show.ts">
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/profile/profile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1955">
-          <caret line="115" column="5" selection-start-line="115" selection-start-column="5" selection-end-line="115" selection-end-column="5" />
+        <state relative-caret-position="918">
+          <caret line="54" column="81" selection-start-line="54" selection-start-column="81" selection-end-line="54" selection-end-column="81" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/workout-details-exercise-show/workout-details-exercise-show.html">
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/profile-public/profile-public.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+        <state relative-caret-position="2142">
+          <caret line="126" column="20" selection-start-line="126" selection-start-column="20" selection-end-line="126" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/share-workout/share-workout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/savedlist/savedlist.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+        <state relative-caret-position="340">
+          <caret line="20" column="69" selection-start-line="20" selection-start-column="69" selection-end-line="20" selection-end-column="69" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/notifications/notifications.ts">
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/searchfilters/searchfilters.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="74" column="33" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/search/search.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/NotificationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
+        <state relative-caret-position="1819">
+          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
           <folding>
-            <marker date="1502718796373" expanded="true" signature="367:1121" ph="SELECT activ... " />
+            <element signature="e#0#48#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/home/home.ts">
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/workout-details/workout-details.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="835">
-          <caret line="148" column="5" selection-start-line="148" selection-start-column="5" selection-end-line="148" selection-end-column="5" />
+        <state relative-caret-position="306">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/createdexercisesstage/createdexercisesstage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/searchfilters/searchfilters.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="8" selection-end-line="30" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/createdexercises/createdexercises.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/create/create.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2550">
+          <caret line="163" column="7" selection-start-line="163" selection-start-column="7" selection-end-line="163" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/home/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="25" column="185" selection-start-line="25" selection-start-column="185" selection-end-line="25" selection-end-column="185" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/app/main.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/SearchController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3383">
+          <caret line="204" column="140" selection-start-line="204" selection-start-column="137" selection-end-line="204" selection-end-column="141" />
           <folding>
-            <element signature="e#0#48#0" expanded="false" />
+            <marker date="1504860147239" expanded="true" signature="3353:4829" ph="SELECT worko... workouts" />
+            <marker date="1504860147239" expanded="true" signature="5031:6282" ph="SELECT worko... workouts" />
+            <marker date="1504860147239" expanded="true" signature="6992:7372" ph="SELECT DISTI... exercise_to_workout" />
+            <marker date="1504860147239" expanded="true" signature="8245:8575" ph="SELECT COUNT... tags_to_workout" />
+            <marker date="1504860147239" expanded="true" signature="8645:8889" ph="SELECT worko... workouts" />
+            <marker date="1504860147239" expanded="true" signature="8645:9558" ph="SELECT worko... workouts" />
+            <marker date="1504860147239" expanded="true" signature="8645:9591" ph="SELECT worko... workouts" />
+            <marker date="1504860147239" expanded="true" signature="10057:10537" ph="SELECT COUNT... tags_to_workout" />
+            <marker date="1504860147239" expanded="true" signature="10326:10454" ph="SELECT tags.... tags" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/search/search.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="145" column="72" selection-start-line="145" selection-start-column="68" selection-end-line="145" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/SearchController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="164" column="50" selection-start-line="164" selection-start-column="40" selection-end-line="164" selection-end-column="50" />
+        <state relative-caret-position="1479">
+          <caret line="87" column="51" selection-start-line="87" selection-start-column="51" selection-end-line="87" selection-end-column="51" />
           <folding>
-            <marker date="1503055862961" expanded="true" signature="3353:4676" ph="SELECT worko... workouts" />
-            <marker date="1503055862961" expanded="true" signature="4878:5958" ph="SELECT worko... workouts" />
-            <marker date="1503055862961" expanded="true" signature="6670:7050" ph="SELECT DISTI... exercise_to_workout" />
-            <marker date="1503055862961" expanded="true" signature="8076:8556" ph="SELECT COUNT... tags_to_workout" />
-            <marker date="1503055862961" expanded="true" signature="8345:8473" ph="SELECT tags.... tags" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#ion-content#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#div#1;n#div#0;n#ion-content#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h1#1;n#div#0;n#div#1;n#div#1;n#div#0;n#ion-content#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h1#2;n#div#0;n#div#1;n#div#1;n#div#0;n#ion-content#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/registration/registration.ts">
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/search/search.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+        <state relative-caret-position="918">
+          <caret line="65" column="20" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/registration/registration.html">
+    <entry file="file://$PROJECT_DIR$/NextFyt/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/login/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/node_modules/ionic-native/dist/esm/plugins/plugin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="138" column="4" selection-start-line="138" selection-start-column="4" selection-end-line="138" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/create/create.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
-          <caret line="42" column="93" selection-start-line="42" selection-start-column="88" selection-end-line="42" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="60" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/database/migrations/2014_10_12_100000_create_password_resets_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Auth/RegisterController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/database/migrations/2014_10_12_000000_create_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/profile-settings/profile-settings.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/profile/profile.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="49" column="32" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/profile-settings/profile-settings.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="51" column="69" selection-start-line="51" selection-start-column="69" selection-end-line="51" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/UserProfileController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2125">
-          <caret line="137" column="29" selection-start-line="137" selection-start-column="29" selection-end-line="137" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/services/auth.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1717">
-          <caret line="110" column="4" selection-start-line="110" selection-start-column="4" selection-end-line="110" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/services/User.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/exercise-history/exercise-history.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="174" selection-start-line="11" selection-start-column="174" selection-end-line="11" selection-end-column="174" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/exercise-default/exercise-default.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="46" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/notifications/notifications.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="65" column="64" selection-start-line="65" selection-start-column="64" selection-end-line="65" selection-end-column="64" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#2;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/tabs/tabs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="36" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="38" />
+          <caret line="96" column="76" selection-start-line="96" selection-start-column="76" selection-end-line="96" selection-end-column="76" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/NextFyt/src/app/app.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="2515" column="10" selection-start-line="2515" selection-start-column="10" selection-end-line="2515" selection-end-column="10" />
+        <state relative-caret-position="657">
+          <caret line="2843" column="0" selection-start-line="2843" selection-start-column="0" selection-end-line="2843" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/profile/profile.html">
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="75" column="51" selection-start-line="75" selection-start-column="23" selection-end-line="75" selection-end-column="56" />
+        <state relative-caret-position="646">
+          <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/services/auth.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="111" column="60" selection-start-line="111" selection-start-column="57" selection-end-line="111" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/login/login.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="751">
+          <caret line="232" column="0" selection-start-line="232" selection-start-column="0" selection-end-line="232" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
+            <element signature="e#0#40#0" expanded="true" />
+            <element signature="e#509#549#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/home/home.html">
+    <entry file="file://$PROJECT_DIR$/backend/vendor/tymon/jwt-auth/src/Providers/Auth/AuthInterface.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="60" column="63" selection-start-line="60" selection-start-column="60" selection-end-line="60" selection-end-column="128" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="374">
+          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/workout-details-exercises/workout-details-exercises.html">
+    <entry file="file://$PROJECT_DIR$/backend/vendor/laravel/framework/src/Illuminate/Auth/SessionGuard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="21" column="74" selection-start-line="21" selection-start-column="74" selection-end-line="21" selection-end-column="74" />
+        <state relative-caret-position="293">
+          <caret line="236" column="20" selection-start-line="236" selection-start-column="20" selection-end-line="236" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/vendor/tymon/jwt-auth/src/Providers/Auth/IlluminateAuthAdapter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="582">
+          <caret line="49" column="32" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Auth/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/WorkoutController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="316" column="37" selection-start-line="294" selection-start-column="3" selection-end-line="320" selection-end-column="9" />
+        <state relative-caret-position="-289">
+          <caret line="25" column="151" selection-start-line="25" selection-start-column="120" selection-end-line="25" selection-end-column="194" />
           <folding>
-            <element signature="e#673#5367#0#PHP" expanded="false" />
-            <element signature="e#8416#10843#0#PHP" expanded="false" />
-            <marker date="1503318177592" expanded="true" signature="5631:6112" ph="SELECT worko... workouts" />
-            <marker date="1503318177592" expanded="true" signature="5631:6129" ph="SELECT worko... workouts" />
-            <marker date="1503318177592" expanded="true" signature="5631:6206" ph="SELECT worko... workouts" />
-            <marker date="1503318177592" expanded="true" signature="5631:6232" ph="SELECT worko... workouts" />
-            <marker date="1503318177592" expanded="true" signature="7190:7570" ph="SELECT DISTI... exercise_to_workout" />
-            <marker date="1503318177592" expanded="true" signature="8724:8994" ph="SELECT worko... workouts" />
-            <marker date="1503318177592" expanded="true" signature="8724:9029" ph="SELECT worko... workouts" />
-            <marker date="1503318177592" expanded="true" signature="8724:9033" ph="SELECT worko... workouts" />
-            <marker date="1503318177592" expanded="true" signature="8724:9151" ph="SELECT worko... workouts" />
-            <marker date="1503318177592" expanded="true" signature="8724:9189" ph="SELECT worko... workouts" />
-            <marker date="1503318177592" expanded="true" signature="9874:10254" ph="SELECT DISTI... exercise_to_workout" />
-            <marker date="1503318177592" expanded="true" signature="11908:12291" ph="SELECT DISTI... exercise_to_workout" />
-            <marker date="1503318177592" expanded="true" signature="12415:12814" ph="SELECT DISTI... exercise_to_workout" />
-            <marker date="1503318177592" expanded="true" signature="12924:13229" ph="SELECT DISTI... workouts" />
-            <marker date="1503318177592" expanded="true" signature="13325:13507" ph="SELECT id FR... workoutlikes" />
-            <marker date="1503318177592" expanded="true" signature="14287:14826" ph="SELECT worko... workoutlikes" />
-            <marker date="1503318177592" expanded="true" signature="15606:15986" ph="SELECT DISTI... exercise_to_workout" />
-            <marker date="1503318177592" expanded="true" signature="17029:17512" ph="SELECT worko... workoutlikes" />
-            <marker date="1503318177592" expanded="true" signature="18165:18545" ph="SELECT DISTI... exercise_to_workout" />
-            <marker date="1503318177592" expanded="true" signature="19406:19616" ph="SELECT worko... workoutkeepers" />
-            <marker date="1503318177592" expanded="true" signature="19406:19691" ph="SELECT worko... workoutkeepers" />
-            <marker date="1503318177592" expanded="true" signature="19406:19726" ph="SELECT worko... workoutkeepers" />
-            <marker date="1503318177592" expanded="true" signature="20338:20718" ph="SELECT DISTI... exercise_to_workout" />
-            <marker date="1503318177592" expanded="true" signature="21578:21699" ph="SELECT worko... workouts" />
-            <marker date="1503318177592" expanded="true" signature="21578:22048" ph="SELECT worko... workouts" />
-            <marker date="1503318177592" expanded="true" signature="23046:23426" ph="SELECT DISTI... exercise_to_workout" />
+            <element signature="e#40#59#0#PHP" expanded="true" />
+            <element signature="e#6017#9048#0#PHP" expanded="false" />
+            <element signature="e#9055#11482#0#PHP" expanded="false" />
+            <element signature="e#11489#14652#0#PHP" expanded="false" />
+            <marker date="1504796107871" expanded="true" signature="6274:6755" ph="SELECT worko... workouts" />
+            <marker date="1504796107871" expanded="true" signature="6274:6772" ph="SELECT worko... workouts" />
+            <marker date="1504796107871" expanded="true" signature="6274:6849" ph="SELECT worko... workouts" />
+            <marker date="1504796107871" expanded="true" signature="6274:6875" ph="SELECT worko... workouts" />
+            <marker date="1504796107871" expanded="true" signature="7829:8209" ph="SELECT DISTI... exercise_to_workout" />
+            <marker date="1504796107871" expanded="true" signature="9363:9633" ph="SELECT worko... workouts" />
+            <marker date="1504796107871" expanded="true" signature="9363:9668" ph="SELECT worko... workouts" />
+            <marker date="1504796107871" expanded="true" signature="9363:9672" ph="SELECT worko... workouts" />
+            <marker date="1504796107871" expanded="true" signature="9363:9790" ph="SELECT worko... workouts" />
+            <marker date="1504796107871" expanded="true" signature="9363:9828" ph="SELECT worko... workouts" />
+            <marker date="1504796107871" expanded="true" signature="10513:10893" ph="SELECT DISTI... exercise_to_workout" />
+            <marker date="1504796107871" expanded="true" signature="12547:12930" ph="SELECT DISTI... exercise_to_workout" />
+            <marker date="1504796107871" expanded="true" signature="13054:13453" ph="SELECT DISTI... exercise_to_workout" />
+            <marker date="1504796107871" expanded="true" signature="13563:13868" ph="SELECT DISTI... workouts" />
+            <marker date="1504796107871" expanded="true" signature="13964:14146" ph="SELECT id FR... workoutlikes" />
+            <marker date="1504796107871" expanded="true" signature="14926:15587" ph="SELECT worko... workoutlikes" />
+            <marker date="1504796107871" expanded="true" signature="16365:16745" ph="SELECT DISTI... exercise_to_workout" />
+            <marker date="1504796107871" expanded="true" signature="17788:18271" ph="SELECT worko... workoutlikes" />
+            <marker date="1504796107871" expanded="true" signature="18924:19304" ph="SELECT DISTI... exercise_to_workout" />
+            <marker date="1504796107871" expanded="true" signature="20165:20375" ph="SELECT worko... workoutkeepers" />
+            <marker date="1504796107871" expanded="true" signature="20165:20450" ph="SELECT worko... workoutkeepers" />
+            <marker date="1504796107871" expanded="true" signature="20165:20485" ph="SELECT worko... workoutkeepers" />
+            <marker date="1504796107871" expanded="true" signature="21097:21477" ph="SELECT DISTI... exercise_to_workout" />
+            <marker date="1504796107871" expanded="true" signature="22337:22458" ph="SELECT worko... workouts" />
+            <marker date="1504796107871" expanded="true" signature="22337:22807" ph="SELECT worko... workouts" />
+            <marker date="1504796107871" expanded="true" signature="23805:24185" ph="SELECT DISTI... exercise_to_workout" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/UserProfileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="179" column="63" selection-start-line="164" selection-start-column="12" selection-end-line="186" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="43" column="83" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="83" />
+        <state relative-caret-position="255">
+          <caret line="24" column="47" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/ExerciseController.php">
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Auth/ForgotPasswordController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="384" column="0" selection-start-line="384" selection-start-column="0" selection-end-line="384" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/vendor/tymon/jwt-auth/src/Facades/JWTAuth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/vendor/tymon/jwt-auth/src/JWTManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2193">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Auth/JWAUTHrams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" column="17" selection-start-line="16" selection-start-column="3" selection-end-line="25" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/vendor/tymon/jwt-auth/src/JWTAuth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="130" column="5" selection-start-line="130" selection-start-column="5" selection-end-line="130" selection-end-column="5" />
           <folding>
-            <element signature="e#488#4096#0#PHP" expanded="false" />
-            <marker date="1503475653632" expanded="true" signature="9811:10033" ph="SELECT `exer... exercises" />
+            <element signature="e#247#275#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="206" column="0" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

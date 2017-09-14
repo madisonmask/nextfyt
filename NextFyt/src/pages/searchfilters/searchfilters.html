@@ -12,212 +12,215 @@
         <div class="h4">Muscles Worked</div>
 
         <div class="list-worked" *ngIf="FilterValues.Muscles.length>0" >
-          <label class="checkbox"  *ngFor="let item of FilterValues.Muscles" (tap)="SelectMuscles(item)"  >
-            <input type="checkbox">
-            <span class="text">{{item.name}}</span>
+          <label class="checkbox"  *ngFor="let item of FilterValues.Muscles"  (tap)="SelectMuscles(item)">
+            <!--    <input type="checkbox" [checked]="checkMuscles(item)"    >-->
+
+              <input type="checkbox" [(ngModel)]="AllMuscles[item.id]" >
+
+              <span class="text">{{item.name}}</span>
+            </label>
+          </div>
+
+          <label class="checkbox-item">
+
+            <ion-item>
+              <ion-label>Cardio</ion-label>
+              <ion-toggle [(ngModel)]="Searched.Filters.Cardio"></ion-toggle>
+            </ion-item>
+
           </label>
         </div>
-
-        <label class="checkbox-item">
-
-          <ion-item>
-            <ion-label>Cardio</ion-label>
-            <ion-toggle [(ngModel)]="Searched.Filters.Cardio"></ion-toggle>
-          </ion-item>
-
-        </label>
-      </div>
-      <div class="diff">
-        <div class="h4">Difficulty</div>
-        <div class="radio-items"  *ngIf="FilterValues.Difficulty.length>0" >
-          <label class="radio"  *ngFor="let item of FilterValues.Difficulty" (tap)="SelectDifficulty(item)"  >
-            <input type="radio" name="Difficulty">
-            <span class="text">{{item.name}}</span>
-          </label>
-        </div>
-      </div>
-      <div class="worked">
-        <div class="h4">Equipment Needed</div>
-
-        <div class="list-worked"  *ngIf="FilterValues.Equipment.length>0">
-          <label class="checkbox" *ngFor="let item of FilterValues.Equipment" (tap)="SelectEquipment(item)" >
-            <input type="checkbox"  >
-            <span class="text">{{item.name}}</span>
-          </label>
-
-        </div>
-      </div>
-      <div class="time--length">
-        <div class="h4">Time Length</div>
-        <p>Please enter your workout length</p>
-        <div class="list--time">
-          <label class="checkbox">
-            <span class="text">ANY</span>
-            <input type="radio" name="radio-time" value="0"  [(ngModel)]="Searched.Filters.TimeLength">
-            <span class="check"></span>
-          </label>
-          <label class="checkbox">
-            <span class="text">0-15 minutes</span>
-            <input type="radio" name="radio-time"  value="15" [(ngModel)]="Searched.Filters.TimeLength">
-            <span class="check"></span>
-          </label>
-          <label class="checkbox">
-            <span class="text">15-30 minutes</span>
-            <input type="radio" name="radio-time" value="30" [(ngModel)]="Searched.Filters.TimeLength">
-            <span class="check"></span>
-          </label>
-          <label class="checkbox">
-            <span class="text">30-45 minutes</span>
-            <input type="radio" name="radio-time" value="45" [(ngModel)]="Searched.Filters.TimeLength">
-            <span class="check"></span>
-          </label>
-          <label class="checkbox">
-            <span class="text">45-60 minutes</span>
-            <input type="radio" name="radio-time" value="60" [(ngModel)]="Searched.Filters.TimeLength">
-            <span class="check"></span>
-          </label>
-          <label class="checkbox">
-            <span class="text">60-75 minutes</span>
-            <input type="radio" name="radio-time" value="75" [(ngModel)]="Searched.Filters.TimeLength">
-            <span class="check"></span>
-          </label>
-          <label class="checkbox">
-            <span class="text">75-90 minutes</span>
-            <input type="radio" name="radio-time" value="90" [(ngModel)]="Searched.Filters.TimeLength">
-            <span class="check"></span>
-          </label>
-          <label class="checkbox">
-            <span class="text">90-120 minutes</span>
-            <input type="radio" name="radio-time" value="120" [(ngModel)]="Searched.Filters.TimeLength">
-            <span class="check"></span>
-          </label>
-          <label class="checkbox">
-            <span class="text">120+ minutes</span>
-            <input type="radio" name="radio-time" value="121" [(ngModel)]="Searched.Filters.TimeLength">
-            <span class="check"></span>
-          </label>
-          <div class="buttons">
-            <button class="apply" (tap)="ApplyFilter()" >Apply</button>
-            <button class="cancel"  (tap)="dismiss()" >Cancel</button>
+        <div class="diff">
+          <div class="h4">Difficulty</div>
+          <div class="radio-items"  *ngIf="FilterValues.Difficulty.length>0" >
+            <label class="radio"  *ngFor="let item of FilterValues.Difficulty" (tap)="SelectDifficulty(item)"  >
+              <input type="radio" name="Difficulty">
+              <span class="text">{{item.name}}</span>
+            </label>
           </div>
         </div>
-      </div>
+        <div class="worked">
+          <div class="h4">Equipment Needed</div>
+
+          <div class="list-worked"  *ngIf="FilterValues.Equipment.length>0">
+            <label class="checkbox" *ngFor="let item of FilterValues.Equipment" (tap)="SelectEquipment(item)" >
+              <input type="checkbox"  >
+              <span class="text">{{item.name}}</span>
+            </label>
+
+          </div>
+        </div>
+        <div class="time--length">
+          <div class="h4">Time Length</div>
+          <p>Please enter your workout length</p>
+          <div class="list--time">
+            <label class="checkbox">
+              <span class="text">ANY</span>
+              <input type="radio" name="radio-time" value="0"  [(ngModel)]="Searched.Filters.TimeLength">
+              <span class="check"></span>
+            </label>
+            <label class="checkbox">
+              <span class="text">0-15 minutes</span>
+              <input type="radio" name="radio-time"  value="15" [(ngModel)]="Searched.Filters.TimeLength">
+              <span class="check"></span>
+            </label>
+            <label class="checkbox">
+              <span class="text">15-30 minutes</span>
+              <input type="radio" name="radio-time" value="30" [(ngModel)]="Searched.Filters.TimeLength">
+              <span class="check"></span>
+            </label>
+            <label class="checkbox">
+              <span class="text">30-45 minutes</span>
+              <input type="radio" name="radio-time" value="45" [(ngModel)]="Searched.Filters.TimeLength">
+              <span class="check"></span>
+            </label>
+            <label class="checkbox">
+              <span class="text">45-60 minutes</span>
+              <input type="radio" name="radio-time" value="60" [(ngModel)]="Searched.Filters.TimeLength">
+              <span class="check"></span>
+            </label>
+            <label class="checkbox">
+              <span class="text">60-75 minutes</span>
+              <input type="radio" name="radio-time" value="75" [(ngModel)]="Searched.Filters.TimeLength">
+              <span class="check"></span>
+            </label>
+            <label class="checkbox">
+              <span class="text">75-90 minutes</span>
+              <input type="radio" name="radio-time" value="90" [(ngModel)]="Searched.Filters.TimeLength">
+              <span class="check"></span>
+            </label>
+            <label class="checkbox">
+              <span class="text">90-120 minutes</span>
+              <input type="radio" name="radio-time" value="120" [(ngModel)]="Searched.Filters.TimeLength">
+              <span class="check"></span>
+            </label>
+            <label class="checkbox">
+              <span class="text">120+ minutes</span>
+              <input type="radio" name="radio-time" value="121" [(ngModel)]="Searched.Filters.TimeLength">
+              <span class="check"></span>
+            </label>
+            <div class="buttons">
+              <button class="apply" (tap)="ApplyFilter()" >Apply</button>
+              <button class="cancel"  (tap)="dismiss()" >Cancel</button>
+            </div>
+          </div>
+        </div>
+
+    </div>
 
   </div>
 
-</div>
+
+  </ion-content>
 
 
-</ion-content>
+  <!--
+
+  <ion-header>
+
+    <ion-navbar>
+      <ion-title>Search</ion-title>
+    </ion-navbar>
+
+  </ion-header>
 
 
-<!--
-
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>Search</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
+  <ion-content padding>
 
 
 
 
 
 
-  <h2>Muscles worked </h2>
+    <h2>Muscles worked </h2>
 
-<div  *ngIf="FilterValues.Muscles.length>0" >
-  <button ion-button    *ngFor="let item of FilterValues.Muscles" (click)="SelectMuscles(item)"   [color]="checkMuscles(item) ? '' : 'light'"> {{item.name}} </button>
-
-</div>
-
-
-  <ion-item>
-    <ion-label>Cardio</ion-label>
-    <ion-toggle [(ngModel)]="Searched.Filters.Cardio"></ion-toggle>
-  </ion-item>
-
-
-
-
-  <h2>Difficulty </h2>
-  <div  *ngIf="FilterValues.Difficulty.length>0" >
-  <button ion-button  *ngFor="let item of FilterValues.Difficulty" (click)="SelectDifficulty(item)"   [color]="checkDifficulty(item) ? '' : 'light'"> {{item.name}} </button>
+  <div  *ngIf="FilterValues.Muscles.length>0" >
+    <button ion-button    *ngFor="let item of FilterValues.Muscles" (click)="SelectMuscles(item)"   [color]="checkMuscles(item) ? '' : 'light'"> {{item.name}} </button>
 
   </div>
 
 
-  <h2>Equipment needed </h2>
-
-  <div  *ngIf="FilterValues.Equipment.length>0" >
-  <button ion-button  *ngFor="let item of FilterValues.Equipment" (click)="SelectEquipment(item)"   [color]="checkEquipment(item)  ? '' : 'light'"> {{item.name}} </button>
-  </div>
-
-
-  <h2>Time length</h2>
+    <ion-item>
+      <ion-label>Cardio</ion-label>
+      <ion-toggle [(ngModel)]="Searched.Filters.Cardio"></ion-toggle>
+    </ion-item>
 
 
 
 
-    <p> Please enter your workout length </p>
+    <h2>Difficulty </h2>
+    <div  *ngIf="FilterValues.Difficulty.length>0" >
+    <button ion-button  *ngFor="let item of FilterValues.Difficulty" (click)="SelectDifficulty(item)"   [color]="checkDifficulty(item) ? '' : 'light'"> {{item.name}} </button>
 
-    <ion-list radio-group [(ngModel)]="Searched.Filters.TimeLength">
-      <ion-item>
-        <ion-label>ANY</ion-label>
-        <ion-radio value="0" [checked]></ion-radio>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>0-15 minutes</ion-label>
-        <ion-radio value="15" ></ion-radio>
-      </ion-item>
-      <ion-item>
-        <ion-label>15-30 minutes</ion-label>
-        <ion-radio value="30"></ion-radio>
-      </ion-item>
-      <ion-item>
-        <ion-label>30-45 minutes</ion-label>
-        <ion-radio value="45" ></ion-radio>
-      </ion-item>
-      <ion-item>
-        <ion-label>45-60 minutes</ion-label>
-        <ion-radio value="60" ></ion-radio>
-      </ion-item>
-      <ion-item>
-        <ion-label>60-75 minutes</ion-label>
-        <ion-radio value="75" ></ion-radio>
-      </ion-item>
-      <ion-item>
-        <ion-label>75-90 minutes</ion-label>
-        <ion-radio value="90" ></ion-radio>
-      </ion-item>
-      <ion-item>
-        <ion-label>90-120 minutes</ion-label>
-        <ion-radio value="120" ></ion-radio>
-      </ion-item>
-      <ion-item>
-        <ion-label>120+ minutes</ion-label>
-        <ion-radio value="121" ></ion-radio>
-      </ion-item>
+    </div>
 
 
-    </ion-list>
+    <h2>Equipment needed </h2>
+
+    <div  *ngIf="FilterValues.Equipment.length>0" >
+    <button ion-button  *ngFor="let item of FilterValues.Equipment" (click)="SelectEquipment(item)"   [color]="checkEquipment(item)  ? '' : 'light'"> {{item.name}} </button>
+    </div>
 
 
-
-  <button ion-button  (click)="ApplyFilter()"   > Apply </button>
-
-
-
-  <button ion-button  (click)="dismiss()"  [color]="'light'" > Cancel </button>
+    <h2>Time length</h2>
 
 
 
 
-</ion-content>
--->
+      <p> Please enter your workout length </p>
+
+      <ion-list radio-group [(ngModel)]="Searched.Filters.TimeLength">
+        <ion-item>
+          <ion-label>ANY</ion-label>
+          <ion-radio value="0" [checked]></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>0-15 minutes</ion-label>
+          <ion-radio value="15" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>15-30 minutes</ion-label>
+          <ion-radio value="30"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>30-45 minutes</ion-label>
+          <ion-radio value="45" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>45-60 minutes</ion-label>
+          <ion-radio value="60" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>60-75 minutes</ion-label>
+          <ion-radio value="75" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>75-90 minutes</ion-label>
+          <ion-radio value="90" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>90-120 minutes</ion-label>
+          <ion-radio value="120" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>120+ minutes</ion-label>
+          <ion-radio value="121" ></ion-radio>
+        </ion-item>
+
+
+      </ion-list>
+
+
+
+    <button ion-button  (click)="ApplyFilter()"   > Apply </button>
+
+
+
+    <button ion-button  (click)="dismiss()"  [color]="'light'" > Cancel </button>
+
+
+
+
+  </ion-content>
+  -->

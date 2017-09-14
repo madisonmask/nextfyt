@@ -129,12 +129,22 @@ class ExerciseController extends Controller
 
         $exercises = Exercise::where('user_id', $user['id'])->get();
 
+        $difficulty = Difficulty::all();
+        foreach ($difficulty as $dif) {
+            $difficultys[$dif->id] = $dif->name;
+        }
         $exportExercise = [];
         $i = 0;
         foreach ($exercises as $ex) {
             $exportExercise[$i] = $ex;
             $exportExercise[$i]['equipment'] = $ex->equipments()->get(['equipment.name']);;
-            $exportExercise[$i]['muscles'] = $ex->muscles()->get(['muscles.name']);;
+            $exportExercise[$i]['muscles'] = $ex->muscles()->get(['muscles.name']);
+
+            if (isset($difficultys[$ex->Difficulty])) {
+                $exportExercise[$i]['skill'] = $difficultys[$ex->Difficulty];
+            } else {
+                $exportExercise[$i]['skill'] = 'N/a';
+            }
 
             $i++;
         }
@@ -147,13 +157,22 @@ class ExerciseController extends Controller
 
         $exercises = Exercise::where('is_default', 1)->get();
 
+        $difficulty = Difficulty::all();
+        foreach ($difficulty as $dif) {
+            $difficultys[$dif->id] = $dif->name;
+        }
+
         $exportExercise = [];
         $i = 0;
         foreach ($exercises as $ex) {
             $exportExercise[$i] = $ex;
             $exportExercise[$i]['equipment'] = $ex->equipments()->get(['equipment.name']);;
             $exportExercise[$i]['muscles'] = $ex->muscles()->get(['muscles.name']);;
-
+            if (isset($difficultys[$ex->Difficulty])) {
+                $exportExercise[$i]['skill'] = $difficultys[$ex->Difficulty];
+            } else {
+                $exportExercise[$i]['skill'] = 'N/a';
+            }
             $i++;
         }
         return response()->json(['error' => false, 'exercises' => $exportExercise]);

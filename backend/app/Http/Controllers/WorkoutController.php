@@ -18,8 +18,13 @@ use App\WorkoutKepers;
 use App\Tag;
 use App\Activities;
 use Illuminate\Support\Facades\Log;
+use Intervention\Image\Facades\Image;
 
-
+/**
+ * Class WorkoutController
+ * @package App\Http\Controllers
+ * [2017-09-07 14:50:47] local.ERROR: exception 'Intervention\Image\Exception\MissingDependencyException' with message 'PHP Fileinfo extension must be installed/enabled to use Intervention Image.' in /home/rams_zp/nextfyt.com/vendor/intervention/image/src/Intervention/Image/ImageManager.php:133
+ */
 class WorkoutController extends Controller
 {
     /**
@@ -55,6 +60,7 @@ class WorkoutController extends Controller
         if (!empty($imagStr)) {
             $image = base64_decode($imagStr);
             $imgName = "workout-" . time() . ".png";
+   //         $imgNameS= "workout-" . time() . "_s.png";
             $webPath = '/pictures/' . $user['id'] . '/' . $imgName;
             $path = public_path() . $webPath;
             //     Image::make($image->getRealPath())->save($path);
@@ -63,6 +69,11 @@ class WorkoutController extends Controller
         } else {
             $photo = '';
         }
+
+ //       $imageToWork  =   Image::make($path);
+ //       $imageToWork->resize(320, 240);
+ //       $imageToWork->save( public_path() . '/pictures/' . $user['id'] . '/' . $imgNameS);
+
 
         if (!isset($request->Length) OR empty($request->Length)) {
             $Length = 0;
@@ -180,7 +191,7 @@ class WorkoutController extends Controller
         $i = 0;
         if (isset($workouts[0])) {
             foreach ($workouts as $work) {
-                $exportWorkout[$i]['author'] = $user['username'];
+                $exportWorkout[$i]['author'] = $user['name'];
                 $exportWorkout[$i]['name'] = $work->name;
                 if (isset($difficultys[$work->difficulty])) {
                     $exportWorkout[$i]['skill'] = $difficultys[$work->difficulty];
@@ -383,11 +394,13 @@ class WorkoutController extends Controller
             $difficultys[$dif->id] = $dif->name;
         }
 
-        $sql = '  SELECT workouts.*,  workoutkeepers.id AS Inkeepers,  workoutlikes.id  AS InLiked
+        $sql = '  SELECT workouts.*,  workoutkeepers.id AS Inkeepers,  workoutlikes.id  AS InLiked , users.name AS username
                 FROM workoutlikes
                 INNER JOIN workouts ON workouts.id =workoutlikes.workout_id
                  LEFT JOIN workoutkeepers ON
                          workoutkeepers.workout_id=workouts.id AND workoutkeepers.user_id=' . $user['id'] . '
+                         
+                   LEFT JOIN users ON users.id =workouts.user_id      
                 WHERE workoutlikes.user_id=' . $user['id'] . '
                  
                  ORDER BY workouts.created_at DESC
@@ -403,7 +416,7 @@ class WorkoutController extends Controller
         $exportWorkout = [];
         $i = 0;
         foreach ($workouts as $work) {
-            $exportWorkout[$i]['author'] = $user['username'];
+            $exportWorkout[$i]['author'] = $work->username;
             $exportWorkout[$i]['name'] = $work->name;
 
             if (isset($difficultys[$work->difficulty])) {

@@ -13,7 +13,7 @@ class CreateCardioField extends Migration
      */
     public function up()
     {
-        Schema::table('workouts', function (Blueprint $table) {
+        Schema::table('Workouts', function (Blueprint $table) {
            $table->boolean('cardio');
         });
     }
@@ -25,7 +25,7 @@ class CreateCardioField extends Migration
      */
     public function down()
     {
-        Schema::table('workouts', function (Blueprint $table) {
+        Schema::table('Workouts', function (Blueprint $table) {
             //
         });
     }

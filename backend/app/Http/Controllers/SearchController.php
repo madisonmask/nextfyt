@@ -88,7 +88,7 @@ class SearchController extends Controller
 
                     //               Log::info(print_r($match,true));
                     //so we search tags
-                    $sql = "SELECT workouts.*, workoutlikes.id AS InLiked
+                    $sql = "SELECT workouts.*, workoutlikes.id AS InLiked ,  users.name AS username
                         FROM workouts
                         LEFT JOIN workoutlikes ON
                          workoutlikes.workout_id=workouts.id AND workoutlikes.user_id=" . $user['id'] . "
@@ -111,9 +111,11 @@ class SearchController extends Controller
                          left join tags on
                          tags.id =tags_to_workout.tags_id
                          
-                         
+                                LEFT JOIN users ON users.id =workouts.user_id  
  
                         WHERE tags.name ='" . $match[1] . "'
+                        
+                        AND workouts.user_id >0
                         
                        ".$filterStr."
                        
@@ -125,7 +127,7 @@ class SearchController extends Controller
 
 
                     //     $workoutsByName = Workout::where('name', 'LIKE', '%' . $request->SearchString . '%')->get();
-                    $sql = "SELECT workouts.*, workoutlikes.id AS InLiked
+                    $sql = "SELECT workouts.*, workoutlikes.id AS InLiked,  users.name AS username
                         FROM workouts
                         LEFT JOIN workoutlikes ON
                          workoutlikes.workout_id=workouts.id AND workoutlikes.user_id=" . $user['id'] . "
@@ -140,10 +142,13 @@ class SearchController extends Controller
                          left join muscles_to_exercise
                          on 
                          muscles_to_exercise.exercise_id =exercise_to_workout.exercise_id
-                    
+                         
+                     LEFT JOIN users ON users.id =workouts.user_id  
                          
                          
                         WHERE workouts.name LIKE '%" . $request->SearchString . "%'
+                       
+                        AND workouts.user_id >0
                         
                        ".$filterStr."
                        
@@ -157,7 +162,7 @@ class SearchController extends Controller
                 $exportWorkout = [];
                 $i = 0;
                 foreach ($workoutsByName as $work) {
-                    $exportWorkout[$i]['author'] = $user['username'];
+                    $exportWorkout[$i]['author'] = $work->username;
                     $exportWorkout[$i]['name'] = $work->name;
                     $exportWorkout[$i]['skill'] = $difficultys[$work->difficulty];
                     $exportWorkout[$i]['InLiked'] = $work->InLiked;
@@ -197,15 +202,44 @@ class SearchController extends Controller
             case 'top':
 
 
+                $users = User::where('posts','>',0)->orderBy('posts', 'desc')->take(10)->get(['avatar', 'followers', 'following', 'id', 'name', 'posts']);
+
+                $sql = "SELECT COUNT(*) AS TotalUsed, tags.name
+                        FROM tags_to_workout
+                        LEFT JOIN tags ON tags_to_workout.tags_id = tags.id
+                        WHERE 1
+                        GROUP BY tags_to_workout.tags_id
+                        ORDER BY TotalUsed DESC
+                        LIMIT 10";
+                $tags = DB::select($sql);
+
+                $sql="  SELECT workouts.*, workoutlikes.id AS InLiked, users.name AS username
+                        FROM workouts
+                        LEFT JOIN workoutlikes ON
+                         workoutlikes.workout_id=workouts.id AND workoutlikes.user_id=" . $user['id'] . "
+                        INNER JOIN exercise_to_workout ON
+                         exercise_to_workout.workout_id =workouts.id
+                        LEFT JOIN equipment_to_exercise ON
+                         equipment_to_exercise.exercise_id = exercise_to_workout.exercise_id
+                        LEFT JOIN muscles_to_exercise ON 
+                         muscles_to_exercise.exercise_id =exercise_to_workout.exercise_id
+                        LEFT JOIN users ON users.id =workouts.user_id
+                        WHERE workouts.user_id >0
+                        GROUP BY workouts.id
+                        ORDER BY workouts.countLikes DESC
+                        LIMIT 10";
+                $workouts = DB::select($sql);
+
+                $results= ['users'=>$users, 'tags'=>$tags, 'workouts'=>$workouts];
+
+
                 break;
 
 
             case 'people':
 
                 $usersByName = User::where('name', 'LIKE', '%' . $request->SearchString . '%')->get(['avatar', 'followers', 'following', 'id', 'name', 'posts']);
-
                 $results = $usersByName;
-
 
                 break;
 

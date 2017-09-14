@@ -27,32 +27,27 @@ class Helpers extends Controller
     }
 
 
-    public static function getMyFollowers($userId){
+    public static function getMyFollowers($userId)
+    {
 
-        $sql='SELECT users.name, users.id, users.avatar, users.email
+        $sql = 'SELECT users.name, users.id, users.avatar, users.email
                 FROM followers
                 LEFT JOIN users ON users.id =followers.following_user_id
                 WHERE followers.follower_user_id =? AND users.id IS NOT NULL
                 GROUP BY (users.id)';
 
-        $res=DB::select($sql,[$userId]);
+        $res = DB::select($sql, [$userId]);
 
-        $users=[];
-        foreach($res as $user){
-
-
-            $users[$user->id]=['avatar'=>$user->avatar,
-'email'=>$user->email,
-
-'name'=>$user->name
-];
-
-
+        $users = [];
+        foreach ($res as $user) {
+            $users[$user->id] = ['avatar' => $user->avatar,
+                'email' => $user->email,
+                'name' => $user->name
+            ];
         }
-
         return $users;
 
 
-}
+    }
 
 }

@@ -22,8 +22,8 @@
 
                         <div class="left">
 
-                            <div class="image" [ngStyle]="{'background-image' : 'url(/assets/images/fitnes_blank.jpg)'}" *ngIf="item.image =='' "></div>
-                            <div class="image"  [ngStyle]="{'background-image': 'url(' + config.baseUrl + item.image + ')'}" *ngIf="item.image.length > 10 " >
+                            <div class="image" [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.jpg)'}" *ngIf="item.image =='' "   (tap)="showDetails(item)"   ></div>
+                            <div class="image"  [ngStyle]="{'background-image': 'url(' + config.baseUrl + item.image + ')'}" *ngIf="item.image.length > 10 "  (tap)="showDetails(item)"  >
 
 
                                 <div class="icon"><img src="assets/images/clocks.png" alt=""></div>
@@ -53,7 +53,7 @@
                                 </li> -->
                             </ul>
                         </div>
-                        <div class="right"  (click)="showDetails(item)" >
+                        <div class="right"  (tap)="showDetails(item)" >
                             <a  class="h4">{{item.name}}</a>
                             <ul>
                                 <li>By: <span>{{item.author}}</span></li>

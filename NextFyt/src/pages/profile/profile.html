@@ -15,8 +15,11 @@
                     <div class="image" style="background-image:url('assets/images/avatar.jpg')" *ngIf="user.avatar==''" ></div>
 
 
-                    <a class="name">{{user.name}}</a>
-                <!--    <a class="tag">@strong_jesus</a> -->
+                    <a class="name">{{user.FirstName}}  {{user.LastName}}  </a>
+                    <a class="tag">@{{user.name}}</a>
+              <!--      <a class="follow">Follow</a> -->
+
+
                 </div>
                 <ul class="char-profile">
                     <li>
@@ -49,7 +52,7 @@
                 <div class="item" *ngFor="let item of ActiveList" (click)="showDetails(item)">
                     <div class="left">
                       <!--  <div   [style.background-image] = " sanitizer.bypassSecurityTrustResourceUrl(item.image) "></div>-->
-                        <div class="image" [ngStyle]="{'background-image' : 'url(/assets/images/fitnes_blank.jpg)'}" *ngIf="item.image =='' "></div>
+                        <div class="image" [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.jpg)'}" *ngIf="item.image =='' "></div>
                         <div class="image" [ngStyle]="{'background-image' : 'url(' +config.baseUrl + item.image + ')'}"   *ngIf="item.image.length > 10 "></div>
 
                         <ul>

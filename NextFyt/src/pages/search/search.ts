@@ -36,6 +36,10 @@ export class SearchPage {
     UserResults = [];
     TagsResults = [];
     TopResults = [];
+    TopResultsTag = [];
+    TopResultsUsers = [];
+    TopResultsWorkouts =[];
+    //  activeTab='workouts'
     //  SerachResultTabs = 'workouts';
 
 
@@ -51,7 +55,7 @@ export class SearchPage {
         //   console.log(event);
         //   console.log(this.Searched);
 
-        this.doSearch();
+        this.doSearch(this.Searched.Type);
 
 
     }
@@ -59,7 +63,8 @@ export class SearchPage {
     /**
      * @param {{results:Array}} data
      */
-    doSearch() {
+    doSearch(type) {
+        this.Searched.Type = type;
         this.IsAjaxLoaded = true;
         this.storage.ready().then(() => {
             this.storage.get('token').then(token => {
@@ -84,6 +89,13 @@ export class SearchPage {
 
 
                         this.TagsResults = data.results;
+                    }else if (this.Searched.Type == 'top') {
+
+
+                        this.TopResultsTag = data.results.tags;
+                        this.TopResultsUsers = data.results.users;
+                        this.TopResultsWorkouts = data.results.workouts;
+
                     }
 
                 });
@@ -126,7 +138,7 @@ export class SearchPage {
             console.log('MODAL DATA', data);
             if (data != undefined) {
                 this.Searched.Filters = data.Filters;
-                this.doSearch();
+                this.doSearch(this.Searched.Type);
             }
 
 
@@ -163,15 +175,11 @@ export class SearchPage {
     }
 
 
-    showTag(tag){
-
-this.Searched.Type='workouts';
-        this.Searched.SearchString='#'+tag;
-        this.doSearch();
-
-
+    showTag(tag) {
+        this.Searched.Type = 'workouts';
+        this.Searched.SearchString = '#' + tag;
+        this.doSearch(this.Searched.Type);
     }
-
 
 
 }

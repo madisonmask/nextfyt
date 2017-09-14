@@ -13,7 +13,7 @@ class CreateHardestField extends Migration
      */
     public function up()
     {
-        Schema::table('difficulty', function (Blueprint $table) {
+        Schema::table('Difficulty', function (Blueprint $table) {
             $table->unsignedTinyInteger('difficulty_level');
 
         });
@@ -26,7 +26,7 @@ class CreateHardestField extends Migration
      */
     public function down()
     {
-        Schema::table('difficulty', function (Blueprint $table) {
+        Schema::table('Difficulty', function (Blueprint $table) {
             //
         });
     }

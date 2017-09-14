@@ -18,7 +18,9 @@
 
 
         <div class="item"   *ngFor="let item of ActiveList" (click)="showDetails(item)" >
-            <div class="image"  [ngStyle]="{'background-image': 'url(' + config.baseUrl + item.image + ')'}"    ></div>
+            <div class="image" [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.jpg)'}" *ngIf="item.image =='' "></div>
+            <div class="image" [ngStyle]="{'background-image' : 'url(' +config.baseUrl + item.image + ')'}"   *ngIf="item.image.length > 10 "></div>
+
             <div class="info">
                 <div class="left">
                     <div class="h5">{{item.name}}</div>

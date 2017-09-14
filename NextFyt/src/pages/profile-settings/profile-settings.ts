@@ -3,6 +3,8 @@ import { NavController, NavParams, AlertController } from 'ionic-angular';
 import {Storage} from "@ionic/storage";
 import {DomSanitizer} from '@angular/platform-browser';
 import {Http, Headers, RequestOptions} from "@angular/http";
+import {AuthService} from '../../services/auth';
+import {LoginPage} from '../login/login';
 import 'rxjs/add/operator/map';
 
 import {APP_CONFIG, IAppConfig} from '../../app/app.config';
@@ -34,7 +36,7 @@ export class ProfileSettingsPage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams,  private camera:Camera, public alertCtrl:AlertController, private storage: Storage,  public http: Http,
-              @Inject(APP_CONFIG)  config: IAppConfig, public _DomSanitizationService:DomSanitizer) {
+              @Inject(APP_CONFIG)  config: IAppConfig, public _DomSanitizationService:DomSanitizer, public Auth: AuthService) {
     this.user = this.navParams.get('user');
     console.log(this.user);
     this.config=config;
@@ -167,5 +169,9 @@ export class ProfileSettingsPage {
     this.navCtrl.pop();
   }
 
+  Logout() {
+    this.Auth.logout();
+    this.navCtrl.setRoot(LoginPage);
+  }
 
 }

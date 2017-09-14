@@ -108,6 +108,10 @@ export class AuthService {
         return this.http.post(this.config.apiEndpoint + 'login', user).map(res => res.json());
     }
 
+    doFBLogin(user) {
+        return this.http.post(this.config.apiEndpoint + 'fblogin', user).map(res => res.json());
+    }
+
     doRegister(user) {
         return this.http.post(this.config.apiEndpoint + 'register', user).map(res => res.json());
     }

@@ -14,9 +14,14 @@
         </div>
         <div class="card-wrap" (click)="runWorkout()">
             <div class="card-slider">
-                <div class="slide"     [ngStyle]="{'background-image' : 'url('  + config.baseUrl + Workout.image + ')'}"            >
+                <div class="slide"     [ngStyle]="{'background-image' : 'url('  + config.baseUrl + Workout.image + ')'}"     *ngIf="Workout.image.length > 10 "       >
                     <div class="icon"><img src="assets/images/clocks.png" alt=""></div>
                 </div>
+
+                <div class="slide"     [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.jpg)'}" *ngIf="Workout.image =='' "       >
+                    <div class="icon"><img src="assets/images/clocks.png" alt=""></div>
+                </div>
+
             </div>
             <div class="card-info">
                 <div class="top">

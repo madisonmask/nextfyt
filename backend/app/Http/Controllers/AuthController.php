@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Auth;
 use Tymon\JWTAuthExceptions\JWTException;
 
 use Tymon\JWTAuth\Facades\JWTAuth;
-
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\File;
 
 
 class AuthController extends Controller
@@ -75,19 +76,17 @@ class AuthController extends Controller
         }
 
 
-        $user= User::create([
+        $user = User::create([
             'name' => $request->Name,
             'email' => $request->Email,
             'password' => bcrypt($request->Password),
-            'role'=>$request->Role
+            'role' => $request->Role
         ]);
 
         //@todo create check for email
-        if(empty($user)){
+        if (empty($user)) {
             return response()->json(['error' => true, 'msg' => 'Cant create user']);
         }
-
-
 
 
         /*
@@ -100,7 +99,7 @@ class AuthController extends Controller
 
         try {
             // verify the credentials and create a token for the user
-            if (! $token = JWTAuth::attempt(['email'=>$request->Email, 'password'=>$request->Password])) {
+            if (!$token = JWTAuth::attempt(['email' => $request->Email, 'password' => $request->Password])) {
                 return response()->json(['error' => 'invalid_credentials'], 401);
             }
         } catch (JWTException $e) {
@@ -110,10 +109,6 @@ class AuthController extends Controller
 
         // if no errors are encountered we can return a JWT
         return response()->json(compact('token'));
-
-
-
-
 
 
     }
@@ -125,21 +120,13 @@ class AuthController extends Controller
     }
 
 
-
-
-
-
-
-
-
-
     public function doLogin(Request $request)
     {
         $credentials = $request->only('email', 'password');
 
         try {
             // verify the credentials and create a token for the user
-            if (! $token = JWTAuth::attempt($credentials)) {
+            if (!$token = JWTAuth::attempt($credentials)) {
                 return response()->json(['error' => 'invalid_credentials'], 401);
             }
         } catch (JWTException $e) {
@@ -152,14 +139,92 @@ class AuthController extends Controller
     }
 
 
+    public function doFBLogin(Request $request)
+    {
+        //find user with this email
+        $user = User::where('email', $request->email)->first();
+
+        if (empty($user)) {
+            //so create them
 
 
+            $password = $string = str_random(8);
+            $curentUser = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => bcrypt($password),
+                'role' => 'user'
+            ]);
+
+            //@todo sen user email with password!!!
+            if (empty($curentUser)) {
+                return response()->json(['error' => true, 'msg' => 'Cant create user']);
+            }
 
 
+            $path = public_path() . '/pictures';
+            if (!File::exists($path)) {
+                File::makeDirectory($path, $mode = 0777, true, true);
+            }
+            $path = public_path() . '/pictures/' . $user['id'];
+            if (!File::exists($path)) {
+                File::makeDirectory($path, $mode = 0777, true, true);
+            }
+            $imgName = "avatar-" . time() . ".png";
+            $webPath = '/pictures/' . $user['id'] . '/' . $imgName;
+            $path = public_path() . $webPath;
+            $image = file_get_contents($request->picture);
+            if (strlen($image) > 100) {
+                file_put_contents($path, $image);
+                $photo = $webPath;
+                $curentUser->avatar = $photo;
+                $curentUser->save();
+
+            }
 
 
+            /*
+            Auth::login($user);
+
+            return response()->json(['error' => false, 'user' => $user]);
+
+    */
 
 
+            try {
+                // verify the credentials and create a token for the user
+                if (!$token = JWTAuth::attempt(['email' => $request->email, 'password' => $password])) {
+                    return response()->json(['error' => 'invalid_credentials'], 401);
+                }
+            } catch (JWTException $e) {
+                // something went wrong
+                return response()->json(['error' => 'could_not_create_token'], 500);
+            }
+
+            // if no errors are encountered we can return a JWT
+            return response()->json(compact('token'));
+
+
+        } else {
+            //so login them
+
+            try {
+                // verify the credentials and create a token for the user
+                if (!$token = JWTAuth::fromUser($user)) {
+                    return response()->json(['error' => 'invalid_credentials'], 401);
+                }
+            } catch (JWTException $e) {
+                // something went wrong
+                return response()->json(['error' => 'could_not_create_token'], 500);
+            }
+
+            // if no errors are encountered we can return a JWT
+            return response()->json(compact('token'));
+
+        }
+
+
+    }
 
 
 }

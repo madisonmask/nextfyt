@@ -35,9 +35,17 @@
                 </div>
             </form>
 
+            <div class="tag--search">
+                <ul>
+                    <li><a  (click)="doSearch('top')"  [ngClass]="{'active': Searched.Type=='top'}"    >Top</a></li>
+                    <li><a  (click)="doSearch('people')"  [ngClass]="{'active': Searched.Type=='people'}"  >People</a></li>
+                    <li><a  (click)="doSearch('tags')"  [ngClass]="{'active': Searched.Type=='tags'}"  >Tags</a></li>
+                    <li><a  (click)="doSearch('workouts')"  [ngClass]="{'active': Searched.Type=='workouts'}"  >Workouts</a></li>
+                </ul>
+            </div>
 
             <div class="items-search">
-
+<!--
                 <ion-segment [(ngModel)]="Searched.Type">
                     <ion-segment-button value="top" (click)="doSearch()">
                         Top
@@ -58,9 +66,33 @@
 
                 </ion-segment>
 
+                -->
+
                 <!--------------------->
-                <div *ngIf="Searched.Type=='top' ">
-                    <p> Top results </p>
+                <div *ngIf="Searched.Type=='top' " style="color:white">
+                    <p> Top results  I dont have html template so it be just list</p>
+                    <h1 style="text-align: center">Top tags</h1>
+
+                    <ul>
+
+                        <li class="exercises"  *ngFor="let item of TopResultsTag" > {{item.name}} </li>
+
+                    </ul>
+
+                    <h1  style="text-align: center">Top users</h1>
+                    <ul>
+
+                        <li   *ngFor="let item of TopResultsUsers" > {{item.name}} have {{item.posts}} posts  </li>
+                    </ul>
+
+                    <h1  style="text-align: center">Top workouts</h1>
+
+                    <ul>
+
+                        <li   *ngFor="let item of TopResultsWorkouts" > {{item.name}} have {{item.countLikes}} likes  </li>
+                    </ul>
+
+
 
 
                 </div>
@@ -71,9 +103,9 @@
                     <div class="searcg--peaple">
                         <div class="item"  *ngFor="let user of UserResults" (click)="userSelected(user)">
                             <div class="icon">
-                                <div class="img"     [ngStyle]="{'background-image': 'url('+ config.baseUrl + user.avatar + ')'}"
-                                     ></div>
-                            </div>
+                                <div class="img"     [ngStyle]="{'background-image': 'url('+ config.baseUrl + user.avatar + ')'}"         *ngIf="user.avatar!=''"                             ></div>
+                                <div class="img"    style="background-image:url('assets/images/avatar.jpg')" *ngIf="user.avatar==''"                         ></div>
+                           </div>
                             <div class="info">
                                 <div class="name">{{user.name}}</div>
                                 <div class="posts">Posts: {{user.posts}}</div>
@@ -93,7 +125,7 @@
                                   <ion-item *ngFor="let user of UserResults" (click)="userSelected(user)">
                                       <ion-avatar item-start>
                                           <img src="{{user.avatar}}" *ngIf="user.avatar!=''">
-                                          <img src="/assets/images/avatar.jpg" *ngIf="user.avatar==''">
+                                          <img src="assets/images/avatar.jpg" *ngIf="user.avatar==''">
                                       </ion-avatar>
                                       <h2>{{user.name}}</h2>
                                       <h3>Posts: {{user.posts}}</h3>
@@ -131,8 +163,8 @@
 
                     <div class="item" *ngFor="let item of WorkoutResults" >
                         <div class="left">
-                            <div class="image" [ngStyle]="{'background-image' : 'url(/assets/images/fitnes_blank.jpg)'}" *ngIf="item.image =='' "></div>
-                            <div class="image" [ngStyle]="{'background-image' : 'url(' +config.baseUrl  + item.image + ')'}"   *ngIf="item.image.length > 10 "></div>
+                            <div class="image" [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.jpg)'}" *ngIf="item.image =='' "  (tap)="showDetails(item)"></div>
+                            <div class="image" [ngStyle]="{'background-image' : 'url(' +config.baseUrl  + item.image + ')'}"   *ngIf="item.image.length > 10 "  (tap)="showDetails(item)"></div>
                                   <ul>
                                 <li>
                                     <a >
@@ -151,10 +183,10 @@
 
                             </ul>
                         </div>
-                        <div class="right" (click)="showDetails(item)">
+                        <div class="right" (tap)="showDetails(item)">
                             <a class="h4">{{item.name}}</a>
                             <ul>
-                                <li>By: <span>{{item.user}}</span></li>
+                                <li>By: <span>{{item.author}}</span></li>
                                 <li>Skill: <span>{{item.skill}}</span></li>
                                 <li>Muscules Worked: <span> <span
                                         *ngFor="let muscle  of item.muscles"> {{muscle.name}}  </span></span></li>
@@ -223,7 +255,7 @@
             <ion-item *ngFor="let user of UserResults" (click)="userSelected(user)">
                 <ion-avatar item-start>
                     <img src="{{user.avatar}}" *ngIf="user.avatar!=''">
-                    <img src="/assets/images/avatar.jpg" *ngIf="user.avatar==''">
+                    <img src="assets/images/avatar.jpg" *ngIf="user.avatar==''">
                 </ion-avatar>
                 <h2>{{user.name}}</h2>
                 <h3>Posts: {{user.posts}}</h3>

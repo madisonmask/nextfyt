@@ -54,6 +54,7 @@ export class LoginPage {
     ionViewDidLoad() {
         console.log('ionViewDidLoad LoginPage');
         //    this.tabsService.hide();
+
     }
 
     doLogin() {
@@ -119,6 +120,69 @@ export class LoginPage {
 
     }
 
+    doFBLogin(user) {
+        alert('do login');
+        this.IsAjaxLoaded=true;
+        this.Auth.doFBLogin(user).subscribe(data => {
+
+alert(data);
+                console.log(data);
+                this.storage.set('token', data.token);
+
+                /*         this.Auth.getProfile().then(user=>{
+                 console.log(user);
+
+                 })
+
+                 */
+                this.Auth.getProfile().then(data=> {
+
+                    this.IsAjaxLoaded=false;
+
+
+                    console.log(data);
+                    if (data.id == 0) {
+                        console.log('User not logined');
+                        this.navCtrl.push(LoginPage);
+                    } else {
+                        this.User = data;
+                        this.navCtrl.setRoot(TabsPage);
+                        //        this.navCtrl.pop();
+
+
+                    }
+                }, error=>{
+                    this.IsAjaxLoaded=false;
+                    this.showToastr(error.json().error)
+
+
+                })
+                /*
+                 this.Auth.getProfile().subscribe(data => {
+
+                 this.User =data;
+
+                 }, err => {
+                 console.log(err);
+
+                 })
+
+                 */
+                //       this.User = this.jwtHelper.decodeToken(data.token);
+                //      console.log(this.User);
+                //      this.storage.set('profile', this.User);
+
+            },
+            error=> {
+                this.IsAjaxLoaded=false;
+                //         console.log('error');
+                console.log(error);
+                //         console.log(err.text());
+                //          console.log(err.json());
+                this.showToastr(error.json().error)
+            })
+
+    }
 
     doRegister() {
         this.navCtrl.push(RegistrationPage);
@@ -146,25 +210,42 @@ export class LoginPage {
         let permissions = new Array<string>();
 //        let nav = this.navCtrl;
         //the permissions your facebook app needs from the user
-        permissions = ["public_profile"];
+        permissions = ['public_profile', 'user_friends', 'email'];
 
+var Controller=this;
 
         Facebook.login(permissions)
             .then(function(response){
                 let userId = response.authResponse.userID;
                 let params = new Array<string>();
-                this.showToastr(response);
+
+             //   this.showToastr(response);
                 //Getting name and gender properties
-                Facebook.api("/me?fields=name,gender", params)
+                Facebook.api("/me?fields=name,gender,email", params)
                     .then(function(user) {
                         user.picture = "https://graph.facebook.com/" + userId + "/picture?type=large";
                         //now we have the users info, let's save it in the NativeStorage
                      console.log(user);
-                        this.showToastr(user);
+                        alert(JSON.stringify(user));
+                        Controller.doFBLogin(user);
+
+            //            this.showToastr(user);
+
+                        /*
+                        {name:'first and last',
+                        gender:'male/female',
+                            id:111111,
+                            picture:"img'"
+                         }
+
+                            */
+
                     })
             }, function(error){
                 console.log(error);
-                this.showToastr(error);
+                alert(error);
+        //        this.showToastr(error);
+
             });
 
 

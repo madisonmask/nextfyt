@@ -21,10 +21,27 @@
                 <img src="assets/images/add-blue.svg" alt="">
                 <span>Add New Tab</span>
             </a>
+
+
+<!--
             <ul class="list">
                 <li *ngFor="let exercise of MyExercises" >
                     <div class="left">
-                        <div class="image" [ngStyle]="{'background-image' : 'url(/assets/images/fitnes_blank.jpg)'}" *ngIf="exercise.stage1_img =='' "></div>
+                        <ul class="etit-ul">
+                            <li>
+                                <a href="" class="delete">
+                                    <img src="assets/images/delete.png" alt="">
+                                    <span class="text">delete</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="edit">
+                                    <img src="assets/images/edit.png" alt="">
+                                    <span class="text">edit</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="image" [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.jpg)'}" *ngIf="exercise.stage1_img =='' "></div>
                         <div class="image" [ngStyle]="{'background-image' : 'url(' +config.baseUrl + exercise.stage1_img + ')'}"   *ngIf="exercise.stage1_img.length > 10 "></div>
 
                     </div>
@@ -36,6 +53,68 @@
                 </li>
 
             </ul>
+
+            <hr>
+-->
+
+            <ion-list>
+
+                <ion-item-sliding class="exercises" *ngFor="let exercise of MyExercises" class=" items-search">
+                    <ion-item   >
+                        <div class="left">
+                            <ul class="etit-ul">
+                              <!--  <li>
+                                    <a href="" class="delete">
+                                        <img src="assets/images/delete.png" alt="">
+                                        <span class="text">delete</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" class="edit">
+                                        <img src="/assets/images/edit.png" alt="">
+                                        <span class="text">edit</span>
+
+                                    </a>
+                                </li> -->
+                            </ul>
+                            <div class="image" [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.jpg)'}" *ngIf="exercise.stage1_img =='' "></div>
+                            <div class="image" [ngStyle]="{'background-image' : 'url(' +config.baseUrl + exercise.stage1_img + ')'}"   *ngIf="exercise.stage1_img.length > 10 "></div>
+
+                        </div>
+                        <div class="right">
+                            <div class="h3">{{exercise.name}}</div>
+                            <p>{{exercise.repeat_count}} {{exercise.repeat_type}}      of  {{exercise.length_count}}   {{exercise.length_type}} </p>
+                            <p>Equipment: <span> <span *ngFor="let eq of exercise.equipment"> {{eq.name}} ,  </span></span></p>
+                        </div>
+                    </ion-item>
+
+
+                    <ion-item-options side="left">
+                        <ul class="">
+                            <li>
+                                <a  (click)="delete(exercise)" class="delete">
+                                    <img src="assets/images/delete.png" alt="">
+                              <!--      <span class="text">delete</span> -->
+                                </a>
+                            </li>
+                       <!--     <li>
+                                <a  class="edit">
+                                    <img src="assets/images/edit.png" alt="">
+                                    <span class="text">edit</span>
+                                </a>
+                            </li>  -->
+                        </ul>
+                    </ion-item-options>
+
+
+                </ion-item-sliding>
+
+            </ion-list>
+
+
+
+
+
             <a  class="share"  (click)="ShareWorkout()" >Share Full Workout</a>
         </div>
 

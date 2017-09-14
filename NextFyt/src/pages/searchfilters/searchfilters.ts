@@ -17,9 +17,10 @@ export class SearchFilters {
         Filters: {enabled: false, Muscles: [], Cardio: false, Difficulty: [], Equipment: [],  TimeLength:"0"}
     };
     shouldShowCancel = true;
-    FilterValues = {Muscles: {}, Cardio: false, Difficulty: {}, Equipment: {}};
+    FilterValues = {Muscles: [], Cardio: false, Difficulty: {}, Equipment: {}};
 
     IsAjaxLoaded: boolean = false;
+    AllMuscles=[];
 
     constructor(params:NavParams, public viewCtrl:ViewController, public http: Http,
                 @Inject(APP_CONFIG)  config: IAppConfig) {
@@ -76,27 +77,55 @@ export class SearchFilters {
     dismiss() {
     //    let data = {'foo': 'bar'};
 //        console.log(data);
+
+        this.Searched.Filters.enabled=false;
           this.viewCtrl.dismiss();
   //      this.viewCtrl.dismiss({"foo": "bar"});
 
     }
 
     SelectMuscles(item) {
+        console.log('select muscle');
         console.log(item);
         console.log(this.Searched);
         console.log(this.Searched.Filters.Muscles);
+        console.log(this.AllMuscles);
         if (this.Searched.Filters.Muscles.indexOf(item) == -1) {
             this.Searched.Filters.Muscles.push(item);
       //     console.log('push');
         } else {
             this.Searched.Filters.Muscles.splice(this.Searched.Filters.Muscles.indexOf(item), 1);
         }
+
+     //   this.checkMuscles(item);
+this.checkEnabledMuscles();
+
+    }
+
+    checkEnabledMuscles(){
+
+        console.log(this.AllMuscles);
+
+        this.FilterValues.Muscles.forEach(function (item) {
+            console.log("firms check!"+ item.id);
+            console.log(this[item.id])
+
+
+
+        },this.AllMuscles);
+
+
     }
 
     checkMuscles(item) {
+        console.log('check muscle');
+        console.log(item);
+        console.log(this.Searched.Filters.Muscles);
         if (this.Searched.Filters.Muscles.indexOf(item) == -1) {
+            console.log('false');
             return false;
         } else {
+            console.log('TRUE');
             return true;
         }
     }

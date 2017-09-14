@@ -314,7 +314,7 @@ body{
   color: #ffffff;
   font-family: gm;
   font-size: 12px;
-  background: #5070d5 url(../img/home/facebook.svg) center left+24px no-repeat;
+  background: #5070d5 url(../assets/images/home/facebook.svg) center left+24px no-repeat;
   margin-bottom: 20px;
 }
 .login-nf .or {
@@ -339,10 +339,10 @@ body{
   font-size: 13px;
 }
 .login-nf  .mail {
-  background: rgba(255, 255, 255, 0.03) url(../img/home/mail.svg) center left+15px no-repeat;
+  background: rgba(255, 255, 255, 0.03) url(../assets/images/home/mail.svg) center left+15px no-repeat;
 }
 .login-nf   .password {
-  background: rgba(255, 255, 255, 0.03) url(../img/home/password.svg) center left+15px no-repeat;
+  background: rgba(255, 255, 255, 0.03) url(../assets/images/home/password.svg) center left+15px no-repeat;
 }
 .login-nf button {
   height: 45px;
@@ -393,16 +393,16 @@ body{
   margin-bottom: 8px;
 }
 .sign-form .fullname {
-  background: rgba(255, 255, 255, 0.03) url(../img/home/name.svg) center left+15px no-repeat;
+  background: rgba(255, 255, 255, 0.03) url(../assets/images/home/name.svg) center left+15px no-repeat;
 }
 .sign-form .user {
-  background: rgba(255, 255, 255, 0.03) url(../img/home/name.svg) center left+15px no-repeat;
+  background: rgba(255, 255, 255, 0.03) url(../assets/images/home/name.svg) center left+15px no-repeat;
 }
 .sign-form .date {
-  background: rgba(255, 255, 255, 0.03) url(../img/home/calendar.svg) center left+15px no-repeat;
+  background: rgba(255, 255, 255, 0.03) url(../assets/images/home/calendar.svg) center left+15px no-repeat;
 }
 .sign-form .country {
-  background: rgba(255, 255, 255, 0.03) url(../img/home/label.svg) center left+15px no-repeat;
+  background: rgba(255, 255, 255, 0.03) url(../assets/images/home/label.svg) center left+15px no-repeat;
 }
 .sign-form .select {
   height: 45px;
@@ -417,7 +417,7 @@ body{
   float: none;
 }
 .sign-form .select:after{
-  background:  url(../img/home/arrow.png) center   no-repeat;
+  background:  url(../assets/images/home/arrow.png) center   no-repeat;
   border: 0;
   width: 9px;
   height: 9px;
@@ -428,7 +428,7 @@ body{
   margin: 0;
 }
 .sign-form .select:before{
-  background:  url(../img/home/arrow.png) center   no-repeat;
+  background:  url(../assets/images/home/arrow.png) center   no-repeat;
   border: 0;
   width: 9px;
   height: 9px;
@@ -478,7 +478,7 @@ body{
   background-position: center;
 }
 .sign-form .radio input:checked + .check{
-  background: #01a9f6 url(../img/home/check.svg) center no-repeat;
+  background: #01a9f6 url(../assets/images/home/check.svg) center no-repeat;
   border-color: #01a9f6;
 }
 .sign-form .radio .text {
@@ -519,7 +519,7 @@ body{
   color: #1396f3;
 }
 .sign-form .checkbox input:checked + .check{
-  background: #01a9f6 url(../img/home/check.svg) center no-repeat;
+  background: #01a9f6 url(../assets/images/home/check.svg) center no-repeat;
   border-color: #01a9f6;
   background-size: 10px;
 }
@@ -1016,12 +1016,12 @@ body{
   color: #ffffff;
   font-family: gr;
   font-size: 12px;
-  background: #01a9f6 url(../img/arrow-white.png) right+23px center no-repeat;
+  background: #01a9f6 url(../assets/images/arrow-white.png) right+23px center no-repeat;
 }
 .numbers-column .button{
   cursor: pointer;
   font-size: 0;
-  background: url(../img/up.svg) center no-repeat;
+  background: url(../assets/images/up.svg) center no-repeat;
   width: 10px;
   height: 10px;position: absolute;
   left: 14px;
@@ -1294,7 +1294,7 @@ body{
   color: #ffffff;
   font-family: gr;
   font-size: 12px;
-  background: #01a9f6 url(../img/arrow-white.png) right+23px center no-repeat;
+  background: #01a9f6 url(../assets/images/arrow-white.png) right+23px center no-repeat;
   border: 0;
   width: 100%;
 }
@@ -1433,6 +1433,32 @@ body{
 }
 .profile-info .profile-top {
   padding: 25px 0;
+   	position: relative;
+}
+.profile-top .follow{
+	position: absolute;
+	right: 20px;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: 86px;
+	height: 32px;
+	border-radius: 3px;	
+	line-height: 32px;
+	text-align: center;
+	color: #ffffff;
+	font-family: pr;
+	font-size: 13px;
+	letter-spacing: -0.08px;	
+	background: #01a9f6 url(../assets/images/w-plus.png) ;
+
+  background-position-x: 90% ;
+  background-position-y: center;
+ background-repeat: no-repeat;
+
+
+
+
 }
 .profile-info .image {
   width: 62px;
@@ -2031,7 +2057,7 @@ body{
 .tag--search a.active,
 .saved--list-tg a.active{
   background-color: #434c6c;
-  color: #fff;
+  color: #9cafc3;
 }
 
 .time--length {
@@ -2412,6 +2438,9 @@ body{
 .prof_set {
   padding: 0 12px;
 }
+.prof_set .log-out{
+	color: #01a9f6;
+}
 .prof_set .item {
   font-size: 0;
   display: table;
@@ -2489,6 +2518,53 @@ body{
   font-size: 17px;
   width: 100%;
 }
+
+
+
+.workout--share .wr img{
+  max-width: 33px;
+  width: 100%;
+}
+.feed-v2{
+  padding-top: 20px!important;
+}
+.top-window .saved--list-tg{
+  padding: 0 10px 0 40px;
+  margin: 0;
+  border: 0;
+}
+.feed-v2 .items-search{
+  overflow: hidden;
+}
+.feed-v2 .item{
+  position: relative;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  right: 0;
+}
+.feed-v2 .item:hover{
+  right: -80px;
+}
+.etit-ul {
+  position: absolute;
+  left: -100px;
+  width: 80px;
+  top: 20px;
+}
+.feed-v2 .item:hover .etit-ul{
+  left: -85px;
+}
+.etit-ul   span {
+  color: #ffffff;
+  font-family: pr;
+  font-size: 12px;
+}
+
+
+
+
+
+
 /*******************************************************************************************/
 
 
@@ -2523,8 +2599,24 @@ body{
   opacity: 0.9;
 }
 
-.ion-ios-HomeTab[ng-reflect-is-active=true] ,
-.ion-md-HomeTab[ng-reflect-is-active=true]  {
+
+.tab-button[aria-selected=true]
+.ion-ios-HomeTab ,
+.tab-button[aria-selected=true]
+.ion-md-HomeTab,
+.tab-button[aria-selected=true]
+.ion-md-HomeTab-outlet,
+.tab-button[aria-selected=true]
+.ion-ios-HomeTab-outlet,
+.tab-button[aria-selected=true]
+.ion-ios-HomeTab-outline,
+.tab-button[aria-selected=true]
+.ion-md-HomeTab-outline
+
+
+
+
+{
   content: url(../assets/images/bar/home-active.svg);
   width: 24px;
   height: 32px;
@@ -2552,8 +2644,9 @@ body{
 .ion-ios-SearchTab,
 .ion-md-SearchTab,
 .ion-ios-SearchTab-outlet,
-.ion-md-SearchTab-outlet
-
+.ion-md-SearchTab-outlet,
+.ion-ios-SearchTab-outline,
+.ion-md-SearchTab-outline
 
 {
   content: url(../assets/images/bar/search.svg);
@@ -2563,9 +2656,20 @@ body{
   opacity: 0.9;
 }
 
-.ion-ios-SearchTab[ng-reflect-is-active=true],
- .ion-md-SearchTab[ng-reflect-is-active=true] {
-   content: url(../assets/images/bar/search-n.svg);
+.tab-button[aria-selected=true]
+.ion-ios-SearchTab ,
+.tab-button[aria-selected=true]
+.ion-md-SearchTab,
+.tab-button[aria-selected=true]
+.ion-md-SearchTab-outlet,
+.tab-button[aria-selected=true]
+.ion-ios-SearchTab-outlet,
+.tab-button[aria-selected=true]
+.ion-ios-SearchTab-outline,
+.tab-button[aria-selected=true]
+.ion-md-SearchTab-outline
+ {
+   content: url(../assets/images/bar/search-active.svg);
    width: 24px;
    height: 32px;
    padding: 6px 4px 2px;
@@ -2576,7 +2680,11 @@ body{
 .ion-ios-CreateTab,
 .ion-md-CreateTab,
 .ion-ios-CreateTab-outlet,
-.ion-md-CreateTab-outlet
+.ion-md-CreateTab-outlet,
+
+.ion-ios-CreateTab-outline,
+.ion-md-CreateTab-outline
+
 
 {
   content: url(../assets/images/bar/close.svg);
@@ -2611,7 +2719,9 @@ body{
 .ion-ios-LikeTab,
 .ion-md-LikeTab,
 .ion-ios-LikeTab-outlet,
-.ion-md-LikeTab-outlet
+.ion-md-LikeTab-outlet,
+.ion-ios-LikeTab-outline,
+.ion-md-LikeTab-outline
 {
   content: url(../assets/images/bar/like.svg);
   width: 24px;
@@ -2620,9 +2730,25 @@ body{
   opacity: 0.9;
 }
 
-.ion-ios-LikeTab[ng-reflect-is-active=true],
-.ion-md-LikeTab[ng-reflect-is-active=true] {
-  content: url(../assets/images/bar/like-red.svg);
+
+
+
+.tab-button[aria-selected=true]
+.ion-ios-LikeTab ,
+.tab-button[aria-selected=true]
+.ion-md-LikeTab,
+.tab-button[aria-selected=true]
+.ion-md-LikeTab-outlet,
+.tab-button[aria-selected=true]
+.ion-ios-LikeTab-outlet,
+.tab-button[aria-selected=true]
+.ion-ios-LikeTab-outline,
+.tab-button[aria-selected=true]
+.ion-md-LikeTab-outline
+
+
+{
+  content: url(../assets/images/bar/like-active.svg);
   width: 24px;
   height: 32px;
   padding: 6px 4px 2px;
@@ -2634,17 +2760,37 @@ body{
 .ion-ios-ProfileTab,
 .ion-md-ProfileTab,
 .ion-ios-ProfileTab-outlet,
-.ion-md-ProfileTab-outlet
+.ion-md-ProfileTab-outlet,
+.ion-ios-ProfileTab-outline,
+.ion-md-ProfileTab-outline
+
+
 {
-  content: url(../assets/images/bar/name.svg);
+  content: url(../assets/images/bar/profile.svg);
   width: 24px;
   height: 32px;
   padding: 6px 4px 2px;
   opacity: 0.9;
 }
 
-.ion-ios-ProfileTab[ng-reflect-is-active=true],
-.ion-md-ProfileTab[ng-reflect-is-active=true] {
+
+
+.tab-button[aria-selected=true]
+.ion-ios-ProfileTab ,
+.tab-button[aria-selected=true]
+.ion-md-ProfileTab,
+.tab-button[aria-selected=true]
+.ion-md-ProfileTab-outlet,
+.tab-button[aria-selected=true]
+.ion-ios-ProfileTab-outlet,
+.tab-button[aria-selected=true]
+.ion-ios-ProfileTab-outline,
+.tab-button[aria-selected=true]
+.ion-md-ProfileTab-outline
+
+
+
+{
   content: url(../assets/images/bar/profile-active.svg);
   width: 24px;
   height: 32px;
@@ -2660,13 +2806,43 @@ body{
 }
 
 
-.checkbox-item .item-md.item-block .item-inner {
+.checkbox-item .item-md.item-block .item-inner , .block-create-tab  .item-md.item-block .item-inner  ,
+.checkbox-item .item-ios.item-block .item-inner , .block-create-tab  .item-ios.item-block .item-inner    {
   border-bottom: none;
 }
 
-.checkbox-item .item-md {
+.checkbox-item .item-md,  .checkbox-item .item-ios {
 
   color: #fff;
   background-color: transparent ;
 
+}
+
+.list-md ion-item-sliding , .list-ios ion-item-sliding{
+  background-color: transparent;
+}
+
+.item-md , .item-ios{
+  background-color: transparent;
+}
+
+.list-md ion-item-options, .list-ios ion-item-options{
+   border-bottom: none;
+}
+
+
+.numbers-column .select-md{
+padding:0;
+
+}
+
+.numbers-column .select-md .select-icon {
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+.numbers-column  ion-select {
+  max-width: 100%;
+  color: white;
 }

@@ -22,6 +22,7 @@ Route::post('/subscribe', 'LandingController@subscribe');
 
 Route::group(['prefix' => 'api'], function () {
     Route::post('/login', 'AuthController@doLogin');
+    Route::post('/fblogin', 'AuthController@doFBLogin');
     Route::post('/register', 'AuthController@doRegister');
     Route::post('/passwordReset', 'AuthController@doPasswordReset');
     Route::post('/loginj', 'AuthController@authenticate');

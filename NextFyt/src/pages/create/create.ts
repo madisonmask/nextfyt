@@ -146,7 +146,7 @@ export class CreatePage {
     }
 
     delete(exercise){
-        this.MyExercises.splice( this.MyExercises.indexOf(exercise),1  );
+        this.MyExercises.splice( this.MyExercises.indexOf(exercise), 1  );
         this.storage.ready().then(() => {
             this.storage.get('token').then(token => {
                 console.log(token);
@@ -161,7 +161,7 @@ export class CreatePage {
                 })
             })
         })
-        this.MyExercises.splice( this.MyExercises.indexOf(exercise),1  );
+     //   this.MyExercises.splice( this.MyExercises.indexOf(exercise) , 1  );
     }
 
 }

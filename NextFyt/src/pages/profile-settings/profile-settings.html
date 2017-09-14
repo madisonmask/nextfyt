@@ -14,7 +14,7 @@
             <div class="profile-info">
                 <div class="profile-top">
 
-                    <div class="image" [style.background-image]="user.avatarSTYLE"  *ngIf="user.avatar!=''" ></div>
+                    <div class="image" [ngStyle]="{'background-image' : 'url(' +config.baseUrl + user.avatar + ')'}"   *ngIf="user.avatar!=''" ></div>
                     <div class="image" style="background-image:url('assets/images/img-1.png')" *ngIf="user.avatar==''" ></div>
                     <label class="edit_photo"  (click)="showRadio()">
                         <input type="file">
@@ -78,6 +78,15 @@
                             </a>
                         </div>
                     </div>
+                    <div class="item" (tap)="Logout()">
+                        <div class="title log-out">Log out</div>
+                        <div class="ps_info">
+                            <a href="">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
 
                 </div>
             </div>
