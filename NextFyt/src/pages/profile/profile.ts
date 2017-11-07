@@ -48,8 +48,10 @@ export class ProfilePage {
 
         //   this.user={id:1,username:'TestUser', avatar:'/assets/images/avatar.png', posts:8, followers:10, following:20};
         this.user = userSrv.getData();
-        console.log(userSrv);
-        console.log(userSrv.getData());
+
+    //    console.log(userSrv);
+   //     console.log(userSrv.getData());
+   //     this.getUserDetails();
         this.getMyWorkouts();
 
 
@@ -118,7 +120,31 @@ export class ProfilePage {
                 })
             })
         })
-    }
+    };
+/*
+    getUserDetails() {
+    //    this.IsAjaxLoaded=true;
+        this.storage.ready().then(() => {
+            this.storage.get('token').then(token => {
+                console.log(token);
+
+
+                let headers = new Headers({'Authorization': 'Bearer ' + token});
+                let options = new RequestOptions({headers: headers});
+
+
+                this.http.get(this.config.apiEndpoint + 'profile/userdata', options).map(res => res.json()).subscribe(data => {
+     console.log(data);
+
+                }, error => {
+                    this.IsAjaxLoaded=false;
+                    console.log(error);
+                    this.showToastr(error.json().error)
+                })
+            })
+        })
+    };
+*/
 
     getFavoritesWorkouts() {
         this.IsAjaxLoaded=true;

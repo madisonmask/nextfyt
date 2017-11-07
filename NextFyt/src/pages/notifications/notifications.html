@@ -31,7 +31,13 @@
 
                          <div *ngIf="item.actionType=='liked'">
                             <div class="avatar">
-                                <div class="photo" style="background-image:url({{item.User.avatar}})"></div>
+
+                                <div class="photo" [ngStyle]="{'background-image' : 'url(' +config.baseUrl + item.User.avatar + ')'}"  *ngIf="item.User.avatar!=''" ></div>
+                                <div class="photo" style="background-image:url('assets/images/avatar.jpg')" *ngIf="item.User.avatar==''" ></div>
+
+
+
+                              <!--  <div class="photo" style="background-image:url({{item.User.avatar}})"></div> -->
                             </div>
                             <div class="info">
                                 <div class="top-info">
@@ -57,7 +63,8 @@
 
                         <div  *ngIf="item.actionType=='followed'">
                             <div class="avatar">
-                                <div class="photo" style="background-image:url({{item.User.avatar}})"></div>
+                                <div class="photo" [ngStyle]="{'background-image' : 'url(' +config.baseUrl + item.User.avatar + ')'}"  *ngIf="item.User.avatar!=''" ></div>
+                                <div class="photo" style="background-image:url('assets/images/avatar.jpg')" *ngIf="item.User.avatar==''" ></div>
                             </div>
                             <div class="info">
                                 <div class="top-info">
@@ -75,7 +82,8 @@
 
                         <div *ngIf="item.actionType =='newworkout' ">
                             <div class="avatar">
-                                <div class="photo" style="background-image:url({{item.User.avatar}})"></div>
+                                <div class="photo" [ngStyle]="{'background-image' : 'url(' +config.baseUrl + item.User.avatar + ')'}"  *ngIf="item.User.avatar!=''" ></div>
+                                <div class="photo" style="background-image:url('assets/images/avatar.jpg')" *ngIf="item.User.avatar==''" ></div>
                             </div>
                             <div class="info">
                                 <div class="top-info">

@@ -121,11 +121,11 @@ export class LoginPage {
     }
 
     doFBLogin(user) {
-        alert('do login');
+     //   alert('do login');
         this.IsAjaxLoaded=true;
         this.Auth.doFBLogin(user).subscribe(data => {
 
-alert(data);
+//alert(data);
                 console.log(data);
                 this.storage.set('token', data.token);
 
@@ -226,7 +226,7 @@ var Controller=this;
                         user.picture = "https://graph.facebook.com/" + userId + "/picture?type=large";
                         //now we have the users info, let's save it in the NativeStorage
                      console.log(user);
-                        alert(JSON.stringify(user));
+           //             alert(JSON.stringify(user));
                         Controller.doFBLogin(user);
 
             //            this.showToastr(user);
@@ -243,7 +243,7 @@ var Controller=this;
                     })
             }, function(error){
                 console.log(error);
-                alert(error);
+     //           alert(error);
         //        this.showToastr(error);
 
             });

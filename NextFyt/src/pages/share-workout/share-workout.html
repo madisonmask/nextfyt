@@ -1,7 +1,7 @@
 <div class="wrap-page ">
     <div class="top-window">
         <a class="prev" (click)="goBack()">
-            <img src="assets/images/home/arrow.svg" alt="">
+            <img src="assets/images/back_arrow.png" alt="">
         </a>
         <div class="h4">Share Workout</div>
     </div>
@@ -9,24 +9,47 @@
         <div class="workout--share">
 
             <form>
-                <div class="image">
+                <div class="image" (click)="showRadio()"  [ngStyle]="{'background-image' : 'url(' + Workout.Image + ')'}"     >
 
-                    <img [src]="_DomSanitizationService.bypassSecurityTrustUrl(Workout.Image)" *ngIf="Workout.Image" (click)="showRadio()"/>
 
-                    <img src="assets/images/image.png" (click)="showRadio()"
+                    <label [ngStyle]="{ 'background-color': showBackground()}" >
+
+                     <span class="wr">
+
+
+                    <img src="assets/images/image.png"
                          *ngIf="Workout.Image=='' && Workout.ImageData==''">
-
-
-                    <label>
-                     <!--   <input type="file">-->
-                        <span class="wr">
 
 
 
               		<span class="text" *ngIf="Workout.Image=='' && Workout.ImageData==''">Upload Image </span>
 						</span>
                     </label>
+
+              <!--      <img [src]="_DomSanitizationService.bypassSecurityTrustUrl(Workout.Image)" *ngIf="Workout.Image" (click)="showRadio()"/>
+
+                    <img src="assets/images/image.png" (click)="showRadio()"
+                         *ngIf="Workout.Image=='' && Workout.ImageData==''">
+
+
+                    <label [ngStyle]="{ 'background-color': showBackground()}" >
+
+                        <span class="wr">
+<!--<img [src]="_DomSanitizationService.bypassSecurityTrustUrl(Workout.Image)" *ngIf="Workout.Image"/>
+
+                    <img src="assets/images/image.png"
+                         *ngIf="Workout.Image=='' && Workout.ImageData==''">
+
+
+
+              		<span class="text" *ngIf="Workout.Image=='' && Workout.ImageData==''">Upload Image </span>
+						</span>
+                    </label>-->
                 </div>
+
+
+
+
                 <input type="text" class="share-input name-workout" placeholder="Please name your workout here "
                        [(ngModel)]="Workout.Name" name="name">
                 <div class="time--length">

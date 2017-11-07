@@ -46,12 +46,33 @@ class ExerciseController extends Controller
 
         foreach ($request->Images as $imagStr) {
             $image = base64_decode($imagStr);
-            $imgName = "exercise-" . time() . "_".rand(1000,9000).".png";
-            $webPath = '/pictures/' . $user['id'] . '/' . $imgName;
-            $path = public_path() . $webPath;
+            $imgName = "exercise-" . time() . "_".rand(1000,9000);
+
+       //     $webPath = '/pictures/' . $user['id'] . '/' . $imgName.".png";
+      //      $path = public_path() . $webPath;
             //     Image::make($image->getRealPath())->save($path);
-            file_put_contents($path, $image);
-            $savedImages[$i] =  $webPath;
+         //   file_put_contents($path, $image);
+
+
+
+            $imageToWork  =   Image::make($image);
+
+            $imageToWork->save( public_path() . '/pictures/' . $user['id'] . '/'.$imgName.'.jpg' );
+
+            $imageToWork  =   Image::make($image);
+            $imageToWork->resize(800, 600,function ($constraint) {
+                $constraint->upsize();
+            });
+            $imageToWork->save( public_path() . '/pictures/' . $user['id'] . '/'.$imgName.'_m.jpg' );
+
+
+            $imageToWork->resize(320, 240,function ($constraint) {
+                $constraint->upsize();
+            });
+            $imageToWork->save( public_path() . '/pictures/' . $user['id'] . '/'.$imgName.'_s.jpg' );
+
+
+            $savedImages[$i] =  '/pictures/' . $user['id'] . '/' . $imgName;
             $i++;
 
         }
@@ -336,9 +357,10 @@ class ExerciseController extends Controller
 
             //    foreach ($exercises as $ex) {
             $exportExercise[$i] = $exercise;
-            $exportExercise[$i]['equipment'] = $exercise->equipments()->get(['equipment.name']);;
-            $exportExercise[$i]['muscles'] = $exercise->muscles()->get(['muscles.name']);;
-
+            $exportExercise[$i]['equipment'] = $exercise->equipments()->get(['equipment.name']);
+            $exportExercise[$i]['muscles'] = $exercise->muscles()->get(['muscles.name']);
+            $exportExercise[$i]['author'] = $exercise->user()->first()->name;
+            $exportExercise[$i]['avatar'] = $exercise->user()->first()->avatar;
             if (isset($difficultys[$exercise->Difficulty])) {
                 $exportExercise[$i]['skill'] = $difficultys[$exercise->Difficulty];
             } else {

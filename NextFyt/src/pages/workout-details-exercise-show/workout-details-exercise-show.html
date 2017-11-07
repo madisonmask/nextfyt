@@ -1,7 +1,7 @@
 <div class="wrap-page padding-bottom-none">
   <div class="top-window">
     <a class="prev" (click)="goBack()">
-      <img src="assets/images/home/arrow.svg" alt="">
+      <img src="assets/images/back_arrow.png" alt="">
     </a>
     <div class="h4">{{Exercise.name}}</div>
   </div>
@@ -19,23 +19,23 @@
       </li>
       <li>
         <img [src]="config.baseUrl +Exercise.stage2_img" alt="" *ngIf="Exercise.stage2_img != ''">
-        <img src="assets/images/img-icon.svg" alt="" *ngIf="Exercise.stage2_img == ''">
+     <!--   <img src="assets/images/img-icon.svg" alt="" *ngIf="Exercise.stage2_img == ''"> -->
       </li>
       <li>
         <img [src]=" config.baseUrl + Exercise.stage3_img" alt="" *ngIf="Exercise.stage3_img != ''">
-        <img src="assets/images/img-icon.svg" alt="" *ngIf="Exercise.stage3_img == ''">
+    <!--    <img src="assets/images/img-icon.svg" alt="" *ngIf="Exercise.stage3_img == ''"> -->
       </li>
       <li>
         <img [src]="config.baseUrl + Exercise.stage4_img" alt="" *ngIf="Exercise.stage4_img != ''">
-        <img src="assets/images/img-icon.svg" alt="" *ngIf="Exercise.stage4_img == ''">
+ <!--       <img src="assets/images/img-icon.svg" alt="" *ngIf="Exercise.stage4_img == ''"> -->
       </li>
       <li>
         <img [src]="config.baseUrl + Exercise.stage5_img" alt="" *ngIf="Exercise.stage5_img != ''">
-        <img src="assets/images/img-icon.svg" alt="" *ngIf="Exercise.stage5_img == ''">
+   <!--     <img src="assets/images/img-icon.svg" alt="" *ngIf="Exercise.stage5_img == ''"> -->
       </li>
       <li>
         <img [src]=" config.baseUrl + Exercise.stage6_img " alt="" *ngIf="Exercise.stage6_img != ''">
-        <img src="assets/images/img-icon.svg" alt="" *ngIf="Exercise.stage6_img == ''">
+     <!--   <img src="assets/images/img-icon.svg" alt="" *ngIf="Exercise.stage6_img == ''"> -->
       </li>
     </ul>
   </div>

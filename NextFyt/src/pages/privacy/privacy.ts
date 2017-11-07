@@ -21,4 +21,7 @@ export class PrivacyPage {
     console.log('ionViewDidLoad PrivacyPage');
   }
 
+  goBack(){
+    this.navCtrl.pop();
+  }
 }

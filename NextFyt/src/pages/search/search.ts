@@ -24,7 +24,7 @@ import {WorkoutDetailsPage} from '../workout-details/workout-details';
 })
 export class SearchPage {
     Searched = {
-        Type: 'workouts',
+        Type: 'top',
         SearchString: '',
         Filters: {enabled: false, Muscles: [], Cardio: false, Difficulty: [], Equipment: [], TimeLength: ''}
     };
@@ -47,6 +47,7 @@ export class SearchPage {
                 @Inject(APP_CONFIG)  config: IAppConfig, private  user: UserService, public http: Http) {
 
         this.config = config;
+        this.doSearch(this.Searched.Type);
     }
 
 

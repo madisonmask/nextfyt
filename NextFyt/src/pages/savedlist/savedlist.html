@@ -1,13 +1,10 @@
 
 
-<div class="wrap-page saved-page share-p">
+<div class="notification feed-page">
     <div class="top-window">
         <a  class="prev" (click)="goBack()">
-            <img src="assets/images/home/arrow.svg" alt="">
+            <img src="assets/images/back_arrow.png" alt="">
         </a>
-        <div class="h4">Savedlist</div>
-    </div>
-    <div class="exercise-History">
         <div class="saved--list-tg">
             <ul>
                 <li><a (click)="ShowSaved('My')"  [ngClass]="{'active': activeTab=='My'}"    >My Creations </a></li>
@@ -17,6 +14,88 @@
         </div>
 
 
+    </div>
+  <!--  <div class="exercise-History">
+   <!--     <div class="saved--list-tg">
+            <ul>
+                <li><a (click)="ShowSaved('My')"  [ngClass]="{'active': activeTab=='My'}"    >My Creations </a></li>
+                <li><a (click)="ShowSaved('Favorited')"   [ngClass]="{'active': activeTab=='Favorited'}"       >My Favorite</a></li>
+                <li><a  (click)="ShowSaved('Keepers')"     [ngClass]="{'active': activeTab=='Keepers'}"         >Keepers</a></li>
+            </ul>
+        </div>
+-->
+
+
+
+        <div class="tab-content">
+        <div class="tab-item active" id="My-Favorite">
+            <div class="items-search">
+                <div class="item" *ngFor="let item of ActiveList">
+                    <div class="left">
+                        <div class="image" [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.jpg)'}"
+                             *ngIf="item.image =='' " (tap)="showDetails(item)"></div>
+                        <div class="image"
+                             [ngStyle]="{'background-image': 'url(' + config.baseUrl + item.image + ')'}"
+                             *ngIf="item.image.length > 10 " (tap)="showDetails(item)">
+                            <div class="icon"><img src="assets/images/clocks.png" alt=""></div>
+<!--
+                            <div class="avatar"
+                                 [ngStyle]="{'background-image' : 'url(' +config.baseUrl + item.avatar + ')'}"
+                                 *ngIf="user.avatar!=''"></div>
+                            <div class="avatar" style="background-image:url('assets/images/avatar.jpg')"
+                                 *ngIf="user.avatar==''"></div>
+
+                            -->
+
+                        </div>
+                        <ul>
+                            <li>
+                                <a *ngIf=" activeTab!='Favorited' " >
+								<span class="icon" (click)="toggleLike(item)">
+									<img src="assets/images/bar/like-red.svg" alt="" *ngIf="item.InLiked >0 ">
+                                    <img src="assets/images/bar/like.svg" alt="" *ngIf="item.InLiked ==null ">
+ 								</span>
+                                    <span class="number">{{item.countLikes}}</span>
+                                </a>
+
+                                <a *ngIf=" activeTab!='My' " >
+ 								<span class="icon" (click)="toggleKeepers($event, item)">
+											<img src="assets/images/active_like.png" alt="" *ngIf="item.Inkeepers >0 ">
+                                    <img src="assets/images/like.png" alt="" *ngIf="item.Inkeepers ==null ">
+ 								</span>
+                                </a>
+
+
+                            </li>
+                            <!--       <li>
+                                       <a >
+                                       <span class="icon">
+                                           <img src="assets/images/comments.svg" alt="">
+                                       </span>
+                                           <span class="number">14</span>
+                                       </a>
+                                   </li> -->
+                        </ul>
+                    </div>
+                    <div class="right" (tap)="showDetails(item)">
+                        <a class="h4">{{item.name}}</a>
+                        <ul>
+                            <li>By: <span>{{item.author}}</span></li>
+                            <li>Skill: <span>{{item.skill}}</span></li>
+                            <li>Muscules Worked: <span> <span
+                                    *ngFor="let muscle  of item.muscles"> {{muscle.name}}  </span></span></li>
+                            <li>Cardio: <span>{{item.cardio}}</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+
+
+
+        <!--
         <div class="item"   *ngFor="let item of ActiveList" (click)="showDetails(item)" >
             <div class="image" [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.jpg)'}" *ngIf="item.image =='' "></div>
             <div class="image" [ngStyle]="{'background-image' : 'url(' +config.baseUrl + item.image + ')'}"   *ngIf="item.image.length > 10 "></div>
@@ -42,7 +121,14 @@
                 <div class="right">
                     <ul>
                         <li>
-                            <a >
+                            <a *ngIf=" activeTab!='My' " >
+ 								<span class="icon" (click)="toggleKeepers($event, item)">
+											<img src="assets/images/active_like.png" alt="" *ngIf="item.Inkeepers >0 ">
+                                    <img src="assets/images/like.png" alt="" *ngIf="item.Inkeepers ==null ">
+ 								</span>
+                            </a>
+
+                            <a *ngIf=" activeTab!='Favorited' "  >
  								<span class="icon" (click)="toggleLike(item)">
 											<img src="assets/images/bar/like-red.svg" alt="" *ngIf="item.InLiked >0 ">
                                     <img src="assets/images/bar/like.svg" alt="" *ngIf="item.InLiked ==null ">
@@ -50,14 +136,6 @@
                                 <span class="number">{{item.countLikes}}</span>
                             </a>
                         </li>
-                      <!--  <li>
-                            <a >
- 								<span class="icon">
-									<img src="assets/images/comments.svg" alt="">
- 								</span>
-                                <span class="number">14</span>
-                            </a>
-                        </li> -->
                     </ul>
                 </div>
             </div>
@@ -65,7 +143,7 @@
 
 
      </div>
-
+-->
 
     <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
 </div>

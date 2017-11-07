@@ -10,7 +10,7 @@
 
     <div class="top-window">
       <a  class="prev" (click)="goBack()">
-        <img src="assets/images/home/arrow.svg" alt="">
+        <img src="assets/images/back_arrow.png" alt="">
       </a>
       <div class="h4">{{user.name}}</div>
     </div>
@@ -23,7 +23,8 @@
 
           <a class="name">{{user.FirstName}}  {{user.LastName}}  </a>
           <a class="tag">@{{user.name}}</a>
-          <a class="follow" (click)="followUser()" >Follow</a>
+          <a class="follow" (click)="followUser()"  *ngIf="!FollowedAlready">Follow</a>
+          <a class="unfollow" (click)="unfollowUser()"  *ngIf="FollowedAlready">unFollow</a>
 
         </div>
         <ul class="char-profile">

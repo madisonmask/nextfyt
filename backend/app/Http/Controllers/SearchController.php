@@ -31,7 +31,6 @@ class SearchController extends Controller
                 $filters = [];
                 $filterStr='';
                 if (isset($request->Filters) AND ($request->Filters['enabled'] == true)) {
-
                     if (isset($request->Filters['Cardio'])) {
                         if ($request->Filters['Cardio'] == true) {
                             $filters[] = ' workouts.cardio=1';
@@ -39,7 +38,6 @@ class SearchController extends Controller
                             $filters[] = ' workouts.cardio=0';
                         }
                     }
-
                     if (isset($request->Filters['Difficulty']) AND (count($request->Filters['Difficulty']) > 0)) {
                         $difficulties = '';
                         foreach ($request->Filters['Difficulty'] AS $dif) {
@@ -202,7 +200,7 @@ class SearchController extends Controller
             case 'top':
 
 
-                $users = User::where('posts','>',0)->orderBy('posts', 'desc')->take(10)->get(['avatar', 'followers', 'following', 'id', 'name', 'posts']);
+                $users = User::where('posts','>',0)->orderBy('posts', 'desc')->take(3)->get(['avatar', 'followers', 'following', 'id', 'name', 'posts']);
 
                 $sql = "SELECT COUNT(*) AS TotalUsed, tags.name
                         FROM tags_to_workout
@@ -210,7 +208,7 @@ class SearchController extends Controller
                         WHERE 1
                         GROUP BY tags_to_workout.tags_id
                         ORDER BY TotalUsed DESC
-                        LIMIT 10";
+                        LIMIT 3";
                 $tags = DB::select($sql);
 
                 $sql="  SELECT workouts.*, workoutlikes.id AS InLiked, users.name AS username
@@ -227,10 +225,45 @@ class SearchController extends Controller
                         WHERE workouts.user_id >0
                         GROUP BY workouts.id
                         ORDER BY workouts.countLikes DESC
-                        LIMIT 10";
+                        LIMIT 3";
                 $workouts = DB::select($sql);
 
-                $results= ['users'=>$users, 'tags'=>$tags, 'workouts'=>$workouts];
+
+                $exportWorkout = [];
+                $i = 0;
+                foreach ($workouts as $work) {
+                    $exportWorkout[$i]['author'] = $work->username;
+                    $exportWorkout[$i]['name'] = $work->name;
+                    $exportWorkout[$i]['skill'] = $difficultys[$work->difficulty];
+                    $exportWorkout[$i]['InLiked'] = $work->InLiked;
+                    $exportWorkout[$i]['workoutId'] = $work->id;
+                    $exportWorkout[$i]['countLikes'] = $work->countLikes;
+
+                    $sql = '  SELECT DISTINCT(muscles.name)
+                    FROM exercise_to_workout
+                    LEFT JOIN muscles_to_exercise ON muscles_to_exercise.exercise_id =exercise_to_workout.exercise_id
+                    LEFT JOIN muscles ON muscles_to_exercise.muscles_id =muscles.id
+                    WHERE exercise_to_workout.workout_id=' . $work->id . ' AND muscles.name IS NOT NULL';
+                    $muscles = DB::select($sql);
+
+                    ////
+                    $exportWorkout[$i]['muscles'] = $muscles;
+///
+
+
+                    $exportWorkout[$i]['cardio'] = $work->cardio;
+                    $exportWorkout[$i]['image'] = $work->photo;
+
+
+                    /*
+                                $exportWorkout[$i]['equipment'] =     $work->equipments()->get(['equipment.name']);;
+                                $exportWorkout[$i]['muscles'] =     $work->muscles()->get(['muscles.name']);;
+                    */
+                    $i++;
+                }
+
+
+                $results= ['users'=>$users, 'tags'=>$tags, 'workouts'=>$exportWorkout];
 
 
                 break;

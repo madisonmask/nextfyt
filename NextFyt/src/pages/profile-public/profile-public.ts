@@ -1,6 +1,7 @@
 import {Component, Inject} from '@angular/core';
-import { NavController, NavParams, ToastController} from 'ionic-angular';
+import {NavController, NavParams, ToastController} from 'ionic-angular';
 import {Storage} from "@ionic/storage";
+import {UserService} from '../../services/User';
 
 import {Http, Headers, RequestOptions} from "@angular/http";
 import 'rxjs/add/operator/map';
@@ -24,7 +25,7 @@ import {WorkoutDetailsPage} from '../workout-details/workout-details';
 export class ProfilePublicPage {
 
     user = {avatar: "", followers: 0, following: 0, id: 0, name: "", posts: 0};
-
+    userLogined = {avatar: "", followers: 0, following: 0, id: 0, name: "", posts: 0};
 
     config: IAppConfig;
     IsAjaxLoaded: boolean = false;
@@ -33,15 +34,18 @@ export class ProfilePublicPage {
 
     favoritedList = [];
     ActiveList = this.createdList;
-    profileWorkoutsType:string='workouts';
+    profileWorkoutsType: string = 'workouts';
+    FollowedAlready= false; // do we already followed this user?
 
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,
-                @Inject(APP_CONFIG)  config: IAppConfig, private storage: Storage
-        , private toastCtrl: ToastController
-    ) {
+                @Inject(APP_CONFIG)  config: IAppConfig, private storage: Storage, public userSrv: UserService,
+                private toastCtrl: ToastController) {
         this.user = this.navParams.get('user');
         console.log(this.user);
+
+
+        //      this.userLogined = userSrv.getData();
 
         this.config = config;
         this.getUserDetails();
@@ -50,6 +54,7 @@ export class ProfilePublicPage {
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad ProfilePublicPage');
+        this.checkIfFollowed();
     }
 
 
@@ -66,7 +71,7 @@ export class ProfilePublicPage {
 
 
                 this.http.get(this.config.apiEndpoint + 'profile/' + this.user.id, options).map(res => res.json()).subscribe(data => {
-    //                this.IsAjaxLoaded = false;
+                    //                this.IsAjaxLoaded = false;
 
                     this.user = data.user;
 
@@ -91,7 +96,8 @@ export class ProfilePublicPage {
                 let options = new RequestOptions({headers: headers});
                 this.http.get(this.config.apiEndpoint + 'profile/follow/' + this.user.id, options).map(res => res.json()).subscribe(data => {
                     this.IsAjaxLoaded = false;
-
+                    this.FollowedAlready=true;
+                    this.userSrv.increaseUserFollowing();
                 }, err => {
                     console.log(err);
                 })
@@ -102,14 +108,31 @@ export class ProfilePublicPage {
     }
 
 
+    unfollowUser() {
+
+        this.IsAjaxLoaded = true;
+        this.storage.ready().then(() => {
+            this.storage.get('token').then(token => {
+                console.log(token);
+
+                let headers = new Headers({'Authorization': 'Bearer ' + token});
+                let options = new RequestOptions({headers: headers});
+                this.http.get(this.config.apiEndpoint + 'profile/unfollow/' + this.user.id, options).map(res => res.json()).subscribe(data => {
+                    this.IsAjaxLoaded = false;
+this.FollowedAlready=false;
+                    this.userSrv.decreaseUserFollowing();
+                }, err => {
+                    console.log(err);
+                })
+            })
+        })
 
 
+    }
 
-    /**
-     * @param {{workouts:Array}} data
-     */
-    getWorkouts() {
-        this.IsAjaxLoaded=true;
+
+    checkIfFollowed() {
+        //    this.IsAjaxLoaded=true;
         this.storage.ready().then(() => {
             this.storage.get('token').then(token => {
                 console.log(token);
@@ -119,15 +142,46 @@ export class ProfilePublicPage {
                 let options = new RequestOptions({headers: headers});
 
 
-                this.http.get(this.config.apiEndpoint + 'workouts/user/'+this.user.id, options).map(res => res.json()).subscribe(data => {
-                    this.IsAjaxLoaded=false;
+                this.http.get(this.config.apiEndpoint + 'profile/checkfollow/' + this.user.id, options).map(res => res.json()).subscribe(data => {
+                    console.log(data);
+
+                    if(data.followed==true){
+                        this.FollowedAlready =true;
+                    };
+
+                }, error => {
+                    this.IsAjaxLoaded = false;
+                    console.log(error);
+                    this.showToastr(error.json().error)
+                })
+            })
+        })
+    };
+
+
+    /**
+     * @param {{workouts:Array}} data
+     */
+    getWorkouts() {
+        this.IsAjaxLoaded = true;
+        this.storage.ready().then(() => {
+            this.storage.get('token').then(token => {
+                console.log(token);
+
+
+                let headers = new Headers({'Authorization': 'Bearer ' + token});
+                let options = new RequestOptions({headers: headers});
+
+
+                this.http.get(this.config.apiEndpoint + 'workouts/user/' + this.user.id, options).map(res => res.json()).subscribe(data => {
+                    this.IsAjaxLoaded = false;
                     this.createdList = data.workouts;
                     console.log(data);
                     this.ActiveList = this.createdList;
 
 
                 }, error => {
-                    this.IsAjaxLoaded=false;
+                    this.IsAjaxLoaded = false;
                     console.log(error);
                     this.showToastr(error.json().error)
                 })
@@ -136,7 +190,7 @@ export class ProfilePublicPage {
     }
 
     getFavoritesWorkouts() {
-        this.IsAjaxLoaded=true;
+        this.IsAjaxLoaded = true;
         this.storage.ready().then(() => {
             this.storage.get('token').then(token => {
                 console.log(token);
@@ -146,23 +200,21 @@ export class ProfilePublicPage {
                 let options = new RequestOptions({headers: headers});
 
 
-                this.http.get(this.config.apiEndpoint + 'workouts/Favorites/'+this.user.id, options).map(res => res.json()).subscribe(data => {
-                    this.IsAjaxLoaded=false;
+                this.http.get(this.config.apiEndpoint + 'workouts/Favorites/' + this.user.id, options).map(res => res.json()).subscribe(data => {
+                    this.IsAjaxLoaded = false;
                     this.favoritedList = data.workouts;
                     console.log(data);
                     this.ActiveList = this.favoritedList;
 
 
                 }, error => {
-                    this.IsAjaxLoaded=false;
+                    this.IsAjaxLoaded = false;
                     console.log(error);
                     this.showToastr(error.json().error)
                 })
             })
         })
     }
-
-
 
 
     showToastr(msg) {
@@ -178,7 +230,7 @@ export class ProfilePublicPage {
     }
 
 
-    updateList(){
+    updateList() {
         console.log('update')
 
         console.log(this.profileWorkoutsType);
@@ -220,10 +272,9 @@ export class ProfilePublicPage {
         })
     }
 
-    goBack(){
+    goBack() {
         this.navCtrl.pop();
     }
-
 
 
 }

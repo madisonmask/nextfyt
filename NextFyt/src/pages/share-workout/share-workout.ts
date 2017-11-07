@@ -168,7 +168,14 @@ export class ShareWorkoutPage {
         this.navCtrl.pop();
     }
 
-
+    showBackground(){
+        if(this.Workout.Image==''){
+            return '';
+    //        return '#434c6c';
+        }else{
+            return '';
+        }
+    }
 
 
 }

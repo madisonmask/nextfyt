@@ -1,9 +1,72 @@
-<!--
-  Generated template for the DefaultExercisesParamsPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
+<div class="wrap-page blackBackground">
+<table class="option-stage">
+  <tr>
+    <td class="set">
+      <div class="wr">
+        <label class="radio">
+          <input type="radio" name="set" [(ngModel)]="Exercise.repeat_type" value="movements">
+          <span>Compound Movements</span>
+        </label>
+        <label class="radio">
+          <input type="radio" name="set" [(ngModel)]="Exercise.repeat_type" value="segments ">
+          <span>Sets</span>
+        </label>
+      </div>
+    </td>
+    <td class="number">
+      <p class="numbers-column">
+        <ion-select [(ngModel)]="Exercise.repeat_count">
+          <ion-option value="1" selected>1</ion-option>
+          <ion-option value="2">2</ion-option>
+          <ion-option value="3">3</ion-option>
+          <ion-option value="4">4</ion-option>
+          <ion-option value="5">5</ion-option>
+          <ion-option value="6">6</ion-option>
+          <ion-option value="7">7</ion-option>
+          <ion-option value="8">8</ion-option>
+          <ion-option value="9">9</ion-option>
+          <ion-option value="10">10</ion-option>
+        </ion-select>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td class="time">
+      <div class="wr">
+        <label class="radio">
+          <input type="radio" name="time" [(ngModel)]="Exercise.length_type" value="Seconds">
+          <span>Seconds</span>
+        </label>
+        <label class="radio">
+          <input type="radio" name="time" checked [(ngModel)]="Exercise.length_type" value="Minutes">
+          <span>Minutes</span>
+        </label>
+        <label class="radio">
+          <input type="radio" name="time" [(ngModel)]="Exercise.length_type" value="Reps">
+          <span>Reps</span>
+        </label>
+      </div>
+    </td>
+    <td class="number">
+      <p class="numbers-column">
+        <input type="text" [(ngModel)]="Exercise.length_count" >
+      </p>
+    </td>
+  </tr>
+</table>
+
+<br>
+  <div class="buttonTABS">
+    <button class="next" (click)="ApplyFilter()">Apply</button>
+  </div>
+  <hr>
+
+
+  </div>
+
+
+<!--
 <ion-header>
 
   <ion-navbar>
@@ -70,3 +133,4 @@
 
 
 </ion-content>
+-->

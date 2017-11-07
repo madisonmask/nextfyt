@@ -59,13 +59,30 @@ class WorkoutController extends Controller
         Log::info('Image:' . $imagStr);
         if (!empty($imagStr)) {
             $image = base64_decode($imagStr);
-            $imgName = "workout-" . time() . ".png";
+            $imgName = "workout-" . time() ;
    //         $imgNameS= "workout-" . time() . "_s.png";
-            $webPath = '/pictures/' . $user['id'] . '/' . $imgName;
-            $path = public_path() . $webPath;
+      //      $webPath = '/pictures/' . $user['id'] . '/' . $imgName. ".png";
+         //   $path = public_path() . $webPath;
             //     Image::make($image->getRealPath())->save($path);
-            file_put_contents($path, $image);
-            $photo = $webPath;
+     //       file_put_contents($path, $image);
+            $photo = '/pictures/' . $user['id'] . '/' . $imgName;
+
+            $imageToWork  =   Image::make($image);
+            $imageToWork->save( public_path() . '/pictures/' . $user['id'] . '/'.$imgName.'.jpg' );
+
+
+            $imageToWork->resize(800, 600,function ($constraint) {
+                $constraint->upsize();
+            });
+            $imageToWork->save( public_path() . '/pictures/' . $user['id'] . '/'.$imgName.'_m.jpg' );
+
+
+            $imageToWork->resize(320, 240,function ($constraint) {
+                $constraint->upsize();
+            });
+            $imageToWork->save( public_path() . '/pictures/' . $user['id'] . '/'.$imgName.'_s.jpg' );
+
+
         } else {
             $photo = '';
         }
@@ -524,9 +541,10 @@ class WorkoutController extends Controller
             $difficultys[$dif->id] = $dif->name;
         }
 
-        $sql = '  SELECT workouts.*,  workoutkeepers.id AS Inkeepers
+        $sql = '  SELECT workouts.*,  workoutkeepers.id AS Inkeepers,   workoutlikes.id  AS InLiked 
                 FROM workoutkeepers
                 INNER JOIN workouts ON workouts.id =workoutkeepers.workout_id
+                LEFT JOIN workoutlikes ON workoutlikes.workout_id =workoutkeepers.workout_id
                 WHERE workoutkeepers.user_id=' . $user['id'] . "
                 ORDER BY workoutkeepers.created_at DESC
                 
@@ -548,6 +566,7 @@ class WorkoutController extends Controller
 
             $exportWorkout[$i]['workoutId'] = $work->id;
             $exportWorkout[$i]['Inkeepers'] = $work->Inkeepers;
+            $exportWorkout[$i]['InLiked'] = $work->InLiked;
             $sql = '  SELECT DISTINCT(muscles.name)
                     FROM exercise_to_workout
                     LEFT JOIN muscles_to_exercise ON muscles_to_exercise.exercise_id =exercise_to_workout.exercise_id
@@ -689,7 +708,13 @@ ORDER BY workouts.created_at DESC
                 $likes->delete();
             }
         } else {
-            WorkoutKepers::create(['user_id' => $user['id'], 'workout_id' => $request->workoutId]);
+
+            $likes = WorkoutKepers::where('user_id', $user['id'])->where('workout_id', $request->workoutId)->first();
+            if (empty($likes)) {
+                WorkoutKepers::create(['user_id' => $user['id'], 'workout_id' => $request->workoutId]);
+            }
+
+
 
         }
         return response()->json(['error' => false]);

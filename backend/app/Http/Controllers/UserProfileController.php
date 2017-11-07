@@ -17,7 +17,6 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\File;
 
 
-
 class UserProfileController extends Controller
 {
 
@@ -55,6 +54,18 @@ class UserProfileController extends Controller
         }
     */
 
+    /*
+        public function getProfileData(Request $request)
+        {
+            $user = Helpers::getUser($request);
+          //  print_r($user['id']);
+         //   exit()
+
+
+
+
+        }
+    */
 
     public function getProfile(Request $request)
     {
@@ -96,17 +107,79 @@ class UserProfileController extends Controller
     public function FollowUser(Request $request, $userId)
     {
         $user = Helpers::getUser($request);
-
         $following = Followers::where('follower_user_id', $user['id'])->where('following_user_id', $userId)->first();
-
         if (empty($following)) {
-
             Followers::create(['follower_user_id' => $user['id'], 'following_user_id' => $userId]);
+
+            Activities::create(['user_id' => $user['id'], 'actionType' => 'followed', 'targetElementId' => $userId]);
+            //    Notifications::create(['user_id' => $userId, 'user_id_who_make_action' => $user['id'], 'actionType' => 'followed']);
+
+            $userWhoFollow = User::find($user['id']);
+            $userWhoFollow->following++;
+            $userWhoFollow->save();
+
+            $user2 = User::find($userId);
+            $user2->followers++;
+            $user2->save();
+
         }
-Activities::create(['user_id' => $user['id'],  'actionType' => 'followed', 'targetElementId'=>$userId]);
-    //    Notifications::create(['user_id' => $userId, 'user_id_who_make_action' => $user['id'], 'actionType' => 'followed']);
+
 
         return response()->json(['error' => false]);
+    }
+
+    public function unFollowUser(Request $request, $userId)
+    {
+        $user = Helpers::getUser($request);
+        $following = Followers::where('follower_user_id', $user['id'])->where('following_user_id', $userId)->first();
+        if (empty($following)) {
+
+            return response()->json(['error' => false]);
+            Followers::create(['follower_user_id' => $user['id'], 'following_user_id' => $userId]);
+
+            Activities::create(['user_id' => $user['id'], 'actionType' => 'followed', 'targetElementId' => $userId]);
+            //    Notifications::create(['user_id' => $userId, 'user_id_who_make_action' => $user['id'], 'actionType' => 'followed']);
+
+            $userWhoFollow = User::find($user['id']);
+            $userWhoFollow->following++;
+            $userWhoFollow->save();
+
+            $user2 = User::find($userId);
+            $user2->followers++;
+            $user2->save();
+
+        } else {
+            $following->delete();
+            Activities::create(['user_id' => $user['id'], 'actionType' => 'unfollowed', 'targetElementId' => $userId]);
+            //    Notifications::create(['user_id' => $userId, 'user_id_who_make_action' => $user['id'], 'actionType' => 'followed']);
+
+            $userWhoFollow = User::find($user['id']);
+            $userWhoFollow->following--;
+            $userWhoFollow->save();
+
+            $user2 = User::find($userId);
+            $user2->followers--;
+            $user2->save();
+
+        }
+
+
+        return response()->json(['error' => false]);
+    }
+
+
+    public function checkFollow(Request $request, $userId)
+    {
+        $user = Helpers::getUser($request);
+        $following = Followers::where('follower_user_id', $user['id'])->where('following_user_id', $userId)->first();
+        if (empty($following)) {
+            return response()->json(['followed' => false]);
+
+        } else {
+            return response()->json(['followed' => true]);
+
+        }
+
     }
 
 
@@ -142,14 +215,12 @@ Activities::create(['user_id' => $user['id'],  'actionType' => 'followed', 'targ
 
             if (Hash::check($request->old_password, $curentUser->password)) {
 
-                if($request->new_password == $request->new_password2){
+                if ($request->new_password == $request->new_password2) {
                     $curentUser->password = Hash::make($request->new_password);
 
-                }else{
+                } else {
                     return response()->json(['error' => true, 'msg' => 'New password dont match']);
                 }
-
-
 
 
             } else {
@@ -174,12 +245,29 @@ Activities::create(['user_id' => $user['id'],  'actionType' => 'followed', 'targ
             $imagStr = $request->ImageData;
             if (!empty($imagStr)) {
                 $image = base64_decode($imagStr);
-                $imgName = "avatar-" . time() . ".png";
-                $webPath = '/pictures/' . $user['id'] . '/' . $imgName;
-                $path = public_path() . $webPath;
+                $imgName = "avatar-" . time() ;
+             //   $webPath = '/pictures/' . $user['id'] . '/' . $imgName;
+             //   $path = public_path() . $webPath;
                 //     Image::make($image->getRealPath())->save($path);
-                file_put_contents($path, $image);
-                $photo = $webPath;
+              //  file_put_contents($path, $image);
+           //     $photo = $webPath;
+
+                $imageToWork  =   Image::make($image);
+                $imageToWork->save( public_path() . '/pictures/' . $user['id'] . '/'.$imgName.'.jpg' );
+
+
+                $imageToWork->resize(800, 600,function ($constraint) {
+                    $constraint->upsize();
+                });
+                $imageToWork->save( public_path() . '/pictures/' . $user['id'] . '/'.$imgName.'_m.jpg' );
+
+
+                $imageToWork->resize(320, 240,function ($constraint) {
+                    $constraint->upsize();
+                });
+                $imageToWork->save( public_path() . '/pictures/' . $user['id'] . '/'.$imgName.'_s.jpg' );
+                $photo = '/pictures/' . $user['id'] . '/' . $imgName;
+
             } else {
                 $photo = '';
             }

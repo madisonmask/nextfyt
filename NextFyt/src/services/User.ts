@@ -7,7 +7,18 @@ import {Injectable} from "@angular/core";
 
 @Injectable()
 export class UserService {
-    user = {id: 0, avatar: '', email: '', name: '', posts: 0, followers: 0, following: 0, firstname:'', lastname:'', age:0};
+    user = {
+        id: 0,
+        avatar: '',
+        email: '',
+        name: '',
+        posts: 0,
+        followers: 0,
+        following: 0,
+        firstname: '',
+        lastname: '',
+        age: 0
+    };
 
     constructor() {
 
@@ -40,12 +51,31 @@ export class UserService {
         console.log(this.user);
     }
 
-    getUserPosts(){
+
+    getUserPosts() {
         return this.user.posts;
     }
-        setUserPosts(posts){
-            this.user.posts =posts;
 
-        }
+    setUserPosts(posts) {
+        this.user.posts = posts;
+
+    }
+
+    setUserFollowing(following){
+        this.user.following = following;
+
+    }
+
+    increaseUserFollowing(){
+        this.user.following++;
+
+    }
+
+    decreaseUserFollowing(){
+        this.user.following--;
+
+    }
+
+
 
 }

@@ -48,6 +48,7 @@ export class NotificationsPage {
     } else {
       this.isMySaved = false;
     }
+    this.getNotification();
 
   }
 
@@ -81,6 +82,13 @@ export class NotificationsPage {
     })
 
   }
+
+
+    showDetails(){
+
+
+    }
+
 
   ionViewWillEnter() {
    this.getNotification();

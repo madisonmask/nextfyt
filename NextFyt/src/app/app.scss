@@ -17,89 +17,109 @@
 
 @font-face {
   font-family: gm;
-  src: url("../../assets/fonts/GothamProMedium/GothamProMedium.eot");
-  src: url("../../assets/fonts/GothamProMedium/GothamProMedium.eot?#iefix")format("embedded-opentype"),
-  url("../../assets/fonts/GothamProMedium/GothamProMedium.woff") format("woff"),
-  url("../../assets/fonts/GothamProMedium/GothamProMedium.ttf") format("truetype");
+  src: url("../assets/fonts/GothamProMedium/GothamProMedium.eot");
+  src: url("../assets/fonts/GothamProMedium/GothamProMedium.eot?#iefix")format("embedded-opentype"),
+  url("../assets/fonts/GothamProMedium/GothamProMedium.woff") format("woff"),
+  url("../assets/fonts/GothamProMedium/GothamProMedium.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
 }
 
 @font-face {
   font-family: gl;
-  src: url("../../assets/fonts/GothamProLight/GothamProLight.eot");
-  src: url("../../assets/fonts/GothamProLight/GothamProLight.eot?#iefix")format("embedded-opentype"),
-  url("../../assets/fonts/GothamProLight/GothamProLight.woff") format("woff"),
-  url("../../assets/fonts/GothamProLight/GothamProLight.ttf") format("truetype");
+  src: url("../assets/fonts/GothamProLight/GothamProLight.eot");
+  src: url("../assets/fonts/GothamProLight/GothamProLight.eot?#iefix")format("embedded-opentype"),
+  url("../assets/fonts/GothamProLight/GothamProLight.woff") format("woff"),
+  url("../assets/fonts/GothamProLight/GothamProLight.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
 }
 
 @font-face {
   font-family: gr;
-  src: url("../../assets/fonts/GothamProRegular/GothamProRegular.eot");
-  src: url("../../assets/fonts/GothamProRegular/GothamProRegular.eot?#iefix")format("embedded-opentype"),
-  url("../../assets/fonts/GothamProRegular/GothamProRegular.woff") format("woff"),
-  url("../../assets/fonts/GothamProRegular/GothamProRegular.ttf") format("truetype");
+  src: url("../assets/fonts/GothamProRegular/GothamProRegular.eot");
+  src: url("../assets/fonts/GothamProRegular/GothamProRegular.eot?#iefix")format("embedded-opentype"),
+  url("../assets/fonts/GothamProRegular/GothamProRegular.woff") format("woff"),
+  url("../assets/fonts/GothamProRegular/GothamProRegular.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
 }
 
 @font-face {
   font-family: gb;
-  src: url("../../assets/fonts/GothamProBold/GothamProBold.eot");
-  src: url("../../assets/fonts/GothamProBold/GothamProBold.eot?#iefix")format("embedded-opentype"),
-  url("../../assets/fonts/GothamProBold/GothamProBold.woff") format("woff"),
-  url("../../assets/fonts/GothamProBold/GothamProBold.ttf") format("truetype");
+  src: url("../assets/fonts/GothamProBold/GothamProBold.eot");
+  src: url("../assets/fonts/GothamProBold/GothamProBold.eot?#iefix")format("embedded-opentype"),
+  url("../assets/fonts/GothamProBold/GothamProBold.woff") format("woff"),
+  url("../assets/fonts/GothamProBold/GothamProBold.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
 }
 
 @font-face {
   font-family: pr;
-  src: url("../../assets/fonts/ProximaNovaRegular/ProximaNovaRegular.eot");
-  src: url("../../assets/fonts/ProximaNovaRegular/ProximaNovaRegular.eot?#iefix")format("embedded-opentype"),
-  url("../../assets/fonts/ProximaNovaRegular/ProximaNovaRegular.woff") format("woff"),
-  url("../../assets/fonts/ProximaNovaRegular/ProximaNovaRegular.ttf") format("truetype");
+  src: url("../assets/fonts/ProximaNovaRegular/ProximaNovaRegular.eot");
+  src: url("../assets/fonts/ProximaNovaRegular/ProximaNovaRegular.eot?#iefix")format("embedded-opentype"),
+  url("../assets/fonts/ProximaNovaRegular/ProximaNovaRegular.woff") format("woff"),
+  url("../assets/fonts/ProximaNovaRegular/ProximaNovaRegular.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
 }
 
 @font-face {
   font-family: pb;
-  src: url("../../assets/fonts/ProximaNovaBold/ProximaNovaBold.eot");
-  src: url("../../assets/fonts/ProximaNovaBold/ProximaNovaBold.eot?#iefix")format("embedded-opentype"),
-  url("../../assets/fonts/ProximaNovaBold/ProximaNovaBold.woff") format("woff"),
-  url("../../assets/fonts/ProximaNovaBold/ProximaNovaBold.ttf") format("truetype");
+  src: url("../assets/fonts/ProximaNovaBold/proxima-nova-bold.eot");
+  src: url("../assets/fonts/ProximaNovaBold/proxima-nova-bold.eot?#iefix")format("embedded-opentype"),
+  url("../assets/fonts/ProximaNovaBold/proxima-nova-bold.woff") format("woff"),
+  url("../assets/fonts/ProximaNovaBold/proxima-nova-bold.woff2") format("woff2"),
+  url("../assets/fonts/ProximaNovaBold/proxima-nova-bold.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
 }
 
 @font-face {
   font-family: pbl;
-  src: url("../../assets/fonts/ProximaNovaBlack/ProximaNovaBlack.eot");
-  src: url("../../assets/fonts/ProximaNovaBlack/ProximaNovaBlack.eot?#iefix")format("embedded-opentype"),
-  url("../../assets/fonts/ProximaNovaBlack/ProximaNovaBlack.woff") format("woff"),
-  url("../../assets/fonts/ProximaNovaBlack/ProximaNovaBlack.ttf") format("truetype");
+  src: url("../assets/fonts/ProximaNovaBlack/ProximaNovaBlack.eot");
+  src: url("../assets/fonts/ProximaNovaBlack/ProximaNovaBlack.eot?#iefix")format("embedded-opentype"),
+  url("../assets/fonts/ProximaNovaBlack/ProximaNovaBlack.woff") format("woff"),
+  url("../assets/fonts/ProximaNovaBlack/ProximaNovaBlack.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
 }
 
 @font-face {
   font-family: pub;
+  /*
   src: url("../../assets/fonts/purista-bold.otf");
+  font-style: normal;
+  font-weight: normal;*/
+  src: url("../assets/fonts/ProximaNovaBold/proxima-nova-bold.eot");
+  src: url("../assets/fonts/ProximaNovaBold/proxima-nova-bold.eot?#iefix")format("embedded-opentype"),
+  url("../assets/fonts/ProximaNovaBold/proxima-nova-bold.woff") format("woff"),
+  url("../assets/fonts/ProximaNovaBold/proxima-nova-bold.woff2") format("woff2"),
+  url("../assets/fonts/ProximaNovaBold/proxima-nova-bold.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
 }
 @font-face {
   font-family: pum;
-  src: url("../../assets/fonts/purista-medium.otf");
+ /* src: url("../../assets/fonts/purista-medium.otf");
+  font-style: normal;
+  font-weight: normal;*/
+  src: url("../assets/fonts/ProximaNovaRegular/ProximaNovaRegular.eot");
+  src: url("../assets/fonts/ProximaNovaRegular/ProximaNovaRegular.eot?#iefix")format("embedded-opentype"),
+  url("../assets/fonts/ProximaNovaRegular/ProximaNovaRegular.woff") format("woff"),
+  url("../assets/fonts/ProximaNovaRegular/ProximaNovaRegular.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
+
 }
 @font-face {
   font-family: pul;
-  src: url("../../assets/fonts/purista-light.otf");
+  /*src: url("../../assets/fonts/purista-light.otf");*/
+  src: url("../assets/fonts/ProximaNovaLight/ProximaNovaLight.eot");
+  src: url("../assets/fonts/ProximaNovaLight/ProximaNovaLight.eot?#iefix")format("embedded-opentype"),
+  url("../assets/fonts/ProximaNovaLight/ProximaNovaLight.woff") format("woff"),
+  url("../assets/fonts/ProximaNovaLight/ProximaNovaLight.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
 }
@@ -275,9 +295,14 @@ body{
   padding-bottom: 17px;
 }
 .login-nf .prev {
-  position: absolute;
+ /* position: absolute;
   left: 20px;
-  top: 0;
+  top: 0;*/
+  position: absolute;
+  width: 10px;
+  height: 12px;
+  margin: auto;
+  left: 15px;
 }
 .login-nf .h4 {
   color: #ffffff;
@@ -753,7 +778,7 @@ body{
 }
 .top-window {
   position: absolute;
-  top: 0px;
+  top: 10px;
   left: 0;
   right: 0;
   padding: 13px 0;
@@ -871,8 +896,8 @@ body{
 
 .top-window .prev{
   position: absolute;
-  width: 3px;
-  height: 7px;
+  width: 10px;
+  height: 12px;
   margin: auto;
   left: 15px;
 }
@@ -1336,12 +1361,13 @@ body{
   font-size: 0;
 }
 .items-search .left span{
-  display: block;
+ /* display: block; */
   color: #9cafc3;
   font-family: pul;
   font-size: 13px;
   letter-spacing: -0.08px;
-  margin-top: 4px;
+ /* margin-top: 4px;*/
+  margin-left: 10px;
 }
 .items-search .image {
   width: 100%;
@@ -1460,6 +1486,33 @@ body{
 
 
 }
+
+.profile-top .unfollow{
+  position: absolute;
+  right: 20px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 86px;
+  height: 32px;
+  border-radius: 3px;
+  line-height: 32px;
+  text-align: center;
+  color: #ffffff;
+  font-family: pr;
+  font-size: 13px;
+  letter-spacing: -0.08px;
+  background: #01a9f6 ;
+
+  background-position-x: 90% ;
+  background-position-y: center;
+  background-repeat: no-repeat;
+
+
+
+
+}
+
 .profile-info .image {
   width: 62px;
   height: 62px;
@@ -1684,9 +1737,14 @@ body{
 
 
 .card-wrap{
-  height: calc(100% + 55px);
+ /* height: calc(100% + 55px);
   overflow: auto;
   margin: -55px 0 0;
+  */
+  padding: 16px 18px;
+  overflow: auto;
+  height: 100%;
+
 }
 
 .card-slider   .slick-dots {
@@ -1718,8 +1776,9 @@ body{
 .card-slider .slide {
   height: 265px;
   position: relative;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
+  background-repeat:no-repeat;
 }
 .card-slider .icon {
   width: 26px;
@@ -2253,12 +2312,20 @@ body{
   padding: 0 16px;
   margin-bottom: 15px;
 }
+
+.search-page .image label {
+
+/*  background-color: #434c6c;
+  background-color: transparent;
+  */
+}
+
 .search-page .image label {
   display: block;
   width: 100%;
   height: 142px;
   border-radius: 3px;
-  background-color: #434c6c;
+/*  background-color: #434c6c;*/
   margin-bottom: 15px;
   text-align: center;
   line-height: 144px;
@@ -2343,9 +2410,12 @@ body{
   border-radius: 4px;
   -webkit-border-radius: 4px;
   margin-bottom: 15px;
-  background-size: cover;
+ /* background-size: cover;*/
   background-position: center;
   width:100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  /*height: 140px;*/
 
 
 
@@ -2525,6 +2595,13 @@ body{
   max-width: 33px;
   width: 100%;
 }
+
+.workout--share .image{
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
 .feed-v2{
   padding-top: 20px!important;
 }
@@ -2681,16 +2758,14 @@ body{
 .ion-md-CreateTab,
 .ion-ios-CreateTab-outlet,
 .ion-md-CreateTab-outlet,
-
 .ion-ios-CreateTab-outline,
 .ion-md-CreateTab-outline
 
 
 {
   content: url(../assets/images/bar/close.svg);
-  width: 24px;
-  height: 32px;
-  padding: 6px 4px 2px;
+
+  padding: 8px;
   opacity: 0.9;
 
 
@@ -2712,7 +2787,8 @@ body{
   content: url(../assets/images/bar/add-blue.svg);
   width: 24px;
   height: 32px;
-  padding: 6px 4px 2px;
+ /* padding: 6px 4px 2px;*/
+  padding:8px;
   opacity: 0.9;
 }
 

@@ -27,9 +27,11 @@ Route::group(['prefix' => 'api'], function () {
     Route::post('/passwordReset', 'AuthController@doPasswordReset');
     Route::post('/loginj', 'AuthController@authenticate');
     Route::get('/profile', 'UserProfileController@getProfile');
+    Route::get('/profile/checkfollow/{userId}', 'UserProfileController@checkFollow');
     Route::post('/profile', 'UserProfileController@saveProfile');
     Route::get('/profile/{userId}', 'UserProfileController@getPublicProfile');
     Route::get('/profile/follow/{userId}', 'UserProfileController@FollowUser');
+    Route::get('/profile/unfollow/{userId}', 'UserProfileController@unFollowUser');
     Route::post('/exercise', 'ExerciseController@saveExercise');
 
 
@@ -59,7 +61,7 @@ Route::group(['prefix' => 'api'], function () {
     Route::get('/workouts/myKeepers', 'WorkoutController@getMyKeepersWorkouts');
     Route::get('/workouts/followers', 'WorkoutController@getFollowersWorkouts');//use for home tab
 
-    Route::get('/news/following', 'NotificationController@getMyNews');
+    Route::get('/news/following', 'NotificationController@getFollowedNews');
     Route::get('/news/my', 'NotificationController@getMyNews');
 
 
