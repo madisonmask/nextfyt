@@ -50,7 +50,7 @@ export class SavedListPage {
         console.log(type);
 
         this.activeTab = type;
-
+        this.ActiveList =[];
         if (type == 'My') {
             this.getMyWorkouts();
             //         this.ActiveList = this.createdList;

@@ -77,7 +77,7 @@ class WorkoutController extends Controller
             $imageToWork->save( public_path() . '/pictures/' . $user['id'] . '/'.$imgName.'_m.jpg' );
 
 
-            $imageToWork->resize(320, 240,function ($constraint) {
+            $imageToWork->resize(186, 140,function ($constraint) {
                 $constraint->upsize();
             });
             $imageToWork->save( public_path() . '/pictures/' . $user['id'] . '/'.$imgName.'_s.jpg' );
@@ -135,6 +135,10 @@ class WorkoutController extends Controller
             }
 
             foreach ($request->Tags as $tag) {
+                if(empty($tag)){
+                    continue;
+                }
+
                 $tagSaved = Tag::where('name', $tag)->first();
                 if (empty($tagSaved)) {
                     $tagSaved = Tag::create(['name' => $tag]);

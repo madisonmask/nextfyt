@@ -80,8 +80,8 @@
 
                         <div class="item" *ngFor="let item of TopResultsWorkouts" >
                             <div class="left">
-                                <div class="image" [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.jpg)'}" *ngIf="item.image =='' "  (tap)="showDetails(item)"></div>
-                                <div class="image" [ngStyle]="{'background-image' : 'url(' +config.baseUrl  + item.image + ')'}"   *ngIf="item.image.length > 10 "  (tap)="showDetails(item)"></div>
+                                <div class="image" [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.png)'}" *ngIf="item.image =='' "  (tap)="showDetails(item)"></div>
+                                <div class="image" [ngStyle]="{'background-image' : 'url(' +config.baseUrl  + item.image + '_s.jpg)'}"   *ngIf="item.image.length > 10 "  (tap)="showDetails(item)"></div>
                                 <ul>
                                     <li>
                                         <a >
@@ -105,9 +105,9 @@
                                 <ul>
                                     <li>By: <span>{{item.author}}</span></li>
                                     <li>Skill: <span>{{item.skill}}</span></li>
-                                    <li>Muscules Worked: <span> <span
+                                    <li>Workout Card: <span> <span
                                             *ngFor="let muscle  of item.muscles"> {{muscle.name}}  </span></span></li>
-                                    <li>Cardio: <span>{{item.cardio}}</span></li>
+                                    <li>Cardio: <span>{{item.cardio  ==1 ? 'yes' : 'no' }}</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -140,12 +140,12 @@
                         <div class="searcg--peaple">
                             <div class="item"  *ngFor="let user of TopResultsUsers" (click)="userSelected(user)">
                                 <div class="icon">
-                                    <div class="img"     [ngStyle]="{'background-image': 'url('+ config.baseUrl + user.avatar + ')'}"         *ngIf="user.avatar!=''"                             ></div>
+                                    <div class="img"     [ngStyle]="{'background-image': 'url('+ config.baseUrl + user.avatar + '_s.jpg)'}"         *ngIf="user.avatar!=''"                             ></div>
                                     <div class="img"    style="background-image:url('assets/images/avatar.jpg')" *ngIf="user.avatar==''"                         ></div>
                                 </div>
                                 <div class="info">
                                     <div class="name">{{user.name}}</div>
-                                    <div class="posts">Posts: {{user.posts}}</div>
+                                    <div class="posts">Created Workouts: {{user.posts}}</div>
                                 </div>
                                 <div class="follow">
                                     <span>Followers: {{user.followers}}</span>
@@ -169,12 +169,12 @@
                     <div class="searcg--peaple">
                         <div class="item"  *ngFor="let user of UserResults" (click)="userSelected(user)">
                             <div class="icon">
-                                <div class="img"     [ngStyle]="{'background-image': 'url('+ config.baseUrl + user.avatar + ')'}"         *ngIf="user.avatar!=''"                             ></div>
+                                <div class="img"     [ngStyle]="{'background-image': 'url('+ config.baseUrl + user.avatar + '_s.jpg)'}"         *ngIf="user.avatar!=''"                             ></div>
                                 <div class="img"    style="background-image:url('assets/images/avatar.jpg')" *ngIf="user.avatar==''"                         ></div>
                            </div>
                             <div class="info">
                                 <div class="name">{{user.name}}</div>
-                                <div class="posts">Posts: {{user.posts}}</div>
+                                <div class="posts">Created Workouts: {{user.posts}}</div>
                             </div>
                             <div class="follow">
                                 <span>Followers: {{user.followers}}</span>
@@ -200,8 +200,8 @@
 
                     <div class="item" *ngFor="let item of WorkoutResults" >
                         <div class="left">
-                            <div class="image" [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.jpg)'}" *ngIf="item.image =='' "  (tap)="showDetails(item)"></div>
-                            <div class="image" [ngStyle]="{'background-image' : 'url(' +config.baseUrl  + item.image + ')'}"   *ngIf="item.image.length > 10 "  (tap)="showDetails(item)"></div>
+                            <div class="image" [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.png)'}" *ngIf="item.image =='' "  (tap)="showDetails(item)"></div>
+                            <div class="image" [ngStyle]="{'background-image' : 'url(' +config.baseUrl  + item.image + '_s.jpg)'}"   *ngIf="item.image.length > 10 "  (tap)="showDetails(item)"></div>
                                   <ul>
                                 <li>
                                     <a >
@@ -225,9 +225,9 @@
                             <ul>
                                 <li>By: <span>{{item.author}}</span></li>
                                 <li>Skill: <span>{{item.skill}}</span></li>
-                                <li>Muscules Worked: <span> <span
+                                <li>Workout Card: <span> <span
                                         *ngFor="let muscle  of item.muscles"> {{muscle.name}}  </span></span></li>
-                                <li>Cardio: <span>{{item.cardio}}</span></li>
+                                <li>Cardio: <span>{{item.cardio  ==1 ? 'yes' : 'no' }}</span></li>
                             </ul>
                         </div>
                     </div>

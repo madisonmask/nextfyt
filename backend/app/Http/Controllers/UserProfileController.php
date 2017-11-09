@@ -15,6 +15,7 @@ use App\Followers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\File;
+use Intervention\Image\Facades\Image;
 
 
 class UserProfileController extends Controller
@@ -262,7 +263,7 @@ class UserProfileController extends Controller
                 $imageToWork->save( public_path() . '/pictures/' . $user['id'] . '/'.$imgName.'_m.jpg' );
 
 
-                $imageToWork->resize(320, 240,function ($constraint) {
+                $imageToWork->resize(186, 140,function ($constraint) {
                     $constraint->upsize();
                 });
                 $imageToWork->save( public_path() . '/pictures/' . $user['id'] . '/'.$imgName.'_s.jpg' );

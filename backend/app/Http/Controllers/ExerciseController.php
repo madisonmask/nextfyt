@@ -66,7 +66,7 @@ class ExerciseController extends Controller
             $imageToWork->save( public_path() . '/pictures/' . $user['id'] . '/'.$imgName.'_m.jpg' );
 
 
-            $imageToWork->resize(320, 240,function ($constraint) {
+            $imageToWork->resize(186, 140,function ($constraint) {
                 $constraint->upsize();
             });
             $imageToWork->save( public_path() . '/pictures/' . $user['id'] . '/'.$imgName.'_s.jpg' );
@@ -148,7 +148,7 @@ class ExerciseController extends Controller
     {
         $user = Helpers::getUser($request);
 
-        $exercises = Exercise::where('user_id', $user['id'])->get();
+        $exercises = Exercise::where('user_id', $user['id'])->where('from_default',0)->get();
 
         $difficulty = Difficulty::all();
         foreach ($difficulty as $dif) {
@@ -160,6 +160,7 @@ class ExerciseController extends Controller
             $exportExercise[$i] = $ex;
             $exportExercise[$i]['equipment'] = $ex->equipments()->get(['equipment.name']);;
             $exportExercise[$i]['muscles'] = $ex->muscles()->get(['muscles.name']);
+            $exportExercise[$i]['author'] = $user['name'];
 
             if (isset($difficultys[$ex->Difficulty])) {
                 $exportExercise[$i]['skill'] = $difficultys[$ex->Difficulty];
@@ -404,7 +405,9 @@ class ExerciseController extends Controller
             'length_type' => $request->length_type, //['Seconds', 'Minutes', 'Reps']);
             'cardio' => $exerciseDefault->cardio,
             'Difficulty' => $exerciseDefault->Difficulty,
-            'is_new' => 1
+            'is_new' => 1,
+            'from_default' => 1,
+
         ]);
 
 

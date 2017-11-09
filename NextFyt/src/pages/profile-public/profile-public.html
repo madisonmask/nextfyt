@@ -17,20 +17,20 @@
     <div class="profile-page">
       <div class="profile-info">
         <div class="profile-top">
-          <div class="image"     [ngStyle]="{'background-image' : 'url(' +config.baseUrl + user.avatar + ')'}"        *ngIf="user.avatar!=''" ></div>
+          <div class="image"     [ngStyle]="{'background-image' : 'url(' +config.baseUrl + user.avatar + '_s.jpg)'}"        *ngIf="user.avatar!=''" ></div>
           <div class="image" style="background-image:url('assets/images/avatar.jpg')" *ngIf="user.avatar==''" ></div>
 
 
           <a class="name">{{user.FirstName}}  {{user.LastName}}  </a>
           <a class="tag">@{{user.name}}</a>
           <a class="follow" (click)="followUser()"  *ngIf="!FollowedAlready">Follow</a>
-          <a class="unfollow" (click)="unfollowUser()"  *ngIf="FollowedAlready">unFollow</a>
+          <a class="unfollow" (click)="unfollowUser()"  *ngIf="FollowedAlready">Unfollow</a>
 
         </div>
         <ul class="char-profile">
           <li>
             <div class="number">{{user.posts}}</div>
-            <div class="text">Posts</div>
+            <div class="text">Created Workouts</div>
           </li>
           <li>
             <div class="number">{{user.followers}}</div>
@@ -49,7 +49,7 @@
             </label>
             <label class="radio">
               <input type="radio" name="profile"  [(ngModel)]="profileWorkoutsType" (ngModelChange)="updateList()" value="favorites">
-              <span class="text">My Favorites</span>
+              <span class="text">Recently Liked</span>
             </label>
           </div>
         </div>
@@ -58,8 +58,8 @@
         <div class="item" *ngFor="let item of ActiveList" (click)="showDetails(item)">
           <div class="left">
             <!--  <div   [style.background-image] = " sanitizer.bypassSecurityTrustResourceUrl(item.image) "></div>-->
-            <div class="image" [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.jpg)'}" *ngIf="item.image =='' "></div>
-            <div class="image" [ngStyle]="{'background-image' : 'url(' + config.baseUrl  + item.image + ')'}"   *ngIf="item.image.length > 10 "></div>
+            <div class="image" [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.png)'}" *ngIf="item.image =='' "></div>
+            <div class="image" [ngStyle]="{'background-image' : 'url(' + config.baseUrl  + item.image + '_s.jpg)'}"   *ngIf="item.image.length > 10 "></div>
 
             <ul>
               <li>
@@ -86,8 +86,8 @@
             <ul>
               <li>By: <span>{{item.author}}</span></li>
               <li>Skill: <span>{{item.skill}}</span></li>
-              <li>Muscules Worked: <span> <span *ngFor="let muscle  of item.muscles"> {{muscle.name}}  </span></span></li>
-              <li>Cardio: <span>{{item.cardio}}</span></li>
+              <li>Workout Card: <span> <span *ngFor="let muscle  of item.muscles"> {{muscle.name}}  </span></span></li>
+              <li>Cardio: <span>{{item.cardio  ==1 ? 'yes' : 'no' }}</span></li>
             </ul>
           </div>
         </div>

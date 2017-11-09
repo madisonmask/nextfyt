@@ -10,15 +10,15 @@
             <a class="prev" (click)="goBack()">
                 <img src="assets/images/back_arrow.png" alt="">
             </a>
-            <div class="h4">Muscules Worked</div>
+            <div class="h4">Workout Card</div>
         </div>
         <div class="card-wrap" (click)="runWorkout()">
             <div class="card-slider">
-                <div class="slide"     [ngStyle]="{'background-image' : 'url('  + config.baseUrl + Workout.image + ')'}"     *ngIf="Workout.image.length > 10 "       >
+                <div class="slide"     [ngStyle]="{'background-image' : 'url('  + config.baseUrl + Workout.image + '_m.jpg)'}"     *ngIf="Workout.image.length > 10 "       >
                     <div class="icon"><img src="assets/images/clocks.png" alt=""></div>
                 </div>
 
-                <div class="slide"     [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.jpg)'}" *ngIf="Workout.image =='' "       >
+                <div class="slide"     [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.png)'}" *ngIf="Workout.image =='' "       >
                     <div class="icon"><img src="assets/images/clocks.png" alt=""></div>
                 </div>
 
@@ -27,7 +27,7 @@
                 <div class="top">
                     <div class="title">{{Workout.name}}</div>
                     <div class="prof">
-                        <div class="image"    [ngStyle]="{'background-image' : 'url('  +config.baseUrl + Workout.authorAvatar + ')'}"  ></div>
+                        <div class="image"    [ngStyle]="{'background-image' : 'url('  +config.baseUrl + Workout.authorAvatar + '_s.jpg)'}"  ></div>
                         <p>By: <span>{{Workout.author}}</span>  </p>
                     </div>
                 </div>
@@ -36,14 +36,14 @@
                         <img src="assets/images/bar/like-red.svg" alt="" *ngIf="Workout.InLiked >0 " (click)="toggleLike(item)">
                         <img src="assets/images/bar/like.svg" alt="" *ngIf="Workout.InLiked ==null " (click)="toggleLike(item)">
                         <div class="number">{{Workout.countLikes}}</div>
-                        <span>recomended</span>
+                        <span>likes</span>
                     </li>
 
                 </ul>
             </div>
             <ul class="card-worked-list">
                 <li>
-                    <div class="left">Muscules Worked:</div>
+                    <div class="left">Muscles Worked:</div>
                     <div class="right"><span *ngFor="let muscle  of Workout.muscles"> {{muscle.name}}  </span> </div>
                 </li>
                 <li>
@@ -52,7 +52,7 @@
                 </li>
                 <li>
                     <div class="left">Cardio</div>
-                    <div class="right">{{Workout.cardio}}</div>
+                    <div class="right">{{Workout.cardio ==1 ? 'yes' : 'no'  }}</div>
                 </li>
             </ul>
 

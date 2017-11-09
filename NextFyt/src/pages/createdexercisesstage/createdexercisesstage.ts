@@ -89,7 +89,7 @@ export class CreatedExercisesStagePage {
 
     showRadio(number) {
         let alert = this.alertCtrl.create();
-        alert.setTitle('Lightsaber color');
+        alert.setTitle('Photos of Stages');
         alert.addInput({
             type: 'radio',
             label: 'Take a Photo',
@@ -99,7 +99,7 @@ export class CreatedExercisesStagePage {
 
         alert.addInput({
             type: 'radio',
-            label: 'Select from galery',
+            label: 'Select from gallery',
             value: 'galery',
             checked: false
         });

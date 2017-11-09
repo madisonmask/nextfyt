@@ -166,8 +166,8 @@ body{
 }
 .home .home-slider {
   height: 100vh;
-  padding-bottom: 45px;
-  /*background-image: linear-gradient(180deg, rgba(41, 51, 81, 0.9) 0%, #32375b 100%);	*/
+  padding-bottom: 75px;
+  background-image: linear-gradient(180deg, rgba(41, 51, 81, 0.9) 0%, #32375b 100%);
 }
 .home .slide {
   height: 100%;
@@ -257,6 +257,7 @@ body{
   left: 0;
   right: 0;
   font-size: 0;
+  padding-bottom: 25px;
 }
 .home .home-sign li {
   display: inline-block;

@@ -14,12 +14,12 @@
 
     <div class="creat-tab wrap-page">
         <div class="top-window">
-            <div class="h4" >Create Tab</div>
+            <div class="h4" >Create</div>
         </div>
         <div class="block-create-tab">
             <a  class="add"   (click)="CreateExercise()" >
                 <img src="assets/images/add-blue.svg" alt="">
-                <span>Add New Tab</span>
+                <span>Add Exercise</span>
             </a>
 
 
@@ -77,8 +77,8 @@
                                     </a>
                                 </li> -->
                             </ul>
-                            <div class="image" [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.jpg)'}" *ngIf="exercise.stage1_img =='' "></div>
-                            <div class="image" [ngStyle]="{'background-image' : 'url(' +config.baseUrl + exercise.stage1_img + ')'}"   *ngIf="exercise.stage1_img.length > 10 "></div>
+                            <div class="image" [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.png)'}" *ngIf="exercise.stage1_img =='' "></div>
+                            <div class="image" [ngStyle]="{'background-image' : 'url(' +config.baseUrl + exercise.stage1_img + '_s.jpg)'}"   *ngIf="exercise.stage1_img.length > 10 "></div>
 
                         </div>
                         <div class="right">

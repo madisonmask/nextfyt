@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {  NavController, NavParams, ViewController } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {NavController, NavParams, ViewController} from 'ionic-angular';
 
 /**
  * Generated class for the DefaultExercisesParamsPage page.
@@ -9,34 +9,31 @@ import {  NavController, NavParams, ViewController } from 'ionic-angular';
  */
 
 @Component({
-  selector: 'page-default-exercises-params',
-  templateUrl: 'default-exercises-params.html',
+    selector: 'page-default-exercises-params',
+    templateUrl: 'default-exercises-params.html',
 })
 export class DefaultExercisesParamsPage {
 
-  Exercise={};
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl:ViewController) {
+    Exercise = {};
 
-    this.Exercise=navParams.get('exercise');
+    constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
 
-  }
+        this.Exercise = navParams.get('exercise');
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DefaultExercisesParamsPage');
-  }
+    }
 
-
-
-
-  ApplyFilter() {
-    console.log('apply');
+    ionViewDidLoad() {
+        console.log('ionViewDidLoad DefaultExercisesParamsPage');
+    }
 
 
-    console.log(this.Exercise);
-    this.viewCtrl.dismiss(this.Exercise);
-  }
+    ApplyFilter() {
+        console.log('apply');
 
 
+        console.log(this.Exercise);
+        this.viewCtrl.dismiss(this.Exercise);
+    }
 
 
 }

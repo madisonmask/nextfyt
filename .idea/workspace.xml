@@ -2,52 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d98de16b-71e9-4b6c-9bb4-64aa367c430f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/assets/images/like.png" afterPath="$PROJECT_DIR$/NextFyt/src/assets/images/like.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/config.xml" afterPath="$PROJECT_DIR$/NextFyt/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/app/app.config.ts" afterPath="$PROJECT_DIR$/NextFyt/src/app/app.config.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/app/app.scss" afterPath="$PROJECT_DIR$/NextFyt/src/app/app.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/index.html" afterPath="$PROJECT_DIR$/NextFyt/src/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/createdexercises/createdexercises.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/createdexercises/createdexercises.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/createdexercisesstage/createdexercisesstage.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/createdexercisesstage/createdexercisesstage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/createdexercisesstage/createdexercisesstage.scss" afterPath="$PROJECT_DIR$/NextFyt/src/pages/createdexercisesstage/createdexercisesstage.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/createdexercisesstep2/createdexercisesstep2.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/createdexercisesstep2/createdexercisesstep2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/default-exercises-params/default-exercises-params.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/default-exercises-params/default-exercises-params.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/default-exercises-params/default-exercises-params.scss" afterPath="$PROJECT_DIR$/NextFyt/src/pages/default-exercises-params/default-exercises-params.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/edit-password/edit-password.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/edit-password/edit-password.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/auth/auth.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/auth/auth.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/create/create.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/create/create.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/createdexercisesstage/createdexercisesstage.ts" afterPath="$PROJECT_DIR$/NextFyt/src/pages/createdexercisesstage/createdexercisesstage.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/default-exercises-params/default-exercises-params.ts" afterPath="$PROJECT_DIR$/NextFyt/src/pages/default-exercises-params/default-exercises-params.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/exercise-default/exercise-default.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/exercise-default/exercise-default.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/exercise-history/exercise-history.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/exercise-history/exercise-history.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/home/home.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/home/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/login/login.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/login/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/login/login.ts" afterPath="$PROJECT_DIR$/NextFyt/src/pages/login/login.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/notifications/notifications.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/notifications/notifications.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/notifications/notifications.ts" afterPath="$PROJECT_DIR$/NextFyt/src/pages/notifications/notifications.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/password-reset/password-reset.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/password-reset/password-reset.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/privacy/privacy.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/privacy/privacy.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/privacy/privacy.scss" afterPath="$PROJECT_DIR$/NextFyt/src/pages/privacy/privacy.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/privacy/privacy.ts" afterPath="$PROJECT_DIR$/NextFyt/src/pages/privacy/privacy.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/profile-public/profile-public.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/profile-public/profile-public.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/profile-public/profile-public.ts" afterPath="$PROJECT_DIR$/NextFyt/src/pages/profile-public/profile-public.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/profile-settings/profile-settings.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/profile-settings/profile-settings.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/profile/profile.ts" afterPath="$PROJECT_DIR$/NextFyt/src/pages/profile/profile.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/profile-settings/profile-settings.ts" afterPath="$PROJECT_DIR$/NextFyt/src/pages/profile-settings/profile-settings.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/profile/profile.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/profile/profile.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/registration/registration.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/registration/registration.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/savedlist/savedlist.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/savedlist/savedlist.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/savedlist/savedlist.ts" afterPath="$PROJECT_DIR$/NextFyt/src/pages/savedlist/savedlist.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/search/search.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/search/search.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/search/search.ts" afterPath="$PROJECT_DIR$/NextFyt/src/pages/search/search.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/share-workout/share-workout.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/share-workout/share-workout.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/share-workout/share-workout.ts" afterPath="$PROJECT_DIR$/NextFyt/src/pages/share-workout/share-workout.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/terms/terms.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/terms/terms.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/terms/terms.scss" afterPath="$PROJECT_DIR$/NextFyt/src/pages/terms/terms.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/workout-details-exercise-show/workout-details-exercise-show.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/workout-details-exercise-show/workout-details-exercise-show.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/workout-details-exercises/workout-details-exercises.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/workout-details-exercises/workout-details-exercises.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/pages/workout-details/workout-details.html" afterPath="$PROJECT_DIR$/NextFyt/src/pages/workout-details/workout-details.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NextFyt/src/services/User.ts" afterPath="$PROJECT_DIR$/NextFyt/src/services/User.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/ExerciseController.php" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/ExerciseController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/NotificationController.php" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/NotificationController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/SearchController.php" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/SearchController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/UserProfileController.php" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/UserProfileController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/WorkoutController.php" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/WorkoutController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/config/app.php" afterPath="$PROJECT_DIR$/backend/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/routes/web.php" afterPath="$PROJECT_DIR$/backend/routes/web.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/database/migrations/2017_06_07_143936_CreateExercisesTable.php" afterPath="$PROJECT_DIR$/backend/database/migrations/2017_06_07_143936_CreateExercisesTable.php" />
     </list>
     <ignored path="NextFyt.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,114 +50,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ExerciseController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ExerciseController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/ExerciseController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3111">
-              <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+            <state relative-caret-position="348">
+              <caret line="150" column="84" selection-start-line="150" selection-start-column="84" selection-end-line="150" selection-end-column="84" />
               <folding>
-                <marker date="1509967042171" expanded="true" signature="11238:11460" ph="SELECT `exer... exercises" />
+                <marker date="1510220071018" expanded="true" signature="11322:11544" ph="SELECT `exer... exercises" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cache.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/config/cache.php">
+      <file leaf-file-name="share-workout.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/share-workout/share-workout.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="561">
+              <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="filesystems.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/config/filesystems.php">
+      <file leaf-file-name="2017_06_07_143936_CreateExercisesTable.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/database/migrations/2017_06_07_143936_CreateExercisesTable.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="493">
+              <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/.env">
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/config/app.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2074">
-              <caret line="122" column="34" selection-start-line="122" selection-start-column="34" selection-end-line="122" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Exercise.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/app/Exercise.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="21" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WorkoutController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/WorkoutController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="67" column="14" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="65" />
-              <folding>
-                <element signature="e#6664#9695#0#PHP" expanded="false" />
-                <element signature="e#9702#12129#0#PHP" expanded="false" />
-                <element signature="e#12136#15299#0#PHP" expanded="false" />
-                <element signature="e#18111#20541#0#PHP" expanded="false" />
-                <marker date="1510054638687" expanded="true" signature="6921:7402" ph="SELECT worko... workouts" />
-                <marker date="1510054638687" expanded="true" signature="6921:7419" ph="SELECT worko... workouts" />
-                <marker date="1510054638687" expanded="true" signature="6921:7496" ph="SELECT worko... workouts" />
-                <marker date="1510054638687" expanded="true" signature="6921:7522" ph="SELECT worko... workouts" />
-                <marker date="1510054638687" expanded="true" signature="8476:8856" ph="SELECT DISTI... exercise_to_workout" />
-                <marker date="1510054638687" expanded="true" signature="10010:10280" ph="SELECT worko... workouts" />
-                <marker date="1510054638687" expanded="true" signature="10010:10315" ph="SELECT worko... workouts" />
-                <marker date="1510054638687" expanded="true" signature="10010:10319" ph="SELECT worko... workouts" />
-                <marker date="1510054638687" expanded="true" signature="10010:10437" ph="SELECT worko... workouts" />
-                <marker date="1510054638687" expanded="true" signature="10010:10475" ph="SELECT worko... workouts" />
-                <marker date="1510054638687" expanded="true" signature="11160:11540" ph="SELECT DISTI... exercise_to_workout" />
-                <marker date="1510054638687" expanded="true" signature="13194:13577" ph="SELECT DISTI... exercise_to_workout" />
-                <marker date="1510054638687" expanded="true" signature="13701:14100" ph="SELECT DISTI... exercise_to_workout" />
-                <marker date="1510054638687" expanded="true" signature="14210:14515" ph="SELECT DISTI... workouts" />
-                <marker date="1510054638687" expanded="true" signature="14611:14793" ph="SELECT id FR... workoutlikes" />
-                <marker date="1510054638687" expanded="true" signature="15573:16234" ph="SELECT worko... workoutlikes" />
-                <marker date="1510054638687" expanded="true" signature="17012:17392" ph="SELECT DISTI... exercise_to_workout" />
-                <marker date="1510054638687" expanded="true" signature="18435:18918" ph="SELECT worko... workoutlikes" />
-                <marker date="1510054638687" expanded="true" signature="19571:19951" ph="SELECT DISTI... exercise_to_workout" />
-                <marker date="1510054638687" expanded="true" signature="20812:21147" ph="SELECT worko... workoutkeepers" />
-                <marker date="1510054638687" expanded="true" signature="20812:21222" ph="SELECT worko... workoutkeepers" />
-                <marker date="1510054638687" expanded="true" signature="20812:21257" ph="SELECT worko... workoutkeepers" />
-                <marker date="1510054638687" expanded="true" signature="21929:22309" ph="SELECT DISTI... exercise_to_workout" />
-                <marker date="1510054638687" expanded="true" signature="23169:23290" ph="SELECT worko... workouts" />
-                <marker date="1510054638687" expanded="true" signature="23169:23639" ph="SELECT worko... workouts" />
-                <marker date="1510054638687" expanded="true" signature="24637:25017" ph="SELECT DISTI... exercise_to_workout" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserProfileController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/UserProfileController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="252" column="13" selection-start-line="252" selection-start-column="13" selection-end-line="252" selection-end-column="13" />
+            <state relative-caret-position="127">
+              <caret line="37" column="54" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -191,11 +102,55 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NextFyt/src/app/app.scss">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/home/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1479">
-              <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+            <state relative-caret-position="581">
+              <caret line="63" column="50" selection-start-line="63" selection-start-column="50" selection-end-line="63" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workout-details.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/workout-details/workout-details.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="45" column="52" selection-start-line="45" selection-start-column="52" selection-end-line="45" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/create/create.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="default-exercises-params.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/default-exercises-params/default-exercises-params.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1510219626419" expanded="true" signature="448:882" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="exercise-default.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/exercise-default/exercise-default.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="136" column="65" selection-start-line="136" selection-start-column="59" selection-end-line="136" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -218,22 +173,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/NextFyt/config.xml" />
-        <option value="$PROJECT_DIR$/NextFyt/node_modules/ionic-native/dist/esm/plugins/plugin.js" />
-        <option value="$PROJECT_DIR$/NextFyt/src/services/auth.ts" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/create/create.html" />
-        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Auth/JWAUTH.php" />
-        <option value="$PROJECT_DIR$/backend/vendor/tymon/jwt-auth/src/JWTAuth.php" />
-        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/AuthController.php" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/login/login.ts" />
         <option value="$PROJECT_DIR$/NextFyt/src/pages/profile/profile.ts" />
         <option value="$PROJECT_DIR$/NextFyt/src/services/User.ts" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/notifications/notifications.html" />
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/NotificationController.php" />
         <option value="$PROJECT_DIR$/NextFyt/src/pages/notifications/notifications.ts" />
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/SearchController.php" />
         <option value="$PROJECT_DIR$/NextFyt/src/app/app.config.ts" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/search/search.html" />
         <option value="$PROJECT_DIR$/NextFyt/src/pages/privacy/privacy.scss" />
         <option value="$PROJECT_DIR$/NextFyt/src/pages/privacy/privacy.ts" />
         <option value="$PROJECT_DIR$/NextFyt/src/pages/terms/terms.scss" />
@@ -242,33 +187,43 @@
         <option value="$PROJECT_DIR$/NextFyt/src/pages/createdexercisesstage/createdexercisesstage.html" />
         <option value="$PROJECT_DIR$/NextFyt/src/pages/createdexercisesstep2/createdexercisesstep2.html" />
         <option value="$PROJECT_DIR$/NextFyt/src/pages/edit-password/edit-password.html" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/exercise-default/exercise-default.html" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/exercise-history/exercise-history.html" />
         <option value="$PROJECT_DIR$/NextFyt/src/pages/login/login.html" />
         <option value="$PROJECT_DIR$/NextFyt/src/pages/password-reset/password-reset.html" />
         <option value="$PROJECT_DIR$/NextFyt/src/pages/privacy/privacy.html" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/profile-public/profile-public.html" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/profile-settings/profile-settings.html" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/registration/registration.html" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/workout-details-exercise-show/workout-details-exercise-show.html" />
         <option value="$PROJECT_DIR$/NextFyt/src/pages/createdexercisesstage/createdexercisesstage.scss" />
         <option value="$PROJECT_DIR$/NextFyt/src/pages/default-exercises-params/default-exercises-params.scss" />
         <option value="$PROJECT_DIR$/NextFyt/src/pages/default-exercises-params/default-exercises-params.html" />
         <option value="$PROJECT_DIR$/backend/routes/web.php" />
         <option value="$PROJECT_DIR$/NextFyt/src/pages/profile-public/profile-public.ts" />
         <option value="$PROJECT_DIR$/NextFyt/src/pages/share-workout/share-workout.html" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/share-workout/share-workout.ts" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/workout-details/workout-details.html" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/home/home.html" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/savedlist/savedlist.html" />
         <option value="$PROJECT_DIR$/NextFyt/src/pages/search/search.ts" />
-        <option value="$PROJECT_DIR$/NextFyt/src/pages/workout-details-exercises/workout-details-exercises.html" />
-        <option value="$PROJECT_DIR$/NextFyt/src/app/app.scss" />
-        <option value="$PROJECT_DIR$/NextFyt/src/index.html" />
-        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/ExerciseController.php" />
         <option value="$PROJECT_DIR$/backend/config/app.php" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/notifications/notifications.html" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/profile-settings/profile-settings.html" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/workout-details-exercise-show/workout-details-exercise-show.html" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/savedlist/savedlist.html" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/create/create.html" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/savedlist/savedlist.ts" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/profile/profile.html" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/profile-public/profile-public.html" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/search/search.html" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/auth/auth.html" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/registration/registration.html" />
+        <option value="$PROJECT_DIR$/NextFyt/src/app/app.scss" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/createdexercisesstage/createdexercisesstage.ts" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/profile-settings/profile-settings.ts" />
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/WorkoutController.php" />
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/UserProfileController.php" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/workout-details-exercises/workout-details-exercises.html" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/exercise-history/exercise-history.html" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/exercise-default/exercise-default.html" />
+        <option value="$PROJECT_DIR$/NextFyt/src/index.html" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/workout-details/workout-details.html" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/default-exercises-params/default-exercises-params.ts" />
+        <option value="$PROJECT_DIR$/backend/database/migrations/2017_06_07_143936_CreateExercisesTable.php" />
+        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/ExerciseController.php" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/home/home.html" />
+        <option value="$PROJECT_DIR$/NextFyt/src/pages/share-workout/share-workout.ts" />
       </list>
     </option>
   </component>
@@ -319,6 +274,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -658,6 +614,10 @@
               <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tabs" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -682,6 +642,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="share-workout" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NextFyt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NextFyt" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NextFyt" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -941,6 +923,32 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="exercise-history" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NextFyt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NextFyt" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NextFyt" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="exercise-default" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -1071,6 +1079,32 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="create" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NextFyt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NextFyt" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NextFyt" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="auth" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -1148,6 +1182,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="routes" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NextFyt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NextFyt" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backend" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NextFyt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NextFyt" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backend" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrations" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -1263,7 +1337,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -1418,18 +1491,20 @@
       <workItem from="1509376095313" duration="307000" />
       <workItem from="1509548766462" duration="7286000" />
       <workItem from="1509964878720" duration="2651000" />
-      <workItem from="1510054387200" duration="527000" />
+      <workItem from="1510054387200" duration="6693000" />
+      <workItem from="1510068108239" duration="2665000" />
+      <workItem from="1510218819133" duration="2219000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="404997000" />
+    <option name="totallyTimeSpent" value="416047000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3001066" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3065032" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3278867" sideWeight="0.5149095" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1445,7 +1520,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32467532" sideWeight="0.48509052" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32467532" sideWeight="0.48509052" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3982684" sideWeight="0.49583766" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1561,27 +1636,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/backend/app/Http/Controllers/ExerciseController.php</url>
-          <line>394</line>
+          <line>395</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/backend/app/Http/Controllers/ExerciseController.php</url>
-          <line>411</line>
+          <line>414</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/backend/app/Http/Controllers/ExerciseController.php</url>
-          <line>409</line>
+          <line>412</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/backend/app/Http/Controllers/ExerciseController.php</url>
-          <line>391</line>
+          <line>392</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/backend/app/Http/Controllers/ExerciseController.php</url>
-          <line>327</line>
+          <line>328</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -1598,139 +1673,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/notifications/notifications.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="71" selection-start-line="28" selection-start-column="66" selection-end-line="28" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/notifications/notifications.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/SearchController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4420">
-          <caret line="265" column="85" selection-start-line="265" selection-start-column="85" selection-end-line="265" selection-end-column="85" />
-          <folding>
-            <marker date="1508158602257" expanded="true" signature="3351:4827" ph="SELECT worko... workouts" />
-            <marker date="1508158602257" expanded="true" signature="5029:6280" ph="SELECT worko... workouts" />
-            <marker date="1508158602257" expanded="true" signature="6990:7370" ph="SELECT DISTI... exercise_to_workout" />
-            <marker date="1508158602257" expanded="true" signature="8242:8570" ph="SELECT COUNT... tags_to_workout" />
-            <marker date="1508158602257" expanded="true" signature="8242:8571" ph="SELECT COUNT... tags_to_workout" />
-            <marker date="1508158602257" expanded="true" signature="8641:8885" ph="SELECT worko... workouts" />
-            <marker date="1508158602257" expanded="true" signature="8641:9554" ph="SELECT worko... workouts" />
-            <marker date="1508158602257" expanded="true" signature="8641:9585" ph="SELECT worko... workouts" />
-            <marker date="1508158602257" expanded="true" signature="8641:9586" ph="SELECT worko... workouts" />
-            <marker date="1508158602257" expanded="true" signature="10196:10576" ph="SELECT DISTI... exercise_to_workout" />
-            <marker date="1508158602257" expanded="true" signature="11594:12074" ph="SELECT COUNT... tags_to_workout" />
-            <marker date="1508158602257" expanded="true" signature="11863:11991" ph="SELECT tags.... tags" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/app/app.config.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/savedlist/savedlist.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2669">
-          <caret line="165" column="20" selection-start-line="165" selection-start-column="17" selection-end-line="165" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/profile-settings/profile-settings.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="167" column="6" selection-start-line="167" selection-start-column="1" selection-end-line="169" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/privacy/privacy.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/privacy/privacy.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="12" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/terms/terms.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/terms/terms.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/terms/terms.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="54" selection-start-line="7" selection-start-column="54" selection-end-line="7" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/edit-password/edit-password.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/exercise-history/exercise-history.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/login/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/password-reset/password-reset.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/privacy/privacy.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/registration/registration.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/workout-details-exercises/workout-details-exercises.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1745,31 +1687,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/exercise-default/exercise-default.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/exercise-default/exercise-default.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="2" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/createdexercisesstage/createdexercisesstage.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/createdexercises/createdexercises.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="62" column="18" selection-start-line="62" selection-start-column="15" selection-end-line="64" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1780,24 +1701,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/workout-details-exercise-show/workout-details-exercise-show.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="95" selection-start-line="37" selection-start-column="95" selection-end-line="37" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/default-exercises-params/default-exercises-params.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/default-exercises-params/default-exercises-params.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1816,20 +1723,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/profile-public/profile-public.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="34" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="111" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/profile-settings/profile-settings.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/createdexercisesstage/createdexercisesstage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1003">
@@ -1844,76 +1737,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/share-workout/share-workout.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2771">
-          <caret line="173" column="6" selection-start-line="173" selection-start-column="6" selection-end-line="173" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/workout-details/workout-details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/savedlist/savedlist.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/search/search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2669">
-          <caret line="157" column="33" selection-start-line="157" selection-start-column="33" selection-end-line="157" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/search/search.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="49" column="42" selection-start-line="49" selection-start-column="42" selection-end-line="49" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/home/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="2" selection-start-line="3" selection-start-column="0" selection-end-line="76" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="61" column="66" selection-start-line="61" selection-start-column="57" selection-end-line="61" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/workout-details-exercises/workout-details-exercises.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/app/app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1479">
-          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NextFyt/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1937,7 +1764,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1957,60 +1783,304 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/WorkoutController.php">
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="67" column="14" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="65" />
+        <state relative-caret-position="-5763">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/notifications/notifications.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="84" column="135" selection-start-line="84" selection-start-column="135" selection-end-line="84" selection-end-column="135" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/profile-settings/profile-settings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="16" column="118" selection-start-line="16" selection-start-column="118" selection-end-line="16" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/workout-details-exercise-show/workout-details-exercise-show.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/createdexercises/createdexercises.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/searchfilters/searchfilters.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/create/create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/savedlist/savedlist.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/savedlist/savedlist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="113" selection-start-line="11" selection-start-column="113" selection-end-line="11" selection-end-column="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/profile/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="58" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/profile-public/profile-public.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/search/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2992">
+          <caret line="176" column="67" selection-start-line="176" selection-start-column="67" selection-end-line="176" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/login/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/tabs/tabs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/registration/registration.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="62" column="63" selection-start-line="62" selection-start-column="63" selection-end-line="62" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/auth/auth.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="84" selection-start-line="14" selection-start-column="84" selection-end-line="14" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/app/app.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="259" column="20" selection-start-line="259" selection-start-column="20" selection-end-line="259" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/createdexercisesstage/createdexercisesstage.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="91" column="40" selection-start-line="91" selection-start-column="40" selection-end-line="91" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/profile-settings/profile-settings.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="114" column="36" selection-start-line="114" selection-start-column="36" selection-end-line="114" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Helpers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
           <folding>
-            <element signature="e#6664#9695#0#PHP" expanded="false" />
-            <element signature="e#9702#12129#0#PHP" expanded="false" />
-            <element signature="e#12136#15299#0#PHP" expanded="false" />
-            <element signature="e#18111#20541#0#PHP" expanded="false" />
-            <marker date="1510054638687" expanded="true" signature="6921:7402" ph="SELECT worko... workouts" />
-            <marker date="1510054638687" expanded="true" signature="6921:7419" ph="SELECT worko... workouts" />
-            <marker date="1510054638687" expanded="true" signature="6921:7496" ph="SELECT worko... workouts" />
-            <marker date="1510054638687" expanded="true" signature="6921:7522" ph="SELECT worko... workouts" />
-            <marker date="1510054638687" expanded="true" signature="8476:8856" ph="SELECT DISTI... exercise_to_workout" />
-            <marker date="1510054638687" expanded="true" signature="10010:10280" ph="SELECT worko... workouts" />
-            <marker date="1510054638687" expanded="true" signature="10010:10315" ph="SELECT worko... workouts" />
-            <marker date="1510054638687" expanded="true" signature="10010:10319" ph="SELECT worko... workouts" />
-            <marker date="1510054638687" expanded="true" signature="10010:10437" ph="SELECT worko... workouts" />
-            <marker date="1510054638687" expanded="true" signature="10010:10475" ph="SELECT worko... workouts" />
-            <marker date="1510054638687" expanded="true" signature="11160:11540" ph="SELECT DISTI... exercise_to_workout" />
-            <marker date="1510054638687" expanded="true" signature="13194:13577" ph="SELECT DISTI... exercise_to_workout" />
-            <marker date="1510054638687" expanded="true" signature="13701:14100" ph="SELECT DISTI... exercise_to_workout" />
-            <marker date="1510054638687" expanded="true" signature="14210:14515" ph="SELECT DISTI... workouts" />
-            <marker date="1510054638687" expanded="true" signature="14611:14793" ph="SELECT id FR... workoutlikes" />
-            <marker date="1510054638687" expanded="true" signature="15573:16234" ph="SELECT worko... workoutlikes" />
-            <marker date="1510054638687" expanded="true" signature="17012:17392" ph="SELECT DISTI... exercise_to_workout" />
-            <marker date="1510054638687" expanded="true" signature="18435:18918" ph="SELECT worko... workoutlikes" />
-            <marker date="1510054638687" expanded="true" signature="19571:19951" ph="SELECT DISTI... exercise_to_workout" />
-            <marker date="1510054638687" expanded="true" signature="20812:21147" ph="SELECT worko... workoutkeepers" />
-            <marker date="1510054638687" expanded="true" signature="20812:21222" ph="SELECT worko... workoutkeepers" />
-            <marker date="1510054638687" expanded="true" signature="20812:21257" ph="SELECT worko... workoutkeepers" />
-            <marker date="1510054638687" expanded="true" signature="21929:22309" ph="SELECT DISTI... exercise_to_workout" />
-            <marker date="1510054638687" expanded="true" signature="23169:23290" ph="SELECT worko... workouts" />
-            <marker date="1510054638687" expanded="true" signature="23169:23639" ph="SELECT worko... workouts" />
-            <marker date="1510054638687" expanded="true" signature="24637:25017" ph="SELECT DISTI... exercise_to_workout" />
+            <element signature="e#40#68#0#PHP" expanded="false" />
+            <marker date="1504196008897" expanded="true" signature="1031:1302" ph="SELECT users... followers" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/UserProfileController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="252" column="13" selection-start-line="252" selection-start-column="13" selection-end-line="252" selection-end-column="13" />
+        <state relative-caret-position="68">
+          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+          <folding>
+            <element signature="e#40#59#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/workout-details-exercises/workout-details-exercises.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="9" selection-start-line="13" selection-start-column="6" selection-end-line="46" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/exercise-history/exercise-history.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#48#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/WorkoutController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="37" />
+          <folding>
+            <marker date="1510068630310" expanded="true" signature="7003:7578" ph="SELECT worko... workouts" />
+            <marker date="1510068630310" expanded="true" signature="8558:8938" ph="SELECT DISTI... exercise_to_workout" />
+            <marker date="1510068630310" expanded="true" signature="10092:10519" ph="SELECT worko... workouts" />
+            <marker date="1510068630310" expanded="true" signature="11242:11622" ph="SELECT DISTI... exercise_to_workout" />
+            <marker date="1510068630310" expanded="true" signature="13276:13659" ph="SELECT DISTI... exercise_to_workout" />
+            <marker date="1510068630310" expanded="true" signature="13783:14182" ph="SELECT DISTI... exercise_to_workout" />
+            <marker date="1510068630310" expanded="true" signature="14292:14597" ph="SELECT DISTI... workouts" />
+            <marker date="1510068630310" expanded="true" signature="14693:14875" ph="SELECT id FR... workoutlikes" />
+            <marker date="1510068630310" expanded="true" signature="15655:16316" ph="SELECT worko... workoutlikes" />
+            <marker date="1510068630310" expanded="true" signature="17094:17474" ph="SELECT DISTI... exercise_to_workout" />
+            <marker date="1510068630310" expanded="true" signature="18517:19000" ph="SELECT worko... workoutlikes" />
+            <marker date="1510068630310" expanded="true" signature="19653:20033" ph="SELECT DISTI... exercise_to_workout" />
+            <marker date="1510068630310" expanded="true" signature="20894:21304" ph="SELECT worko... workoutkeepers" />
+            <marker date="1510068630310" expanded="true" signature="22011:22391" ph="SELECT DISTI... exercise_to_workout" />
+            <marker date="1510068630310" expanded="true" signature="23251:23721" ph="SELECT worko... workouts" />
+            <marker date="1510068630310" expanded="true" signature="24719:25099" ph="SELECT DISTI... exercise_to_workout" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/exercise-default/exercise-default.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/exercise-history/exercise-history.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="52" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/workout-details/workout-details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="45" column="52" selection-start-line="45" selection-start-column="52" selection-end-line="45" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/create/create.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/default-exercises-params/default-exercises-params.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1510219626419" expanded="true" signature="448:882" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/exercise-default/exercise-default.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="136" column="65" selection-start-line="136" selection-start-column="59" selection-end-line="136" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/database/migrations/2017_06_07_143936_CreateExercisesTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="37" column="54" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/ExerciseController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3111">
-          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+        <state relative-caret-position="348">
+          <caret line="150" column="84" selection-start-line="150" selection-start-column="84" selection-end-line="150" selection-end-column="84" />
           <folding>
-            <marker date="1509967042171" expanded="true" signature="11238:11460" ph="SELECT `exer... exercises" />
+            <marker date="1510220071018" expanded="true" signature="11322:11544" ph="SELECT `exer... exercises" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/home/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="581">
+          <caret line="63" column="50" selection-start-line="63" selection-start-column="50" selection-end-line="63" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NextFyt/src/pages/share-workout/share-workout.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>

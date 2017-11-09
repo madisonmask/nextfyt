@@ -8,8 +8,8 @@
         <div class="saved--list-tg">
             <ul>
                 <li><a (click)="ShowSaved('My')"  [ngClass]="{'active': activeTab=='My'}"    >My Creations </a></li>
-                <li><a (click)="ShowSaved('Favorited')"   [ngClass]="{'active': activeTab=='Favorited'}"       >My Favorite</a></li>
-                <li><a  (click)="ShowSaved('Keepers')"     [ngClass]="{'active': activeTab=='Keepers'}"         >Keepers</a></li>
+                <li><a (click)="ShowSaved('Favorited')"   [ngClass]="{'active': activeTab=='Favorited'}"       >Recently Liked</a></li>
+                <li><a  (click)="ShowSaved('Keepers')"     [ngClass]="{'active': activeTab=='Keepers'}"         >My Favorites</a></li>
             </ul>
         </div>
 
@@ -32,10 +32,10 @@
             <div class="items-search">
                 <div class="item" *ngFor="let item of ActiveList">
                     <div class="left">
-                        <div class="image" [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.jpg)'}"
+                        <div class="image" [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.png)'}"
                              *ngIf="item.image =='' " (tap)="showDetails(item)"></div>
                         <div class="image"
-                             [ngStyle]="{'background-image': 'url(' + config.baseUrl + item.image + ')'}"
+                             [ngStyle]="{'background-image': 'url(' + config.baseUrl + item.image + '_s.jpg)'}"
                              *ngIf="item.image.length > 10 " (tap)="showDetails(item)">
                             <div class="icon"><img src="assets/images/clocks.png" alt=""></div>
 <!--
@@ -82,9 +82,9 @@
                         <ul>
                             <li>By: <span>{{item.author}}</span></li>
                             <li>Skill: <span>{{item.skill}}</span></li>
-                            <li>Muscules Worked: <span> <span
+                            <li>Workout Card: <span> <span
                                     *ngFor="let muscle  of item.muscles"> {{muscle.name}}  </span></span></li>
-                            <li>Cardio: <span>{{item.cardio}}</span></li>
+                            <li>Cardio: <span>{{item.cardio  ==1 ? 'yes' : 'no' }}</span></li>
                         </ul>
                     </div>
                 </div>

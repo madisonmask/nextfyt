@@ -4,15 +4,54 @@
             <img src="assets/images/back_arrow.png" alt="">
         </a>
 
-        <div class="h4">ExerciseHistory</div>
+        <div class="h4">Past Created Exercises</div>
     </div>
 
+    <div class="tab-content">
+        <div class="tab-item active" id="My-Favorite">
+            <div class="items-search">
+                <div class="item" *ngFor="let item of MyExercises">
+                    <div class="left">
+                        <div class="image" [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.png)'}"
+                             *ngIf="item.stage1_img =='' " (tap)="runExercise(item)"></div>
+                        <div class="image"
+                             [ngStyle]="{'background-image': 'url(' + config.baseUrl + item.stage1_img + '_s.jpg)'}"
+                             *ngIf="item.stage1_img.length > 10 " (tap)="runExercise(item)">
+                            <div class="icon"><img src="assets/images/clocks.png" alt=""></div>
+
+                            <div class="avatar"
+                                 [ngStyle]="{'background-image' : 'url(' +config.baseUrl + item.avatar + '_s.jpg)'}"
+                                 *ngIf="item.avatar!=''"></div>
+                            <div class="avatar" style="background-image:url('assets/images/avatar.jpg')"
+                                 *ngIf="item.avatar==''"></div>
+                        </div>
+                    </div>
+                    <div class="right" (tap)="showDetails(item)">
+                        <a class="h4">{{item.name}}</a>
+                        <ul>
+                           <li>By: <span>{{item.author}}</span></li>
+                            <li>Skill: <span>{{item.skill}}</span></li>
+                            <li>Workout Card: <span> <span
+                                    *ngFor="let muscle  of item.muscles"> {{muscle.name}}  </span></span></li>
+                            <li>Cardio: <span>{{item.cardio  ==1 ? 'yes' : 'no'  }}</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--
     <div class="exercise-History">
         <div class="item" *ngFor="let exercise of MyExercises">
-            <div class="image"                [ngStyle]="{'background-image': 'url('  + config.baseUrl + exercise.stage1_img + ')'}"     *ngIf="exercise.stage1_img.length > 10 "      (click)="selectItem(exercise)"  ></div>
+            <div class="image"                [ngStyle]="{'background-image': 'url('  + config.baseUrl + exercise.stage1_img + '_s.jpg)'}"     *ngIf="exercise.stage1_img.length > 10 "      (click)="selectItem(exercise)"  ></div>
 
 
-            <div class="image" [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.jpg)'}" *ngIf="exercise.stage1_img =='' "      (click)="selectItem(exercise)" ></div>
+            <div class="image" [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.png)'}" *ngIf="exercise.stage1_img =='' "      (click)="selectItem(exercise)" ></div>
 
             <div class="info" (click)="selectItem(exercise)">
                 <div class="left">
@@ -22,30 +61,19 @@
                             Skill: <span>{{exercise.skill}}</span>
                         </li>
                         <li>
-                            Muscules Worked: <span><span *ngFor="let muscle  of exercise.muscles"> {{muscle.name}}  </span></span>
+                            Workout Card: <span><span *ngFor="let muscle  of exercise.muscles"> {{muscle.name}}  </span></span>
                         </li>
                         <li>
-                            Cardio: <span> {{exercise.cardio}}</span>
+                            Cardio: <span> {{exercise.cardio  ==1 ? 'yes' : 'no' }}</span>
                         </li>
                     </ul>
                 </div>
-                <!--     <div class="right">
-                         <ul>
-                             <li>
-                                 <a >
-                                          <span class="icon">
-                                             <img src="assets/images/bar/like-red.svg" alt="">
-                                          </span>
-                                     <span class="number">125</span>
-                                 </a>
-                             </li>
-
-                         </ul>
-                     </div> -->
             </div>
         </div>
 
     </div>
+
+    -->
 
 </div>
 

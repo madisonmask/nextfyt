@@ -14,7 +14,7 @@
             <div class="profile-info">
                 <div class="profile-top">
 
-                    <div class="image" [ngStyle]="{'background-image' : 'url(' +config.baseUrl + user.avatar + ')'}"   *ngIf="user.avatar!=''" ></div>
+                    <div class="image" [ngStyle]="{'background-image' : 'url(' +config.baseUrl + user.avatar + '_s.jpg)'}"   *ngIf="user.avatar!=''" ></div>
                     <div class="image" style="background-image:url('assets/images/img-1.png')" *ngIf="user.avatar==''" ></div>
                     <label class="edit_photo"  (click)="showRadio()">
                         <input type="file">

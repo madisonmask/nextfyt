@@ -12,7 +12,7 @@
                 <a (click)="goSaved()"><img src="assets/images/notification/tabs.svg" alt=""></a>
             </div>
             <ul class="tab">
-                <li class="h4"> NextFyt</li>
+                <li class="h4"> Next Fyt</li>
             </ul>
         </div>
 
@@ -22,15 +22,15 @@
                 <div class="items-search">
                     <div class="item" *ngFor="let item of Followers">
                         <div class="left">
-                            <div class="image" [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.jpg)'}"
+                            <div class="image" [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.png)'}"
                                  *ngIf="item.image =='' " (tap)="showDetails(item)"></div>
                             <div class="image"
-                                 [ngStyle]="{'background-image': 'url(' + config.baseUrl + item.image + ')'}"
+                                 [ngStyle]="{'background-image': 'url(' + config.baseUrl + item.image + '_s.jpg)'}"
                                  *ngIf="item.image.length > 10 " (tap)="showDetails(item)">
                                 <div class="icon"><img src="assets/images/clocks.png" alt=""></div>
 
                                 <div class="avatar"
-                                     [ngStyle]="{'background-image' : 'url(' +config.baseUrl + item.avatar + ')'}"
+                                     [ngStyle]="{'background-image' : 'url(' +config.baseUrl + item.avatar + '_s.jpg)'}"
                                      *ngIf="user.avatar!=''"></div>
                                 <div class="avatar" style="background-image:url('assets/images/avatar.jpg')"
                                      *ngIf="user.avatar==''"></div>
@@ -61,9 +61,9 @@
                             <ul>
                                 <li>By: <span>{{item.author}}</span></li>
                                 <li>Skill: <span>{{item.skill}}</span></li>
-                                <li>Muscules Worked: <span> <span
+                                <li>Muscles Worked: <span> <span
                                         *ngFor="let muscle  of item.muscles"> {{muscle.name}}  </span></span></li>
-                                <li>Cardio: <span>{{item.cardio}}</span></li>
+                                <li>Cardio: <span>{{item.cardio  ==1 ? 'yes' : 'no' }}</span></li>
                             </ul>
                         </div>
                     </div>

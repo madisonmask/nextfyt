@@ -28,6 +28,8 @@ class CreateExercisesTable extends Migration
             $table->integer('length_count')->unsigned();
             $table->enum('length_type', ['Seconds', 'Minutes', 'Reps']);
             $table->boolean('is_new')->default(0);
+            $table->boolean('is_default')->default(0);
+            $table->boolean('from_default')->default(0);
             $table->timestamps();
         });
     }

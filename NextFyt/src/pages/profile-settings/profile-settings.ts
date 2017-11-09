@@ -112,7 +112,7 @@ export class ProfileSettingsPage {
 
   showRadio() {
     let alert = this.alertCtrl.create();
-    alert.setTitle('Lightsaber color');
+    alert.setTitle('Photos of Stages');
     alert.addInput({
       type: 'radio',
       label: 'Take a Photo',
@@ -122,7 +122,7 @@ export class ProfileSettingsPage {
 
     alert.addInput({
       type: 'radio',
-      label: 'Select from galery',
+      label: 'Select from gallery',
       value: 'galery',
       checked: false
     });
