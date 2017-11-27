@@ -76,7 +76,9 @@ export class CreatedExercisesStagePage {
     selectFromGalery(number) {
         this.camera.getPicture({
             destinationType: this.camera.DestinationType.DATA_URL,
-            sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
+            sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
+            targetWidth: 1000,
+            targetHeight: 1000
         }).then((imageData) => {
             // imageData is a base64 encoded string
             this.ExcerciseImage[number] = "data:image/jpeg;base64," + imageData;

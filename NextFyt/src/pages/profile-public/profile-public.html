@@ -86,7 +86,7 @@
             <ul>
               <li>By: <span>{{item.author}}</span></li>
               <li>Skill: <span>{{item.skill}}</span></li>
-              <li>Workout Card: <span> <span *ngFor="let muscle  of item.muscles"> {{muscle.name}}  </span></span></li>
+              <li>Muscles Worked: <span> <span *ngFor="let muscle  of item.muscles"> {{muscle.name}}  </span></span></li>
               <li>Cardio: <span>{{item.cardio  ==1 ? 'yes' : 'no' }}</span></li>
             </ul>
           </div>

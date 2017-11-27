@@ -769,7 +769,8 @@ body{
 
 
 .wrap-page{
-  height: 100vh;
+    min-height: 100vh;
+
  /* height: 100%;*/
   position: relative;
   background-image: -webkit-linear-gradient(180deg, rgba(41, 51, 81, 0.9) 0%, #32375b 100%);
@@ -1327,7 +1328,7 @@ body{
 
 
 .items-search {
-  padding:  0 10px 25px;
+  padding:  0 10px ;
 }
 .items-search .item {
   display: table;

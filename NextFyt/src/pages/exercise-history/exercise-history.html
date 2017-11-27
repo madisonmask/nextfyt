@@ -1,3 +1,4 @@
+<ion-content>
 <div class="wrap-page ">
     <div class="top-window">
         <a class="prev" (click)="goBack()">
@@ -13,10 +14,10 @@
                 <div class="item" *ngFor="let item of MyExercises">
                     <div class="left">
                         <div class="image" [ngStyle]="{'background-image' : 'url(assets/images/fitnes_blank.png)'}"
-                             *ngIf="item.stage1_img =='' " (tap)="runExercise(item)"></div>
+                             *ngIf="item.stage1_img =='' " (tap)="selectItem(item)"></div>
                         <div class="image"
                              [ngStyle]="{'background-image': 'url(' + config.baseUrl + item.stage1_img + '_s.jpg)'}"
-                             *ngIf="item.stage1_img.length > 10 " (tap)="runExercise(item)">
+                             *ngIf="item.stage1_img.length > 10 " (tap)="selectItem(item)">
                             <div class="icon"><img src="assets/images/clocks.png" alt=""></div>
 
                             <div class="avatar"
@@ -26,12 +27,12 @@
                                  *ngIf="item.avatar==''"></div>
                         </div>
                     </div>
-                    <div class="right" (tap)="showDetails(item)">
+                    <div class="right" (tap)="selectItem(item)">
                         <a class="h4">{{item.name}}</a>
                         <ul>
                            <li>By: <span>{{item.author}}</span></li>
                             <li>Skill: <span>{{item.skill}}</span></li>
-                            <li>Workout Card: <span> <span
+                            <li>Muscles Worked: <span> <span
                                     *ngFor="let muscle  of item.muscles"> {{muscle.name}}  </span></span></li>
                             <li>Cardio: <span>{{item.cardio  ==1 ? 'yes' : 'no'  }}</span></li>
                         </ul>
@@ -76,7 +77,7 @@
     -->
 
 </div>
-
+</ion-content>
 <ion-spinner class="loaderSpiner" [hidden]="!IsAjaxLoaded"></ion-spinner>
 
 <!--

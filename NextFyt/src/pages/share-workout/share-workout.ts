@@ -99,6 +99,7 @@ export class ShareWorkoutPage {
             targetHeight: 1000
         }).then((imageData) => {
             // imageData is a base64 encoded string
+            // "data:image/jpeg;base64," + imageData;
             this.Workout.Image = "data:image/jpeg;base64," + imageData;
             this.Workout.ImageData = imageData;
         }, (err) => {
@@ -110,7 +111,9 @@ export class ShareWorkoutPage {
     selectFromGalery() {
         this.camera.getPicture({
             destinationType: this.camera.DestinationType.DATA_URL,
-            sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
+            sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
+            targetWidth: 1000,
+            targetHeight: 1000
         }).then((imageData) => {
             // imageData is a base64 encoded string
             this.Workout.Image = "data:image/jpeg;base64," + imageData;
